@@ -1,0 +1,153 @@
+{
+  "type": "object",
+  "properties": {
+    "application_tests_run": {
+      "type": "boolean"
+    },
+    "checks": {
+      "type": "object",
+      "properties": {
+        "api_examples_checked": {
+          "type": "integer"
+        },
+        "api_operations": {
+          "type": "integer"
+        },
+        "asyncapi_standard": {
+          "type": "boolean"
+        },
+        "child_requirements": {
+          "type": "integer"
+        },
+        "dashboard_routes": {
+          "type": "integer"
+        },
+        "dashboards": {
+          "type": "integer"
+        },
+        "domain_negative_checks": {
+          "type": "integer"
+        },
+        "event_channels": {
+          "type": "integer"
+        },
+        "jsonschema_ajv_cases": {
+          "type": "integer"
+        },
+        "jsonschema_ajv_standard": {
+          "type": "boolean"
+        },
+        "jsonschema_standard": {
+          "type": "boolean"
+        },
+        "local_links_checked": {
+          "type": "integer"
+        },
+        "manifest_artifacts": {
+          "type": "integer"
+        },
+        "negative_validator_checks": {
+          "type": "integer"
+        },
+        "normative_documents": {
+          "type": "integer"
+        },
+        "openapi_standard": {
+          "type": "boolean"
+        },
+        "parent_features": {
+          "type": "integer"
+        },
+        "product_families": {
+          "type": "integer"
+        },
+        "product_negative_checks": {
+          "type": "integer"
+        },
+        "traceability_rows": {
+          "type": "integer"
+        }
+      },
+      "required": [
+        "api_examples_checked",
+        "api_operations",
+        "asyncapi_standard",
+        "child_requirements",
+        "dashboard_routes",
+        "dashboards",
+        "domain_negative_checks",
+        "event_channels",
+        "jsonschema_ajv_cases",
+        "jsonschema_ajv_standard",
+        "jsonschema_standard",
+        "local_links_checked",
+        "manifest_artifacts",
+        "negative_validator_checks",
+        "normative_documents",
+        "openapi_standard",
+        "parent_features",
+        "product_families",
+        "product_negative_checks",
+        "traceability_rows"
+      ],
+      "additionalProperties": false
+    },
+    "errors": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "limitations": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "result": {
+      "type": "string",
+      "minLength": 1
+    },
+    "semantic_completeness_proven": {
+      "type": "boolean"
+    },
+    "status": {
+      "enum": [
+        "draft",
+        "proposed",
+        "partial",
+        "complete",
+        "blocked"
+      ]
+    },
+    "updated": {
+      "type": "string",
+      "minLength": 1
+    },
+    "version": {
+      "type": "string",
+      "minLength": 1
+    }
+  },
+  "required": [
+    "application_tests_run",
+    "checks",
+    "errors",
+    "id",
+    "limitations",
+    "result",
+    "semantic_completeness_proven",
+    "status",
+    "updated",
+    "version"
+  ],
+  "additionalProperties": false,
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://insurance.example.invalid/meta/validation-report.schema.json",
+  "title": "validation-report registry v1"
+}

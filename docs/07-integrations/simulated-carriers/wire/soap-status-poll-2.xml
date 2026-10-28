@@ -1,0 +1,2 @@
+<?xml version='1.0' encoding='utf-8'?>
+<soap:Envelope xmlns:c="urn:fictional:carrier:soap:v1" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/"><soap:Body><c:SubmissionStatus><c:ClientApplicationRef>synthetic-order-001</c:ClientApplicationRef><c:PollOrdinal>2</c:PollOrdinal><c:Status>pending</c:Status><c:Authoritative>true</c:Authoritative><c:Ticket>SIM-SOAP-S-1</c:Ticket></c:SubmissionStatus></soap:Body></soap:Envelope>

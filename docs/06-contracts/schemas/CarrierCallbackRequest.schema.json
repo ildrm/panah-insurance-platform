@@ -1,0 +1,59 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://insurance.example.invalid/schemas/CarrierCallbackRequest.schema.json",
+  "title": "CarrierCallbackRequest",
+  "type": "object",
+  "properties": {
+    "externalEventId": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 128
+    },
+    "externalReference": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 128
+    },
+    "operation": {
+      "type": "string",
+      "enum": [
+        "submission",
+        "issuance",
+        "endorsement",
+        "cancellation",
+        "claim",
+        "claim_payout"
+      ]
+    },
+    "observedStatus": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 128,
+      "pattern": "^[A-Za-z0-9_.:-]+$"
+    },
+    "occurredAt": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "mappingVersion": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 128,
+      "pattern": "^[A-Za-z0-9_.:-]+$"
+    },
+    "payloadDocumentRef": {
+      "type": "string",
+      "format": "uuid"
+    }
+  },
+  "required": [
+    "externalEventId",
+    "externalReference",
+    "operation",
+    "observedStatus",
+    "occurredAt",
+    "mappingVersion",
+    "payloadDocumentRef"
+  ],
+  "additionalProperties": false
+}

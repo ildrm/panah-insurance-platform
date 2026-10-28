@@ -1,0 +1,549 @@
+{
+  "type": "object",
+  "properties": {
+    "entries": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "dataset": {
+            "type": "string",
+            "minLength": 1
+          },
+          "dependency_boundary": {
+            "type": "string",
+            "minLength": 1
+          },
+          "end": {
+            "type": "string",
+            "minLength": 1
+          },
+          "environment": {
+            "type": "string",
+            "minLength": 1
+          },
+          "gate": {
+            "type": "string",
+            "minLength": 1
+          },
+          "id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "owner_role": {
+            "type": "string",
+            "minLength": 1
+          },
+          "recovery_fixture": {
+            "type": "string",
+            "minLength": 1
+          },
+          "sampling": {
+            "type": "string",
+            "minLength": 1
+          },
+          "start": {
+            "type": "string",
+            "minLength": 1
+          },
+          "status": {
+            "type": "string",
+            "minLength": 1
+          },
+          "target": {
+            "type": "object",
+            "properties": {
+              "CLS_p75": {
+                "type": "number"
+              },
+              "INP_p75_ms": {
+                "type": "integer"
+              },
+              "LCP_p75_ms": {
+                "type": "integer"
+              },
+              "aggregation_deadline_ms": {
+                "type": "integer"
+              },
+              "api_pool_max_per_process": {
+                "type": "integer"
+              },
+              "bounded_write_queries_max": {
+                "type": "integer"
+              },
+              "catchup_target_seconds": {
+                "type": "integer"
+              },
+              "cosmetic_staleness_max_ms": {
+                "type": "integer"
+              },
+              "currency": {
+                "type": "string",
+                "minLength": 1
+              },
+              "dashboard_initial_gzip_kib": {
+                "type": "integer"
+              },
+              "database_RPO_seconds": {
+                "type": "integer"
+              },
+              "database_RTO_seconds": {
+                "type": "integer"
+              },
+              "db_connections_max": {
+                "type": "integer"
+              },
+              "export_page_rows_max": {
+                "type": "integer"
+              },
+              "first_eligible_p95_ms": {
+                "type": "integer"
+              },
+              "full_purchase_journey_gzip_kib": {
+                "type": "integer"
+              },
+              "import_20000_rows_target_seconds": {
+                "type": "integer"
+              },
+              "import_chunk_rows_max": {
+                "type": "integer"
+              },
+              "landing_initial_gzip_kib": {
+                "type": "integer"
+              },
+              "monthly_success_percent": {
+                "type": "number"
+              },
+              "normal_oldest_ready_age_seconds": {
+                "type": "integer"
+              },
+              "object_RPO_seconds": {
+                "type": "integer"
+              },
+              "object_RTO_seconds": {
+                "type": "integer"
+              },
+              "oncall_acknowledge_seconds": {
+                "type": "integer"
+              },
+              "operational_reserved_connections": {
+                "type": "integer"
+              },
+              "ordinary_read_queries_max": {
+                "type": "integer"
+              },
+              "p95_ms": {
+                "type": "integer"
+              },
+              "p99_ms": {
+                "type": "integer"
+              },
+              "paid_unissued_alert_age_seconds": {
+                "type": "integer"
+              },
+              "per_tenant_active_jobs_max": {
+                "type": "integer"
+              },
+              "private_shared_cache_allowed": {
+                "type": "boolean"
+              },
+              "production_cost_target": {
+                "type": "string",
+                "minLength": 1
+              },
+              "provider_price_baseline": {
+                "type": "string",
+                "minLength": 1
+              },
+              "public_catalog_max_age_seconds": {
+                "type": "integer"
+              },
+              "public_editorial_max_age_seconds": {
+                "type": "integer"
+              },
+              "purchase_commit_staleness_ms": {
+                "type": "integer"
+              },
+              "purchase_initial_gzip_kib": {
+                "type": "integer"
+              },
+              "retry_attempts_max": {
+                "type": "integer"
+              },
+              "retry_backoff_seconds": {
+                "type": "array",
+                "items": {
+                  "type": "integer"
+                }
+              },
+              "transaction_soft_deadline_ms": {
+                "type": "integer"
+              },
+              "unknown_outcome_alert_delay_seconds": {
+                "type": "integer"
+              },
+              "worker_pool_max_per_process": {
+                "type": "integer"
+              }
+            },
+            "required": [],
+            "additionalProperties": false
+          },
+          "title": {
+            "type": "string",
+            "minLength": 1
+          },
+          "tools": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "workload": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "required": [
+          "dataset",
+          "dependency_boundary",
+          "end",
+          "environment",
+          "gate",
+          "id",
+          "owner_role",
+          "sampling",
+          "start",
+          "status",
+          "target",
+          "title",
+          "tools",
+          "workload"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "environment": {
+      "type": "object",
+      "properties": {
+        "api": {
+          "type": "object",
+          "properties": {
+            "ram_gib_each": {
+              "type": "integer"
+            },
+            "replicas": {
+              "type": "integer"
+            },
+            "vcpu_each": {
+              "type": "integer"
+            }
+          },
+          "required": [
+            "ram_gib_each",
+            "replicas",
+            "vcpu_each"
+          ],
+          "additionalProperties": false
+        },
+        "browser": {
+          "type": "string",
+          "minLength": 1
+        },
+        "dependency_versions": {
+          "type": "string",
+          "minLength": 1
+        },
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "load_generator": {
+          "type": "string",
+          "minLength": 1
+        },
+        "network": {
+          "type": "string",
+          "minLength": 1
+        },
+        "postgres": {
+          "type": "object",
+          "properties": {
+            "ram_gib": {
+              "type": "integer"
+            },
+            "storage": {
+              "type": "string",
+              "minLength": 1
+            },
+            "vcpu": {
+              "type": "integer"
+            }
+          },
+          "required": [
+            "ram_gib",
+            "storage",
+            "vcpu"
+          ],
+          "additionalProperties": false
+        },
+        "region": {
+          "type": "string",
+          "minLength": 1
+        },
+        "status": {
+          "type": "string",
+          "minLength": 1
+        },
+        "worker": {
+          "type": "object",
+          "properties": {
+            "ram_gib_each": {
+              "type": "integer"
+            },
+            "replicas": {
+              "type": "integer"
+            },
+            "vcpu_each": {
+              "type": "integer"
+            }
+          },
+          "required": [
+            "ram_gib_each",
+            "replicas",
+            "vcpu_each"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "api",
+        "browser",
+        "dependency_versions",
+        "id",
+        "load_generator",
+        "network",
+        "postgres",
+        "region",
+        "status",
+        "worker"
+      ],
+      "additionalProperties": false
+    },
+    "id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "observational_workload": {
+      "type": "object",
+      "properties": {
+        "availability_denominator": {
+          "type": "string",
+          "minLength": 1
+        },
+        "environment": {
+          "type": "string",
+          "minLength": 1
+        },
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "sampling": {
+          "type": "string",
+          "minLength": 1
+        },
+        "traffic": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "required": [
+        "availability_denominator",
+        "environment",
+        "id",
+        "sampling",
+        "traffic"
+      ],
+      "additionalProperties": false
+    },
+    "status": {
+      "enum": [
+        "draft",
+        "proposed",
+        "partial",
+        "complete",
+        "blocked"
+      ]
+    },
+    "updated": {
+      "type": "string",
+      "minLength": 1
+    },
+    "version": {
+      "type": "string",
+      "minLength": 1
+    },
+    "workload": {
+      "type": "object",
+      "properties": {
+        "active_connections": {
+          "type": "integer"
+        },
+        "arrival_model": {
+          "type": "string",
+          "minLength": 1
+        },
+        "burst_minutes": {
+          "type": "integer"
+        },
+        "burst_rps": {
+          "type": "integer"
+        },
+        "carrier_simulators": {
+          "type": "integer"
+        },
+        "concurrent_import_rows": {
+          "type": "integer"
+        },
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "max_command_kib": {
+          "type": "integer"
+        },
+        "max_quote_response_kib": {
+          "type": "integer"
+        },
+        "max_read_response_kib": {
+          "type": "integer"
+        },
+        "mix_percent": {
+          "type": "object",
+          "properties": {
+            "authorized_reads": {
+              "type": "integer"
+            },
+            "bounded_writes": {
+              "type": "integer"
+            },
+            "callback_status": {
+              "type": "integer"
+            },
+            "quote_start_update": {
+              "type": "integer"
+            }
+          },
+          "required": [
+            "authorized_reads",
+            "bounded_writes",
+            "callback_status",
+            "quote_start_update"
+          ],
+          "additionalProperties": false
+        },
+        "operations": {
+          "type": "object",
+          "properties": {
+            "authorized_reads": {
+              "type": "string",
+              "minLength": 1
+            },
+            "bounded_writes": {
+              "type": "string",
+              "minLength": 1
+            },
+            "callback_status": {
+              "type": "string",
+              "minLength": 1
+            },
+            "quote_start_update": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "required": [
+            "authorized_reads",
+            "bounded_writes",
+            "callback_status",
+            "quote_start_update"
+          ],
+          "additionalProperties": false
+        },
+        "organizations": {
+          "type": "integer"
+        },
+        "people": {
+          "type": "integer"
+        },
+        "policies": {
+          "type": "integer"
+        },
+        "provider_profile": {
+          "type": "string",
+          "minLength": 1
+        },
+        "quote_provider_fanout_max": {
+          "type": "integer"
+        },
+        "steady_minutes": {
+          "type": "integer"
+        },
+        "steady_rps": {
+          "type": "integer"
+        },
+        "think_time": {
+          "type": "string",
+          "minLength": 1
+        },
+        "variants": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      },
+      "required": [
+        "active_connections",
+        "arrival_model",
+        "burst_minutes",
+        "burst_rps",
+        "carrier_simulators",
+        "concurrent_import_rows",
+        "id",
+        "max_command_kib",
+        "max_quote_response_kib",
+        "max_read_response_kib",
+        "mix_percent",
+        "operations",
+        "organizations",
+        "people",
+        "policies",
+        "provider_profile",
+        "quote_provider_fanout_max",
+        "steady_minutes",
+        "steady_rps",
+        "think_time",
+        "variants"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "required": [
+    "entries",
+    "environment",
+    "id",
+    "observational_workload",
+    "status",
+    "updated",
+    "version",
+    "workload"
+  ],
+  "additionalProperties": false,
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://insurance.example.invalid/meta/performance-budgets.schema.json",
+  "title": "performance-budgets registry v1"
+}

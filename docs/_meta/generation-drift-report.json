@@ -1,0 +1,54 @@
+{
+  "id": "REPORT-GENERATION-DRIFT",
+  "version": "1.0.0",
+  "status": "complete",
+  "updated": "2026-10-28",
+  "result": "pass",
+  "builders": [
+    {
+      "builder": "build_root.py",
+      "exit_code": 0,
+      "output": "Root governance, product and shared requirement documents written.",
+      "error": ""
+    },
+    {
+      "builder": "build_experience.py",
+      "exit_code": 0,
+      "output": "{\"products\": 24, \"dashboards\": 7, \"experience_topics\": 7, \"guides\": 8, \"product_schemas\": 24, \"fixtures\": 24, \"status\": \"draft_generated_not_application_tested\"}",
+      "error": ""
+    },
+    {
+      "builder": "build_features.py",
+      "exit_code": 0,
+      "output": "{\"parents\": 74, \"children\": 230, \"operations\": 230}",
+      "error": ""
+    },
+    {
+      "builder": "build_engineering.py",
+      "exit_code": 0,
+      "output": "Wrote 28 JSON wire fixtures, 11 XML fixtures, 2 signing vectors, schemas and synthetic PDF; no simulator service.\nWrote 103 engineering documents and 3 synthetic simulator fixture files; no application implementation.",
+      "error": ""
+    },
+    {
+      "builder": "build_delivery.py",
+      "exit_code": 0,
+      "output": "Wrote 16 workflows, quality specifications and delivery handoff.",
+      "error": ""
+    },
+    {
+      "builder": "build_meta.py",
+      "exit_code": 0,
+      "output": "Metadata: baseline=74, products=24, authored_features=74, authored_products=24",
+      "error": ""
+    },
+    {
+      "builder": "build_contracts.py",
+      "exit_code": 0,
+      "output": "Contracts: 238 operations; 195 events",
+      "error": ""
+    }
+  ],
+  "compared_files": 723,
+  "changed_files": [],
+  "scope": "Regenerated authored documents, fragments, meta and contracts in isolated temporary copy; evidence reports/manifest intentionally excluded."
+}

@@ -1,0 +1,56 @@
+{
+  "id": "REPORT-CONTRACT-STANDARDS",
+  "version": "1.0.0",
+  "status": "complete",
+  "updated": "2026-10-28",
+  "checkedAt": "2026-10-28T10:20:54.345Z",
+  "runtime": "v24.22.1",
+  "valid": true,
+  "inputs": [
+    {
+      "path": "06-contracts/openapi.yaml",
+      "sha256": "25e5fad0f3af0c045737ab492b4a141863195c4ac4d085b071f6cfadab1dd8c7"
+    },
+    {
+      "path": "06-contracts/asyncapi.yaml",
+      "sha256": "bfd083675e66427922f1ba96c83a95b51a88fb1bcfccd37c42d7e52583ba8fac"
+    }
+  ],
+  "outcomes": [
+    {
+      "kind": "OpenAPI",
+      "version": "3.1.0",
+      "valid": true,
+      "operations": 238,
+      "engine": "@apidevtools/swagger-parser13.1.0"
+    },
+    {
+      "kind": "AsyncAPI",
+      "version": "3.0.0",
+      "valid": true,
+      "engine": "@asyncapi/parser3.6.6",
+      "diagnostics": [
+        {
+          "code": "asyncapi-latest-version",
+          "message": "The latest version of AsyncAPi is not used. It is recommended update to the \"3.1.0\" version.",
+          "path": [
+            "asyncapi"
+          ],
+          "severity": 2,
+          "source": "/Users/shahinilderemi/Documents/tmp/iranbroker-st/docs/06-contracts/asyncapi.yaml",
+          "range": {
+            "start": {
+              "line": 1,
+              "character": 14
+            },
+            "end": {
+              "line": 1,
+              "character": 21
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "scope": "Static target contract standards checks only; not proof that runtime implements all operations or that partners certified these contracts."
+}

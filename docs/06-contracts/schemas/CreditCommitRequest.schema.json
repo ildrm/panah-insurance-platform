@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://insurance.example.invalid/schemas/CreditCommitRequest.schema.json",
+  "title": "CreditCommitRequest",
+  "type": "object",
+  "properties": {
+    "orderId": {
+      "type": "string",
+      "format": "uuid"
+    },
+    "approvalId": {
+      "type": "string",
+      "format": "uuid"
+    },
+    "approvedProposalDigest": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "expectedVersion": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 2147483647
+    }
+  },
+  "required": [
+    "orderId",
+    "approvalId",
+    "approvedProposalDigest",
+    "expectedVersion"
+  ],
+  "additionalProperties": false
+}

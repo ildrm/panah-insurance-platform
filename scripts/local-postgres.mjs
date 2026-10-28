@@ -1,0 +1,15 @@
+import {spawnSync} from 'node:child_process';
+import {existsSync,mkdirSync} from 'node:fs';
+import {resolve} from 'node:path';
+const configured=process.env.ST_POSTGRES_BIN;
+const pgConfig=spawnSync('pg_config',['--bindir'],{encoding:'utf8'});
+const bin=configured??(existsSync('/opt/homebrew/opt/postgresql@17/bin/initdb')?'/opt/homebrew/opt/postgresql@17/bin':pgConfig.status===0?pgConfig.stdout.trim():null);
+if(!bin)throw new Error('Install PostgreSQL17 or set ST_POSTGRES_BIN. The Docker alternative is infra/compose.yaml.');
+const data=resolve('.local/postgres'),log=resolve('.local/postgres.log');mkdirSync('.local',{recursive:true,mode:0o700});
+const run=(name,args,options={})=>{const result=spawnSync(resolve(bin,name),args,{encoding:'utf8',...options});if(result.status!==0)throw new Error(`${name} failed: ${result.stderr||result.stdout}`);return result.stdout;};
+if(!existsSync(data+'/PG_VERSION'))run('initdb',['-D',data,'-U','st','--encoding=UTF8','--no-locale','--auth-local=trust','--auth-host=trust']);
+const status=spawnSync(resolve(bin,'pg_ctl'),['-D',data,'status'],{encoding:'utf8'});
+if(status.status!==0)run('pg_ctl',['-D',data,'-l',log,'-o','-h 127.0.0.1 -p 55432 -k /tmp','-w','start']);
+const existing=run('psql',['-h','127.0.0.1','-p','55432','-U','st','-d','postgres','-tAc',"SELECT datname FROM pg_database WHERE datname='st_local'"]);
+if(!existing.trim())run('createdb',['-h','127.0.0.1','-p','55432','-U','st','st_local']);
+console.log('Isolated synthetic PostgreSQL ready on127.0.0.1:55432; durable local data is ignored at.local/postgres.');

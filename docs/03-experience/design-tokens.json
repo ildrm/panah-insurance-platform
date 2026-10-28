@@ -1,0 +1,52 @@
+{
+  "schemaVersion": "1.0.0",
+  "status": "proposed",
+  "ownerRole": "R04",
+  "sourceRefs": [
+    "S00",
+    "S08"
+  ],
+  "updated": "2026-10-28",
+  "color": {
+    "text": "#172B4D",
+    "textMuted": "#44546F",
+    "surface": "#FFFFFF",
+    "surfaceSubtle": "#F4F7FA",
+    "border": "#74849A",
+    "action": "#005A78",
+    "actionText": "#FFFFFF",
+    "focus": "#6B3FA0",
+    "success": "#166534",
+    "warning": "#854D0E",
+    "danger": "#B42318"
+  },
+  "spacingPx": {
+    "xs": 4,
+    "sm": 8,
+    "md": 12,
+    "lg": 16,
+    "xl": 24,
+    "xxl": 32
+  },
+  "radiusPx": {
+    "control": 8,
+    "panel": 12
+  },
+  "typePx": {
+    "body": 16,
+    "small": 14,
+    "heading3": 20,
+    "heading2": 24,
+    "heading1": 32
+  },
+  "lineHeight": {
+    "body": 1.7,
+    "heading": 1.35
+  },
+  "focus": {
+    "outlineWidthPx": 3,
+    "outlineOffsetPx": 2
+  },
+  "direction": "logical-properties",
+  "contrastStatus": "requires component-state verification"
+}

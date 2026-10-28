@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://insurance.example.invalid/schemas/PageInfo.schema.json",
+  "title": "PageInfo",
+  "type": "object",
+  "properties": {
+    "nextCursor": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "maxLength": 512
+    },
+    "hasMore": {
+      "type": "boolean"
+    }
+  },
+  "required": [
+    "nextCursor",
+    "hasMore"
+  ],
+  "additionalProperties": false
+}

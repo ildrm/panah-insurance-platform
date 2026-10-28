@@ -1,0 +1,31 @@
+{
+  "fixtureId": "FIX-PRD-14",
+  "synthetic": true,
+  "productId": "PRD-14",
+  "schemaRef": "../schemas/PRD-14.risk.schema.json",
+  "riskExample": {
+    "sportCode": "SYNTH-SPORT-A",
+    "activityLevelCode": "SYNTH-RECREATIONAL",
+    "periodStart": "2027-04-01",
+    "periodEnd": "2027-04-02",
+    "issuerPlanCode": "SYNTH-SPORT-PLAN",
+    "participantRefs": [
+      "00000000-0000-4000-8000-000000001401"
+    ]
+  },
+  "canonicalContext": {
+    "currency": "IRR",
+    "unit": "rial",
+    "channel": "b2c",
+    "partyAndAuthorityFixture": "Synthetic authorized buyer/payer/policyholder/insured roles; referenced UUIDs resolve only in the local test harness.",
+    "productRuleVersion": "SYNTH-1",
+    "liveOperationsAllowed": false
+  },
+  "scenarioContext": {},
+  "expected": {
+    "withoutContract": "live_quote_and_purchase_disabled",
+    "syntacticValidation": "pass",
+    "carrierEligibility": "undetermined_without_synthetic_rule_set",
+    "variant": "A recreational quote is reused for a competition event: server rejects the mismatched activity and requires a permitted plan or assisted review."
+  }
+}

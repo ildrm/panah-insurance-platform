@@ -1,0 +1,29 @@
+{
+  "id": "LOCAL-RECOVERY-SOURCE-GATE",
+  "version": "1.0.0",
+  "status": "partial",
+  "updated": "2026-10-28",
+  "evidence_id": "recovery-source-gate-node24",
+  "artifact_directory": ".local/backups/2026-10-28T10-55-39-650Z-4d493b7a-18be-4566-b3b7-36ecea699384",
+  "snapshot_matched": true,
+  "business_integrity_passed": false,
+  "source_consistency": {
+    "scope": "Ledger balance, policy/order states and canonical committed order/event/submission consistency; not a complete financial provenance or production audit",
+    "committed_orders": 59,
+    "missing_commitment_events": 30,
+    "duplicate_commitment_events": 0,
+    "mismatched_commitment_events": 0,
+    "missing_submissions": 30,
+    "mismatched_submissions": 0,
+    "invalid_commitment_kinds": 0,
+    "unbalanced_journals": 0,
+    "policy_order_mismatches": 0,
+    "issued_orders_without_policy": 0,
+    "valid": false
+  },
+  "restored_database_retained": false,
+  "table_count": 53,
+  "document_count": 36,
+  "required_followup": "Preserve historical synthetic fixture records and review the30 pre-isolation orphan commitments; do not invent insurer dispatch or delete posted money. Fresh finance tests now run in isolated generated databases.",
+  "production_rpo_rto_qualified": false
+}

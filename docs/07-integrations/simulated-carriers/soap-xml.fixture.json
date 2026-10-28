@@ -1,0 +1,31 @@
+{
+  "id": "SIM-SOAP",
+  "synthetic": true,
+  "protocol": "SOAP XML",
+  "capabilities": {
+    "quote": true,
+    "submit": true,
+    "status": true,
+    "issue": true,
+    "retrieveDocument": true,
+    "idempotency": false,
+    "callbacks": false
+  },
+  "request": {
+    "format": "SOAP1.1",
+    "examplePath": "wire/soap-submit-request.xml"
+  },
+  "scenarios": [
+    "normal",
+    "duplicate_callback",
+    "malformed_response",
+    "timeout_after_acceptance",
+    "idempotency_not_supported",
+    "throttled",
+    "expired_token",
+    "partial_outage",
+    "mapping_version_change"
+  ],
+  "requestExamplePath": "wire/soap-submit-request.xml",
+  "wireFixtureManifest": "wire/fixture-manifest.json"
+}

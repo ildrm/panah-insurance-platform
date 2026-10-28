@@ -1,0 +1,74 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://insurance.invalid/schemas/PRD-21.risk.v1.schema.json",
+  "title": "PRD-21 synthetic risk input syntax",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "liabilityClassCode",
+    "insuredPartyRef",
+    "operationsDescription",
+    "exposureMeasures",
+    "limitOption"
+  ],
+  "properties": {
+    "liabilityClassCode": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 80,
+      "description": "required; approved professional/public/employer classification <= 80. Sensitivity: internal. Error: LIABILITY_CLASS_UNAVAILABLE. Eligibility is contract-dependent."
+    },
+    "insuredPartyRef": {
+      "type": "string",
+      "format": "uuid",
+      "description": "required; authorized person or legal entity. Sensitivity: restricted. Error: INSURED_AUTHORITY_REQUIRED. Eligibility is contract-dependent."
+    },
+    "operationsDescription": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 2000,
+      "description": "required; 1–2000 NFC characters. Sensitivity: confidential. Error: OPERATIONS_REQUIRED. Eligibility is contract-dependent."
+    },
+    "exposureMeasures": {
+      "type": "object",
+      "minProperties": 1,
+      "maxProperties": 100,
+      "additionalProperties": {
+        "oneOf": [
+          {
+            "type": "number",
+            "minimum": 0
+          },
+          {
+            "type": "string",
+            "pattern": "^[0-9]{1,18}(\\.[0-9]{1,6})?$"
+          }
+        ]
+      },
+      "description": "required by class; only versioned named nonnegative decimal measures. Sensitivity: confidential. Error: EXPOSURE_SCHEMA_INVALID. Eligibility is contract-dependent."
+    },
+    "locationRefs": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 100,
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "format": "uuid"
+      },
+      "description": "conditional by class; 1–100 permitted locations. Sensitivity: restricted. Error: LOCATION_REQUIRED. Eligibility is contract-dependent."
+    },
+    "limitOption": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 40,
+      "description": "required; approved occurrence/aggregate structure. Sensitivity: financial. Error: LIMIT_UNAVAILABLE. Eligibility is contract-dependent."
+    },
+    "priorClaimsRef": {
+      "type": "string",
+      "format": "uuid",
+      "description": "conditional by underwriting; restricted declaration version. Sensitivity: highly restricted. Error: CLAIM_HISTORY_REQUIRED. Eligibility is contract-dependent."
+    }
+  },
+  "description": "Strict syntax baseline. Conditional predicates, cross-field dates/sums/relationships and actual carrier eligibility require the versioned application validator; passing this schema is not underwriting acceptance."
+}

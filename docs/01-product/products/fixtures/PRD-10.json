@@ -1,0 +1,33 @@
+{
+  "fixtureId": "FIX-PRD-10",
+  "synthetic": true,
+  "productId": "PRD-10",
+  "schemaRef": "../schemas/PRD-10.risk.schema.json",
+  "riskExample": {
+    "destinationCodes": [
+      "SYNTH-DEST-A"
+    ],
+    "departureDate": "2027-02-01",
+    "returnDate": "2027-02-10",
+    "tripTypeCode": "SYNTH-SINGLE",
+    "assistancePlanCode": "SYNTH-TRAVEL-A",
+    "travelerRefs": [
+      "00000000-0000-4000-8000-000000001001"
+    ]
+  },
+  "canonicalContext": {
+    "currency": "IRR",
+    "unit": "rial",
+    "channel": "b2c",
+    "partyAndAuthorityFixture": "Synthetic authorized buyer/payer/policyholder/insured roles; referenced UUIDs resolve only in the local test harness.",
+    "productRuleVersion": "SYNTH-1",
+    "liveOperationsAllowed": false
+  },
+  "scenarioContext": {},
+  "expected": {
+    "withoutContract": "live_quote_and_purchase_disabled",
+    "syntacticValidation": "pass",
+    "carrierEligibility": "undetermined_without_synthetic_rule_set",
+    "variant": "The destination changes after pricing: the old quote is invalidated and a carrier that does not cover the new destination cannot be selected."
+  }
+}

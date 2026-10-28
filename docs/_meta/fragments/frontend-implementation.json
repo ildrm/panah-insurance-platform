@@ -1,0 +1,624 @@
+{
+  "version": "1.2.0",
+  "status": "verified_local",
+  "owner_roles": [
+    "R04",
+    "R07",
+    "R21"
+  ],
+  "updated": "2026-10-28",
+  "owned_paths": [
+    "apps/web/",
+    "packages/api-client/",
+    "packages/ui/",
+    "tests/e2e/"
+  ],
+  "architecture": "One Next App Router presentation application; seven context-specific dashboard surfaces; all business decisions delegated to Nest API. Browser same-origin rewrite transports requests only. Server public rendering fetches Nest directly.",
+  "frameworks": {
+    "next": "16.4.3",
+    "react": "19.3.1",
+    "typescript": "5.9.3"
+  },
+  "working_flows": [
+    "sandbox OTP and privileged MFA",
+    "context selection with full navigation and synchronous state remount",
+    "24 versioned risk-schema questionnaires with authorized profile references",
+    "draft save/resume, quote fan-out result polling and comparison",
+    "declarations and order, sandbox verified payment, distinct financial/submission/issuance state tracking, authorized policy PDF",
+    "corporate census CSV preview/approval/apply controls and credit request",
+    "named claims/support/policy-change/automotive/growth forms calling actual domain operations",
+    "inspection evidence upload with quarantine visibility and reviewer decision controls",
+    "feature proposal and independent approval UI",
+    "partner submission/exception reconciliation and persistent connection proposal/validation/approval UI",
+    "public-only offline guidance and install manifest",
+    "authoritative four-bucket wallet, explicit sandbox receipt confirmation and separate wallet funding, held withdrawal, distinct checker approval and first provider dispatch",
+    "lazy scoped-control proposal and hypothetical preview with server explanation; version-bound independent approval and rollback proposal controls"
+  ],
+  "counts": {
+    "dashboard_navigation_routes": 101,
+    "dashboard_surfaces": 7,
+    "documented_dashboard_navigation_routes": 100,
+    "additional_specialized_routes": 1
+  },
+  "checks": [
+    {
+      "command": "rtk proxy npm run build -w @st/api-client",
+      "result": "passed"
+    },
+    {
+      "command": "rtk proxy npm run build -w @st/ui",
+      "result": "passed"
+    },
+    {
+      "command": "rtk proxy npm run typecheck -w @st/web",
+      "result": "passed"
+    },
+    {
+      "command": "rtk proxy npm run build -w @st/web",
+      "result": "passed",
+      "page_modules": 27,
+      "immutable_evidence_id": "scoped-controls-final-build-node24"
+    },
+    {
+      "command": "rtk proxy npm exec -- playwright test -c tests/e2e/playwright.config.ts",
+      "result": "passed",
+      "passed": 12,
+      "failed": 0,
+      "duration_seconds": 24.0,
+      "b2c_flow_seconds": 4.7,
+      "evidence_path": "artifacts/e2e/results.json",
+      "skipped": 0,
+      "finance_flow_seconds": 9.7,
+      "immutable_evidence_id": "scoped-controls-final-browser-node24",
+      "scoped_controls_flow_seconds": 4.8
+    },
+    {
+      "command": "Node24 scripts/bundle-budgets.mjs",
+      "result": "passed",
+      "immutable_evidence_id": "scoped-controls-final-bundles-node24",
+      "budgets_kib": {
+        "landing": 180,
+        "purchase": 280,
+        "dashboard": 400
+      },
+      "measured_kib": {
+        "landing": 179.49,
+        "purchase": 193.43,
+        "dashboard": 199.46
+      },
+      "full_field_performance_proven": false
+    },
+    {
+      "command": "B2C browser-observed production JavaScript union gate",
+      "result": "passed",
+      "evidence_path": "docs/09-performance/evidence/purchase-journey-bundle.json",
+      "immutable_evidence_id": "scoped-controls-final-browser-node24",
+      "observed_assets": 13,
+      "measured_gzip_kib": 190.5,
+      "budget_kib": 750,
+      "missing_files": 0,
+      "failed_script_responses": 0,
+      "method": "Unique observed same-origin Next static JavaScript production files, each gzip level6; an asset union estimate, not wire bytes or field Web Vitals."
+    }
+  ],
+  "leaf_evidence": [
+    {
+      "id": "INS-01-R001",
+      "api_operation": "searchInsuranceCatalog",
+      "status": "in_progress",
+      "files": [
+        "apps/web/components/catalog.tsx"
+      ],
+      "evidence": "Frontend workflow exists; parent aggregate must evaluate full domain and all child acceptance semantics before marking verified_local."
+    },
+    {
+      "id": "INS-02-R001",
+      "api_operation": "createApplicationDraft",
+      "status": "in_progress",
+      "files": [
+        "apps/web/components/purchase.tsx",
+        "apps/web/components/schema-field.tsx"
+      ],
+      "evidence": "Frontend workflow exists; parent aggregate must evaluate full domain and all child acceptance semantics before marking verified_local."
+    },
+    {
+      "id": "INS-02-R002",
+      "api_operation": "saveApplicationAnswers",
+      "status": "in_progress",
+      "files": [
+        "apps/web/components/purchase.tsx"
+      ],
+      "evidence": "Frontend workflow exists; parent aggregate must evaluate full domain and all child acceptance semantics before marking verified_local."
+    },
+    {
+      "id": "INS-05-R001",
+      "api_operation": "startQuoteAggregation",
+      "status": "in_progress",
+      "files": [
+        "apps/web/components/purchase.tsx"
+      ],
+      "evidence": "Frontend workflow exists; parent aggregate must evaluate full domain and all child acceptance semantics before marking verified_local."
+    },
+    {
+      "id": "INS-05-R002",
+      "api_operation": "readQuoteResults",
+      "status": "in_progress",
+      "files": [
+        "apps/web/components/purchase.tsx"
+      ],
+      "evidence": "Frontend workflow exists; parent aggregate must evaluate full domain and all child acceptance semantics before marking verified_local."
+    },
+    {
+      "id": "INS-06-R001",
+      "api_operation": "compareInsuranceOffers",
+      "status": "in_progress",
+      "files": [
+        "apps/web/components/purchase.tsx"
+      ],
+      "evidence": "Frontend workflow exists; parent aggregate must evaluate full domain and all child acceptance semantics before marking verified_local."
+    },
+    {
+      "id": "INS-09-R001",
+      "api_operation": "bookVehicleInspection",
+      "status": "in_progress",
+      "files": [
+        "apps/web/components/business-form.tsx"
+      ],
+      "evidence": "Frontend workflow exists; parent aggregate must evaluate full domain and all child acceptance semantics before marking verified_local."
+    },
+    {
+      "id": "INS-09-R002",
+      "api_operation": "uploadInspectionEvidence",
+      "status": "in_progress",
+      "files": [
+        "apps/web/components/inspection.tsx"
+      ],
+      "evidence": "Frontend workflow exists; parent aggregate must evaluate full domain and all child acceptance semantics before marking verified_local."
+    },
+    {
+      "id": "INS-09-R003",
+      "api_operation": "decideInspection",
+      "status": "in_progress",
+      "files": [
+        "apps/web/components/inspection.tsx"
+      ],
+      "evidence": "Frontend workflow exists; parent aggregate must evaluate full domain and all child acceptance semantics before marking verified_local."
+    },
+    {
+      "id": "COM-01-R001",
+      "api_operation": "reviewCheckout",
+      "status": "in_progress",
+      "files": [
+        "apps/web/components/purchase.tsx"
+      ],
+      "evidence": "Frontend workflow exists; parent aggregate must evaluate full domain and all child acceptance semantics before marking verified_local."
+    },
+    {
+      "id": "COM-01-R002",
+      "api_operation": "acceptCheckoutDeclarations",
+      "status": "in_progress",
+      "files": [
+        "apps/web/components/purchase.tsx"
+      ],
+      "evidence": "Frontend workflow exists; parent aggregate must evaluate full domain and all child acceptance semantics before marking verified_local."
+    },
+    {
+      "id": "COM-01-R003",
+      "api_operation": "createOrder",
+      "status": "in_progress",
+      "files": [
+        "apps/web/components/purchase.tsx"
+      ],
+      "evidence": "Frontend workflow exists; parent aggregate must evaluate full domain and all child acceptance semantics before marking verified_local."
+    },
+    {
+      "id": "GRW-01-R001",
+      "api_operation": "startOtpAuthentication",
+      "status": "in_progress",
+      "files": [
+        "apps/web/components/auth.tsx"
+      ],
+      "evidence": "Frontend workflow exists; parent aggregate must evaluate full domain and all child acceptance semantics before marking verified_local."
+    },
+    {
+      "id": "GRW-01-R002",
+      "api_operation": "verifyAuthenticationChallenge",
+      "status": "in_progress",
+      "files": [
+        "apps/web/components/auth.tsx"
+      ],
+      "evidence": "Frontend workflow exists; parent aggregate must evaluate full domain and all child acceptance semantics before marking verified_local."
+    },
+    {
+      "id": "GRW-01-R003",
+      "api_operation": "switchOrganizationContext",
+      "status": "in_progress",
+      "files": [
+        "apps/web/components/protected-session.tsx"
+      ],
+      "evidence": "Frontend workflow exists; parent aggregate must evaluate full domain and all child acceptance semantics before marking verified_local."
+    },
+    {
+      "id": "GRW-01-R004",
+      "api_operation": "stepUpPrivilegedAccess",
+      "status": "in_progress",
+      "files": [
+        "apps/web/components/protected-session.tsx"
+      ],
+      "evidence": "Frontend workflow exists; parent aggregate must evaluate full domain and all child acceptance semantics before marking verified_local."
+    },
+    {
+      "id": "GRW-02-R001",
+      "api_operation": "readWalletBalances",
+      "status": "in_progress",
+      "files": [
+        "apps/web/components/finance.tsx",
+        "packages/api-client/src/finance.ts"
+      ],
+      "test_paths": [
+        "tests/e2e/finance.spec.ts",
+        "tests/e2e/finance-contract.spec.ts"
+      ],
+      "remaining_behavior": "Pending-by-account projections, all restrictions and complete child acceptance are not fully implemented."
+    },
+    {
+      "id": "GRW-02-R002",
+      "api_operation": "redeemWalletCredit",
+      "status": "in_progress",
+      "files": [
+        "apps/web/components/finance.tsx",
+        "packages/api-client/src/finance.ts"
+      ],
+      "test_paths": [
+        "tests/e2e/finance.spec.ts",
+        "tests/e2e/finance-contract.spec.ts"
+      ],
+      "remaining_behavior": "Reservation and capture controls compile; complete promotion/expiry/channel and commercial commitment browser variants remain unverified."
+    },
+    {
+      "id": "GRW-02-R003",
+      "api_operation": "withdrawWalletFunds",
+      "status": "in_progress",
+      "files": [
+        "apps/web/components/finance.tsx",
+        "packages/api-client/src/finance.ts"
+      ],
+      "test_paths": [
+        "tests/e2e/finance.spec.ts",
+        "tests/e2e/finance-contract.spec.ts"
+      ],
+      "remaining_behavior": "One verified synthetic positive payout journey; refund approvals, confirmed failure/unknown variants and live authority remain incomplete."
+    },
+    {
+      "id": "COM-04-R002",
+      "api_operation": "createInstallmentSchedule",
+      "status": "in_progress",
+      "files": [
+        "apps/web/components/finance.tsx",
+        "packages/api-client/src/finance.ts"
+      ],
+      "test_paths": [
+        "tests/e2e/finance.spec.ts",
+        "tests/e2e/finance-contract.spec.ts"
+      ],
+      "remaining_behavior": "Approved schedule components render from server; eligibility, acceptance, debt integration and full financing workflow are not browser qualified."
+    },
+    {
+      "id": "COM-09-R003",
+      "api_operation": "settleCarrierAndSeller",
+      "status": "in_progress",
+      "files": [
+        "apps/web/components/finance.tsx",
+        "packages/api-client/src/finance.ts"
+      ],
+      "test_paths": [
+        "tests/e2e/finance.spec.ts",
+        "tests/e2e/finance-contract.spec.ts"
+      ],
+      "remaining_behavior": "Wallet payout positive slice tested; complete carrier/seller settlement, vesting/reversal and statements remain incomplete."
+    },
+    {
+      "id": "CHN-04-R001",
+      "api_operation": "proposeScopedAvailability",
+      "status": "in_progress",
+      "files": [
+        "apps/web/components/admin/scoped-controls.tsx",
+        "packages/api-client/src/controls.ts"
+      ],
+      "test_paths": [
+        "tests/e2e/scoped-controls.spec.ts"
+      ],
+      "remaining_behavior": "Closed typed scope editor and negative journey verified; all dimensions and real runtime guard coverage remain incomplete."
+    },
+    {
+      "id": "CHN-04-R002",
+      "api_operation": "previewFeatureDependencies",
+      "status": "in_progress",
+      "files": [
+        "apps/web/components/admin/scoped-controls.tsx",
+        "packages/api-client/src/controls.ts"
+      ],
+      "test_paths": [
+        "tests/e2e/scoped-controls.spec.ts"
+      ],
+      "remaining_behavior": "Hypothetical preview with authoritative explanations verified; full dependency/cohort/channel matrix browser acceptance remains incomplete."
+    },
+    {
+      "id": "CHN-04-R003",
+      "api_operation": "approveFeatureChange",
+      "status": "in_progress",
+      "files": [
+        "apps/web/components/admin/scoped-controls.tsx",
+        "packages/api-client/src/controls.ts"
+      ],
+      "test_paths": [
+        "tests/e2e/scoped-controls.spec.ts"
+      ],
+      "remaining_behavior": "Independent checker controls, optimistic epoch and rollback proposal UI compile; positive UI publication/rollback and history browser acceptance remain unverified."
+    }
+  ],
+  "limitations": [
+    "Navigation paths are not proof of all workflow semantics; no complete dashboard child is inferred from a menu entry.",
+    "Full 230-leaf frontend acceptance coverage is incomplete. Seller onboarding/leads, advanced rules/marketing/analytics and workflow variants remain absent or unverified. Financial UI covers a verified synthetic funding/payout slice; complete refunds, financing eligibility/acceptance, servicing disputes, counterparty settlement and wallet recovery semantics remain incomplete.",
+    "Native applications remain a separate undecided deliverable.",
+    "Manual screen-reader/accessibility and representative field/performance qualification are pending.",
+    "Persistent connection UI, inspection review, corporate credit and secondary forms compile and call named real domain operations; targeted browser acceptance beyond the verified B2C/admin/read/offline suite remains pending.",
+    "No live insurer, payment, SMS or official inquiry operation is represented as connected.",
+    "Handwritten runtime-decoded clients are not a generated full OpenAPI compatibility suite for every operation.",
+    "Pending sandbox intent listing is exposed by API; browser UI keeps the currently created intent only until navigation. Dedicated pending-intent recovery UI remains incomplete.",
+    "Scoped controls expose107registered previewable keys, but current runtime bindings cover selected purchase/credit paths only. Most business mutations and scoped worker quarantine remain incomplete. Ordinary editor excludes incident creation and internal reservation-completion contexts."
+  ],
+  "production_ready": false,
+  "independent_human_review": "pending",
+  "scope_status": "working_vertical_slices_not_full_frontend_scope",
+  "local_browser_evidence": [
+    "real_b2c_ui_to_verified_payment_and_carrier_pdf",
+    "privileged_mfa_and_proposal_maker_checker_ui",
+    "rtl_mobile_landmarks_and_no_horizontal_overflow",
+    "offline_public_only_cache_and_no_private_rows",
+    "anonymous_private_route",
+    "bounded_csv_semantics",
+    "money_boundary_and_exact_negative_toman_display",
+    "four_wallet_buckets_provider_confirmation_separate_from_posting_held_payout_distinct_checker_and_first_dispatch",
+    "actual_b2c_browser_javascript_asset_union_below_750_kib",
+    "scoped_control_closed_selector_rejection_maker_denial_calendar_validation_and_unchanged_active_epoch"
+  ],
+  "review_findings_resolved": [
+    "International account contact format now includes mandatory plus prefix",
+    "Browser trusted-origin mismatch fixed by parent with exact sandbox allowlist; no bypass",
+    "Money response cannot silently turn missing amount into zero",
+    "Context and permission revision remount all protected client state; authorization failures recheck session",
+    "Post-login navigation uses actual server-derived role context",
+    "Privileged mutation controls expose real context-bound step-up; no automatic factor bypass",
+    "Studio capabilities serialized as provider-contract string array",
+    "Negative sub-toman amounts preserve sign",
+    "Finance input labels and descriptions are associated separately with useId/htmlFor and aria-describedby",
+    "Localized product form fallback retained in private purchase module while public catalog uses authoritative titleFa",
+    "Public session bootstrap and view modules physically separated from generic command transport",
+    "Static footer rendered on server; browser packages use exact ESM exports",
+    "Playwright output and reporter paths resolve absolutely to ignored root artifacts",
+    "Scoped-control UTC inputs reject invalid calendar normalization rather than silently changing dates",
+    "Preview results store and display immutable submitted sample contexts and a last-completed-simulation label",
+    "Incident proposal approval intersects generic checker and quarantine-specific checker grants",
+    "Scoped admin UI states that registered previewable keys do not imply complete runtime enforcement"
+  ],
+  "source_hashes": {
+    "apps/web/app/account/[[...section]]/page.tsx": "b057640372e47d992b110e223ba85007709c80e854eb0c80664aea89047b7714",
+    "apps/web/app/admin/[[...section]]/page.tsx": "e2912353835eda73eb5c2f1ee5995aa906707b23cda7eedb3c5a41afad8d348b",
+    "apps/web/app/applications/[id]/page.tsx": "cd50305bb4c649c8f7a3b395a731a1e8304a8bea64053553fd62b6dd35e5a062",
+    "apps/web/app/auth/recovery/page.tsx": "289d13d251dc1b1427ef3a7c1bb795690d25259170038230612132f918c6d126",
+    "apps/web/app/auth/sign-in/page.tsx": "5bb9b6c351063df55dc8760b1ef7ac1262f355051269dc029eeea34688bafda5",
+    "apps/web/app/automotive/[kind]/page.tsx": "d9793bfa51268311c82e15356de42d21855ebd9c8444e19f83daa2c60c91410d",
+    "apps/web/app/benefits/[[...section]]/page.tsx": "a4a76d308e9c3c6b0a10be8e94fbe695eec8f4346684c81949df6d2947c5f625",
+    "apps/web/app/checkout/[applicationId]/page.tsx": "c35df6f783a313e2d4bbef4718c85da8eafcb8ba36645c6838b22a64ca23a356",
+    "apps/web/app/error.tsx": "eca0cbf2ac75084c480c87dad8184ce41047e456cd453359bdf47f5af3a9451a",
+    "apps/web/app/globals.css": "ad52cb6cdb3ca9c77a4d2d6ce68d4af79a28f80b53c8a4a622f88660d469e165",
+    "apps/web/app/help/page.tsx": "e53f6102f1137348dba59ce2884318ae09a946a3d1c5bf9c09c13c7cd8d8288b",
+    "apps/web/app/icon.svg": "9c629b3988efb71e5c77c971e583415ba741ef064bc9484186265eb1ca6f1a29",
+    "apps/web/app/inspections/[id]/page.tsx": "714b7b40d358f2310d75b6c3cc240ad0c0ebb199cdf7d5e59ebe44cb1b460c75",
+    "apps/web/app/insurance/[productId]/page.tsx": "a9ec13685853c0a0c3694289136abd701ccaeef910e205454c9b3e62cd7bef53",
+    "apps/web/app/insurance/page.tsx": "1e08474035f2b9336429c293ed9e0250e13a20e8ed257cc189988db1da100321",
+    "apps/web/app/insurers/[slug]/page.tsx": "785f7eb8ad6f13c90cea7b835107fdc911aceb456ed5a2e391adb61b1c02fb7f",
+    "apps/web/app/layout.tsx": "ba776e26ca8721e79aa071f6781c17d6a0d4ab64be455a77ddbb10bdd9fe350e",
+    "apps/web/app/loading.tsx": "3568550f30f37375cee31113022269e22bfeceb93120c28d2237bf998c27834c",
+    "apps/web/app/manifest.ts": "eb1fef676daa970a7eed57eadc07fe3aae4c85382a55733e2990881560449cbe",
+    "apps/web/app/not-found.tsx": "563efef0f732642cbb988ef6e9a25b895161f4974cd70259849a72c4b66cced8",
+    "apps/web/app/offline/page.tsx": "2fa861f65ca786a650da75343bc04b6fd7555440f8242cf1a950b60c595799ee",
+    "apps/web/app/ops/[[...section]]/page.tsx": "77db862b4c3b486115bce768a46c5fa6b04a7304c69918020129dcfc74654c30",
+    "apps/web/app/orders/[id]/page.tsx": "3d643fbddf8dd1364d31dbab400a16373f66ea5fc193e62143a431823f9fc139",
+    "apps/web/app/org/[orgId]/[[...section]]/page.tsx": "90dbfc7bf2b00470efcb7ebf7b709babd8ebbab3eaf3798e55eff524944c7043",
+    "apps/web/app/org/page.tsx": "4b4d16f343b469b928a9452472179ef9ca7da014aa6081b096f4c5e4e2e94d91",
+    "apps/web/app/page.tsx": "100a74c2f6fbfb45ba550f408b406b43c935f7118829b12d7830067b95eb7736",
+    "apps/web/app/partner/[[...section]]/page.tsx": "ee60dd639a17cbd26c3f801f306701998ebe847db8740634116f3e4047e2401f",
+    "apps/web/app/partner-referrals/page.tsx": "bf8901251f8adfec4054476bb41f6e01d121750ee98a48f40d5ed8d76641a4fb",
+    "apps/web/app/policies/[id]/changes/page.tsx": "2dade6151999427727b7e79cddb32b57d6a4b5bfead09a0eef247a8c8febfed4",
+    "apps/web/app/policies/[id]/page.tsx": "eba466885ab1e3edbb3a7fd759c1afabc45b523dcb5994108de413d34831e2f8",
+    "apps/web/app/quotes/[id]/compare/page.tsx": "5f531fe13b55f78662eb4dafed941a36ac6d7c7e86967b28da4868aaab5b1035",
+    "apps/web/app/sandbox/payments/[id]/page.tsx": "865fb8ce369c1fe51199d4e47d253fd935d09dc87a290b857e3edcff4cf4f5d3",
+    "apps/web/app/search/page.tsx": "122fa5e1a93ada645aaade34652b6769a494d925f843924adf9d6c2d1694b15d",
+    "apps/web/app/seller/[[...section]]/page.tsx": "6ef340d44a83ccbae24bdf5c029487e9728d49817d039a6f417f8477d8a2c5e5",
+    "apps/web/components/admin/scoped-controls.tsx": "8c479b6907594bdbe061bf3540b46c2399fb8fccd1194ccaddf95a7a447367d7",
+    "apps/web/components/admin-tools.tsx": "2a2debffabf468ec53f89b1936d2710a0e72cb6c12652542c938f2be0022580f",
+    "apps/web/components/auth.tsx": "232adc77fec42095252a22ccf70267517d9f299f495b231c05bc90edd2332b6c",
+    "apps/web/components/business-form.tsx": "34b8d24a8ddd41104e0362a26f2b1795273685ff2c3d5050debf50290c324f85",
+    "apps/web/components/catalog.tsx": "a382eec96a57ea67d2e497d3a343983d80c506c30766bc5f90b8ad5ce7ffc773",
+    "apps/web/components/chrome.tsx": "729b021817e87c1354f6aa74b4afcc8e009989a07bfed8f36942e3d2ebcdb138",
+    "apps/web/components/dashboard.tsx": "d093f85c316ddb1e8be9a3e3f7600d6cab2201d2d7e544bbc2fc32c88852a4de",
+    "apps/web/components/finance.tsx": "891c7ab49f7f59ca0bea6fb4af660eca48f1e2258f5ecd2bea29e0428f4adf75",
+    "apps/web/components/footer.tsx": "7ebb74bdf55ce8c00778d58b5e04c948303fd530e75e6f1413a8eb4b9074fab5",
+    "apps/web/components/inspection.tsx": "a6722b725ed9a478918ecd71d9f27c1045fa1ae0ada2617c73fda2f4b9b004f6",
+    "apps/web/components/primitives.tsx": "1bc2042e21faf62053076f8c393b7cbe51034d25d3af971a415b942a1e0cc77c",
+    "apps/web/components/protected-session.tsx": "3b73fac78bd311a7d238a2eb525d1ebb289130b869dbcdf6ca9caf4b8835702d",
+    "apps/web/components/purchase.tsx": "1742d83df28f60560856e69def1649b45685f8442effd32b38c2dc25252b71a8",
+    "apps/web/components/pwa.tsx": "ecd41deee5206e41ec116b28c8e2aeec60568bd90075e7faf0827dfba2df37c3",
+    "apps/web/components/schema-field.tsx": "c73d2c1809acd504890722ff560bfcff13fb6921fbc8a98e38eac543a5b9090b",
+    "apps/web/components/session.tsx": "0678f6472b48eb0234e2c0021379e9edb7dd2399a9e202a9f5577f81e2909c10",
+    "apps/web/components/special-pages.tsx": "ceecf1666b1cca2deeb4579ca03e1be183b223112c0f1ff26697796450703def",
+    "apps/web/lib/finance-routes.ts": "92e436cbb652bcfb0c4347c9ef1dd1d496d620f283d31dd0a06d31d214960d67",
+    "apps/web/lib/portal-routes.ts": "4037946a540238782c5a97ec93d6d9212e00401a056f597488e0358dc74deab5",
+    "apps/web/lib/product-titles.ts": "a7b371559f9ce484ca23749f0e24ed09148cfaf7336adf8b096f2c44b0a1327b",
+    "apps/web/lib/server-api.ts": "37a42052ffcf2e42f1465035e3103dfeefb7a4406d6a2fe52d773cc53031a3b7",
+    "apps/web/next-env.d.ts": "1862ac4bbbc5192d4bf562161df66ea547ed3e67173100656ab606ae9797db2b",
+    "apps/web/next.config.ts": "9b5b4a33874d6bb9260572bf8fd8f7c6a87de8cd2d7a5fd126493748d4b07899",
+    "apps/web/package.json": "ebfc221b8a60a9893aa89ffc280d8380c2ab307b5eca08fc4e30573afc132026",
+    "apps/web/public/sw.js": "e01fc75e768affd4e1d0820cab2fa708859081c563abfd042e2698cf9320f769",
+    "apps/web/tsconfig.json": "24f5edeb400775f26641eb10010f9976996175b318a7cb303ee839f5c53ad461",
+    "packages/api-client/package.json": "507833b45f541809602ae6ed9eb43959b5db6d3f9c8d7601aba9a30c3456cd8e",
+    "packages/api-client/src/controls.ts": "c5a7ca7ec8a132713618365c589d49126ab53508759dbc00eaa76ca9b9a97a87",
+    "packages/api-client/src/csv.ts": "3c14d2733ed3b3954cd0fbdb0f926abfbf9c0900177880b1aa9f1efe8825f78a",
+    "packages/api-client/src/finance.ts": "ab8028a3c9e0e3fbfea57f940099fbef606ed06b41412ed3b1726be8ac020e9c",
+    "packages/api-client/src/index.ts": "7c4a58e728a37573a6a485375e2281130cccd65a9d2d996308aa9d18983986d9",
+    "packages/api-client/src/session-reader.ts": "e8ac7d496d5c6d479b5fc94ed5d8ccd984afa2f7da4311e635b2b64a999cad62",
+    "packages/api-client/src/session-view.ts": "e62276a028b6c0feb0fb35490dd4af201f2d966a89483c0d69d26ff6eede1535",
+    "packages/api-client/src/session.ts": "d027507d2bb8b8aca123eef802a63da39016eea7719aaad36d9bc03ad7c720a9",
+    "packages/api-client/tsconfig.json": "7e1e80737533d4bd4f58e3f02ce2a3b9efda1941c16d78117efbba211a4cb063",
+    "packages/ui/package.json": "290f72a821ec9b1f01f3d9b94be1cf8f81066e4b78819272ce2b8a8d5a91486e",
+    "packages/ui/src/index.ts": "a281f1389fafd57c5900a46118f18a840aabf3400769ae84a29726642202de49",
+    "packages/ui/tsconfig.json": "7e1e80737533d4bd4f58e3f02ce2a3b9efda1941c16d78117efbba211a4cb063",
+    "tests/e2e/csv.spec.ts": "3af8a2c6ea37903116ec751c899169d221d8290f7b4f28f6d728fad494b6050c",
+    "tests/e2e/finance-contract.spec.ts": "05a8139637fc185ee7a2251cb695d1e2fc9ac483b7cb0206fdd8bd3596519527",
+    "tests/e2e/finance.spec.ts": "b1449953fa267e698cf8879c910aef4e8d7925ceab8e6cd178db79e89502107a",
+    "tests/e2e/playwright.config.ts": "14d099722900f69661628f32c5779bfa707efda955af2d536a1ce98d539b0ecb",
+    "tests/e2e/purchase.spec.ts": "3775bd556dc4faad9730db805627cc3b896e6fbf9c4a1b4d7dcde470e4babff8",
+    "tests/e2e/scoped-controls.spec.ts": "25d75c96f6e4c701a2fc23513e40020ab3483426907a9b7a25a97f63bf2fc55f"
+  },
+  "environment": {
+    "frontend_node": "24.22.1",
+    "browser": "Google Chrome156.0.8078.48",
+    "runner": "Playwright1.64.1",
+    "mode": "production Next build; synthetic local Nest/PostgreSQL/carriers"
+  },
+  "finance_slice": {
+    "status": "partially_verified_local",
+    "files": [
+      "apps/web/components/finance.tsx",
+      "apps/web/lib/finance-routes.ts",
+      "packages/api-client/src/finance.ts",
+      "tests/e2e/finance-contract.spec.ts",
+      "tests/e2e/finance.spec.ts"
+    ],
+    "routes": [
+      "/account/wallet-and-rewards",
+      "/account/installments",
+      "/seller/wallet",
+      "/seller/commissions",
+      "/seller/withdrawals",
+      "/org/:orgId/billing",
+      "/admin/finance",
+      "/admin/commissions",
+      "/ops/reconciliation",
+      "/ops/refunds-settlements"
+    ],
+    "verified_behavior": [
+      "four distinct server-backed wallet buckets; no grand total or points conversion",
+      "provider intent creation and explicit confirmation do not change wallet balance",
+      "a verified receipt is separately posted into wallet cash and immutable statement",
+      "withdrawal request reserves money before outcome",
+      "ordinary customer lacks independent approval UI",
+      "a different checker switches to explicit platform scope and performs context-bound MFA step-up",
+      "an explicit reason authorizes audited review queue access",
+      "checker approval does not debit funds",
+      "separate administrator authority dispatches the first synthetic payment",
+      "successful verified provider outcome produces one debit and releases the reserved amount",
+      "paid payout has no first-dispatch action",
+      "typed nested installment and ledger decoders reject incomplete monetary payloads"
+    ],
+    "compiled_unverified_behavior": [
+      "installment source agreement creation, component schedule display, receipt allocation",
+      "commission accrual, vesting and reversal UI",
+      "corporate invoice receipt allocation UI",
+      "wallet reservation commit/release UI",
+      "configured-only status lookup for uncertain payout outcome",
+      "reconciliation mismatch and exception tables"
+    ],
+    "permissions": "Exact finance.<operation> capabilities govern client controls; every API read/mutation remains server authorized. Cross-owner review additionally requires explicit platform scope and finance.manage.all.",
+    "not_implemented_or_not_claimed": [
+      "public wallet refund command is deliberately not exposed by UI; server remains fail-closed until independent refund approval is implemented",
+      "no live banking, real payout authority or financing contract acceptance claim",
+      "no automatic unknown-outcome replay",
+      "no complete GRW-02 or COM-09 family completion inferred from this slice"
+    ],
+    "immutable_evidence_id": "scoped-controls-final-browser-node24"
+  },
+  "bundle_optimization": {
+    "baseline_path": "docs/09-performance/evidence/bundle-budgets-before-session-split.json",
+    "current_path": "docs/09-performance/evidence/bundle-budgets.json",
+    "baseline_landing_gzip_bytes": 188591,
+    "current_landing_gzip_bytes": 183800,
+    "saved_bytes": 4791,
+    "baseline_runtime": "Node26.12.0",
+    "current_runtime": "Node24.22.1",
+    "budget_unchanged": true,
+    "note": "Local production asset measurements; runtime/build changes are recorded. No field performance or complete release qualification implied."
+  },
+  "final_immutable_evidence": {
+    "build": "scoped-controls-final-build-node24",
+    "browser": "scoped-controls-final-browser-node24",
+    "initial_bundles": "scoped-controls-final-bundles-node24",
+    "source_sha256": "2350a35609b238a6af2292b26c0118ec4eef4daf51c706d0ebd4a0ed7ba6b109",
+    "source_changed_during_all_three_runs": false
+  },
+  "previous_frozen_checkpoints": [
+    {
+      "build": "frontend-build-node24-v4",
+      "browser": "frontend-final-node24-v4",
+      "initial_bundles": "frontend-bundles-node24-v3",
+      "source_sha256": "adb22b9710572fc82f4141c4f361c245d4b42de2d150446638bc540135f5ec74",
+      "source_changed_during_all_three_runs": false
+    }
+  ],
+  "scoped_controls_slice": {
+    "status": "partially_verified_local",
+    "route": "/admin/features",
+    "loading": "Explicitly opened lazy panel; no additional public initial JavaScript dependency",
+    "files": [
+      "apps/web/components/admin/scoped-controls.tsx",
+      "apps/web/components/admin-tools.tsx",
+      "packages/api-client/src/controls.ts",
+      "tests/e2e/scoped-controls.spec.ts"
+    ],
+    "contract_source": [
+      "packages/controls/src/types.ts",
+      "packages/controls/src/policy.ts",
+      "packages/controls/src/index.ts"
+    ],
+    "verified_browser_behavior": [
+      "mandatory foundation cannot be disabled or rolled out partially through editor",
+      "invalid calendar dates rejected without silent UTC normalization",
+      "known two-dimension AND scope and explicit2099UTC interval proposed without publication",
+      "exact proposed version previewed with a hypothetical-context warning",
+      "last completed simulation label displayed alongside server result",
+      "server explicit-deny explanations displayed",
+      "active control epoch unchanged by proposal and preview",
+      "maker lacking independent authority receives403 on approve command",
+      "unknown closed-scope field receives422 validation_failed",
+      "different checker in actual platform context sees the validated review action"
+    ],
+    "compiled_unverified_browser_behavior": [
+      "independent scoped configuration publication",
+      "version-bound rollback creates a separate proposal",
+      "registered regional evidence, plan and carrier conjunction variants",
+      "stable cohort percentages and added dependency variants",
+      "incident-specific checker controls for existing quarantine proposals",
+      "immutable submitted preview snapshots after subsequent editor input changes; implemented and agent-reviewed, not directly asserted by current browser test"
+    ],
+    "runtime_enforcement_warning": "UI explicitly limits current scoped runtime enforcement to purchase admission and approved credit. Other registered/previewable capabilities and scoped worker binding remain incomplete. No whole-platform shutdown claim.",
+    "internal_contracts_excluded_from_editor": [
+      "reservation_completion purpose",
+      "arbitrary scope fields or expression/code editors",
+      "generic security quarantine or recovery creation"
+    ],
+    "remaining_behavior": [
+      "full scope-dimension and channel matrix browser acceptance",
+      "historical version browsing; current API exposes active epoch/rule page and numeric prior target, not a history listing",
+      "dedicated incident quarantine/recovery UI and complete scoped worker enforcement",
+      "independent positive publication/rollback browser variants"
+    ],
+    "code_review": {
+      "kind": "agent review; not independent human approval",
+      "findings_resolved": 3,
+      "files_changed_by_reviewer": false
+    },
+    "immutable_evidence_id": "scoped-controls-final-browser-node24"
+  }
+}

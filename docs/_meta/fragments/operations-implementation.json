@@ -1,0 +1,160 @@
+{
+  "id": "IMPL-OPERATIONS-COMPONENT",
+  "version": "1.0.0",
+  "status": "partial",
+  "recorded_at": "2026-10-28T09:57:50Z",
+  "owner_roles": [
+    "R10",
+    "R12",
+    "R13",
+    "R14"
+  ],
+  "human_approval": "pending",
+  "production_ready": false,
+  "requirements": [
+    {
+      "id": "CHN-05-R003",
+      "state": "in_progress",
+      "verified_backend_behaviors": [
+        "Local immutable backup and isolated restore preserve pending/unknown obligations, outbox/inbox/submissions, exact journal amounts and private policy document hashes",
+        "Exact snapshot restoration is reported separately from source business consistency; missing/duplicate/mismatched purchase events or submissions prevent verified business integrity, and the invalid generated restore database is cleaned up."
+      ],
+      "missing": [
+        "Production recovery, external acceptance reconciliation after data loss, retention/deletion reapplication and access revalidation remain unqualified"
+      ],
+      "code_paths": [
+        "scripts/backup-restore.mjs",
+        "scripts/verify-recovery.ts",
+        "infra/compose.yaml"
+      ],
+      "test_paths": [
+        "tests/recovery.test.ts"
+      ],
+      "evidence_ids": [
+        "OPS-LOCAL-RECOVERY-4",
+        "OPS-NATIVE-RESTORE-20261028",
+        "OPS-LOCAL-RECOVERY-6"
+      ]
+    },
+    {
+      "id": "INT-07-R004",
+      "state": "in_progress",
+      "verified_backend_behaviors": [
+        "Restored integration state is compared bytewise by table fingerprints, unknown outcomes remain unknown and no outbound command is replayed by recovery",
+        "Exact snapshot restoration is reported separately from source business consistency; missing/duplicate/mismatched purchase events or submissions prevent verified business integrity, and the invalid generated restore database is cleaned up."
+      ],
+      "missing": [
+        "Operator replay execution with authoritative evidence, production failure-domain recovery and independently reviewed permissions are incomplete"
+      ],
+      "code_paths": [
+        "scripts/backup-restore.mjs",
+        "scripts/verify-recovery.ts"
+      ],
+      "test_paths": [
+        "tests/recovery.test.ts"
+      ],
+      "evidence_ids": [
+        "OPS-LOCAL-RECOVERY-4",
+        "OPS-NATIVE-RESTORE-20261028",
+        "OPS-LOCAL-RECOVERY-6"
+      ]
+    }
+  ],
+  "checks": [
+    {
+      "id": "OPS-LOCAL-RECOVERY-4",
+      "command": "rtk proxy node --import tsx --test tests/recovery.test.ts",
+      "result": "passed",
+      "passed": 4,
+      "scope": "Generated task-owned local databases, money above JS integer precision, snapshot concurrency, restored-row/PDF tamper detection and safe URL/name rejection"
+    },
+    {
+      "id": "OPS-NATIVE-RESTORE-20261028",
+      "command": "rtk proxy node --env-file-if-exists=.env.local scripts/backup-restore.mjs",
+      "result": "passed",
+      "artifact": ".local/backups/2026-10-28T09-32-11-580Z-c796a8a0-e0b9-4810-9103-42ecaad235bf/recovery-report.json",
+      "tables": 33,
+      "private_documents": 6,
+      "backup_ms": 3966,
+      "restore_and_verify_ms": 938,
+      "restored_database_cleaned": true,
+      "scope": "Historical native local drill; current source can contain later migrations and data. Not production RPO/RTO certification This historical checkpoint used the earlier, weaker integrity gate and does not establish a pass under the current canonical commitment gate."
+    },
+    {
+      "id": "OPS-COMPOSE-PARSE",
+      "command": "rtk proxy docker compose -f infra/compose.yaml config --quiet",
+      "result": "passed",
+      "scope": "Six-service local configuration syntax only; image build and container runtime not executed"
+    },
+    {
+      "id": "INT-OPS-LOCAL-20",
+      "command": "rtk proxy node --import tsx --test tests/integration-adapters.test.ts tests/integration-adapters-studio.test.ts tests/recovery.test.ts",
+      "result": "passed",
+      "passed": 20,
+      "failed": 0,
+      "skipped": 0,
+      "duration_ms": 2526.321334,
+      "scope": "Actual local HTTP and PostgreSQL tests including wallet v2 issuance and four recovery tests"
+    },
+    {
+      "id": "OPS-LOCAL-RECOVERY-6",
+      "command": "env PATH=<pinned-Node24-and-PG17-binaries> node --env-file=.env.local --import tsx --test --test-concurrency=1 tests/recovery.test.ts",
+      "result": "passed",
+      "passed": 6,
+      "failed": 0,
+      "skipped": 0,
+      "duration_ms": 3220.2485,
+      "scope": "Generated local recovery databases only; complete valid v1/v2 commitment fixtures, exact >2^53 money and private object preservation, orphan/duplicate/routing/fake-wallet-cash negative source checks, snapshot concurrency and row/document tampering. Invalid-source restoration matches bytes but returns verified=false and removes only its generated restore target."
+    }
+  ],
+  "decisions": [
+    {
+      "id": "OPS-D01",
+      "status": "local-implementation-choice",
+      "detail": "Use read-only exported PostgreSQL snapshot for both fingerprints and pg_dump; restore only into newly generated task-owned database and clean only in-process-created names"
+    },
+    {
+      "id": "OPS-D02",
+      "status": "local-implementation-choice",
+      "detail": "Permit exact configured service hostnames only from trusted sandbox deployment environment; loopback remains the default and all host ports bind loopback"
+    },
+    {
+      "id": "OPS-D03",
+      "status": "local-implementation-choice",
+      "detail": "Capture transactionally consistent source data even when the scoped business gate fails. Restore reports snapshotMatched separately from verified/businessIntegrityPassed; invalid-source CLI result is nonzero, the backup is retained and only the generated restore database is removed. Older manifests require a fresh backup before qualifying under this gate."
+    }
+  ],
+  "limitations": [
+    "Compose image/runtime, named-volume object export and full container recovery are unqualified",
+    "No encrypted off-site backup, key-loss drill or independent failure-domain restore",
+    "Production RPO/RTO, representative capacity, deletion reapplication and session/access revalidation are unmeasured",
+    "Local process/database runtime was recreated after an environment restart; historical artifact remains evidence of its recorded checkpoint",
+    "No human release approval or real provider certification",
+    "Historical synthetic st_local rows from earlier test isolation can violate the stronger source gate. They are not deleted or repaired; a prior weaker-gate pass is not a current business integrity qualification."
+  ],
+  "updated": "2026-10-28",
+  "source_fingerprints": [
+    {
+      "path": "scripts/backup-restore.mjs",
+      "sha256": "02474abe1b51804a56d5a823b201220c754fcb661203069462672433b4570844"
+    },
+    {
+      "path": "scripts/verify-recovery.ts",
+      "sha256": "9dd997ba9f9e76fbf47df31fc96657246e1018d583d789da256a0765d4815d5c"
+    },
+    {
+      "path": "tests/recovery.test.ts",
+      "sha256": "575bb4965be043a290944e8a59c2b89940bc8e45ddffb7d6aaf2d9a4710bcf8b"
+    }
+  ],
+  "current_source_gate": {
+    "evidence_id": "recovery-source-gate-node24",
+    "report_path": "docs/12-operations/evidence/local-recovery-source-gate.json",
+    "snapshot_matched": true,
+    "business_integrity_passed": false,
+    "missing_commitment_events": 30,
+    "missing_submissions": 30,
+    "classification": "Historical synthetic test fixtures from before isolation; no source data repaired or deleted",
+    "next_action": "Review preserved fixture obligations; never fabricate dispatch or delete posted journals"
+  }
+}

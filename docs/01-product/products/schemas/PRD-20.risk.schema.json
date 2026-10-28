@@ -1,0 +1,67 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://insurance.invalid/schemas/PRD-20.risk.v1.schema.json",
+  "title": "PRD-20 synthetic risk input syntax",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "organizationRef",
+    "siteScheduleRef",
+    "assetScheduleRef",
+    "occupancyCodes",
+    "totalDeclaredValue",
+    "valuationBasisCode"
+  ],
+  "properties": {
+    "organizationRef": {
+      "type": "string",
+      "format": "uuid",
+      "description": "required; active permitted organization. Sensitivity: confidential. Error: ORGANIZATION_REQUIRED. Eligibility is contract-dependent."
+    },
+    "siteScheduleRef": {
+      "type": "string",
+      "format": "uuid",
+      "description": "required; approved versioned site rows. Sensitivity: restricted. Error: SITE_SCHEDULE_REQUIRED. Eligibility is contract-dependent."
+    },
+    "assetScheduleRef": {
+      "type": "string",
+      "format": "uuid",
+      "description": "required; approved values/interests by asset/site. Sensitivity: restricted. Error: ASSET_SCHEDULE_REQUIRED. Eligibility is contract-dependent."
+    },
+    "occupancyCodes": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 100,
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 100
+      },
+      "description": "required by site; 1–100 distinct mapped use codes. Sensitivity: confidential. Error: OCCUPANCY_UNMAPPED. Eligibility is contract-dependent."
+    },
+    "totalDeclaredValue": {
+      "type": "string",
+      "pattern": "^(0|[1-9][0-9]{0,17})$",
+      "description": "required; exact sum validated against approved schedule. Sensitivity: financial. Error: SCHEDULE_TOTAL_MISMATCH. Eligibility is contract-dependent."
+    },
+    "valuationBasisCode": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 60,
+      "description": "required; contract-offered basis <= 60. Sensitivity: financial. Error: VALUATION_BASIS_REQUIRED. Eligibility is contract-dependent."
+    },
+    "riskSurveyRefs": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 100,
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "format": "uuid"
+      },
+      "description": "conditional; site-bound current evidence. Sensitivity: highly restricted. Error: RISK_SURVEY_REQUIRED. Eligibility is contract-dependent."
+    }
+  },
+  "description": "Strict syntax baseline. Conditional predicates, cross-field dates/sums/relationships and actual carrier eligibility require the versioned application validator; passing this schema is not underwriting acceptance."
+}

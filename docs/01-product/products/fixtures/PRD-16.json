@@ -1,0 +1,29 @@
+{
+  "fixtureId": "FIX-PRD-16",
+  "synthetic": true,
+  "productId": "PRD-16",
+  "schemaRef": "../schemas/PRD-16.risk.schema.json",
+  "riskExample": {
+    "deviceModelCode": "SYNTH-PHONE-A",
+    "deviceIdentifier": "SYNTH-DEVICE-0001",
+    "purchaseDate": "2026-09-01",
+    "declaredValue": "50000000",
+    "conditionCode": "SYNTH-NEW",
+    "perilPlanCode": "SYNTH-DEVICE-PLAN"
+  },
+  "canonicalContext": {
+    "currency": "IRR",
+    "unit": "rial",
+    "channel": "b2c",
+    "partyAndAuthorityFixture": "Synthetic authorized buyer/payer/policyholder/insured roles; referenced UUIDs resolve only in the local test harness.",
+    "productRuleVersion": "SYNTH-1",
+    "liveOperationsAllowed": false
+  },
+  "scenarioContext": {},
+  "expected": {
+    "withoutContract": "live_quote_and_purchase_disabled",
+    "syntacticValidation": "pass",
+    "carrierEligibility": "undetermined_without_synthetic_rule_set",
+    "variant": "Two accounts submit the same device identifier concurrently: transactional duplicate-risk review prevents duplicate binding without disclosing the other owner's identity."
+  }
+}

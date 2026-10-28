@@ -1,0 +1,36 @@
+{
+  "fixtureId": "FIX-PRD-20",
+  "synthetic": true,
+  "productId": "PRD-20",
+  "schemaRef": "../schemas/PRD-20.risk.schema.json",
+  "riskExample": {
+    "occupancyCodes": [
+      "SYNTH-WAREHOUSE"
+    ],
+    "totalDeclaredValue": "500000000000",
+    "valuationBasisCode": "SYNTH-REPLACEMENT",
+    "organizationRef": "00000000-0000-4000-8000-000000002001",
+    "siteScheduleRef": "00000000-0000-4000-8000-000000002002",
+    "assetScheduleRef": "00000000-0000-4000-8000-000000002003"
+  },
+  "canonicalContext": {
+    "currency": "IRR",
+    "unit": "rial",
+    "channel": "commercial",
+    "partyAndAuthorityFixture": "Synthetic authorized buyer/payer/policyholder/insured roles; referenced UUIDs resolve only in the local test harness.",
+    "productRuleVersion": "SYNTH-1",
+    "liveOperationsAllowed": false
+  },
+  "scenarioContext": {
+    "syntheticSchedule": {
+      "sites": 3,
+      "currency": "IRR"
+    }
+  },
+  "expected": {
+    "withoutContract": "live_quote_and_purchase_disabled",
+    "syntacticValidation": "pass",
+    "carrierEligibility": "undetermined_without_synthetic_rule_set",
+    "variant": "The sum of row values differs from totalDeclaredValue: the preview reports exact row totals and commitment fails until a checker approves the corrected version."
+  }
+}

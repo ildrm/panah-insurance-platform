@@ -1,0 +1,57 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://insurance.invalid/schemas/PRD-07.risk.v1.schema.json",
+  "title": "PRD-07 synthetic risk input syntax",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "organizationRef",
+    "censusBatchRef",
+    "benefitClassCode",
+    "enrollmentWindowRef",
+    "effectiveDate",
+    "billingBasisCode",
+    "proposalVersion"
+  ],
+  "properties": {
+    "organizationRef": {
+      "type": "string",
+      "format": "uuid",
+      "description": "required; active permitted buyer tenant. Sensitivity: confidential. Error: ORGANIZATION_REQUIRED. Eligibility is contract-dependent."
+    },
+    "censusBatchRef": {
+      "type": "string",
+      "format": "uuid",
+      "description": "required; approved row-validation snapshot. Sensitivity: restricted. Error: CENSUS_NOT_APPROVED. Eligibility is contract-dependent."
+    },
+    "benefitClassCode": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 40,
+      "description": "required per member; 1–40 characters mapped to negotiated benefits. Sensitivity: confidential. Error: BENEFIT_CLASS_UNMAPPED. Eligibility is contract-dependent."
+    },
+    "enrollmentWindowRef": {
+      "type": "string",
+      "format": "uuid",
+      "description": "required; versioned group contract window. Sensitivity: internal. Error: ENROLLMENT_WINDOW_CLOSED. Eligibility is contract-dependent."
+    },
+    "effectiveDate": {
+      "type": "string",
+      "format": "date",
+      "description": "required per change; contract timezone, approved date rule. Sensitivity: restricted. Error: ENROLLMENT_DATE_INVALID. Eligibility is contract-dependent."
+    },
+    "billingBasisCode": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 40,
+      "description": "required; versioned negotiated billing basis. Sensitivity: financial. Error: BILLING_BASIS_UNAPPROVED. Eligibility is contract-dependent."
+    },
+    "proposalVersion": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 2147483647,
+      "description": "required at commitment; positive; exact checker-approved revision. Sensitivity: confidential. Error: PROPOSAL_APPROVAL_STALE. Eligibility is contract-dependent."
+    }
+  },
+  "description": "Strict syntax baseline. Conditional predicates, cross-field dates/sums/relationships and actual carrier eligibility require the versioned application validator; passing this schema is not underwriting acceptance."
+}

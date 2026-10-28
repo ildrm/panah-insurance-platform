@@ -1,0 +1,28 @@
+{
+  "fixtureId": "FIX-PRD-01",
+  "synthetic": true,
+  "productId": "PRD-01",
+  "schemaRef": "../schemas/PRD-01.risk.schema.json",
+  "riskExample": {
+    "vehicleClass": "synthetic-passenger",
+    "usageCode": "synthetic-private",
+    "plate": "SYNTH-001",
+    "liabilityPlanCode": "SYNTH-LIABILITY-A",
+    "vehicleRef": "00000000-0000-4000-8000-000000000101"
+  },
+  "canonicalContext": {
+    "currency": "IRR",
+    "unit": "rial",
+    "channel": "b2c",
+    "partyAndAuthorityFixture": "Synthetic authorized buyer/payer/policyholder/insured roles; referenced UUIDs resolve only in the local test harness.",
+    "productRuleVersion": "SYNTH-1",
+    "liveOperationsAllowed": false
+  },
+  "scenarioContext": {},
+  "expected": {
+    "withoutContract": "live_quote_and_purchase_disabled",
+    "syntacticValidation": "pass",
+    "carrierEligibility": "undetermined_without_synthetic_rule_set",
+    "variant": "Change no-claim evidence after an offer: the old offer becomes unusable, requotation includes the new evidence version, and no stale discount reaches commitment."
+  }
+}

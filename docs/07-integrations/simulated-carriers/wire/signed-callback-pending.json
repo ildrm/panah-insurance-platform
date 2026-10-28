@@ -1,0 +1,8 @@
+{
+  "event_id": "SIM-SIGNED-E-0",
+  "sequence": 1,
+  "client_ref": "synthetic-order-001",
+  "receipt_ref": "SIM-SIGNED-S-1",
+  "issuance": "pending",
+  "occurred_at": "2026-10-28T08:00:01Z"
+}

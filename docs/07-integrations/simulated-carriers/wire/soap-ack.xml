@@ -1,0 +1,2 @@
+<?xml version='1.0' encoding='utf-8'?>
+<soap:Envelope xmlns:c="urn:fictional:carrier:soap:v1" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/"><soap:Body><c:SubmissionAcknowledgment><c:Ticket>SIM-SOAP-S-1</c:Ticket><c:AcceptedAtUTC>2026-10-28T08:00:00Z</c:AcceptedAtUTC></c:SubmissionAcknowledgment></soap:Body></soap:Envelope>

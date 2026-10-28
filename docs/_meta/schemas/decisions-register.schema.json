@@ -1,0 +1,85 @@
+{
+  "type": "object",
+  "properties": {
+    "entries": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "approval_evidence": {
+            "type": "null"
+          },
+          "id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "owner_role": {
+            "type": "string",
+            "minLength": 1
+          },
+          "reviewer_roles": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "spec_path": {
+            "type": "string",
+            "minLength": 1
+          },
+          "status": {
+            "type": "string",
+            "minLength": 1
+          },
+          "title": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "required": [
+          "approval_evidence",
+          "id",
+          "owner_role",
+          "reviewer_roles",
+          "spec_path",
+          "status",
+          "title"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "status": {
+      "enum": [
+        "draft",
+        "proposed",
+        "partial",
+        "complete",
+        "blocked"
+      ]
+    },
+    "updated": {
+      "type": "string",
+      "minLength": 1
+    },
+    "version": {
+      "type": "string",
+      "minLength": 1
+    }
+  },
+  "required": [
+    "entries",
+    "id",
+    "status",
+    "updated",
+    "version"
+  ],
+  "additionalProperties": false,
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://insurance.example.invalid/meta/decisions-register.schema.json",
+  "title": "decisions-register registry v1"
+}

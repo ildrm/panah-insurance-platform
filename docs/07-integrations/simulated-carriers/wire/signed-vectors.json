@@ -1,0 +1,32 @@
+{
+  "synthetic": true,
+  "algorithm": "HMAC-SHA256",
+  "vectors": [
+    {
+      "id": "submission",
+      "syntheticKeyAscii": "synthetic-only-key-v1-not-for-live-use",
+      "keyId": "sim-key-v1",
+      "method": "POST",
+      "path": "/sim/signed/v1/submissions",
+      "timestamp": "2026-10-28T08:00:00Z",
+      "nonce": "nonce-0001",
+      "bodyUtf8": "{\"client_ref\":\"synthetic-order-001\",\"quote_ref\":\"SIM-SIGNED-Q-1\",\"premium_toman\":\"12000\",\"effective_jalali\":\"1405-08-10\",\"calendar\":\"persian\",\"mapping_version\":\"signed-map-v1\"}",
+      "bodySha256": "280553c4e31dbbbd047e1841fb1135e0b6e81fd6ac8b648c1a510a2c4844ca2a",
+      "canonicalUtf8": "POST\n/sim/signed/v1/submissions\n2026-10-28T08:00:00Z\nnonce-0001\n280553c4e31dbbbd047e1841fb1135e0b6e81fd6ac8b648c1a510a2c4844ca2a",
+      "signatureHex": "8dc7ec3dac714719c3253f791d4a83f091c79f235e21bd09ac57cdd05524b934"
+    },
+    {
+      "id": "callback",
+      "syntheticKeyAscii": "synthetic-only-key-v1-not-for-live-use",
+      "keyId": "sim-key-v1",
+      "method": "POST",
+      "path": "/callbacks/sim-signed",
+      "timestamp": "2026-10-28T08:00:00Z",
+      "nonce": "nonce-0002",
+      "bodyUtf8": "{\"event_id\":\"SIM-SIGNED-E-1\",\"sequence\":2,\"client_ref\":\"synthetic-order-001\",\"receipt_ref\":\"SIM-SIGNED-S-1\",\"issuance\":\"issued\",\"occurred_at\":\"2026-10-28T08:00:02Z\",\"policy_ref\":\"SIM-SIGNED-P-1\",\"effective_jalali\":\"1405-08-10\",\"until_jalali_exclusive\":\"1405-08-11\",\"calendar\":\"persian\",\"document_ref\":\"SIM-DOC-1\"}",
+      "bodySha256": "54a588dd45eed0b3969e91744b1ef054cb21869f83e241ed6c9360655b419fbe",
+      "canonicalUtf8": "POST\n/callbacks/sim-signed\n2026-10-28T08:00:00Z\nnonce-0002\n54a588dd45eed0b3969e91744b1ef054cb21869f83e241ed6c9360655b419fbe",
+      "signatureHex": "4897c94535a31a4df6147b9d63b1d6636cf99fcc0122684f9542c4d94997e118"
+    }
+  ]
+}

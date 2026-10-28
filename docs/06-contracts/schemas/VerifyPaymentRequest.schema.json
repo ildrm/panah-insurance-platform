@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://insurance.example.invalid/schemas/VerifyPaymentRequest.schema.json",
+  "title": "VerifyPaymentRequest",
+  "type": "object",
+  "properties": {
+    "attemptId": {
+      "type": "string",
+      "format": "uuid"
+    },
+    "providerReference": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 128
+    },
+    "expectedVersion": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 2147483647
+    }
+  },
+  "required": [
+    "attemptId",
+    "providerReference",
+    "expectedVersion"
+  ],
+  "additionalProperties": false
+}

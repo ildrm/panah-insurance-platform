@@ -1,0 +1,89 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://insurance.example.invalid/schemas/CarrierSubmissionRequested.event.schema.json",
+  "title": "CarrierSubmissionRequested",
+  "type": "object",
+  "properties": {
+    "eventId": {
+      "type": "string",
+      "format": "uuid"
+    },
+    "eventType": {
+      "const": "carrier.submission.requested.v1"
+    },
+    "schemaVersion": {
+      "const": 1
+    },
+    "occurredAt": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "correlationId": {
+      "type": "string",
+      "format": "uuid"
+    },
+    "causationId": {
+      "type": "string",
+      "format": "uuid"
+    },
+    "aggregateId": {
+      "type": "string",
+      "format": "uuid"
+    },
+    "aggregateVersion": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 2147483647
+    },
+    "contextRef": {
+      "type": "string",
+      "format": "uuid"
+    },
+    "data": {
+      "type": "object",
+      "properties": {
+        "submissionId": {
+          "type": "string",
+          "format": "uuid"
+        },
+        "purchaseId": {
+          "type": "string",
+          "format": "uuid"
+        },
+        "businessIdempotencyKey": {
+          "$ref": "IdempotencyKey.schema.json"
+        },
+        "mappingVersion": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 128,
+          "pattern": "^[A-Za-z0-9_.:-]+$"
+        },
+        "recipientProjectionRef": {
+          "type": "string",
+          "format": "uuid"
+        }
+      },
+      "required": [
+        "submissionId",
+        "purchaseId",
+        "businessIdempotencyKey",
+        "mappingVersion",
+        "recipientProjectionRef"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "required": [
+    "eventId",
+    "eventType",
+    "schemaVersion",
+    "occurredAt",
+    "correlationId",
+    "aggregateId",
+    "aggregateVersion",
+    "contextRef",
+    "data"
+  ],
+  "additionalProperties": false
+}

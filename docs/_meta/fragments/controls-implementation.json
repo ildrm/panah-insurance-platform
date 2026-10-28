@@ -1,0 +1,210 @@
+{
+  "id": "FRAGMENT-CONTROLS-IMPLEMENTATION",
+  "version": "1.0.0",
+  "status": "partial",
+  "updated": "2026-10-28",
+  "requirements": [
+    {
+      "id": "CHN-04-R001",
+      "state": "in_progress",
+      "code_paths": [
+        "packages/controls/src/index.ts",
+        "packages/controls/src/policy.ts",
+        "packages/controls/src/types.ts",
+        "packages/controls/src/registry.json",
+        "packages/controls/migrations/001_scoped_controls.sql"
+      ],
+      "test_paths": [
+        "tests/scoped-controls.test.ts"
+      ],
+      "missing": [
+        "Full API/UI acceptance and all operation/property guards under current root integration",
+        "Scoped quarantine enforcement in all committed workers and servicing paths; incident ownership/notification/recovery evidence workflow",
+        "Multi-replica load, all scope combinations, exact performance/query/response budgets and manual accessibility",
+        "Qualified production region/carrier/plan authority, human review and release sign-off"
+      ]
+    },
+    {
+      "id": "CHN-04-R002",
+      "state": "in_progress",
+      "code_paths": [
+        "packages/controls/src/index.ts",
+        "packages/controls/src/policy.ts",
+        "packages/controls/src/types.ts",
+        "packages/controls/src/registry.json",
+        "packages/controls/migrations/001_scoped_controls.sql"
+      ],
+      "test_paths": [
+        "tests/scoped-controls.test.ts"
+      ],
+      "missing": [
+        "Full API/UI acceptance and all operation/property guards under current root integration",
+        "Scoped quarantine enforcement in all committed workers and servicing paths; incident ownership/notification/recovery evidence workflow",
+        "Multi-replica load, all scope combinations, exact performance/query/response budgets and manual accessibility",
+        "Qualified production region/carrier/plan authority, human review and release sign-off"
+      ]
+    },
+    {
+      "id": "CHN-04-R003",
+      "state": "in_progress",
+      "code_paths": [
+        "packages/controls/src/index.ts",
+        "packages/controls/src/policy.ts",
+        "packages/controls/src/types.ts",
+        "packages/controls/src/registry.json",
+        "packages/controls/migrations/001_scoped_controls.sql"
+      ],
+      "test_paths": [
+        "tests/scoped-controls.test.ts"
+      ],
+      "missing": [
+        "Full API/UI acceptance and all operation/property guards under current root integration",
+        "Scoped quarantine enforcement in all committed workers and servicing paths; incident ownership/notification/recovery evidence workflow",
+        "Multi-replica load, all scope combinations, exact performance/query/response budgets and manual accessibility",
+        "Qualified production region/carrier/plan authority, human review and release sign-off"
+      ]
+    },
+    {
+      "id": "CHN-04-R004",
+      "state": "in_progress",
+      "code_paths": [
+        "packages/controls/src/index.ts",
+        "packages/controls/src/policy.ts",
+        "packages/controls/src/types.ts",
+        "packages/controls/src/registry.json",
+        "packages/controls/migrations/001_scoped_controls.sql"
+      ],
+      "test_paths": [
+        "tests/scoped-controls.test.ts"
+      ],
+      "missing": [
+        "Full API/UI acceptance and all operation/property guards under current root integration",
+        "Scoped quarantine enforcement in all committed workers and servicing paths; incident ownership/notification/recovery evidence workflow",
+        "Multi-replica load, all scope combinations, exact performance/query/response budgets and manual accessibility",
+        "Qualified production region/carrier/plan authority, human review and release sign-off"
+      ]
+    }
+  ],
+  "component_verification": {
+    "result": "verified_local",
+    "command": ".local/node-v24.22.1-darwin-arm64/bin/node --import tsx --test --test-concurrency=1 tests/scoped-controls.test.ts",
+    "runtime": "Node24.22.1",
+    "database": "Actual isolated PostgreSQL17 generated st_controls_fixture_<uuid>; source st_local read only to obtain connection profile; generated database dropped after tests",
+    "tests": 9,
+    "passed": 9,
+    "failed": 0,
+    "skipped": 0,
+    "duration_ms": 691.153792,
+    "evidence_scope": "Package invariants only, not full CHN04 or production qualification",
+    "checks": [
+      "74parent capability and24product IDs preserved across107 registered controls",
+      "Fail-closed commercial defaults; mandatory foundations/servicing remain true",
+      "Strict selector conjunction, registered plan/region/carrier references and regional evidence",
+      "Explicit deny dominates narrower allow; unknown possibly matching denial selectors fail closed",
+      "Future UTC windows and stable opaque HMAC cohort previews",
+      "Dependency-cycle and contradictory equal-precedence overlap rejection",
+      "Current membership/revision fencing and independent checker; revoked stale grants denied",
+      "Idempotent command digests and immutable version/audit history",
+      "Actual epoch lock serializes protected commit against disable, rollback appends new history",
+      "Separate incident permissions, no randomized quarantine or silent expiry, safe reads/reconciliation preserved",
+      "A05 accepted-reservation completion separate from committed obligations, expiry/current quarantine still enforced",
+      "Context/epoch-bound opaque rule pagination",
+      "Sanitized denied-command audit persists outside domain rollback",
+      "Active quarantine cannot release protected coverage by moving scope/start/incident while staying enabled"
+    ]
+  },
+  "source_fingerprints": [
+    {
+      "path": "packages/controls/migrations/001_scoped_controls.sql",
+      "sha256": "7631931185f53d7daa80f6d8a5fa316edd1617ca2f82ed250cd0a1d519d6a42b"
+    },
+    {
+      "path": "packages/controls/package.json",
+      "sha256": "b7d3af1ecca63b4bdec63aba79cbe91a147846ada7816474af209b84018e0e54"
+    },
+    {
+      "path": "packages/controls/src/index.ts",
+      "sha256": "c3c714fda97cdbd90daf53886ad62f0e4463b2c8fdcada06298ed13b7d0ca0d2"
+    },
+    {
+      "path": "packages/controls/src/policy.ts",
+      "sha256": "d17fdf5d50bd744b7e6d335945c79a2391d6ddd51b4bbb066f39945214cbbd51"
+    },
+    {
+      "path": "packages/controls/src/registry.json",
+      "sha256": "81974fc1e20a66131c8434aa61e3a7ff738254f226a5b17193fc39bd0175b86f"
+    },
+    {
+      "path": "packages/controls/src/types.ts",
+      "sha256": "a24a2871af5c540c2ea3bea675db93e621bbc43771c7c362bdae0494b0a6c6e9"
+    },
+    {
+      "path": "packages/controls/tsconfig.json",
+      "sha256": "0872a57a7abeeb6ce1f713decc3c46a24823921b3b0ba41d1e3da68adb522ed4"
+    },
+    {
+      "path": "tests/scoped-controls.test.ts",
+      "sha256": "bde4dd586d8a397e0adccf5ccda6798d9e2c34d9350cf9833d0da5008a71e8c1"
+    }
+  ],
+  "decisions": [
+    {
+      "id": "CTRL-DEC-01",
+      "state": "proposed-local-default",
+      "description": "Commercial controls default false, mandatory foundations/servicing true, no live authority can be supplied by public booleans; root fixture explicitly publishes synthetic approvals."
+    },
+    {
+      "id": "CTRL-DEC-02",
+      "state": "proposed-local-default",
+      "description": "Quarantine reviewAt records review due and never auto-lifts hazardous operation denial. Recovery requires a dedicated incident-scoped rule replacement with remediation reference, separate approval grant; generic rollback cannot change quarantine."
+    },
+    {
+      "id": "CTRL-DEC-03",
+      "state": "integration-contract",
+      "description": "ControlContext is an internal server contract. Scope values and reservation/commitment references must be derived and validated from authorized persisted records by the owning use case; flags never grant object/property authority."
+    },
+    {
+      "id": "CTRL-DEC-04",
+      "state": "proposed-local-default",
+      "description": "Rule edits replace active snapshot entries but retain all immutable prior versions. The shared epoch lock serializes application commit and approval. Historical reads reuse the same SQL client to avoid pool acquisition deadlocks."
+    }
+  ],
+  "review_findings": [
+    {
+      "id": "CTRL-RV-01",
+      "state": "corrected-locally",
+      "finding": "Nested database pool use inside rollback transactions could exhaust the20-connection process pool.",
+      "resolution": "Historical lookup/candidate methods now use the held SqlClient."
+    },
+    {
+      "id": "CTRL-RV-02",
+      "state": "corrected-locally",
+      "finding": "Generic rollback could otherwise lift a newly imposed security quarantine.",
+      "resolution": "Reject rollback if security-rule snapshot differs; require dedicated incident/remediation proposal."
+    },
+    {
+      "id": "CTRL-RV-03",
+      "state": "corrected-locally",
+      "finding": "Rejected foundation changes would lose audit if logged in the aborted transaction.",
+      "resolution": "Persist only sanitized operation/error code in a separate post-rollback audit, preserving original error on audit failure."
+    },
+    {
+      "id": "CTRL-RV-04",
+      "state": "open-integration",
+      "finding": "Package lock alone cannot enforce all platform workers, servicing operations, recipient properties or true resource-derived scope.",
+      "resolution": "Root must integrate guarded transactions and safe-money exception handling; full leaf remains in_progress."
+    },
+    {
+      "id": "CTRL-RV-05",
+      "state": "corrected-locally",
+      "finding": "An active quarantine could have been moved to a narrower scope or future start while still enabled, silently releasing existing coverage without recovery evidence.",
+      "resolution": "Existing active quarantine keeps incident, scope, effectiveFrom, dependencies, rollout and regional evidence until an explicit remediation-backed disable is independently approved; added three regression substitutions."
+    }
+  ],
+  "limitations": [
+    "No whole leaf is verified or ready_for_release",
+    "No human or live carrier/payment/legal authority inferred",
+    "No scoped-control admission result may be used as a permission grant",
+    "No all-operation/full-load/production telemetry or qualification claimed"
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "fixtureId": "FIX-PRD-08",
+  "synthetic": true,
+  "productId": "PRD-08",
+  "schemaRef": "../schemas/PRD-08.risk.schema.json",
+  "riskExample": {
+    "birthDate": "1990-01-01",
+    "occupationCode": "SYNTH-OCC-A",
+    "beneficiaries": [
+      {
+        "ref": "00000000-0000-4000-8000-000000000308",
+        "basisPoints": 10000
+      }
+    ],
+    "contributionAmount": "1000000",
+    "contributionFrequency": "SYNTH-MONTHLY",
+    "illustrationVersion": "SYNTH-ILLUSTRATION-1",
+    "insuredRef": "00000000-0000-4000-8000-000000000801"
+  },
+  "canonicalContext": {
+    "currency": "IRR",
+    "unit": "rial",
+    "channel": "b2c",
+    "partyAndAuthorityFixture": "Synthetic authorized buyer/payer/policyholder/insured roles; referenced UUIDs resolve only in the local test harness.",
+    "productRuleVersion": "SYNTH-1",
+    "liveOperationsAllowed": false
+  },
+  "scenarioContext": {},
+  "expected": {
+    "withoutContract": "live_quote_and_purchase_disabled",
+    "syntacticValidation": "pass",
+    "carrierEligibility": "undetermined_without_synthetic_rule_set",
+    "variant": "Two concurrent beneficiary edits each total 100%: only the matching application version succeeds, preserving a single approved designation and prior history."
+  }
+}

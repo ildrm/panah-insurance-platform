@@ -1,0 +1,91 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://insurance.example.invalid/schemas/VerifyPaymentResult.schema.json",
+  "title": "VerifyPaymentResult",
+  "type": "object",
+  "properties": {
+    "attemptId": {
+      "type": "string",
+      "format": "uuid"
+    },
+    "state": {
+      "type": "string",
+      "enum": [
+        "pending",
+        "verified",
+        "failed",
+        "external_outcome_unknown"
+      ]
+    },
+    "verifiedAt": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "receiptId": {
+      "type": "string",
+      "format": "uuid"
+    },
+    "purchaseId": {
+      "type": "string",
+      "format": "uuid"
+    },
+    "receivedMoney": {
+      "$ref": "Money.schema.json"
+    },
+    "reasonCode": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 128,
+      "pattern": "^[A-Za-z0-9_.:-]+$"
+    }
+  },
+  "required": [
+    "attemptId",
+    "state"
+  ],
+  "additionalProperties": false,
+  "oneOf": [
+    {
+      "properties": {
+        "state": {
+          "const": "verified"
+        }
+      },
+      "required": [
+        "receiptId",
+        "verifiedAt",
+        "receivedMoney"
+      ]
+    },
+    {
+      "properties": {
+        "state": {
+          "enum": [
+            "pending",
+            "failed",
+            "external_outcome_unknown"
+          ]
+        }
+      },
+      "not": {
+        "anyOf": [
+          {
+            "required": [
+              "receiptId"
+            ]
+          },
+          {
+            "required": [
+              "verifiedAt"
+            ]
+          },
+          {
+            "required": [
+              "receivedMoney"
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

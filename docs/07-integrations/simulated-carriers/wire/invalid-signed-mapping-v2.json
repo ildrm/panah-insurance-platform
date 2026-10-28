@@ -1,0 +1,8 @@
+{
+  "client_ref": "synthetic-order-001",
+  "quote_ref": "SIM-SIGNED-Q-1",
+  "effective_jalali": "1405-08-10",
+  "calendar": "gregory",
+  "mapping_version": "signed-map-v1",
+  "premium_rial": "120000"
+}

@@ -1,0 +1,89 @@
+{
+  "type": "object",
+  "properties": {
+    "entries": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "accountable_for": {
+            "type": "string",
+            "minLength": 1
+          },
+          "assignment": {
+            "type": "string",
+            "minLength": 1
+          },
+          "consulted_roles": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "informed_roles": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "review_state": {
+            "type": "string",
+            "minLength": 1
+          },
+          "title": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "required": [
+          "accountable_for",
+          "assignment",
+          "consulted_roles",
+          "id",
+          "informed_roles",
+          "review_state",
+          "title"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "status": {
+      "enum": [
+        "draft",
+        "proposed",
+        "partial",
+        "complete",
+        "blocked"
+      ]
+    },
+    "updated": {
+      "type": "string",
+      "minLength": 1
+    },
+    "version": {
+      "type": "string",
+      "minLength": 1
+    }
+  },
+  "required": [
+    "entries",
+    "id",
+    "status",
+    "updated",
+    "version"
+  ],
+  "additionalProperties": false,
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://insurance.example.invalid/meta/roles-and-raci.schema.json",
+  "title": "roles-and-raci registry v1"
+}

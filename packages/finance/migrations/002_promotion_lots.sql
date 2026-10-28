@@ -1,0 +1,2 @@
+CREATE TABLE IF NOT EXISTS finance_promo_lots(id uuid PRIMARY KEY REFERENCES finance_resources(id),tenant_id uuid NOT NULL,owner_id uuid NOT NULL,grant_reference text NOT NULL UNIQUE,remaining numeric(24,0) NOT NULL CHECK(remaining>=0),reserved numeric(24,0) NOT NULL DEFAULT 0 CHECK(reserved>=0 AND reserved<=remaining),expires_at timestamptz NOT NULL);
+CREATE INDEX IF NOT EXISTS finance_promo_expiry ON finance_promo_lots(tenant_id,owner_id,expires_at,id);

@@ -1,0 +1,727 @@
+{
+  "id": "FRAGMENT-FINANCE-IMPLEMENTATION",
+  "version": "1.0.0",
+  "status": "partial",
+  "updated": "2026-10-28",
+  "owner_roles": [
+    "R08",
+    "R10",
+    "R11",
+    "R12",
+    "R13"
+  ],
+  "review_kind": "Automated agent review under responsibility lenses; no independent qualified human sign-off",
+  "requirements": [
+    {
+      "id": "COM-04-R001",
+      "title": "Eligibility and financing provider selection",
+      "state": "in_progress",
+      "code_paths": [
+        "packages/finance/src/core.ts",
+        "packages/finance/src/types.ts",
+        "packages/finance/src/wallet.ts",
+        "packages/finance/src/index.ts",
+        "packages/finance/migrations/001_finance.sql",
+        "apps/api/src/finance-ports.ts",
+        "apps/api/src/commerce.ts",
+        "apps/api/src/main.ts",
+        "packages/database/migrations/003-wallet-commitment.sql",
+        "packages/database/migrations/004-credit-servicing.sql"
+      ],
+      "test_paths": [
+        "tests/finance-servicing.test.ts",
+        "tests/finance-platform.test.ts",
+        "tests/finance-invariants.test.ts",
+        "tests/platform.test.ts",
+        "tests/finance-ports.test.ts"
+      ],
+      "evidence_ids": [
+        "finance-platform-node24",
+        "local-regression-node24"
+      ],
+      "rollout": "local-synthetic-only; affected live operations disabled",
+      "missing": [
+        "Live financing provider contracts, consented eligibility requests, real offer selection and eligibility rules are absent; local source is an already approved synthetic organization-credit order."
+      ]
+    },
+    {
+      "id": "COM-04-R002",
+      "title": "Down payment, schedule and total payable",
+      "state": "in_progress",
+      "code_paths": [
+        "packages/finance/src/core.ts",
+        "packages/finance/src/types.ts",
+        "packages/finance/src/wallet.ts",
+        "packages/finance/src/index.ts",
+        "packages/finance/migrations/001_finance.sql",
+        "apps/api/src/finance-ports.ts",
+        "apps/api/src/commerce.ts",
+        "apps/api/src/main.ts",
+        "packages/database/migrations/003-wallet-commitment.sql",
+        "packages/database/migrations/004-credit-servicing.sql"
+      ],
+      "test_paths": [
+        "tests/finance-servicing.test.ts",
+        "tests/finance-platform.test.ts",
+        "tests/finance-invariants.test.ts",
+        "tests/platform.test.ts",
+        "tests/finance-ports.test.ts"
+      ],
+      "evidence_ids": [
+        "finance-platform-node24",
+        "local-regression-node24"
+      ],
+      "rollout": "local-synthetic-only; affected live operations disabled",
+      "missing": [
+        "Full checkout offer review, contract-backed down payment/cost rules, local-calendar date presentation and all-family qualification remain incomplete."
+      ]
+    },
+    {
+      "id": "COM-04-R003",
+      "title": "Terms, guarantor/security evidence and acceptance",
+      "state": "in_progress",
+      "code_paths": [
+        "packages/finance/src/core.ts",
+        "packages/finance/src/types.ts",
+        "packages/finance/src/wallet.ts",
+        "packages/finance/src/index.ts",
+        "packages/finance/migrations/001_finance.sql",
+        "apps/api/src/finance-ports.ts",
+        "apps/api/src/commerce.ts",
+        "apps/api/src/main.ts",
+        "packages/database/migrations/003-wallet-commitment.sql",
+        "packages/database/migrations/004-credit-servicing.sql"
+      ],
+      "test_paths": [
+        "tests/finance-servicing.test.ts",
+        "tests/finance-platform.test.ts",
+        "tests/finance-invariants.test.ts",
+        "tests/platform.test.ts",
+        "tests/finance-ports.test.ts"
+      ],
+      "evidence_ids": [
+        "finance-platform-node24",
+        "local-regression-node24"
+      ],
+      "rollout": "local-synthetic-only; affected live operations disabled",
+      "missing": [
+        "Borrower/guarantor terms acceptance, required security evidence and lender confirmation are absent; synthetic acceptedAt is derived from credit commitment and is not proof of financing consent."
+      ]
+    },
+    {
+      "id": "COM-09-R001",
+      "title": "Reconciliation and premium allocation",
+      "state": "in_progress",
+      "code_paths": [
+        "packages/finance/src/core.ts",
+        "packages/finance/src/types.ts",
+        "packages/finance/src/wallet.ts",
+        "packages/finance/src/index.ts",
+        "packages/finance/migrations/001_finance.sql",
+        "apps/api/src/finance-ports.ts",
+        "apps/api/src/commerce.ts",
+        "apps/api/src/main.ts",
+        "packages/database/migrations/003-wallet-commitment.sql",
+        "packages/database/migrations/004-credit-servicing.sql"
+      ],
+      "test_paths": [
+        "tests/finance-servicing.test.ts",
+        "tests/finance-platform.test.ts",
+        "tests/finance-invariants.test.ts",
+        "tests/platform.test.ts",
+        "tests/finance-ports.test.ts"
+      ],
+      "evidence_ids": [
+        "finance-platform-node24",
+        "local-regression-node24"
+      ],
+      "rollout": "local-synthetic-only; affected live operations disabled",
+      "missing": [
+        "Real provider reconciliation files, insurer settlement allocation, reserved-wallet projection checks and operator resolution of held receipts remain incomplete."
+      ]
+    },
+    {
+      "id": "COM-09-R002",
+      "title": "Refund request, eligibility and dual control",
+      "state": "in_progress",
+      "code_paths": [
+        "packages/finance/src/core.ts",
+        "packages/finance/src/types.ts",
+        "packages/finance/src/wallet.ts",
+        "packages/finance/src/index.ts",
+        "packages/finance/migrations/001_finance.sql",
+        "apps/api/src/finance-ports.ts",
+        "apps/api/src/commerce.ts",
+        "apps/api/src/main.ts",
+        "packages/database/migrations/003-wallet-commitment.sql",
+        "packages/database/migrations/004-credit-servicing.sql"
+      ],
+      "test_paths": [
+        "tests/finance-servicing.test.ts",
+        "tests/finance-platform.test.ts",
+        "tests/finance-invariants.test.ts",
+        "tests/platform.test.ts",
+        "tests/finance-ports.test.ts"
+      ],
+      "evidence_ids": [
+        "finance-platform-node24",
+        "local-regression-node24"
+      ],
+      "rollout": "local-synthetic-only; affected live operations disabled",
+      "missing": [
+        "Wallet refund HTTP execution is safely disabled until an independently approved once-consumable refund authority is implemented. Internal provenance handling does not satisfy the dual-control workflow.",
+        "Real refunds, cancellation delegation and provider outcome reconciliation remain blocked."
+      ]
+    },
+    {
+      "id": "COM-09-R003",
+      "title": "Commissions, insurer settlement and payouts",
+      "state": "in_progress",
+      "code_paths": [
+        "packages/finance/src/core.ts",
+        "packages/finance/src/types.ts",
+        "packages/finance/src/wallet.ts",
+        "packages/finance/src/index.ts",
+        "packages/finance/migrations/001_finance.sql",
+        "apps/api/src/finance-ports.ts",
+        "apps/api/src/commerce.ts",
+        "apps/api/src/main.ts",
+        "packages/database/migrations/003-wallet-commitment.sql",
+        "packages/database/migrations/004-credit-servicing.sql"
+      ],
+      "test_paths": [
+        "tests/finance-servicing.test.ts",
+        "tests/finance-platform.test.ts",
+        "tests/finance-invariants.test.ts",
+        "tests/platform.test.ts",
+        "tests/finance-ports.test.ts"
+      ],
+      "evidence_ids": [
+        "finance-platform-node24",
+        "local-regression-node24"
+      ],
+      "rollout": "local-synthetic-only; affected live operations disabled",
+      "missing": [
+        "Synthetic fixed commission rules and local payout receipts do not establish contractual commissions, insurer settlement, bank verification or live payout authority."
+      ]
+    },
+    {
+      "id": "COM-09-R004",
+      "title": "Accounting permissions and audit evidence",
+      "state": "in_progress",
+      "code_paths": [
+        "packages/finance/src/core.ts",
+        "packages/finance/src/types.ts",
+        "packages/finance/src/wallet.ts",
+        "packages/finance/src/index.ts",
+        "packages/finance/migrations/001_finance.sql",
+        "apps/api/src/finance-ports.ts",
+        "apps/api/src/commerce.ts",
+        "apps/api/src/main.ts",
+        "packages/database/migrations/003-wallet-commitment.sql",
+        "packages/database/migrations/004-credit-servicing.sql"
+      ],
+      "test_paths": [
+        "tests/finance-servicing.test.ts",
+        "tests/finance-platform.test.ts",
+        "tests/finance-invariants.test.ts",
+        "tests/platform.test.ts",
+        "tests/finance-ports.test.ts"
+      ],
+      "evidence_ids": [
+        "finance-platform-node24",
+        "local-regression-node24"
+      ],
+      "rollout": "local-synthetic-only; affected live operations disabled",
+      "missing": [
+        "Complete accounting exports, purpose/retention controls, comprehensive reconciliation and qualified finance sign-off remain incomplete."
+      ]
+    },
+    {
+      "id": "SVC-03-R001",
+      "title": "Schedules, balances and receipts",
+      "state": "in_progress",
+      "code_paths": [
+        "packages/finance/src/core.ts",
+        "packages/finance/src/types.ts",
+        "packages/finance/src/wallet.ts",
+        "packages/finance/src/index.ts",
+        "packages/finance/migrations/001_finance.sql",
+        "apps/api/src/finance-ports.ts",
+        "apps/api/src/commerce.ts",
+        "apps/api/src/main.ts",
+        "packages/database/migrations/003-wallet-commitment.sql",
+        "packages/database/migrations/004-credit-servicing.sql"
+      ],
+      "test_paths": [
+        "tests/finance-servicing.test.ts",
+        "tests/finance-platform.test.ts",
+        "tests/finance-invariants.test.ts",
+        "tests/platform.test.ts",
+        "tests/finance-ports.test.ts"
+      ],
+      "evidence_ids": [
+        "finance-platform-node24",
+        "local-regression-node24"
+      ],
+      "rollout": "local-synthetic-only; affected live operations disabled",
+      "missing": [
+        "Complete schedule lifecycle, authorized sharing, receipt documents and all servicing cases are incomplete."
+      ]
+    },
+    {
+      "id": "SVC-03-R002",
+      "title": "Payment allocation and reminders",
+      "state": "in_progress",
+      "code_paths": [
+        "packages/finance/src/core.ts",
+        "packages/finance/src/types.ts",
+        "packages/finance/src/wallet.ts",
+        "packages/finance/src/index.ts",
+        "packages/finance/migrations/001_finance.sql",
+        "apps/api/src/finance-ports.ts",
+        "apps/api/src/commerce.ts",
+        "apps/api/src/main.ts",
+        "packages/database/migrations/003-wallet-commitment.sql",
+        "packages/database/migrations/004-credit-servicing.sql"
+      ],
+      "test_paths": [
+        "tests/finance-servicing.test.ts",
+        "tests/finance-platform.test.ts",
+        "tests/finance-invariants.test.ts",
+        "tests/platform.test.ts",
+        "tests/finance-ports.test.ts"
+      ],
+      "evidence_ids": [
+        "finance-platform-node24",
+        "local-regression-node24"
+      ],
+      "rollout": "local-synthetic-only; affected live operations disabled",
+      "missing": [
+        "Receipt allocation and exact held excess are implemented, but communications/reminders and operator allocation of held receipts are absent."
+      ]
+    },
+    {
+      "id": "SVC-03-R003",
+      "title": "Arrears, disputes and approved collection rules",
+      "state": "in_progress",
+      "code_paths": [
+        "packages/finance/src/core.ts",
+        "packages/finance/src/types.ts",
+        "packages/finance/src/wallet.ts",
+        "packages/finance/src/index.ts",
+        "packages/finance/migrations/001_finance.sql",
+        "apps/api/src/finance-ports.ts",
+        "apps/api/src/commerce.ts",
+        "apps/api/src/main.ts",
+        "packages/database/migrations/003-wallet-commitment.sql",
+        "packages/database/migrations/004-credit-servicing.sql"
+      ],
+      "test_paths": [
+        "tests/finance-servicing.test.ts",
+        "tests/finance-platform.test.ts",
+        "tests/finance-invariants.test.ts",
+        "tests/platform.test.ts",
+        "tests/finance-ports.test.ts"
+      ],
+      "evidence_ids": [
+        "finance-platform-node24",
+        "local-regression-node24"
+      ],
+      "rollout": "local-synthetic-only; affected live operations disabled",
+      "missing": [
+        "Arrears are derived from due dates; disputes, authorized collection rules and escalation workflows are absent."
+      ]
+    },
+    {
+      "id": "GRW-02-R001",
+      "title": "Cash, refund, commission and promotional balances",
+      "state": "in_progress",
+      "code_paths": [
+        "packages/finance/src/core.ts",
+        "packages/finance/src/types.ts",
+        "packages/finance/src/wallet.ts",
+        "packages/finance/src/index.ts",
+        "packages/finance/migrations/001_finance.sql",
+        "apps/api/src/finance-ports.ts",
+        "apps/api/src/commerce.ts",
+        "apps/api/src/main.ts",
+        "packages/database/migrations/003-wallet-commitment.sql",
+        "packages/database/migrations/004-credit-servicing.sql"
+      ],
+      "test_paths": [
+        "tests/finance-servicing.test.ts",
+        "tests/finance-platform.test.ts",
+        "tests/finance-invariants.test.ts",
+        "tests/platform.test.ts",
+        "tests/finance-ports.test.ts"
+      ],
+      "evidence_ids": [
+        "finance-platform-node24",
+        "local-regression-node24"
+      ],
+      "rollout": "local-synthetic-only; affected live operations disabled",
+      "missing": [
+        "Balances and source provenance are implemented locally; real withdrawability/settlement rules, provider contracts and production reconciliation are incomplete."
+      ]
+    },
+    {
+      "id": "GRW-02-R002",
+      "title": "Vouchers, expiry and permitted redemption",
+      "state": "in_progress",
+      "code_paths": [
+        "packages/finance/src/core.ts",
+        "packages/finance/src/types.ts",
+        "packages/finance/src/wallet.ts",
+        "packages/finance/src/index.ts",
+        "packages/finance/migrations/001_finance.sql",
+        "apps/api/src/finance-ports.ts",
+        "apps/api/src/commerce.ts",
+        "apps/api/src/main.ts",
+        "packages/database/migrations/003-wallet-commitment.sql",
+        "packages/database/migrations/004-credit-servicing.sql"
+      ],
+      "test_paths": [
+        "tests/finance-servicing.test.ts",
+        "tests/finance-platform.test.ts",
+        "tests/finance-invariants.test.ts",
+        "tests/platform.test.ts",
+        "tests/finance-ports.test.ts"
+      ],
+      "evidence_ids": [
+        "finance-platform-node24",
+        "local-regression-node24"
+      ],
+      "rollout": "local-synthetic-only; affected live operations disabled",
+      "missing": [
+        "Promotion expiry/redemption is partial; voucher lifecycle, comprehensive eligibility/budgets/abuse controls and real commercial rules are incomplete."
+      ]
+    },
+    {
+      "id": "GRW-02-R003",
+      "title": "Withdrawals, refunds and append-only ledgers",
+      "state": "in_progress",
+      "code_paths": [
+        "packages/finance/src/core.ts",
+        "packages/finance/src/types.ts",
+        "packages/finance/src/wallet.ts",
+        "packages/finance/src/index.ts",
+        "packages/finance/migrations/001_finance.sql",
+        "apps/api/src/finance-ports.ts",
+        "apps/api/src/commerce.ts",
+        "apps/api/src/main.ts",
+        "packages/database/migrations/003-wallet-commitment.sql",
+        "packages/database/migrations/004-credit-servicing.sql"
+      ],
+      "test_paths": [
+        "tests/finance-servicing.test.ts",
+        "tests/finance-platform.test.ts",
+        "tests/finance-invariants.test.ts",
+        "tests/platform.test.ts",
+        "tests/finance-ports.test.ts"
+      ],
+      "evidence_ids": [
+        "finance-platform-node24",
+        "local-regression-node24"
+      ],
+      "rollout": "local-synthetic-only; affected live operations disabled",
+      "missing": [
+        "Wallet refund HTTP execution is safely disabled pending transactional independent approval; real withdrawals, refunds and recovery workflows are not qualified."
+      ]
+    },
+    {
+      "id": "ORG-03-R001",
+      "title": "Requester/approver/payer/policyholder separation",
+      "state": "in_progress",
+      "code_paths": [
+        "packages/finance/src/core.ts",
+        "packages/finance/src/types.ts",
+        "packages/finance/src/wallet.ts",
+        "packages/finance/src/index.ts",
+        "packages/finance/migrations/001_finance.sql",
+        "apps/api/src/finance-ports.ts",
+        "apps/api/src/commerce.ts",
+        "apps/api/src/main.ts",
+        "packages/database/migrations/003-wallet-commitment.sql",
+        "packages/database/migrations/004-credit-servicing.sql"
+      ],
+      "test_paths": [
+        "tests/finance-servicing.test.ts",
+        "tests/finance-platform.test.ts",
+        "tests/finance-invariants.test.ts",
+        "tests/platform.test.ts",
+        "tests/finance-ports.test.ts"
+      ],
+      "evidence_ids": [
+        "finance-platform-node24",
+        "local-regression-node24"
+      ],
+      "rollout": "local-synthetic-only; affected live operations disabled",
+      "missing": [
+        "Current orders preserve tenant/owner and independent approval, but full requester/buyer/payer/policyholder/insured separation is incomplete."
+      ]
+    },
+    {
+      "id": "ORG-03-R002",
+      "title": "Maker-checker, delegated limits and budgets",
+      "state": "in_progress",
+      "code_paths": [
+        "packages/finance/src/core.ts",
+        "packages/finance/src/types.ts",
+        "packages/finance/src/wallet.ts",
+        "packages/finance/src/index.ts",
+        "packages/finance/migrations/001_finance.sql",
+        "apps/api/src/finance-ports.ts",
+        "apps/api/src/commerce.ts",
+        "apps/api/src/main.ts",
+        "packages/database/migrations/003-wallet-commitment.sql",
+        "packages/database/migrations/004-credit-servicing.sql"
+      ],
+      "test_paths": [
+        "tests/finance-servicing.test.ts",
+        "tests/finance-platform.test.ts",
+        "tests/finance-invariants.test.ts",
+        "tests/platform.test.ts",
+        "tests/finance-ports.test.ts"
+      ],
+      "evidence_ids": [
+        "finance-platform-node24",
+        "local-regression-node24"
+      ],
+      "rollout": "local-synthetic-only; affected live operations disabled",
+      "missing": [
+        "Credit limits serialize and maker/checker is enforced; delegated approval limits, multi-step budgets and comprehensive role/channel cases remain incomplete."
+      ]
+    },
+    {
+      "id": "ORG-03-R003",
+      "title": "Invoices, credit/prepay terms and commercial commitment",
+      "state": "in_progress",
+      "code_paths": [
+        "packages/finance/src/core.ts",
+        "packages/finance/src/types.ts",
+        "packages/finance/src/wallet.ts",
+        "packages/finance/src/index.ts",
+        "packages/finance/migrations/001_finance.sql",
+        "apps/api/src/finance-ports.ts",
+        "apps/api/src/commerce.ts",
+        "apps/api/src/main.ts",
+        "packages/database/migrations/003-wallet-commitment.sql",
+        "packages/database/migrations/004-credit-servicing.sql"
+      ],
+      "test_paths": [
+        "tests/finance-servicing.test.ts",
+        "tests/finance-platform.test.ts",
+        "tests/finance-invariants.test.ts",
+        "tests/platform.test.ts",
+        "tests/finance-ports.test.ts"
+      ],
+      "evidence_ids": [
+        "finance-platform-node24",
+        "local-regression-node24"
+      ],
+      "rollout": "local-synthetic-only; affected live operations disabled",
+      "missing": [
+        "Approved credit, invoice receipts and installment reclassification are partial; prepay, complete billing statements and contractual commercial acceptance remain incomplete."
+      ]
+    }
+  ],
+  "component_evidence": [
+    {
+      "component": "Exact source funding, bucket provenance, concurrent holds, append-only balanced journals, deterministic installments, invoice guards, commission reversal, independent payouts, unknown-outcome hold and paid-evidence monotonicity",
+      "state": "verified_local",
+      "tests": "tests/finance-servicing.test.ts",
+      "evidence_id": "local-regression-node24",
+      "limitation": "Component execution is not complete leaf acceptance or a live money operation"
+    },
+    {
+      "component": "Actual HTTP wallet-to-order v2 commitment and credit-to-installment debt reclassification",
+      "state": "verified_local",
+      "tests": "tests/finance-platform.test.ts",
+      "evidence_id": "finance-platform-node24",
+      "limitation": "Fictional providers and isolated PostgreSQL only"
+    },
+    {
+      "component": "Actual root-port invoice payment versus installment activation races, and synthetic payout recipient revocation/immutable paid truth above JS integer precision",
+      "state": "verified_local",
+      "tests": "tests/finance-ports.test.ts",
+      "command": ".local/node-v24.22.1-darwin-arm64/bin/node --env-file=.env.local --import tsx --test --test-concurrency=1 tests/finance-ports.test.ts",
+      "observed_result": {
+        "tests": 2,
+        "pass_count": 2,
+        "fail_count": 0,
+        "skipped": 0,
+        "duration_ms": 480.295833
+      },
+      "limitation": "Eight races exercise valid serialization outcomes; not full production concurrency or live provider qualification"
+    },
+    {
+      "component": "Independent financial invariant database lifecycle, including concurrent credit limits, late cash, failed purchase guards, refund reservation ambiguity and append-only balanced money",
+      "state": "verified_local",
+      "tests": "tests/finance-invariants.test.ts",
+      "command": ".local/node-v24.22.1-darwin-arm64/bin/node --env-file=.env.local --import tsx --test --test-concurrency=1 tests/finance-invariants.test.ts",
+      "observed_result": {
+        "tests": 4,
+        "pass_count": 4,
+        "fail_count": 0,
+        "skipped": 0,
+        "duration_ms": 569.5125,
+        "fixture_database": "st_finance_fixture_0df5f892412d4a48a1b12fab634d36e5",
+        "fixture_removed": true
+      },
+      "limitation": "Only a newly created owned local database was dropped; existing st_local historical synthetic rows were not changed."
+    },
+    {
+      "component": "All three isolated finance suites plus source-consistency-aware actual PostgreSQL recovery",
+      "state": "verified_local",
+      "tests": [
+        "tests/finance-invariants.test.ts",
+        "tests/finance-ports.test.ts",
+        "tests/finance-servicing.test.ts",
+        "tests/recovery.test.ts"
+      ],
+      "command": "env PATH=<pinned-Node24-and-PG17-binaries> node --env-file=.env.local --import tsx --test --test-concurrency=1 tests/finance-invariants.test.ts tests/finance-ports.test.ts tests/finance-servicing.test.ts tests/recovery.test.ts",
+      "observed_result": {
+        "tests": 23,
+        "pass_count": 23,
+        "fail_count": 0,
+        "skipped": 0,
+        "duration_ms": 5139.424084,
+        "finance_fixture_databases_removed": true
+      },
+      "limitation": "Recovery negative cases pass by preserving a source-inconsistent snapshot and reporting businessIntegrityPassed=false; no shared st_local repair or production qualification is implied."
+    }
+  ],
+  "review_findings": [
+    {
+      "id": "FIN-RV-01",
+      "state": "corrected-locally",
+      "finding": "Existing approved credit must be reclassified into installments once instead of creating a second receivable/provider liability",
+      "evidence": [
+        "tests/finance-servicing.test.ts",
+        "tests/finance-platform.test.ts"
+      ]
+    },
+    {
+      "id": "FIN-RV-02",
+      "state": "corrected-locally",
+      "finding": "Installment receipt targets the owned stable planId, not an external agreement alias",
+      "evidence": [
+        "packages/finance/src/index.ts",
+        "tests/finance-platform.test.ts"
+      ]
+    },
+    {
+      "id": "FIN-RV-03",
+      "state": "corrected-locally",
+      "finding": "Stored externally paid evidence must never be downgraded to rejected and release held funds",
+      "evidence": [
+        "tests/finance-servicing.test.ts"
+      ]
+    },
+    {
+      "id": "FIN-RV-04",
+      "state": "safely-disabled-incomplete",
+      "finding": "Root blocks wallet refund HTTP execution with refund_approval_not_configured and removes the ordinary seed grant; internal provenance method remains tested but is not a complete dual-control refund workflow.",
+      "evidence": [
+        "apps/api/src/main.ts",
+        "scripts/seed.ts",
+        "packages/finance/src/wallet.ts"
+      ],
+      "next_action": "Implement owner refund request plus independently authorized approval consumed once under the order lock before enabling execution."
+    },
+    {
+      "id": "FIN-RV-05",
+      "state": "corrected-locally",
+      "finding": "All three pure finance suites now use independently generated st_finance_fixture_<uuid> databases: invariant tests apply ordered platform/business SQL, ports and servicing apply ordered platform/finance SQL. Each suite closes its pool and drops only its created fixture. No search_path fallback, public mock payout rows, public order/journal writes or shared demo control injection remains in those suites.",
+      "evidence": [
+        "tests/finance-invariants.test.ts",
+        "tests/finance-ports.test.ts",
+        "tests/finance-servicing.test.ts"
+      ],
+      "historical_scope": "Existing synthetic rows from previous suite runs were not deleted or repaired; append-only public ledger history was preserved."
+    },
+    {
+      "id": "FIN-RV-06",
+      "state": "guard-implemented-source-unqualified",
+      "finding": "Recovery now separates exact snapshot match from scoped business consistency. Every committed order must have exactly one canonical purchase event and a matching carrier submission with tenant, owner, product, carrier and commitment kind consistent; wallet v2 requires a wallet reference without invented cash receipt fields. Historical inconsistent synthetic sources are captured but cannot receive verified=true.",
+      "evidence": [
+        "scripts/backup-restore.mjs",
+        "tests/recovery.test.ts"
+      ],
+      "next_action": "Record the current local drill result under the stronger gate; label historical synthetic anomalies without deleting append-only ledger history. A clean source and all other production gates remain required before release."
+    }
+  ],
+  "source_fingerprints": [
+    {
+      "path": "packages/finance/src/core.ts",
+      "sha256": "dd98ad80f1370a67c484225e3cd54fd796577a5184f5b55cdc6295d5bc7c33a8"
+    },
+    {
+      "path": "packages/finance/src/types.ts",
+      "sha256": "424c2c21f8e084a9c2c73d5ad7802dfaf0c2d1903820029b9b4da1c3e5a105e0"
+    },
+    {
+      "path": "packages/finance/src/wallet.ts",
+      "sha256": "d3dc06bf5e64279045156380e208a30928b5f3df03893c3d6189d81d261392a4"
+    },
+    {
+      "path": "packages/finance/src/index.ts",
+      "sha256": "3a4457d0ade5e9b55c92f036d2f8bdefc20e9a97c9e69fca8ee6af3d60bb3eb7"
+    },
+    {
+      "path": "packages/finance/migrations/001_finance.sql",
+      "sha256": "e01540fcd96440908329b43d65f14ea52762e0474f0b3c7afbff064eec99c310"
+    },
+    {
+      "path": "apps/api/src/finance-ports.ts",
+      "sha256": "7d392842c2ffdcde1b05eb6228635c84e8a44c3847acf51d58b9c597f9197793"
+    },
+    {
+      "path": "apps/api/src/commerce.ts",
+      "sha256": "67afa48bd1b2eb35487b2c5173a0c7cca27fc3655b1f36bda389b62f09a74341"
+    },
+    {
+      "path": "apps/api/src/main.ts",
+      "sha256": "9ba9c95252550abb4bb27d4763d855aaa13a5a52e1d4953c28663af3a95d1357"
+    },
+    {
+      "path": "packages/database/migrations/003-wallet-commitment.sql",
+      "sha256": "9a34d9f4c049481f72a7b6b0f49ebc1a300141a1a1d6be1eef5b980b3f506e74"
+    },
+    {
+      "path": "packages/database/migrations/004-credit-servicing.sql",
+      "sha256": "7dbb8b2a021603a3e193a1830a016f7bb1a4fe5fc544027194591cc205dc45f0"
+    },
+    {
+      "path": "tests/finance-servicing.test.ts",
+      "sha256": "b39b1bf98823492bd6b739d8d3ecf9c1070dd0ed416059888f8f6d7a4434e7c8"
+    },
+    {
+      "path": "tests/finance-platform.test.ts",
+      "sha256": "adbc22e15f721578f18195a6d8bd8859a609d4672e3cf406144f734769621cf5"
+    },
+    {
+      "path": "tests/finance-invariants.test.ts",
+      "sha256": "b010f74144190fb1655a2d46bdaaa31a7a6a3204ba8b2790f1f320a7c90a0e32"
+    },
+    {
+      "path": "tests/platform.test.ts",
+      "sha256": "eb7dd78522f3e426db47a9cd3c2e31760b595223529a5941cac2da279d505936"
+    },
+    {
+      "path": "tests/finance-ports.test.ts",
+      "sha256": "ac6e302027c4469032a420283abb0ab861ad351a515e5985092d012eb3ad26d6"
+    },
+    {
+      "path": "scripts/seed.ts",
+      "sha256": "ea47e4f01b6063f06b4c6a7639d8900fa434e45b173d546beac91a4a6112caca"
+    }
+  ],
+  "limitations": [
+    "No whole leaf is marked verified or release ready",
+    "Real financing, settlement, claims payout, merchant and bank authority remain absent",
+    "Not all 238 target operations are implemented; client/runtime compatibility remains partial",
+    "No production, legal, accounting or qualified human approval is implied"
+  ]
+}

@@ -1,0 +1,2208 @@
+[
+  {
+    "id": "PRD-01",
+    "title": "Motor third-party",
+    "channels": [
+      "b2c",
+      "commercial",
+      "reseller",
+      "b2b2c"
+    ],
+    "kind": "standalone; carrier-dependent plans",
+    "schemaVersion": "1.0.0",
+    "schema": {
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "$id": "https://insurance.invalid/schemas/PRD-01.risk.v1.schema.json",
+      "title": "PRD-01 synthetic risk input syntax",
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "vehicleRef",
+        "vehicleClass",
+        "usageCode",
+        "liabilityPlanCode"
+      ],
+      "properties": {
+        "vehicleRef": {
+          "type": "string",
+          "format": "uuid",
+          "description": "required; owned or delegated vehicle record. Sensitivity: confidential. Error: VEHICLE_AUTHORITY_REQUIRED. Eligibility is contract-dependent."
+        },
+        "plate": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 20,
+          "description": "conditional on approved inquiry; 1–20 characters; format from jurisdiction profile. Sensitivity: restricted. Error: PLATE_FORMAT_INVALID. Eligibility is contract-dependent."
+        },
+        "vehicleClass": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 40,
+          "description": "required; versioned carrier-compatible classification. Sensitivity: internal. Error: VEHICLE_CLASS_UNMAPPED. Eligibility is contract-dependent."
+        },
+        "usageCode": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 40,
+          "description": "required; 1–40 characters from product form. Sensitivity: internal. Error: USAGE_NOT_OFFERED. Eligibility is contract-dependent."
+        },
+        "priorPolicyRef": {
+          "type": "string",
+          "format": "uuid",
+          "description": "optional; authorized policy or verified uploaded evidence. Sensitivity: restricted. Error: PRIOR_POLICY_AUTHORITY_REQUIRED. Eligibility is contract-dependent."
+        },
+        "noClaimHistoryRef": {
+          "type": "string",
+          "format": "uuid",
+          "description": "conditional for discount; provenance, as-of time and inquiry version required. Sensitivity: restricted. Error: NO_CLAIM_EVIDENCE_STALE. Eligibility is contract-dependent."
+        },
+        "liabilityPlanCode": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 40,
+          "description": "required; 1–40 characters; offered plan snapshot. Sensitivity: internal. Error: LIABILITY_PLAN_UNAVAILABLE. Eligibility is contract-dependent."
+        }
+      },
+      "description": "Strict syntax baseline. Conditional predicates, cross-field dates/sums/relationships and actual carrier eligibility require the versioned application validator; passing this schema is not underwriting acceptance."
+    },
+    "example": {
+      "vehicleClass": "synthetic-passenger",
+      "usageCode": "synthetic-private",
+      "plate": "SYNTH-001",
+      "liabilityPlanCode": "SYNTH-LIABILITY-A",
+      "vehicleRef": "00000000-0000-4000-8000-000000000101"
+    },
+    "synthetic": true,
+    "liveEnabled": false,
+    "sourceSha256": "e666747fd346ca079af483c97526194c92cff4132f4712fd4e35cf9b1afd45df"
+  },
+  {
+    "id": "PRD-02",
+    "title": "Comprehensive motor / body",
+    "channels": [
+      "b2c",
+      "commercial",
+      "reseller"
+    ],
+    "kind": "standalone with optional riders",
+    "schemaVersion": "1.0.0",
+    "schema": {
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "$id": "https://insurance.invalid/schemas/PRD-02.risk.v1.schema.json",
+      "title": "PRD-02 synthetic risk input syntax",
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "vehicleRef",
+        "declaredValue",
+        "perilCodes",
+        "deductibleOption",
+        "territoryCode"
+      ],
+      "properties": {
+        "vehicleRef": {
+          "type": "string",
+          "format": "uuid",
+          "description": "required; authorized vehicle record. Sensitivity: confidential. Error: VEHICLE_AUTHORITY_REQUIRED. Eligibility is contract-dependent."
+        },
+        "declaredValue": {
+          "type": "string",
+          "pattern": "^[1-9][0-9]{0,17}$",
+          "description": "required; positive integer minor units, explicit currency/unit. Sensitivity: financial. Error: VALUE_REQUIRED. Eligibility is contract-dependent."
+        },
+        "accessories": {
+          "type": "array",
+          "maxItems": 100,
+          "items": {
+            "type": "object",
+            "required": [
+              "id",
+              "description",
+              "value"
+            ],
+            "additionalProperties": false,
+            "properties": {
+              "id": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 100
+              },
+              "description": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 200
+              },
+              "value": {
+                "type": "string",
+                "pattern": "^(0|[1-9][0-9]{0,17})$"
+              }
+            }
+          },
+          "description": "optional; <= 100 items; unique item IDs with description <= 200 and money value. Sensitivity: confidential. Error: ACCESSORY_SCHEDULE_INVALID. Eligibility is contract-dependent."
+        },
+        "perilCodes": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 30,
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 100
+          },
+          "description": "required; 1–30 distinct contract-offered codes. Sensitivity: internal. Error: PERIL_COMBINATION_INVALID. Eligibility is contract-dependent."
+        },
+        "deductibleOption": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 40,
+          "description": "required; 1–40 characters from chosen plan. Sensitivity: internal. Error: DEDUCTIBLE_UNAVAILABLE. Eligibility is contract-dependent."
+        },
+        "inspectionRef": {
+          "type": "string",
+          "format": "uuid",
+          "description": "conditional before issuance; approved, current inspection bound to this vehicle/version. Sensitivity: restricted. Error: INSPECTION_REQUIRED. Eligibility is contract-dependent."
+        },
+        "territoryCode": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 40,
+          "description": "required; versioned jurisdiction/territory code <= 40. Sensitivity: confidential. Error: TERRITORY_UNMAPPED. Eligibility is contract-dependent."
+        }
+      },
+      "description": "Strict syntax baseline. Conditional predicates, cross-field dates/sums/relationships and actual carrier eligibility require the versioned application validator; passing this schema is not underwriting acceptance."
+    },
+    "example": {
+      "declaredValue": "1200000000",
+      "perilCodes": [
+        "SYNTH-COLLISION"
+      ],
+      "deductibleOption": "SYNTH-DEDUCT-A",
+      "territoryCode": "SYNTH-TERRITORY",
+      "vehicleRef": "00000000-0000-4000-8000-000000000201"
+    },
+    "synthetic": true,
+    "liveEnabled": false,
+    "sourceSha256": "942e0f217e92bc80da35eff4e0676d0f3ed0dc3b46abeabaa2760dc3d61bfff4"
+  },
+  {
+    "id": "PRD-03",
+    "title": "Motorcycle third-party",
+    "channels": [
+      "b2c",
+      "commercial",
+      "reseller"
+    ],
+    "kind": "standalone",
+    "schemaVersion": "1.0.0",
+    "schema": {
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "$id": "https://insurance.invalid/schemas/PRD-03.risk.v1.schema.json",
+      "title": "PRD-03 synthetic risk input syntax",
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "motorcycleRef",
+        "powertrainCode",
+        "modelYear",
+        "usageCode",
+        "liabilityPlanCode"
+      ],
+      "properties": {
+        "motorcycleRef": {
+          "type": "string",
+          "format": "uuid",
+          "description": "required; authorized asset record. Sensitivity: confidential. Error: MOTORCYCLE_AUTHORITY_REQUIRED. Eligibility is contract-dependent."
+        },
+        "engineCapacityCc": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 100000,
+          "description": "conditional by form; 1–100000 technical bound, not eligibility. Sensitivity: internal. Error: ENGINE_CAPACITY_INVALID. Eligibility is contract-dependent."
+        },
+        "powertrainCode": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 40,
+          "description": "required; carrier-mapped code <= 40. Sensitivity: internal. Error: POWERTRAIN_UNMAPPED. Eligibility is contract-dependent."
+        },
+        "modelYear": {
+          "type": "integer",
+          "minimum": 1000,
+          "maximum": 9999,
+          "description": "required; explicit calendar; four digits after conversion. Sensitivity: internal. Error: MODEL_YEAR_INVALID. Eligibility is contract-dependent."
+        },
+        "usageCode": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 40,
+          "description": "required; private/commercial classifications are carrier-owned. Sensitivity: internal. Error: USAGE_UNAVAILABLE. Eligibility is contract-dependent."
+        },
+        "priorPolicyRef": {
+          "type": "string",
+          "format": "uuid",
+          "description": "optional; permission-checked document reference. Sensitivity: restricted. Error: PRIOR_POLICY_INVALID. Eligibility is contract-dependent."
+        },
+        "liabilityPlanCode": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 40,
+          "description": "required; 1–40 characters from published plan. Sensitivity: internal. Error: PLAN_NOT_OFFERED. Eligibility is contract-dependent."
+        }
+      },
+      "description": "Strict syntax baseline. Conditional predicates, cross-field dates/sums/relationships and actual carrier eligibility require the versioned application validator; passing this schema is not underwriting acceptance."
+    },
+    "example": {
+      "engineCapacityCc": 150,
+      "powertrainCode": "SYNTH-PETROL",
+      "modelYear": 2024,
+      "usageCode": "SYNTH-DELIVERY",
+      "liabilityPlanCode": "SYNTH-MOTO-A",
+      "motorcycleRef": "00000000-0000-4000-8000-000000000301"
+    },
+    "synthetic": true,
+    "liveEnabled": false,
+    "sourceSha256": "f0a1eef25ea6aa301f35cf0c401c05d37c9fd0921aa433a38440af7604c38a40"
+  },
+  {
+    "id": "PRD-04",
+    "title": "Fire / property",
+    "channels": [
+      "b2c",
+      "commercial",
+      "reseller"
+    ],
+    "kind": "standalone with peril riders",
+    "schemaVersion": "1.0.0",
+    "schema": {
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "$id": "https://insurance.invalid/schemas/PRD-04.risk.v1.schema.json",
+      "title": "PRD-04 synthetic risk input syntax",
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "locationRef",
+        "occupancyCode",
+        "constructionCode",
+        "areaM2",
+        "perilCodes"
+      ],
+      "properties": {
+        "locationRef": {
+          "type": "string",
+          "format": "uuid",
+          "description": "required; authorized address with jurisdiction precision. Sensitivity: restricted. Error: LOCATION_REQUIRED. Eligibility is contract-dependent."
+        },
+        "occupancyCode": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 40,
+          "description": "required; versioned residential/commercial use code. Sensitivity: internal. Error: OCCUPANCY_UNMAPPED. Eligibility is contract-dependent."
+        },
+        "constructionCode": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 40,
+          "description": "required; carrier-mapped construction class. Sensitivity: internal. Error: CONSTRUCTION_REQUIRED. Eligibility is contract-dependent."
+        },
+        "areaM2": {
+          "type": "string",
+          "pattern": "^[0-9]{1,12}(\\.[0-9]{1,2})?$",
+          "not": {
+            "pattern": "^0+(\\.0+)?$"
+          },
+          "description": "required; positive, <= 12 digits and 2 decimals. Sensitivity: confidential. Error: AREA_INVALID. Eligibility is contract-dependent."
+        },
+        "buildingValue": {
+          "type": "string",
+          "pattern": "^(0|[1-9][0-9]{0,17})$",
+          "description": "conditional for building cover; nonnegative; positive if building selected. Sensitivity: financial. Error: BUILDING_VALUE_REQUIRED. Eligibility is contract-dependent."
+        },
+        "contentsValue": {
+          "type": "string",
+          "pattern": "^(0|[1-9][0-9]{0,17})$",
+          "description": "conditional for contents cover; nonnegative; positive if contents selected. Sensitivity: financial. Error: CONTENTS_VALUE_REQUIRED. Eligibility is contract-dependent."
+        },
+        "perilCodes": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 30,
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 100
+          },
+          "description": "required; 1–30 unique carrier-offered codes. Sensitivity: internal. Error: PERIL_DEPENDENCY_INVALID. Eligibility is contract-dependent."
+        }
+      },
+      "description": "Strict syntax baseline. Conditional predicates, cross-field dates/sums/relationships and actual carrier eligibility require the versioned application validator; passing this schema is not underwriting acceptance."
+    },
+    "example": {
+      "occupancyCode": "SYNTH-RESIDENTIAL",
+      "constructionCode": "SYNTH-MASONRY",
+      "areaM2": "85.50",
+      "buildingValue": "9000000000",
+      "contentsValue": "500000000",
+      "perilCodes": [
+        "SYNTH-FIRE"
+      ],
+      "locationRef": "00000000-0000-4000-8000-000000000401"
+    },
+    "synthetic": true,
+    "liveEnabled": false,
+    "sourceSha256": "bff91e58cfbb06f09d7ef126e2e4a44381fbbd32986250a2709dee4554c54805"
+  },
+  {
+    "id": "PRD-05",
+    "title": "Earthquake coverage",
+    "channels": [
+      "b2c",
+      "commercial",
+      "reseller"
+    ],
+    "kind": "standalone or rider only where contracted",
+    "schemaVersion": "1.0.0",
+    "schema": {
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "$id": "https://insurance.invalid/schemas/PRD-05.risk.v1.schema.json",
+      "title": "PRD-05 synthetic risk input syntax",
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "coverageMode",
+        "locationRef",
+        "constructionCode",
+        "insuredValue",
+        "limitOption",
+        "deductibleOption"
+      ],
+      "properties": {
+        "coverageMode": {
+          "type": "string",
+          "enum": [
+            "standalone",
+            "rider"
+          ],
+          "description": "required; standalone or rider; offered mode only. Sensitivity: internal. Error: EARTHQUAKE_MODE_UNAVAILABLE. Eligibility is contract-dependent."
+        },
+        "basePolicyOrQuoteRef": {
+          "type": "string",
+          "format": "uuid",
+          "description": "required for rider; same permitted property and interest. Sensitivity: confidential. Error: BASE_COVER_INCOMPATIBLE. Eligibility is contract-dependent."
+        },
+        "locationRef": {
+          "type": "string",
+          "format": "uuid",
+          "description": "required; risk-zone mapping version retained. Sensitivity: restricted. Error: LOCATION_UNMAPPED. Eligibility is contract-dependent."
+        },
+        "constructionCode": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 40,
+          "description": "required; contract-mapped structural category. Sensitivity: internal. Error: STRUCTURE_UNMAPPED. Eligibility is contract-dependent."
+        },
+        "insuredValue": {
+          "type": "string",
+          "pattern": "^[1-9][0-9]{0,17}$",
+          "description": "required; positive; valuation basis explicit. Sensitivity: financial. Error: VALUE_INVALID. Eligibility is contract-dependent."
+        },
+        "limitOption": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 40,
+          "description": "required; offered limit code <= 40. Sensitivity: internal. Error: LIMIT_UNAVAILABLE. Eligibility is contract-dependent."
+        },
+        "deductibleOption": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 40,
+          "description": "required; offered deductible code <= 40. Sensitivity: internal. Error: DEDUCTIBLE_REQUIRED. Eligibility is contract-dependent."
+        }
+      },
+      "description": "Strict syntax baseline. Conditional predicates, cross-field dates/sums/relationships and actual carrier eligibility require the versioned application validator; passing this schema is not underwriting acceptance.",
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "coverageMode": {
+                "const": "rider"
+              }
+            },
+            "required": [
+              "coverageMode"
+            ]
+          },
+          "then": {
+            "required": [
+              "basePolicyOrQuoteRef"
+            ]
+          }
+        }
+      ]
+    },
+    "example": {
+      "coverageMode": "rider",
+      "constructionCode": "SYNTH-STRUCTURE-A",
+      "insuredValue": "9000000000",
+      "limitOption": "SYNTH-EQ-LIMIT",
+      "deductibleOption": "SYNTH-EQ-DEDUCT",
+      "basePolicyOrQuoteRef": "00000000-0000-4000-8000-000000000502",
+      "locationRef": "00000000-0000-4000-8000-000000000503"
+    },
+    "synthetic": true,
+    "liveEnabled": false,
+    "sourceSha256": "01aa2843bb88171a60dcab1c15b7361e0b3bdc42d8ced92e4e6b3a45530709ac"
+  },
+  {
+    "id": "PRD-06",
+    "title": "Individual / family supplementary health",
+    "channels": [
+      "b2c",
+      "reseller",
+      "b2b2c"
+    ],
+    "kind": "standalone or contract-dependent supplementary plan",
+    "schemaVersion": "1.0.0",
+    "schema": {
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "$id": "https://insurance.invalid/schemas/PRD-06.risk.v1.schema.json",
+      "title": "PRD-06 synthetic risk input syntax",
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "memberRefs",
+        "relationshipCodes",
+        "birthDates",
+        "benefitPlanCode"
+      ],
+      "properties": {
+        "memberRefs": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 100,
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "description": "required; 1–100 stable authorized person refs; batch above this. Sensitivity: restricted. Error: MEMBER_AUTHORITY_REQUIRED. Eligibility is contract-dependent."
+        },
+        "relationshipCodes": {
+          "type": "object",
+          "minProperties": 1,
+          "maxProperties": 100,
+          "additionalProperties": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 100
+          },
+          "description": "required; one carrier-compatible relationship per member. Sensitivity: restricted. Error: RELATIONSHIP_INVALID. Eligibility is contract-dependent."
+        },
+        "birthDates": {
+          "type": "object",
+          "minProperties": 1,
+          "maxProperties": 100,
+          "additionalProperties": {
+            "type": "string",
+            "format": "date"
+          },
+          "description": "required by rating; valid dates, not future; restricted projection. Sensitivity: restricted. Error: BIRTH_DATE_INVALID. Eligibility is contract-dependent."
+        },
+        "baseCoverageRefs": {
+          "type": "object",
+          "minProperties": 1,
+          "maxProperties": 100,
+          "additionalProperties": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "description": "conditional by plan; verified evidence and current status. Sensitivity: restricted. Error: BASE_COVERAGE_REQUIRED. Eligibility is contract-dependent."
+        },
+        "healthDeclarationRefs": {
+          "type": "object",
+          "minProperties": 1,
+          "maxProperties": 100,
+          "additionalProperties": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "description": "conditional by underwriting; member-specific restricted evidence. Sensitivity: highly restricted. Error: DECLARATION_REQUIRED. Eligibility is contract-dependent."
+        },
+        "benefitPlanCode": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 40,
+          "description": "required; carrier plan version <= 40 code points. Sensitivity: internal. Error: BENEFIT_PLAN_INVALID. Eligibility is contract-dependent."
+        },
+        "networkCode": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 40,
+          "description": "conditional; offered provider-network revision. Sensitivity: internal. Error: NETWORK_UNAVAILABLE. Eligibility is contract-dependent."
+        }
+      },
+      "description": "Strict syntax baseline. Conditional predicates, cross-field dates/sums/relationships and actual carrier eligibility require the versioned application validator; passing this schema is not underwriting acceptance."
+    },
+    "example": {
+      "memberRefs": [
+        "00000000-0000-4000-8000-000000000206"
+      ],
+      "relationshipCodes": {
+        "00000000-0000-4000-8000-000000000206": "dependent"
+      },
+      "birthDates": {
+        "00000000-0000-4000-8000-000000000206": "2000-01-01"
+      },
+      "benefitPlanCode": "SYNTH-HEALTH-A",
+      "networkCode": "SYNTH-NET-A"
+    },
+    "synthetic": true,
+    "liveEnabled": false,
+    "sourceSha256": "dabd8baf4f9dfd5bb71d7e2c8d16436a9cd6ad33b9e70c4b0c87d008cfd934fd"
+  },
+  {
+    "id": "PRD-07",
+    "title": "Corporate / group health",
+    "channels": [
+      "corporate",
+      "commercial",
+      "reseller",
+      "b2b2c"
+    ],
+    "kind": "negotiated group plan with beneficiary servicing",
+    "schemaVersion": "1.0.0",
+    "schema": {
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "$id": "https://insurance.invalid/schemas/PRD-07.risk.v1.schema.json",
+      "title": "PRD-07 synthetic risk input syntax",
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "organizationRef",
+        "censusBatchRef",
+        "benefitClassCode",
+        "enrollmentWindowRef",
+        "effectiveDate",
+        "billingBasisCode",
+        "proposalVersion"
+      ],
+      "properties": {
+        "organizationRef": {
+          "type": "string",
+          "format": "uuid",
+          "description": "required; active permitted buyer tenant. Sensitivity: confidential. Error: ORGANIZATION_REQUIRED. Eligibility is contract-dependent."
+        },
+        "censusBatchRef": {
+          "type": "string",
+          "format": "uuid",
+          "description": "required; approved row-validation snapshot. Sensitivity: restricted. Error: CENSUS_NOT_APPROVED. Eligibility is contract-dependent."
+        },
+        "benefitClassCode": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 40,
+          "description": "required per member; 1–40 characters mapped to negotiated benefits. Sensitivity: confidential. Error: BENEFIT_CLASS_UNMAPPED. Eligibility is contract-dependent."
+        },
+        "enrollmentWindowRef": {
+          "type": "string",
+          "format": "uuid",
+          "description": "required; versioned group contract window. Sensitivity: internal. Error: ENROLLMENT_WINDOW_CLOSED. Eligibility is contract-dependent."
+        },
+        "effectiveDate": {
+          "type": "string",
+          "format": "date",
+          "description": "required per change; contract timezone, approved date rule. Sensitivity: restricted. Error: ENROLLMENT_DATE_INVALID. Eligibility is contract-dependent."
+        },
+        "billingBasisCode": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 40,
+          "description": "required; versioned negotiated billing basis. Sensitivity: financial. Error: BILLING_BASIS_UNAPPROVED. Eligibility is contract-dependent."
+        },
+        "proposalVersion": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 2147483647,
+          "description": "required at commitment; positive; exact checker-approved revision. Sensitivity: confidential. Error: PROPOSAL_APPROVAL_STALE. Eligibility is contract-dependent."
+        }
+      },
+      "description": "Strict syntax baseline. Conditional predicates, cross-field dates/sums/relationships and actual carrier eligibility require the versioned application validator; passing this schema is not underwriting acceptance."
+    },
+    "example": {
+      "benefitClassCode": "SYNTH-CLASS-A",
+      "effectiveDate": "2027-01-01",
+      "billingBasisCode": "SYNTH-MONTHLY",
+      "proposalVersion": 3,
+      "organizationRef": "00000000-0000-4000-8000-000000000701",
+      "censusBatchRef": "00000000-0000-4000-8000-000000000702",
+      "enrollmentWindowRef": "00000000-0000-4000-8000-000000000704"
+    },
+    "synthetic": true,
+    "liveEnabled": false,
+    "sourceSha256": "268277db2055705823fa6eb85c436cbb7131c24545388dc39b9450a668ca7845"
+  },
+  {
+    "id": "PRD-08",
+    "title": "Life / investment-linked life",
+    "channels": [
+      "b2c",
+      "commercial",
+      "reseller"
+    ],
+    "kind": "standalone; investment-linked only under approved contract",
+    "schemaVersion": "1.0.0",
+    "schema": {
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "$id": "https://insurance.invalid/schemas/PRD-08.risk.v1.schema.json",
+      "title": "PRD-08 synthetic risk input syntax",
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "insuredRef",
+        "birthDate",
+        "beneficiaries",
+        "contributionAmount",
+        "contributionFrequency"
+      ],
+      "properties": {
+        "insuredRef": {
+          "type": "string",
+          "format": "uuid",
+          "description": "required; authorized person and underwriting purpose. Sensitivity: restricted. Error: INSURED_AUTHORITY_REQUIRED. Eligibility is contract-dependent."
+        },
+        "birthDate": {
+          "type": "string",
+          "format": "date",
+          "description": "required; valid nonfuture date with calendar source. Sensitivity: restricted. Error: BIRTH_DATE_INVALID. Eligibility is contract-dependent."
+        },
+        "occupationCode": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 60,
+          "description": "conditional; versioned risk classification <= 40. Sensitivity: restricted. Error: OCCUPATION_UNMAPPED. Eligibility is contract-dependent."
+        },
+        "beneficiaries": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 100,
+          "items": {
+            "type": "object",
+            "required": [
+              "ref",
+              "basisPoints"
+            ],
+            "additionalProperties": false,
+            "properties": {
+              "ref": {
+                "type": "string",
+                "format": "uuid"
+              },
+              "basisPoints": {
+                "type": "integer",
+                "minimum": 1,
+                "maximum": 10000
+              }
+            }
+          },
+          "description": "required before issue; 1–100 party refs with allocation basis points summing 10000 when percentage allocation applies. Sensitivity: highly restricted. Error: BENEFICIARY_ALLOCATION_INVALID. Eligibility is contract-dependent."
+        },
+        "contributionAmount": {
+          "type": "string",
+          "pattern": "^[1-9][0-9]{0,17}$",
+          "description": "required; positive; explicit schedule/currency. Sensitivity: financial. Error: CONTRIBUTION_INVALID. Eligibility is contract-dependent."
+        },
+        "contributionFrequency": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 40,
+          "description": "required; contract-offered schedule code. Sensitivity: financial. Error: FREQUENCY_UNAVAILABLE. Eligibility is contract-dependent."
+        },
+        "illustrationVersion": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 80,
+          "description": "conditional for projection; approved document/version <= 80. Sensitivity: financial. Error: ILLUSTRATION_UNAPPROVED. Eligibility is contract-dependent."
+        },
+        "medicalDeclarationRef": {
+          "type": "string",
+          "format": "uuid",
+          "description": "conditional; restricted member-specific record. Sensitivity: highly restricted. Error: MEDICAL_REVIEW_REQUIRED. Eligibility is contract-dependent."
+        }
+      },
+      "description": "Strict syntax baseline. Conditional predicates, cross-field dates/sums/relationships and actual carrier eligibility require the versioned application validator; passing this schema is not underwriting acceptance."
+    },
+    "example": {
+      "birthDate": "1990-01-01",
+      "occupationCode": "SYNTH-OCC-A",
+      "beneficiaries": [
+        {
+          "ref": "00000000-0000-4000-8000-000000000308",
+          "basisPoints": 10000
+        }
+      ],
+      "contributionAmount": "1000000",
+      "contributionFrequency": "SYNTH-MONTHLY",
+      "illustrationVersion": "SYNTH-ILLUSTRATION-1",
+      "insuredRef": "00000000-0000-4000-8000-000000000801"
+    },
+    "synthetic": true,
+    "liveEnabled": false,
+    "sourceSha256": "6bc34002994258d71c9837456b0be1a19c70fcf025b3356fd258e8f73ce2e295"
+  },
+  {
+    "id": "PRD-09",
+    "title": "Pension / annuity",
+    "channels": [
+      "b2c",
+      "corporate",
+      "reseller"
+    ],
+    "kind": "contract-defined pension or annuity plan",
+    "schemaVersion": "1.0.0",
+    "schema": {
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "$id": "https://insurance.invalid/schemas/PRD-09.risk.v1.schema.json",
+      "title": "PRD-09 synthetic risk input syntax",
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "annuitantRef",
+        "birthDate",
+        "contributionAmount",
+        "contributionTermCode",
+        "payoutOptionCode",
+        "plannedStartDate",
+        "illustrationVersion"
+      ],
+      "properties": {
+        "annuitantRef": {
+          "type": "string",
+          "format": "uuid",
+          "description": "required; authorized insured/member relationship. Sensitivity: restricted. Error: ANNUITANT_REQUIRED. Eligibility is contract-dependent."
+        },
+        "birthDate": {
+          "type": "string",
+          "format": "date",
+          "description": "required; valid nonfuture date. Sensitivity: restricted. Error: BIRTH_DATE_INVALID. Eligibility is contract-dependent."
+        },
+        "contributionAmount": {
+          "type": "string",
+          "pattern": "^[1-9][0-9]{0,17}$",
+          "description": "required; positive exact integer amount. Sensitivity: financial. Error: CONTRIBUTION_INVALID. Eligibility is contract-dependent."
+        },
+        "contributionTermCode": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 40,
+          "description": "required; offered term <= 40 characters. Sensitivity: financial. Error: TERM_UNAVAILABLE. Eligibility is contract-dependent."
+        },
+        "payoutOptionCode": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 40,
+          "description": "required; contract-supported benefit option. Sensitivity: financial. Error: PAYOUT_OPTION_UNAVAILABLE. Eligibility is contract-dependent."
+        },
+        "plannedStartDate": {
+          "type": "string",
+          "format": "date",
+          "description": "required; explicit local-date semantics; eligibility from contract. Sensitivity: confidential. Error: START_DATE_INELIGIBLE. Eligibility is contract-dependent."
+        },
+        "illustrationVersion": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 80,
+          "description": "required for benefit display; approved version <= 80. Sensitivity: financial. Error: BENEFIT_ILLUSTRATION_REQUIRED. Eligibility is contract-dependent."
+        }
+      },
+      "description": "Strict syntax baseline. Conditional predicates, cross-field dates/sums/relationships and actual carrier eligibility require the versioned application validator; passing this schema is not underwriting acceptance."
+    },
+    "example": {
+      "birthDate": "1985-01-01",
+      "contributionAmount": "2000000",
+      "contributionTermCode": "SYNTH-TERM-A",
+      "payoutOptionCode": "SYNTH-PAYOUT-A",
+      "plannedStartDate": "2040-01-01",
+      "illustrationVersion": "SYNTH-PENSION-ILL-1",
+      "annuitantRef": "00000000-0000-4000-8000-000000000901"
+    },
+    "synthetic": true,
+    "liveEnabled": false,
+    "sourceSha256": "32767d4091df48c02823b6ba4c7825700bc25f0a986c9441c93e0d902db41be3"
+  },
+  {
+    "id": "PRD-10",
+    "title": "Travel",
+    "channels": [
+      "b2c",
+      "commercial",
+      "reseller"
+    ],
+    "kind": "standalone trip or contract-defined multi-trip plan",
+    "schemaVersion": "1.0.0",
+    "schema": {
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "$id": "https://insurance.invalid/schemas/PRD-10.risk.v1.schema.json",
+      "title": "PRD-10 synthetic risk input syntax",
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "travelerRefs",
+        "destinationCodes",
+        "departureDate",
+        "returnDate",
+        "tripTypeCode",
+        "assistancePlanCode"
+      ],
+      "properties": {
+        "travelerRefs": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 100,
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "description": "required; 1–100 authorized traveler records. Sensitivity: restricted. Error: TRAVELER_AUTHORITY_REQUIRED. Eligibility is contract-dependent."
+        },
+        "destinationCodes": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 100,
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 100
+          },
+          "description": "required; 1–100 ISO/configured destination codes, unique. Sensitivity: confidential. Error: DESTINATION_UNSUPPORTED. Eligibility is contract-dependent."
+        },
+        "departureDate": {
+          "type": "string",
+          "format": "date",
+          "description": "required; valid itinerary-local date. Sensitivity: confidential. Error: DEPARTURE_DATE_INVALID. Eligibility is contract-dependent."
+        },
+        "returnDate": {
+          "type": "string",
+          "format": "date",
+          "description": "required for single trip; not before departure; duration contract-validated. Sensitivity: confidential. Error: RETURN_DATE_INVALID. Eligibility is contract-dependent."
+        },
+        "tripTypeCode": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 40,
+          "description": "required; offered single/multi-trip category. Sensitivity: internal. Error: TRIP_TYPE_UNAVAILABLE. Eligibility is contract-dependent."
+        },
+        "assistancePlanCode": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 40,
+          "description": "required; versioned assistance/coverage plan. Sensitivity: internal. Error: ASSISTANCE_PLAN_UNAVAILABLE. Eligibility is contract-dependent."
+        },
+        "passportEvidenceRef": {
+          "type": "string",
+          "format": "uuid",
+          "description": "conditional by contract; restricted evidence, never analytics payload. Sensitivity: highly restricted. Error: TRAVEL_DOCUMENT_REQUIRED. Eligibility is contract-dependent."
+        }
+      },
+      "description": "Strict syntax baseline. Conditional predicates, cross-field dates/sums/relationships and actual carrier eligibility require the versioned application validator; passing this schema is not underwriting acceptance."
+    },
+    "example": {
+      "destinationCodes": [
+        "SYNTH-DEST-A"
+      ],
+      "departureDate": "2027-02-01",
+      "returnDate": "2027-02-10",
+      "tripTypeCode": "SYNTH-SINGLE",
+      "assistancePlanCode": "SYNTH-TRAVEL-A",
+      "travelerRefs": [
+        "00000000-0000-4000-8000-000000001001"
+      ]
+    },
+    "synthetic": true,
+    "liveEnabled": false,
+    "sourceSha256": "162b8824b5b332f421d8a8c2d0d88720c9afcb65de1eed0bf605d92ce795ac2d"
+  },
+  {
+    "id": "PRD-11",
+    "title": "Pilgrimage / Karbala",
+    "channels": [
+      "b2c",
+      "commercial",
+      "reseller"
+    ],
+    "kind": "special-destination travel plan where contracted",
+    "schemaVersion": "1.0.0",
+    "schema": {
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "$id": "https://insurance.invalid/schemas/PRD-11.risk.v1.schema.json",
+      "title": "PRD-11 synthetic risk input syntax",
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "travelerRefs",
+        "destinationPlanCode",
+        "departureDate",
+        "durationDays",
+        "assistancePlanCode"
+      ],
+      "properties": {
+        "travelerRefs": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 100,
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "description": "required; 1–100 authorized refs; larger groups use bulk workflow. Sensitivity: restricted. Error: TRAVELER_AUTHORITY_REQUIRED. Eligibility is contract-dependent."
+        },
+        "destinationPlanCode": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 40,
+          "description": "required; explicit offered pilgrimage destination/program <= 40. Sensitivity: confidential. Error: PILGRIMAGE_PLAN_UNAVAILABLE. Eligibility is contract-dependent."
+        },
+        "departureDate": {
+          "type": "string",
+          "format": "date",
+          "description": "required; explicit calendar/timezone context. Sensitivity: confidential. Error: DEPARTURE_DATE_INVALID. Eligibility is contract-dependent."
+        },
+        "durationDays": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 3660,
+          "description": "required; 1–3660 technical bound; actual max from carrier. Sensitivity: internal. Error: DURATION_NOT_OFFERED. Eligibility is contract-dependent."
+        },
+        "organizerRef": {
+          "type": "string",
+          "format": "uuid",
+          "description": "optional; authorized organizer relationship. Sensitivity: confidential. Error: ORGANIZER_AUTHORITY_REQUIRED. Eligibility is contract-dependent."
+        },
+        "assistancePlanCode": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 40,
+          "description": "required; versioned emergency/assistance plan. Sensitivity: internal. Error: ASSISTANCE_PLAN_UNAVAILABLE. Eligibility is contract-dependent."
+        },
+        "requiredTravelEvidenceRef": {
+          "type": "string",
+          "format": "uuid",
+          "description": "conditional; contract-defined evidence only. Sensitivity: highly restricted. Error: TRAVEL_EVIDENCE_REQUIRED. Eligibility is contract-dependent."
+        }
+      },
+      "description": "Strict syntax baseline. Conditional predicates, cross-field dates/sums/relationships and actual carrier eligibility require the versioned application validator; passing this schema is not underwriting acceptance."
+    },
+    "example": {
+      "destinationPlanCode": "SYNTH-PILGRIMAGE-A",
+      "departureDate": "2027-03-01",
+      "durationDays": 7,
+      "assistancePlanCode": "SYNTH-PILGRIM-HELP",
+      "travelerRefs": [
+        "00000000-0000-4000-8000-000000001101"
+      ]
+    },
+    "synthetic": true,
+    "liveEnabled": false,
+    "sourceSha256": "d3260af6877c722eaf76e8bc42d1a7016acabcd6cd607e37b0330b33470fa109"
+  },
+  {
+    "id": "PRD-12",
+    "title": "Physicians professional liability",
+    "channels": [
+      "b2c",
+      "commercial",
+      "reseller"
+    ],
+    "kind": "professional liability; assisted variants",
+    "schemaVersion": "1.0.0",
+    "schema": {
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "$id": "https://insurance.invalid/schemas/PRD-12.risk.v1.schema.json",
+      "title": "PRD-12 synthetic risk input syntax",
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "professionalRef",
+        "credentialRef",
+        "specialtyCode",
+        "practiceLocations",
+        "limitOption"
+      ],
+      "properties": {
+        "professionalRef": {
+          "type": "string",
+          "format": "uuid",
+          "description": "required; authorized person/profile. Sensitivity: restricted. Error: PROFESSIONAL_AUTHORITY_REQUIRED. Eligibility is contract-dependent."
+        },
+        "credentialRef": {
+          "type": "string",
+          "format": "uuid",
+          "description": "required; verified professional credential evidence/version. Sensitivity: restricted. Error: CREDENTIAL_REQUIRED. Eligibility is contract-dependent."
+        },
+        "specialtyCode": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 60,
+          "description": "required; carrier-mapped specialty <= 60. Sensitivity: confidential. Error: SPECIALTY_UNMAPPED. Eligibility is contract-dependent."
+        },
+        "practiceLocations": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 100,
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "description": "required; 1–100 permitted practice addresses. Sensitivity: confidential. Error: PRACTICE_LOCATION_REQUIRED. Eligibility is contract-dependent."
+        },
+        "procedureCodes": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 100,
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 100
+          },
+          "description": "conditional; <= 100 declared contract categories. Sensitivity: restricted. Error: PROCEDURE_DECLARATION_REQUIRED. Eligibility is contract-dependent."
+        },
+        "priorClaimDeclarationRef": {
+          "type": "string",
+          "format": "uuid",
+          "description": "conditional by plan; restricted declaration with source version. Sensitivity: highly restricted. Error: CLAIM_HISTORY_REQUIRED. Eligibility is contract-dependent."
+        },
+        "limitOption": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 40,
+          "description": "required; offered limit/aggregate basis code. Sensitivity: financial. Error: LIMIT_UNAVAILABLE. Eligibility is contract-dependent."
+        }
+      },
+      "description": "Strict syntax baseline. Conditional predicates, cross-field dates/sums/relationships and actual carrier eligibility require the versioned application validator; passing this schema is not underwriting acceptance."
+    },
+    "example": {
+      "specialtyCode": "SYNTH-SPECIALTY-A",
+      "procedureCodes": [
+        "SYNTH-PROCEDURE-A"
+      ],
+      "limitOption": "SYNTH-PROF-LIMIT",
+      "professionalRef": "00000000-0000-4000-8000-000000001201",
+      "credentialRef": "00000000-0000-4000-8000-000000001202",
+      "practiceLocations": [
+        "00000000-0000-4000-8000-000000001204"
+      ]
+    },
+    "synthetic": true,
+    "liveEnabled": false,
+    "sourceSha256": "f95b7041890fb412d84249ec35c31ebef1adfbff4614dae6245b406359bb4ed7"
+  },
+  {
+    "id": "PRD-13",
+    "title": "Elevator liability",
+    "channels": [
+      "b2c",
+      "commercial",
+      "reseller"
+    ],
+    "kind": "equipment-related liability",
+    "schemaVersion": "1.0.0",
+    "schema": {
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "$id": "https://insurance.invalid/schemas/PRD-13.risk.v1.schema.json",
+      "title": "PRD-13 synthetic risk input syntax",
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "buildingRef",
+        "equipmentIdentifier",
+        "capacityKg",
+        "stopCount",
+        "limitOption"
+      ],
+      "properties": {
+        "buildingRef": {
+          "type": "string",
+          "format": "uuid",
+          "description": "required; authorized building/address. Sensitivity: confidential. Error: BUILDING_AUTHORITY_REQUIRED. Eligibility is contract-dependent."
+        },
+        "equipmentIdentifier": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 100,
+          "description": "required; 1–100 NFC characters, unique within building. Sensitivity: confidential. Error: ELEVATOR_IDENTIFIER_REQUIRED. Eligibility is contract-dependent."
+        },
+        "capacityPersons": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 10000,
+          "description": "conditional by equipment type; 1–10000 technical bound. Sensitivity: internal. Error: CAPACITY_INVALID. Eligibility is contract-dependent."
+        },
+        "capacityKg": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 1000000,
+          "description": "required; 1–1000000 technical bound. Sensitivity: internal. Error: CAPACITY_INVALID. Eligibility is contract-dependent."
+        },
+        "stopCount": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 1000,
+          "description": "required; 1–1000 technical bound. Sensitivity: internal. Error: STOP_COUNT_INVALID. Eligibility is contract-dependent."
+        },
+        "maintenanceEvidenceRef": {
+          "type": "string",
+          "format": "uuid",
+          "description": "conditional by carrier; current agreement/service evidence. Sensitivity: restricted. Error: MAINTENANCE_EVIDENCE_REQUIRED. Eligibility is contract-dependent."
+        },
+        "inspectionEvidenceRef": {
+          "type": "string",
+          "format": "uuid",
+          "description": "conditional before issue; approved provider inspection with expiry. Sensitivity: restricted. Error: INSPECTION_EXPIRED. Eligibility is contract-dependent."
+        },
+        "limitOption": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 40,
+          "description": "required; offered per-person/per-event basis. Sensitivity: financial. Error: LIMIT_UNAVAILABLE. Eligibility is contract-dependent."
+        }
+      },
+      "description": "Strict syntax baseline. Conditional predicates, cross-field dates/sums/relationships and actual carrier eligibility require the versioned application validator; passing this schema is not underwriting acceptance."
+    },
+    "example": {
+      "equipmentIdentifier": "SYNTH-LIFT-01",
+      "capacityPersons": 8,
+      "capacityKg": 600,
+      "stopCount": 6,
+      "limitOption": "SYNTH-LIFT-LIMIT",
+      "buildingRef": "00000000-0000-4000-8000-000000001301"
+    },
+    "synthetic": true,
+    "liveEnabled": false,
+    "sourceSha256": "816c60ceeec48aa1df0b8c29b5c5560d3e71f40e45f0939a5f9241e51443eff0"
+  },
+  {
+    "id": "PRD-14",
+    "title": "Sports",
+    "channels": [
+      "b2c",
+      "corporate",
+      "commercial",
+      "reseller",
+      "b2b2c"
+    ],
+    "kind": "participant/activity cover through authorized issuer",
+    "schemaVersion": "1.0.0",
+    "schema": {
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "$id": "https://insurance.invalid/schemas/PRD-14.risk.v1.schema.json",
+      "title": "PRD-14 synthetic risk input syntax",
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "participantRefs",
+        "sportCode",
+        "activityLevelCode",
+        "periodStart",
+        "periodEnd",
+        "issuerPlanCode"
+      ],
+      "properties": {
+        "participantRefs": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 100,
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "description": "required; 1–100 authorized refs; larger rosters use bulk. Sensitivity: restricted. Error: PARTICIPANT_AUTHORITY_REQUIRED. Eligibility is contract-dependent."
+        },
+        "sportCode": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 60,
+          "description": "required; carrier/issuer classification <= 60. Sensitivity: internal. Error: SPORT_UNMAPPED. Eligibility is contract-dependent."
+        },
+        "activityLevelCode": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 40,
+          "description": "required; offered recreational/competition classification. Sensitivity: internal. Error: ACTIVITY_LEVEL_UNAVAILABLE. Eligibility is contract-dependent."
+        },
+        "eventRef": {
+          "type": "string",
+          "format": "uuid",
+          "description": "optional; authorized event/organizer reference. Sensitivity: confidential. Error: EVENT_AUTHORITY_REQUIRED. Eligibility is contract-dependent."
+        },
+        "periodStart": {
+          "type": "string",
+          "format": "date",
+          "description": "required; explicit activity-local date. Sensitivity: confidential. Error: PERIOD_INVALID. Eligibility is contract-dependent."
+        },
+        "periodEnd": {
+          "type": "string",
+          "format": "date",
+          "description": "required; not before start. Sensitivity: confidential. Error: PERIOD_INVALID. Eligibility is contract-dependent."
+        },
+        "issuerPlanCode": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 40,
+          "description": "required; authorized issuer plan/version. Sensitivity: internal. Error: ISSUER_NOT_AUTHORIZED. Eligibility is contract-dependent."
+        }
+      },
+      "description": "Strict syntax baseline. Conditional predicates, cross-field dates/sums/relationships and actual carrier eligibility require the versioned application validator; passing this schema is not underwriting acceptance."
+    },
+    "example": {
+      "sportCode": "SYNTH-SPORT-A",
+      "activityLevelCode": "SYNTH-RECREATIONAL",
+      "periodStart": "2027-04-01",
+      "periodEnd": "2027-04-02",
+      "issuerPlanCode": "SYNTH-SPORT-PLAN",
+      "participantRefs": [
+        "00000000-0000-4000-8000-000000001401"
+      ]
+    },
+    "synthetic": true,
+    "liveEnabled": false,
+    "sourceSha256": "90eabb4632342ba28466cb7e2f6a36ccb8348a564f9dd3c2df375a27b7268bd0"
+  },
+  {
+    "id": "PRD-15",
+    "title": "Personal accident",
+    "channels": [
+      "b2c",
+      "corporate",
+      "commercial",
+      "reseller",
+      "b2b2c"
+    ],
+    "kind": "individual/group accident plan",
+    "schemaVersion": "1.0.0",
+    "schema": {
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "$id": "https://insurance.invalid/schemas/PRD-15.risk.v1.schema.json",
+      "title": "PRD-15 synthetic risk input syntax",
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "insuredRefs",
+        "occupationCode",
+        "activityCodes",
+        "benefitPlanCode",
+        "territoryCode",
+        "termCode"
+      ],
+      "properties": {
+        "insuredRefs": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 100,
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "description": "required; 1–100 authorized refs. Sensitivity: restricted. Error: INSURED_AUTHORITY_REQUIRED. Eligibility is contract-dependent."
+        },
+        "occupationCode": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 60,
+          "description": "required; versioned risk code <= 60. Sensitivity: restricted. Error: OCCUPATION_UNMAPPED. Eligibility is contract-dependent."
+        },
+        "activityCodes": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 100,
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 100
+          },
+          "description": "required; 1–100 distinct declared categories. Sensitivity: restricted. Error: ACTIVITY_REQUIRED. Eligibility is contract-dependent."
+        },
+        "benefitPlanCode": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 40,
+          "description": "required; offered death/disability/expense structure. Sensitivity: internal. Error: BENEFIT_PLAN_UNAVAILABLE. Eligibility is contract-dependent."
+        },
+        "beneficiaryRefs": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 100,
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "description": "conditional by benefit; authorized designation, allocation contract-validated. Sensitivity: highly restricted. Error: BENEFICIARY_REQUIRED. Eligibility is contract-dependent."
+        },
+        "territoryCode": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 40,
+          "description": "required; offered geographic scope <= 40. Sensitivity: internal. Error: TERRITORY_UNAVAILABLE. Eligibility is contract-dependent."
+        },
+        "termCode": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 40,
+          "description": "required; offered period code <= 40. Sensitivity: internal. Error: TERM_UNAVAILABLE. Eligibility is contract-dependent."
+        }
+      },
+      "description": "Strict syntax baseline. Conditional predicates, cross-field dates/sums/relationships and actual carrier eligibility require the versioned application validator; passing this schema is not underwriting acceptance."
+    },
+    "example": {
+      "occupationCode": "SYNTH-OCC-B",
+      "activityCodes": [
+        "SYNTH-ACTIVITY-A"
+      ],
+      "benefitPlanCode": "SYNTH-ACCIDENT-A",
+      "territoryCode": "SYNTH-TERRITORY",
+      "termCode": "SYNTH-ANNUAL",
+      "insuredRefs": [
+        "00000000-0000-4000-8000-000000001501"
+      ]
+    },
+    "synthetic": true,
+    "liveEnabled": false,
+    "sourceSha256": "5a2fcf910d957d3e932b2fb6c28c150b3aa3aa95dcdf59f0f473c9944c36b7f9"
+  },
+  {
+    "id": "PRD-16",
+    "title": "Mobile-device protection",
+    "channels": [
+      "b2c",
+      "commercial",
+      "reseller"
+    ],
+    "kind": "insurance or contract-specific protection; classification disclosed",
+    "schemaVersion": "1.0.0",
+    "schema": {
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "$id": "https://insurance.invalid/schemas/PRD-16.risk.v1.schema.json",
+      "title": "PRD-16 synthetic risk input syntax",
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "deviceModelCode",
+        "deviceIdentifier",
+        "purchaseDate",
+        "declaredValue",
+        "conditionCode",
+        "perilPlanCode"
+      ],
+      "properties": {
+        "deviceModelCode": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 80,
+          "description": "required; catalog/contract mapping <= 80. Sensitivity: internal. Error: DEVICE_MODEL_UNMAPPED. Eligibility is contract-dependent."
+        },
+        "deviceIdentifier": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 64,
+          "description": "required; 1–64 characters; scheme-specific validation, encrypt/mask. Sensitivity: restricted. Error: DEVICE_IDENTIFIER_INVALID. Eligibility is contract-dependent."
+        },
+        "purchaseDate": {
+          "type": "string",
+          "format": "date",
+          "description": "required; nonfuture; calendar source explicit. Sensitivity: confidential. Error: PURCHASE_DATE_INVALID. Eligibility is contract-dependent."
+        },
+        "declaredValue": {
+          "type": "string",
+          "pattern": "^[1-9][0-9]{0,17}$",
+          "description": "required; positive explicit currency/unit. Sensitivity: financial. Error: DEVICE_VALUE_INVALID. Eligibility is contract-dependent."
+        },
+        "conditionCode": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 40,
+          "description": "required; contract-offered new/used/reconditioned category. Sensitivity: internal. Error: CONDITION_UNAVAILABLE. Eligibility is contract-dependent."
+        },
+        "purchaseEvidenceRef": {
+          "type": "string",
+          "format": "uuid",
+          "description": "conditional; authorized invoice/ownership evidence. Sensitivity: restricted. Error: PURCHASE_EVIDENCE_REQUIRED. Eligibility is contract-dependent."
+        },
+        "inspectionRef": {
+          "type": "string",
+          "format": "uuid",
+          "description": "conditional; approved device/condition check. Sensitivity: restricted. Error: DEVICE_INSPECTION_REQUIRED. Eligibility is contract-dependent."
+        },
+        "perilPlanCode": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 40,
+          "description": "required; offered damage/theft/other structure. Sensitivity: internal. Error: DEVICE_PLAN_UNAVAILABLE. Eligibility is contract-dependent."
+        }
+      },
+      "description": "Strict syntax baseline. Conditional predicates, cross-field dates/sums/relationships and actual carrier eligibility require the versioned application validator; passing this schema is not underwriting acceptance."
+    },
+    "example": {
+      "deviceModelCode": "SYNTH-PHONE-A",
+      "deviceIdentifier": "SYNTH-DEVICE-0001",
+      "purchaseDate": "2026-09-01",
+      "declaredValue": "50000000",
+      "conditionCode": "SYNTH-NEW",
+      "perilPlanCode": "SYNTH-DEVICE-PLAN"
+    },
+    "synthetic": true,
+    "liveEnabled": false,
+    "sourceSha256": "7ff05707061a408ae6501147c3d6f7982da987670813ff5f15a3902271edce65"
+  },
+  {
+    "id": "PRD-17",
+    "title": "Electronic equipment",
+    "channels": [
+      "commercial",
+      "corporate",
+      "reseller"
+    ],
+    "kind": "scheduled commercial equipment; assisted underwriting",
+    "schemaVersion": "1.0.0",
+    "schema": {
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "$id": "https://insurance.invalid/schemas/PRD-17.risk.v1.schema.json",
+      "title": "PRD-17 synthetic risk input syntax",
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "organizationRef",
+        "scheduleBatchRef",
+        "equipmentClassCode",
+        "declaredValue",
+        "locationRef",
+        "useCode"
+      ],
+      "properties": {
+        "organizationRef": {
+          "type": "string",
+          "format": "uuid",
+          "description": "required; permitted commercial buyer context. Sensitivity: confidential. Error: ORGANIZATION_REQUIRED. Eligibility is contract-dependent."
+        },
+        "scheduleBatchRef": {
+          "type": "string",
+          "format": "uuid",
+          "description": "required; approved stable equipment row IDs. Sensitivity: restricted. Error: EQUIPMENT_SCHEDULE_INVALID. Eligibility is contract-dependent."
+        },
+        "equipmentClassCode": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 80,
+          "description": "required per row; carrier-mapped category <= 80. Sensitivity: internal. Error: EQUIPMENT_CLASS_UNMAPPED. Eligibility is contract-dependent."
+        },
+        "declaredValue": {
+          "type": "string",
+          "pattern": "^[1-9][0-9]{0,17}$",
+          "description": "required per row; positive with valuation basis. Sensitivity: financial. Error: EQUIPMENT_VALUE_INVALID. Eligibility is contract-dependent."
+        },
+        "locationRef": {
+          "type": "string",
+          "format": "uuid",
+          "description": "required per row; authorized site reference. Sensitivity: restricted. Error: LOCATION_REQUIRED. Eligibility is contract-dependent."
+        },
+        "useCode": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 60,
+          "description": "required per row; declared business use <= 60. Sensitivity: confidential. Error: USE_UNMAPPED. Eligibility is contract-dependent."
+        },
+        "maintenanceEvidenceRef": {
+          "type": "string",
+          "format": "uuid",
+          "description": "conditional; current service evidence. Sensitivity: restricted. Error: MAINTENANCE_REQUIRED. Eligibility is contract-dependent."
+        }
+      },
+      "description": "Strict syntax baseline. Conditional predicates, cross-field dates/sums/relationships and actual carrier eligibility require the versioned application validator; passing this schema is not underwriting acceptance."
+    },
+    "example": {
+      "equipmentClassCode": "SYNTH-SERVER",
+      "declaredValue": "800000000",
+      "useCode": "SYNTH-DATA-PROCESSING",
+      "organizationRef": "00000000-0000-4000-8000-000000001701",
+      "scheduleBatchRef": "00000000-0000-4000-8000-000000001702",
+      "locationRef": "00000000-0000-4000-8000-000000001705"
+    },
+    "synthetic": true,
+    "liveEnabled": false,
+    "sourceSha256": "842612efdc5657c11314620a4268ec5bc59a599a5e14387552ffc92b3b2d2630"
+  },
+  {
+    "id": "PRD-18",
+    "title": "Engineering",
+    "channels": [
+      "commercial",
+      "reseller"
+    ],
+    "kind": "project-specific assisted commercial cover",
+    "schemaVersion": "1.0.0",
+    "schema": {
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "$id": "https://insurance.invalid/schemas/PRD-18.risk.v1.schema.json",
+      "title": "PRD-18 synthetic risk input syntax",
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "projectName",
+        "projectTypeCode",
+        "siteRefs",
+        "insuredValue",
+        "projectStart",
+        "projectEnd",
+        "contractorPartyRefs",
+        "technicalDossierRef"
+      ],
+      "properties": {
+        "projectName": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 200,
+          "description": "required; 1–200 NFC characters. Sensitivity: confidential. Error: PROJECT_NAME_REQUIRED. Eligibility is contract-dependent."
+        },
+        "projectTypeCode": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 80,
+          "description": "required; carrier-mapped project category <= 80. Sensitivity: confidential. Error: PROJECT_TYPE_UNMAPPED. Eligibility is contract-dependent."
+        },
+        "siteRefs": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 100,
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "description": "required; 1–100 authorized locations. Sensitivity: restricted. Error: PROJECT_SITE_REQUIRED. Eligibility is contract-dependent."
+        },
+        "insuredValue": {
+          "type": "string",
+          "pattern": "^[1-9][0-9]{0,17}$",
+          "description": "required; positive; value components separate. Sensitivity: financial. Error: PROJECT_VALUE_INVALID. Eligibility is contract-dependent."
+        },
+        "projectStart": {
+          "type": "string",
+          "format": "date",
+          "description": "required; explicit site-local date. Sensitivity: confidential. Error: PROJECT_PERIOD_INVALID. Eligibility is contract-dependent."
+        },
+        "projectEnd": {
+          "type": "string",
+          "format": "date",
+          "description": "required; not before start. Sensitivity: confidential. Error: PROJECT_PERIOD_INVALID. Eligibility is contract-dependent."
+        },
+        "contractorPartyRefs": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 100,
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "description": "required; 1–100 role-linked participants. Sensitivity: confidential. Error: CONTRACTOR_ROLE_REQUIRED. Eligibility is contract-dependent."
+        },
+        "technicalDossierRef": {
+          "type": "string",
+          "format": "uuid",
+          "description": "required for underwriting; versioned design/scope/evidence bundle. Sensitivity: highly restricted. Error: TECHNICAL_DOSSIER_REQUIRED. Eligibility is contract-dependent."
+        }
+      },
+      "description": "Strict syntax baseline. Conditional predicates, cross-field dates/sums/relationships and actual carrier eligibility require the versioned application validator; passing this schema is not underwriting acceptance."
+    },
+    "example": {
+      "projectName": "Synthetic Bridge Project",
+      "projectTypeCode": "SYNTH-CIVIL",
+      "insuredValue": "200000000000",
+      "projectStart": "2027-01-01",
+      "projectEnd": "2028-06-30",
+      "siteRefs": [
+        "00000000-0000-4000-8000-000000001803"
+      ],
+      "contractorPartyRefs": [
+        "00000000-0000-4000-8000-000000001807"
+      ],
+      "technicalDossierRef": "00000000-0000-4000-8000-000000001808"
+    },
+    "synthetic": true,
+    "liveEnabled": false,
+    "sourceSha256": "e64a5ba45304cee32841afbbb380f69b8566854621eb3ed620dde399801adfed"
+  },
+  {
+    "id": "PRD-19",
+    "title": "Cargo / transit",
+    "channels": [
+      "commercial",
+      "reseller",
+      "b2c"
+    ],
+    "kind": "shipment or contract-defined open-cover declaration",
+    "schemaVersion": "1.0.0",
+    "schema": {
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "$id": "https://insurance.invalid/schemas/PRD-19.risk.v1.schema.json",
+      "title": "PRD-19 synthetic risk input syntax",
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "cargoDescription",
+        "commodityCode",
+        "insuredValue",
+        "originCode",
+        "destinationCode",
+        "transportMode",
+        "shipmentStart"
+      ],
+      "properties": {
+        "cargoDescription": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 1000,
+          "description": "required; 1–1000 NFC characters; no embedded files. Sensitivity: confidential. Error: CARGO_DESCRIPTION_REQUIRED. Eligibility is contract-dependent."
+        },
+        "commodityCode": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 80,
+          "description": "required; contract-mapped cargo category <= 80. Sensitivity: confidential. Error: COMMODITY_UNMAPPED. Eligibility is contract-dependent."
+        },
+        "insuredValue": {
+          "type": "string",
+          "pattern": "^[1-9][0-9]{0,17}$",
+          "description": "required; positive; value/currency/valuation basis explicit. Sensitivity: financial. Error: CARGO_VALUE_INVALID. Eligibility is contract-dependent."
+        },
+        "originCode": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 40,
+          "description": "required; approved location code <= 80. Sensitivity: confidential. Error: ROUTE_LOCATION_INVALID. Eligibility is contract-dependent."
+        },
+        "destinationCode": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 40,
+          "description": "required; approved location code <= 80. Sensitivity: confidential. Error: ROUTE_LOCATION_INVALID. Eligibility is contract-dependent."
+        },
+        "transportMode": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 40,
+          "description": "required; one or multiple legs explicitly modeled. Sensitivity: internal. Error: TRANSPORT_MODE_UNAVAILABLE. Eligibility is contract-dependent."
+        },
+        "shipmentStart": {
+          "type": "string",
+          "format": "date",
+          "description": "required; route-local effective semantics. Sensitivity: confidential. Error: SHIPMENT_DATE_INVALID. Eligibility is contract-dependent."
+        },
+        "transportEvidenceRef": {
+          "type": "string",
+          "format": "uuid",
+          "description": "conditional; invoice/packing/transport document refs. Sensitivity: restricted. Error: TRANSPORT_EVIDENCE_REQUIRED. Eligibility is contract-dependent."
+        }
+      },
+      "description": "Strict syntax baseline. Conditional predicates, cross-field dates/sums/relationships and actual carrier eligibility require the versioned application validator; passing this schema is not underwriting acceptance."
+    },
+    "example": {
+      "cargoDescription": "Synthetic machine components",
+      "commodityCode": "SYNTH-MACHINERY",
+      "insuredValue": "750000000",
+      "originCode": "SYNTH-ORIGIN",
+      "destinationCode": "SYNTH-DESTINATION",
+      "transportMode": "SYNTH-ROAD",
+      "shipmentStart": "2027-05-01"
+    },
+    "synthetic": true,
+    "liveEnabled": false,
+    "sourceSha256": "b0e675dde227901485f22e7731078fbb59c6cbd7d21a80e94663a59001f839fd"
+  },
+  {
+    "id": "PRD-20",
+    "title": "Commercial property / assets",
+    "channels": [
+      "commercial",
+      "corporate",
+      "reseller"
+    ],
+    "kind": "multi-site scheduled commercial cover",
+    "schemaVersion": "1.0.0",
+    "schema": {
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "$id": "https://insurance.invalid/schemas/PRD-20.risk.v1.schema.json",
+      "title": "PRD-20 synthetic risk input syntax",
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "organizationRef",
+        "siteScheduleRef",
+        "assetScheduleRef",
+        "occupancyCodes",
+        "totalDeclaredValue",
+        "valuationBasisCode"
+      ],
+      "properties": {
+        "organizationRef": {
+          "type": "string",
+          "format": "uuid",
+          "description": "required; active permitted organization. Sensitivity: confidential. Error: ORGANIZATION_REQUIRED. Eligibility is contract-dependent."
+        },
+        "siteScheduleRef": {
+          "type": "string",
+          "format": "uuid",
+          "description": "required; approved versioned site rows. Sensitivity: restricted. Error: SITE_SCHEDULE_REQUIRED. Eligibility is contract-dependent."
+        },
+        "assetScheduleRef": {
+          "type": "string",
+          "format": "uuid",
+          "description": "required; approved values/interests by asset/site. Sensitivity: restricted. Error: ASSET_SCHEDULE_REQUIRED. Eligibility is contract-dependent."
+        },
+        "occupancyCodes": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 100,
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 100
+          },
+          "description": "required by site; 1–100 distinct mapped use codes. Sensitivity: confidential. Error: OCCUPANCY_UNMAPPED. Eligibility is contract-dependent."
+        },
+        "totalDeclaredValue": {
+          "type": "string",
+          "pattern": "^(0|[1-9][0-9]{0,17})$",
+          "description": "required; exact sum validated against approved schedule. Sensitivity: financial. Error: SCHEDULE_TOTAL_MISMATCH. Eligibility is contract-dependent."
+        },
+        "valuationBasisCode": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 60,
+          "description": "required; contract-offered basis <= 60. Sensitivity: financial. Error: VALUATION_BASIS_REQUIRED. Eligibility is contract-dependent."
+        },
+        "riskSurveyRefs": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 100,
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "description": "conditional; site-bound current evidence. Sensitivity: highly restricted. Error: RISK_SURVEY_REQUIRED. Eligibility is contract-dependent."
+        }
+      },
+      "description": "Strict syntax baseline. Conditional predicates, cross-field dates/sums/relationships and actual carrier eligibility require the versioned application validator; passing this schema is not underwriting acceptance."
+    },
+    "example": {
+      "occupancyCodes": [
+        "SYNTH-WAREHOUSE"
+      ],
+      "totalDeclaredValue": "500000000000",
+      "valuationBasisCode": "SYNTH-REPLACEMENT",
+      "organizationRef": "00000000-0000-4000-8000-000000002001",
+      "siteScheduleRef": "00000000-0000-4000-8000-000000002002",
+      "assetScheduleRef": "00000000-0000-4000-8000-000000002003"
+    },
+    "synthetic": true,
+    "liveEnabled": false,
+    "sourceSha256": "e0e4524bb6f5b764e5eec2cb3e3b30a44faceecd23b912ce9afabb97a06d25fe"
+  },
+  {
+    "id": "PRD-21",
+    "title": "Other liability",
+    "channels": [
+      "b2c",
+      "commercial",
+      "corporate",
+      "reseller"
+    ],
+    "kind": "assisted professional/public/employer liability variants",
+    "schemaVersion": "1.0.0",
+    "schema": {
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "$id": "https://insurance.invalid/schemas/PRD-21.risk.v1.schema.json",
+      "title": "PRD-21 synthetic risk input syntax",
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "liabilityClassCode",
+        "insuredPartyRef",
+        "operationsDescription",
+        "exposureMeasures",
+        "limitOption"
+      ],
+      "properties": {
+        "liabilityClassCode": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 80,
+          "description": "required; approved professional/public/employer classification <= 80. Sensitivity: internal. Error: LIABILITY_CLASS_UNAVAILABLE. Eligibility is contract-dependent."
+        },
+        "insuredPartyRef": {
+          "type": "string",
+          "format": "uuid",
+          "description": "required; authorized person or legal entity. Sensitivity: restricted. Error: INSURED_AUTHORITY_REQUIRED. Eligibility is contract-dependent."
+        },
+        "operationsDescription": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 2000,
+          "description": "required; 1–2000 NFC characters. Sensitivity: confidential. Error: OPERATIONS_REQUIRED. Eligibility is contract-dependent."
+        },
+        "exposureMeasures": {
+          "type": "object",
+          "minProperties": 1,
+          "maxProperties": 100,
+          "additionalProperties": {
+            "oneOf": [
+              {
+                "type": "number",
+                "minimum": 0
+              },
+              {
+                "type": "string",
+                "pattern": "^[0-9]{1,18}(\\.[0-9]{1,6})?$"
+              }
+            ]
+          },
+          "description": "required by class; only versioned named nonnegative decimal measures. Sensitivity: confidential. Error: EXPOSURE_SCHEMA_INVALID. Eligibility is contract-dependent."
+        },
+        "locationRefs": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 100,
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "description": "conditional by class; 1–100 permitted locations. Sensitivity: restricted. Error: LOCATION_REQUIRED. Eligibility is contract-dependent."
+        },
+        "limitOption": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 40,
+          "description": "required; approved occurrence/aggregate structure. Sensitivity: financial. Error: LIMIT_UNAVAILABLE. Eligibility is contract-dependent."
+        },
+        "priorClaimsRef": {
+          "type": "string",
+          "format": "uuid",
+          "description": "conditional by underwriting; restricted declaration version. Sensitivity: highly restricted. Error: CLAIM_HISTORY_REQUIRED. Eligibility is contract-dependent."
+        }
+      },
+      "description": "Strict syntax baseline. Conditional predicates, cross-field dates/sums/relationships and actual carrier eligibility require the versioned application validator; passing this schema is not underwriting acceptance."
+    },
+    "example": {
+      "liabilityClassCode": "SYNTH-PUBLIC-LIABILITY",
+      "operationsDescription": "Synthetic warehouse visitors",
+      "exposureMeasures": {
+        "visitorCount": 100
+      },
+      "limitOption": "SYNTH-LIABILITY-LIMIT",
+      "insuredPartyRef": "00000000-0000-4000-8000-000000002102"
+    },
+    "synthetic": true,
+    "liveEnabled": false,
+    "sourceSha256": "f457c3a3aeb1cb3b3a9e43e5298d8cd4613902d2504856e885f76270b149f794"
+  },
+  {
+    "id": "PRD-22",
+    "title": "Dental implant",
+    "channels": [
+      "b2c",
+      "corporate",
+      "reseller",
+      "b2b2c"
+    ],
+    "kind": "contract-defined health benefit, device protection or rider; classification explicit",
+    "schemaVersion": "1.0.0",
+    "schema": {
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "$id": "https://insurance.invalid/schemas/PRD-22.risk.v1.schema.json",
+      "title": "PRD-22 synthetic risk input syntax",
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "patientRef",
+        "treatmentCode",
+        "providerRef",
+        "benefitPlanCode"
+      ],
+      "properties": {
+        "patientRef": {
+          "type": "string",
+          "format": "uuid",
+          "description": "required; patient/guardian authority for health purpose. Sensitivity: highly restricted. Error: PATIENT_AUTHORITY_REQUIRED. Eligibility is contract-dependent."
+        },
+        "treatmentCode": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 80,
+          "description": "required; contract-approved category <= 80. Sensitivity: highly restricted. Error: TREATMENT_NOT_ELIGIBLE. Eligibility is contract-dependent."
+        },
+        "providerRef": {
+          "type": "string",
+          "format": "uuid",
+          "description": "required; approved provider/network revision. Sensitivity: restricted. Error: PROVIDER_NOT_ELIGIBLE. Eligibility is contract-dependent."
+        },
+        "deviceModelCode": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 80,
+          "description": "conditional by contract; approved device category <= 80. Sensitivity: restricted. Error: DEVICE_NOT_ELIGIBLE. Eligibility is contract-dependent."
+        },
+        "treatmentDate": {
+          "type": "string",
+          "format": "date",
+          "description": "conditional before acceptance; explicit proposed/performed status. Sensitivity: highly restricted. Error: TREATMENT_DATE_INVALID. Eligibility is contract-dependent."
+        },
+        "clinicalEvidenceRef": {
+          "type": "string",
+          "format": "uuid",
+          "description": "conditional for underwriting; purpose-scoped evidence, restricted review. Sensitivity: highly restricted. Error: CLINICAL_EVIDENCE_REQUIRED. Eligibility is contract-dependent."
+        },
+        "benefitPlanCode": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 40,
+          "description": "required; approved benefit/exclusion version. Sensitivity: internal. Error: BENEFIT_PLAN_UNAVAILABLE. Eligibility is contract-dependent."
+        }
+      },
+      "description": "Strict syntax baseline. Conditional predicates, cross-field dates/sums/relationships and actual carrier eligibility require the versioned application validator; passing this schema is not underwriting acceptance."
+    },
+    "example": {
+      "treatmentCode": "SYNTH-IMPLANT-A",
+      "deviceModelCode": "SYNTH-IMPLANT-MODEL",
+      "treatmentDate": "2027-06-01",
+      "benefitPlanCode": "SYNTH-DENTAL-PLAN",
+      "patientRef": "00000000-0000-4000-8000-000000002201",
+      "providerRef": "00000000-0000-4000-8000-000000002203"
+    },
+    "synthetic": true,
+    "liveEnabled": false,
+    "sourceSha256": "ed248f4c957638e754d0e1130d50170646ea57257cdc008bef6d0ecc01d942be"
+  },
+  {
+    "id": "PRD-23",
+    "title": "War-related property coverage",
+    "channels": [
+      "b2c",
+      "commercial",
+      "reseller"
+    ],
+    "kind": "contract-defined standalone/rider only; live availability unestablished",
+    "schemaVersion": "1.0.0",
+    "schema": {
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "$id": "https://insurance.invalid/schemas/PRD-23.risk.v1.schema.json",
+      "title": "PRD-23 synthetic risk input syntax",
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "coverageMode",
+        "propertyRef",
+        "eligibleTerritoryCode",
+        "insuredValue",
+        "perilDefinitionVersion",
+        "authorityEvidenceRef"
+      ],
+      "properties": {
+        "coverageMode": {
+          "type": "string",
+          "enum": [
+            "standalone",
+            "rider"
+          ],
+          "description": "required; standalone or rider only if contract supports. Sensitivity: internal. Error: WAR_COVER_MODE_UNAVAILABLE. Eligibility is contract-dependent."
+        },
+        "basePolicyOrQuoteRef": {
+          "type": "string",
+          "format": "uuid",
+          "description": "required for rider; compatible approved property interest. Sensitivity: confidential. Error: BASE_POLICY_INCOMPATIBLE. Eligibility is contract-dependent."
+        },
+        "propertyRef": {
+          "type": "string",
+          "format": "uuid",
+          "description": "required; authorized property/location. Sensitivity: restricted. Error: PROPERTY_AUTHORITY_REQUIRED. Eligibility is contract-dependent."
+        },
+        "eligibleTerritoryCode": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 80,
+          "description": "required; explicit contract-mapped geography <= 80. Sensitivity: restricted. Error: TERRITORY_NOT_APPROVED. Eligibility is contract-dependent."
+        },
+        "insuredValue": {
+          "type": "string",
+          "pattern": "^[1-9][0-9]{0,17}$",
+          "description": "required; positive with explicit valuation basis. Sensitivity: financial. Error: VALUE_INVALID. Eligibility is contract-dependent."
+        },
+        "perilDefinitionVersion": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 100,
+          "description": "required; approved exact wording/version <= 100. Sensitivity: restricted. Error: PERIL_DEFINITION_UNAPPROVED. Eligibility is contract-dependent."
+        },
+        "authorityEvidenceRef": {
+          "type": "string",
+          "format": "uuid",
+          "description": "required before any live offer; reviewed carrier/commercial/legal authority record. Sensitivity: restricted. Error: LIVE_AUTHORITY_MISSING. Eligibility is contract-dependent."
+        }
+      },
+      "description": "Strict syntax baseline. Conditional predicates, cross-field dates/sums/relationships and actual carrier eligibility require the versioned application validator; passing this schema is not underwriting acceptance.",
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "coverageMode": {
+                "const": "rider"
+              }
+            },
+            "required": [
+              "coverageMode"
+            ]
+          },
+          "then": {
+            "required": [
+              "basePolicyOrQuoteRef"
+            ]
+          }
+        }
+      ]
+    },
+    "example": {
+      "coverageMode": "rider",
+      "eligibleTerritoryCode": "SYNTH-TERRITORY-A",
+      "insuredValue": "9000000000",
+      "perilDefinitionVersion": "SYNTH-WAR-DEFINITION-1",
+      "basePolicyOrQuoteRef": "00000000-0000-4000-8000-000000002302",
+      "propertyRef": "00000000-0000-4000-8000-000000002303",
+      "authorityEvidenceRef": "00000000-0000-4000-8000-000000002307"
+    },
+    "synthetic": true,
+    "liveEnabled": false,
+    "sourceSha256": "bad953832574bf5ccc30aca11e7d9e9a2eab93ccdb0318d9dda0a873dbe5e617"
+  },
+  {
+    "id": "PRD-24",
+    "title": "Fleet / other group insurance",
+    "channels": [
+      "corporate",
+      "commercial",
+      "reseller",
+      "b2b2c"
+    ],
+    "kind": "master contract with schedules/certificates where supported",
+    "schemaVersion": "1.0.0",
+    "schema": {
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "$id": "https://insurance.invalid/schemas/PRD-24.risk.v1.schema.json",
+      "title": "PRD-24 synthetic risk input syntax",
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "organizationRef",
+        "groupTypeCode",
+        "scheduleBatchRef",
+        "underlyingProductId",
+        "effectiveDate",
+        "allocationCode",
+        "certificateMode",
+        "proposalVersion"
+      ],
+      "properties": {
+        "organizationRef": {
+          "type": "string",
+          "format": "uuid",
+          "description": "required; authorized group buyer context. Sensitivity: confidential. Error: ORGANIZATION_REQUIRED. Eligibility is contract-dependent."
+        },
+        "groupTypeCode": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 40,
+          "description": "required; approved vehicle/asset/person schedule type. Sensitivity: internal. Error: GROUP_TYPE_UNAVAILABLE. Eligibility is contract-dependent."
+        },
+        "scheduleBatchRef": {
+          "type": "string",
+          "format": "uuid",
+          "description": "required; approved row identities/schema/version. Sensitivity: restricted. Error: SCHEDULE_NOT_APPROVED. Eligibility is contract-dependent."
+        },
+        "underlyingProductId": {
+          "type": "string",
+          "enum": [
+            "PRD-01",
+            "PRD-02",
+            "PRD-03",
+            "PRD-04",
+            "PRD-05",
+            "PRD-06",
+            "PRD-07",
+            "PRD-08",
+            "PRD-09",
+            "PRD-10",
+            "PRD-11",
+            "PRD-12",
+            "PRD-13",
+            "PRD-14",
+            "PRD-15",
+            "PRD-16",
+            "PRD-17",
+            "PRD-18",
+            "PRD-19",
+            "PRD-20",
+            "PRD-21",
+            "PRD-22",
+            "PRD-23"
+          ],
+          "description": "required per row/group; approved PRD family; no recursive PRD-24. Sensitivity: internal. Error: UNDERLYING_PRODUCT_INVALID. Eligibility is contract-dependent."
+        },
+        "effectiveDate": {
+          "type": "string",
+          "format": "date",
+          "description": "required per change; contract timezone and effective-window validation. Sensitivity: restricted. Error: GROUP_EFFECTIVE_DATE_INVALID. Eligibility is contract-dependent."
+        },
+        "allocationCode": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 60,
+          "description": "required for billing; branch/cost-center mapping <= 60. Sensitivity: financial. Error: ALLOCATION_INVALID. Eligibility is contract-dependent."
+        },
+        "certificateMode": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 40,
+          "description": "required; master-only or individual if contract permits. Sensitivity: internal. Error: CERTIFICATE_MODE_UNAVAILABLE. Eligibility is contract-dependent."
+        },
+        "proposalVersion": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 2147483647,
+          "description": "required at commitment; positive approved master/schedule revision. Sensitivity: confidential. Error: GROUP_APPROVAL_STALE. Eligibility is contract-dependent."
+        }
+      },
+      "description": "Strict syntax baseline. Conditional predicates, cross-field dates/sums/relationships and actual carrier eligibility require the versioned application validator; passing this schema is not underwriting acceptance."
+    },
+    "example": {
+      "groupTypeCode": "SYNTH-FLEET",
+      "underlyingProductId": "PRD-01",
+      "effectiveDate": "2027-01-01",
+      "allocationCode": "SYNTH-COST-A",
+      "certificateMode": "SYNTH-INDIVIDUAL",
+      "proposalVersion": 2,
+      "organizationRef": "00000000-0000-4000-8000-000000002401",
+      "scheduleBatchRef": "00000000-0000-4000-8000-000000002403"
+    },
+    "synthetic": true,
+    "liveEnabled": false,
+    "sourceSha256": "27ee9e201c2d6d6ac134066ecdf0ad8f34e27da311752786cf44cb7617a4ac83"
+  }
+]

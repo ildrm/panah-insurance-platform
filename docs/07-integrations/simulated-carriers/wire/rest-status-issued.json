@@ -1,0 +1,14 @@
+{
+  "kind": "status",
+  "clientApplicationRef": "synthetic-order-001",
+  "externalRef": "SIM-REST-S-1",
+  "submissionState": "acknowledged",
+  "issuanceState": "issued",
+  "observedAt": "2026-10-28T08:00:02Z",
+  "policy": {
+    "policyRef": "SIM-REST-P-1",
+    "effectiveFrom": "2026-11-01",
+    "effectiveUntilExclusive": "2026-11-02",
+    "documentRef": "SIM-DOC-1"
+  }
+}

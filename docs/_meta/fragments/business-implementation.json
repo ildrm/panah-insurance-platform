@@ -1,0 +1,1558 @@
+{
+  "owner_roles": [
+    "R02",
+    "R03",
+    "R08",
+    "R10",
+    "R11",
+    "R12",
+    "R13",
+    "R20"
+  ],
+  "version": "1.0.0",
+  "updated": "2026-10-28",
+  "revision": "4c395c7b7976ec32edeca243a516fd6cc0fec886",
+  "scope": "Business backend implementation only; no whole-project, UI, performance or live-certification completion claim",
+  "requirements": [
+    {
+      "id": "INS-01-R001",
+      "state": "in_progress",
+      "rollout": "local-synthetic-only;live-disabled",
+      "verified_backend_behaviors": [
+        "Immutable24-product catalog, schema metadata, assisted classification, live-disabled markers"
+      ],
+      "missing": [
+        "Hierarchical category tree, featured products, approved plan publication and full catalog search remain incomplete"
+      ],
+      "ui_status": "Parent-owned integration and browser acceptance must be checked; backend test is not complete leaf evidence",
+      "code_paths": [
+        "packages/business/src/index.ts",
+        "packages/business/src/store.ts",
+        "packages/business/src/catalog.ts",
+        "packages/business/src/evidence.ts",
+        "packages/business/migrations/001_business.sql"
+      ],
+      "test_paths": [
+        "tests/business.test.ts"
+      ]
+    },
+    {
+      "id": "INS-01-R003",
+      "state": "in_progress",
+      "rollout": "local-synthetic-only;live-disabled",
+      "verified_backend_behaviors": [
+        "Immutable24-product catalog, schema metadata, assisted classification, live-disabled markers"
+      ],
+      "missing": [
+        "Hierarchical category tree, featured products, approved plan publication and full catalog search remain incomplete"
+      ],
+      "ui_status": "Parent-owned integration and browser acceptance must be checked; backend test is not complete leaf evidence",
+      "code_paths": [
+        "packages/business/src/index.ts",
+        "packages/business/src/store.ts",
+        "packages/business/src/catalog.ts",
+        "packages/business/src/evidence.ts",
+        "packages/business/migrations/001_business.sql"
+      ],
+      "test_paths": [
+        "tests/business.test.ts"
+      ]
+    },
+    {
+      "id": "INS-02-R001",
+      "state": "in_progress",
+      "rollout": "local-synthetic-only;live-disabled",
+      "verified_backend_behaviors": [
+        "Versioned family schemas, persisted private drafts, optimistic answer updates, quote invalidation"
+      ],
+      "missing": [
+        "Declaration consent/version acceptance, conditional UI steps, draft migrations and document requirements UI remain incomplete"
+      ],
+      "ui_status": "Parent-owned integration and browser acceptance must be checked; backend test is not complete leaf evidence",
+      "code_paths": [
+        "packages/business/src/index.ts",
+        "packages/business/src/store.ts",
+        "packages/business/src/catalog.ts",
+        "packages/business/src/evidence.ts",
+        "packages/business/migrations/001_business.sql"
+      ],
+      "test_paths": [
+        "tests/business.test.ts"
+      ]
+    },
+    {
+      "id": "INS-02-R002",
+      "state": "in_progress",
+      "rollout": "local-synthetic-only;live-disabled",
+      "verified_backend_behaviors": [
+        "Versioned family schemas, persisted private drafts, optimistic answer updates, quote invalidation"
+      ],
+      "missing": [
+        "Declaration consent/version acceptance, conditional UI steps, draft migrations and document requirements UI remain incomplete"
+      ],
+      "ui_status": "Parent-owned integration and browser acceptance must be checked; backend test is not complete leaf evidence",
+      "code_paths": [
+        "packages/business/src/index.ts",
+        "packages/business/src/store.ts",
+        "packages/business/src/catalog.ts",
+        "packages/business/src/evidence.ts",
+        "packages/business/migrations/001_business.sql"
+      ],
+      "test_paths": [
+        "tests/business.test.ts"
+      ]
+    },
+    {
+      "id": "INS-03-R001",
+      "state": "in_progress",
+      "rollout": "local-synthetic-only;live-disabled",
+      "verified_backend_behaviors": [
+        "Owner/context-scoped person, vehicle, property and device profiles"
+      ],
+      "missing": [
+        "Adult dependent/guardian delegation, ownership transfer, field dictionaries and prior-policy reuse consent remain incomplete"
+      ],
+      "ui_status": "Parent-owned integration and browser acceptance must be checked; backend test is not complete leaf evidence",
+      "code_paths": [
+        "packages/business/src/index.ts",
+        "packages/business/src/store.ts",
+        "packages/business/src/catalog.ts",
+        "packages/business/src/evidence.ts",
+        "packages/business/migrations/001_business.sql"
+      ],
+      "test_paths": [
+        "tests/business.test.ts"
+      ]
+    },
+    {
+      "id": "INS-03-R002",
+      "state": "in_progress",
+      "rollout": "local-synthetic-only;live-disabled",
+      "verified_backend_behaviors": [
+        "Owner/context-scoped person, vehicle, property and device profiles"
+      ],
+      "missing": [
+        "Adult dependent/guardian delegation, ownership transfer, field dictionaries and prior-policy reuse consent remain incomplete"
+      ],
+      "ui_status": "Parent-owned integration and browser acceptance must be checked; backend test is not complete leaf evidence",
+      "code_paths": [
+        "packages/business/src/index.ts",
+        "packages/business/src/store.ts",
+        "packages/business/src/catalog.ts",
+        "packages/business/src/evidence.ts",
+        "packages/business/migrations/001_business.sql"
+      ],
+      "test_paths": [
+        "tests/business.test.ts"
+      ]
+    },
+    {
+      "id": "INS-05-R001",
+      "state": "in_progress",
+      "rollout": "local-synthetic-only;live-disabled",
+      "verified_backend_behaviors": [
+        "Provider gateway invoked outside transactions, immutable risk version, approved census count projection, persisted private offers and expiry on risk edit"
+      ],
+      "missing": [
+        "All-provider deadline recovery and actual insurer contract/rating certification are not established by business tests"
+      ],
+      "ui_status": "Parent-owned integration and browser acceptance must be checked; backend test is not complete leaf evidence",
+      "code_paths": [
+        "packages/business/src/index.ts",
+        "packages/business/src/store.ts",
+        "packages/business/src/catalog.ts",
+        "packages/business/src/evidence.ts",
+        "packages/business/migrations/001_business.sql"
+      ],
+      "test_paths": [
+        "tests/business.test.ts"
+      ]
+    },
+    {
+      "id": "INS-05-R002",
+      "state": "in_progress",
+      "rollout": "local-synthetic-only;live-disabled",
+      "verified_backend_behaviors": [
+        "Provider gateway invoked outside transactions, immutable risk version, approved census count projection, persisted private offers and expiry on risk edit"
+      ],
+      "missing": [
+        "All-provider deadline recovery and actual insurer contract/rating certification are not established by business tests"
+      ],
+      "ui_status": "Parent-owned integration and browser acceptance must be checked; backend test is not complete leaf evidence",
+      "code_paths": [
+        "packages/business/src/index.ts",
+        "packages/business/src/store.ts",
+        "packages/business/src/catalog.ts",
+        "packages/business/src/evidence.ts",
+        "packages/business/migrations/001_business.sql"
+      ],
+      "test_paths": [
+        "tests/business.test.ts"
+      ]
+    },
+    {
+      "id": "INS-05-R003",
+      "state": "in_progress",
+      "rollout": "local-synthetic-only;live-disabled",
+      "verified_backend_behaviors": [
+        "Provider gateway invoked outside transactions, immutable risk version, approved census count projection, persisted private offers and expiry on risk edit"
+      ],
+      "missing": [
+        "All-provider deadline recovery and actual insurer contract/rating certification are not established by business tests"
+      ],
+      "ui_status": "Parent-owned integration and browser acceptance must be checked; backend test is not complete leaf evidence",
+      "code_paths": [
+        "packages/business/src/index.ts",
+        "packages/business/src/store.ts",
+        "packages/business/src/catalog.ts",
+        "packages/business/src/evidence.ts",
+        "packages/business/migrations/001_business.sql"
+      ],
+      "test_paths": [
+        "tests/business.test.ts"
+      ]
+    },
+    {
+      "id": "INS-08-R001",
+      "state": "in_progress",
+      "rollout": "local-synthetic-only;live-disabled",
+      "verified_backend_behaviors": [
+        "Version-pinned synthetic underwriting cases, assigned independent review, evidence requests and stale-risk purchase guard"
+      ],
+      "missing": [
+        "Real carrier authority, all eligibility/rating rules, reviewer queue assignment and complete underwriting UI remain incomplete"
+      ],
+      "ui_status": "Parent-owned integration and browser acceptance must be checked; backend test is not complete leaf evidence",
+      "code_paths": [
+        "packages/business/src/index.ts",
+        "packages/business/src/store.ts",
+        "packages/business/src/catalog.ts",
+        "packages/business/src/evidence.ts",
+        "packages/business/migrations/001_business.sql"
+      ],
+      "test_paths": [
+        "tests/business.test.ts"
+      ]
+    },
+    {
+      "id": "INS-08-R002",
+      "state": "in_progress",
+      "rollout": "local-synthetic-only;live-disabled",
+      "verified_backend_behaviors": [
+        "Version-pinned synthetic underwriting cases, assigned independent review, evidence requests and stale-risk purchase guard"
+      ],
+      "missing": [
+        "Real carrier authority, all eligibility/rating rules, reviewer queue assignment and complete underwriting UI remain incomplete"
+      ],
+      "ui_status": "Parent-owned integration and browser acceptance must be checked; backend test is not complete leaf evidence",
+      "code_paths": [
+        "packages/business/src/index.ts",
+        "packages/business/src/store.ts",
+        "packages/business/src/catalog.ts",
+        "packages/business/src/evidence.ts",
+        "packages/business/migrations/001_business.sql"
+      ],
+      "test_paths": [
+        "tests/business.test.ts"
+      ]
+    },
+    {
+      "id": "INS-08-R003",
+      "state": "in_progress",
+      "rollout": "local-synthetic-only;live-disabled",
+      "verified_backend_behaviors": [
+        "Version-pinned synthetic underwriting cases, assigned independent review, evidence requests and stale-risk purchase guard"
+      ],
+      "missing": [
+        "Real carrier authority, all eligibility/rating rules, reviewer queue assignment and complete underwriting UI remain incomplete"
+      ],
+      "ui_status": "Parent-owned integration and browser acceptance must be checked; backend test is not complete leaf evidence",
+      "code_paths": [
+        "packages/business/src/index.ts",
+        "packages/business/src/store.ts",
+        "packages/business/src/catalog.ts",
+        "packages/business/src/evidence.ts",
+        "packages/business/migrations/001_business.sql"
+      ],
+      "test_paths": [
+        "tests/business.test.ts"
+      ]
+    },
+    {
+      "id": "INS-09-R001",
+      "state": "in_progress",
+      "rollout": "local-synthetic-only;live-disabled",
+      "verified_backend_behaviors": [
+        "Case-scoped evidence manifests, fixed versioned synthetic checklist, retakes, independent optimistic review, expiry and vehicle-bound purchase guard"
+      ],
+      "missing": [
+        "In-person appointment linkage and capture provenance are incomplete; arbitrary real files remain quarantined without an approved scanning provider"
+      ],
+      "ui_status": "Parent-owned integration and browser acceptance must be checked; backend test is not complete leaf evidence",
+      "code_paths": [
+        "packages/business/src/index.ts",
+        "packages/business/src/store.ts",
+        "packages/business/src/catalog.ts",
+        "packages/business/src/evidence.ts",
+        "packages/business/migrations/001_business.sql"
+      ],
+      "test_paths": [
+        "tests/business.test.ts"
+      ]
+    },
+    {
+      "id": "INS-09-R002",
+      "state": "in_progress",
+      "rollout": "local-synthetic-only;live-disabled",
+      "verified_backend_behaviors": [
+        "Case-scoped evidence manifests, fixed versioned synthetic checklist, retakes, independent optimistic review, expiry and vehicle-bound purchase guard"
+      ],
+      "missing": [
+        "In-person appointment linkage and capture provenance are incomplete; arbitrary real files remain quarantined without an approved scanning provider"
+      ],
+      "ui_status": "Parent-owned integration and browser acceptance must be checked; backend test is not complete leaf evidence",
+      "code_paths": [
+        "packages/business/src/index.ts",
+        "packages/business/src/store.ts",
+        "packages/business/src/catalog.ts",
+        "packages/business/src/evidence.ts",
+        "packages/business/migrations/001_business.sql"
+      ],
+      "test_paths": [
+        "tests/business.test.ts"
+      ]
+    },
+    {
+      "id": "INS-09-R003",
+      "state": "in_progress",
+      "rollout": "local-synthetic-only;live-disabled",
+      "verified_backend_behaviors": [
+        "Case-scoped evidence manifests, fixed versioned synthetic checklist, retakes, independent optimistic review, expiry and vehicle-bound purchase guard"
+      ],
+      "missing": [
+        "In-person appointment linkage and capture provenance are incomplete; arbitrary real files remain quarantined without an approved scanning provider"
+      ],
+      "ui_status": "Parent-owned integration and browser acceptance must be checked; backend test is not complete leaf evidence",
+      "code_paths": [
+        "packages/business/src/index.ts",
+        "packages/business/src/store.ts",
+        "packages/business/src/catalog.ts",
+        "packages/business/src/evidence.ts",
+        "packages/business/migrations/001_business.sql"
+      ],
+      "test_paths": [
+        "tests/business.test.ts"
+      ]
+    },
+    {
+      "id": "INS-11-R001",
+      "state": "in_progress",
+      "rollout": "local-synthetic-only;live-disabled",
+      "verified_backend_behaviors": [
+        "All24 JSONSchema2020 risk templates and synthetic fixtures, beneficiary allocation/date/member consistency checks"
+      ],
+      "missing": [
+        "24 complete underwriting, rider/rating/servicing/provider variations are not implemented merely by passing schemas"
+      ],
+      "ui_status": "Parent-owned integration and browser acceptance must be checked; backend test is not complete leaf evidence",
+      "code_paths": [
+        "packages/business/src/index.ts",
+        "packages/business/src/store.ts",
+        "packages/business/src/catalog.ts",
+        "packages/business/src/evidence.ts",
+        "packages/business/migrations/001_business.sql"
+      ],
+      "test_paths": [
+        "tests/business.test.ts"
+      ]
+    },
+    {
+      "id": "INS-11-R002",
+      "state": "in_progress",
+      "rollout": "local-synthetic-only;live-disabled",
+      "verified_backend_behaviors": [
+        "All24 JSONSchema2020 risk templates and synthetic fixtures, beneficiary allocation/date/member consistency checks"
+      ],
+      "missing": [
+        "24 complete underwriting, rider/rating/servicing/provider variations are not implemented merely by passing schemas"
+      ],
+      "ui_status": "Parent-owned integration and browser acceptance must be checked; backend test is not complete leaf evidence",
+      "code_paths": [
+        "packages/business/src/index.ts",
+        "packages/business/src/store.ts",
+        "packages/business/src/catalog.ts",
+        "packages/business/src/evidence.ts",
+        "packages/business/migrations/001_business.sql"
+      ],
+      "test_paths": [
+        "tests/business.test.ts"
+      ]
+    },
+    {
+      "id": "INS-11-R003",
+      "state": "in_progress",
+      "rollout": "local-synthetic-only;live-disabled",
+      "verified_backend_behaviors": [
+        "All24 JSONSchema2020 risk templates and synthetic fixtures, beneficiary allocation/date/member consistency checks"
+      ],
+      "missing": [
+        "24 complete underwriting, rider/rating/servicing/provider variations are not implemented merely by passing schemas"
+      ],
+      "ui_status": "Parent-owned integration and browser acceptance must be checked; backend test is not complete leaf evidence",
+      "code_paths": [
+        "packages/business/src/index.ts",
+        "packages/business/src/store.ts",
+        "packages/business/src/catalog.ts",
+        "packages/business/src/evidence.ts",
+        "packages/business/migrations/001_business.sql"
+      ],
+      "test_paths": [
+        "tests/business.test.ts"
+      ]
+    },
+    {
+      "id": "ORG-04-R001",
+      "state": "in_progress",
+      "rollout": "local-synthetic-only;live-disabled",
+      "verified_backend_behaviors": [
+        "Census row previews/errors, explicit atomic/partial policy, independent approval, effective-period overlap checks, replay-safe bounded SQL apply"
+      ],
+      "missing": [
+        "File upload/parser/HR synchronization, resumable background chunks, effective removal/change UI and representative20000-row load evidence remain incomplete"
+      ],
+      "ui_status": "Parent-owned integration and browser acceptance must be checked; backend test is not complete leaf evidence",
+      "code_paths": [
+        "packages/business/src/index.ts",
+        "packages/business/src/store.ts",
+        "packages/business/src/catalog.ts",
+        "packages/business/src/evidence.ts",
+        "packages/business/migrations/001_business.sql"
+      ],
+      "test_paths": [
+        "tests/business.test.ts"
+      ]
+    },
+    {
+      "id": "ORG-04-R002",
+      "state": "in_progress",
+      "rollout": "local-synthetic-only;live-disabled",
+      "verified_backend_behaviors": [
+        "Census row previews/errors, explicit atomic/partial policy, independent approval, effective-period overlap checks, replay-safe bounded SQL apply"
+      ],
+      "missing": [
+        "File upload/parser/HR synchronization, resumable background chunks, effective removal/change UI and representative20000-row load evidence remain incomplete"
+      ],
+      "ui_status": "Parent-owned integration and browser acceptance must be checked; backend test is not complete leaf evidence",
+      "code_paths": [
+        "packages/business/src/index.ts",
+        "packages/business/src/store.ts",
+        "packages/business/src/catalog.ts",
+        "packages/business/src/evidence.ts",
+        "packages/business/migrations/001_business.sql"
+      ],
+      "test_paths": [
+        "tests/business.test.ts"
+      ]
+    },
+    {
+      "id": "ORG-04-R003",
+      "state": "in_progress",
+      "rollout": "local-synthetic-only;live-disabled",
+      "verified_backend_behaviors": [
+        "Census row previews/errors, explicit atomic/partial policy, independent approval, effective-period overlap checks, replay-safe bounded SQL apply"
+      ],
+      "missing": [
+        "File upload/parser/HR synchronization, resumable background chunks, effective removal/change UI and representative20000-row load evidence remain incomplete"
+      ],
+      "ui_status": "Parent-owned integration and browser acceptance must be checked; backend test is not complete leaf evidence",
+      "code_paths": [
+        "packages/business/src/index.ts",
+        "packages/business/src/store.ts",
+        "packages/business/src/catalog.ts",
+        "packages/business/src/evidence.ts",
+        "packages/business/migrations/001_business.sql"
+      ],
+      "test_paths": [
+        "tests/business.test.ts"
+      ]
+    },
+    {
+      "id": "SVC-02-R002",
+      "state": "in_progress",
+      "rollout": "local-synthetic-only;live-disabled",
+      "verified_backend_behaviors": [
+        "Renewal application linked to authorized predecessor and requiring fresh quotes"
+      ],
+      "missing": [
+        "Expiry cohorts/reminders, risk prefill mapping, group/fleet changes and attribution remain incomplete"
+      ],
+      "ui_status": "Parent-owned integration and browser acceptance must be checked; backend test is not complete leaf evidence",
+      "code_paths": [
+        "packages/business/src/index.ts",
+        "packages/business/src/store.ts",
+        "packages/business/src/catalog.ts",
+        "packages/business/src/evidence.ts",
+        "packages/business/migrations/001_business.sql"
+      ],
+      "test_paths": [
+        "tests/business.test.ts"
+      ]
+    },
+    {
+      "id": "SVC-04-R001",
+      "state": "in_progress",
+      "rollout": "local-synthetic-only;live-disabled",
+      "verified_backend_behaviors": [
+        "Authorized policy change request preserves previous policy state and waits for carrier"
+      ],
+      "missing": [
+        "Carrier endorsement/cancel execution, effective policy version replacement and financial refund handoff remain incomplete"
+      ],
+      "ui_status": "Parent-owned integration and browser acceptance must be checked; backend test is not complete leaf evidence",
+      "code_paths": [
+        "packages/business/src/index.ts",
+        "packages/business/src/store.ts",
+        "packages/business/src/catalog.ts",
+        "packages/business/src/evidence.ts",
+        "packages/business/migrations/001_business.sql"
+      ],
+      "test_paths": [
+        "tests/business.test.ts"
+      ]
+    },
+    {
+      "id": "SVC-04-R002",
+      "state": "in_progress",
+      "rollout": "local-synthetic-only;live-disabled",
+      "verified_backend_behaviors": [
+        "Authorized policy change request preserves previous policy state and waits for carrier"
+      ],
+      "missing": [
+        "Carrier endorsement/cancel execution, effective policy version replacement and financial refund handoff remain incomplete"
+      ],
+      "ui_status": "Parent-owned integration and browser acceptance must be checked; backend test is not complete leaf evidence",
+      "code_paths": [
+        "packages/business/src/index.ts",
+        "packages/business/src/store.ts",
+        "packages/business/src/catalog.ts",
+        "packages/business/src/evidence.ts",
+        "packages/business/migrations/001_business.sql"
+      ],
+      "test_paths": [
+        "tests/business.test.ts"
+      ]
+    },
+    {
+      "id": "SVC-04-R003",
+      "state": "in_progress",
+      "rollout": "local-synthetic-only;live-disabled",
+      "verified_backend_behaviors": [
+        "Authorized policy change request preserves previous policy state and waits for carrier"
+      ],
+      "missing": [
+        "Carrier endorsement/cancel execution, effective policy version replacement and financial refund handoff remain incomplete"
+      ],
+      "ui_status": "Parent-owned integration and browser acceptance must be checked; backend test is not complete leaf evidence",
+      "code_paths": [
+        "packages/business/src/index.ts",
+        "packages/business/src/store.ts",
+        "packages/business/src/catalog.ts",
+        "packages/business/src/evidence.ts",
+        "packages/business/migrations/001_business.sql"
+      ],
+      "test_paths": [
+        "tests/business.test.ts"
+      ]
+    },
+    {
+      "id": "SVC-06-R001",
+      "state": "in_progress",
+      "rollout": "local-synthetic-only;live-disabled",
+      "verified_backend_behaviors": [
+        "Confirmed coverage-interval claim intake, private evidence references, redacted employer-denied queues, explicit assigned-purpose detail audit"
+      ],
+      "missing": [
+        "Claimant party/place schemas, actual evidence attachments and authorized carrier submission/tracking remain incomplete"
+      ],
+      "ui_status": "Parent-owned integration and browser acceptance must be checked; backend test is not complete leaf evidence",
+      "code_paths": [
+        "packages/business/src/index.ts",
+        "packages/business/src/store.ts",
+        "packages/business/src/catalog.ts",
+        "packages/business/src/evidence.ts",
+        "packages/business/migrations/001_business.sql"
+      ],
+      "test_paths": [
+        "tests/business.test.ts"
+      ]
+    },
+    {
+      "id": "SVC-06-R002",
+      "state": "in_progress",
+      "rollout": "local-synthetic-only;live-disabled",
+      "verified_backend_behaviors": [
+        "Confirmed coverage-interval claim intake, private evidence references, redacted employer-denied queues, explicit assigned-purpose detail audit"
+      ],
+      "missing": [
+        "Claimant party/place schemas, actual evidence attachments and authorized carrier submission/tracking remain incomplete"
+      ],
+      "ui_status": "Parent-owned integration and browser acceptance must be checked; backend test is not complete leaf evidence",
+      "code_paths": [
+        "packages/business/src/index.ts",
+        "packages/business/src/store.ts",
+        "packages/business/src/catalog.ts",
+        "packages/business/src/evidence.ts",
+        "packages/business/migrations/001_business.sql"
+      ],
+      "test_paths": [
+        "tests/business.test.ts"
+      ]
+    },
+    {
+      "id": "SVC-06-R003",
+      "state": "in_progress",
+      "rollout": "local-synthetic-only;live-disabled",
+      "verified_backend_behaviors": [
+        "Confirmed coverage-interval claim intake, private evidence references, redacted employer-denied queues, explicit assigned-purpose detail audit"
+      ],
+      "missing": [
+        "Claimant party/place schemas, actual evidence attachments and authorized carrier submission/tracking remain incomplete"
+      ],
+      "ui_status": "Parent-owned integration and browser acceptance must be checked; backend test is not complete leaf evidence",
+      "code_paths": [
+        "packages/business/src/index.ts",
+        "packages/business/src/store.ts",
+        "packages/business/src/catalog.ts",
+        "packages/business/src/evidence.ts",
+        "packages/business/migrations/001_business.sql"
+      ],
+      "test_paths": [
+        "tests/business.test.ts"
+      ]
+    },
+    {
+      "id": "SVC-07-R002",
+      "state": "in_progress",
+      "rollout": "local-synthetic-only;live-disabled",
+      "verified_backend_behaviors": [
+        "Independent synthetic assessment and supplementary evidence request; no payout or policy activation assertion"
+      ],
+      "missing": [
+        "Carrier-authorized decision, adjuster scheduling/loss inspection, formal appeal and settlement authority remain incomplete"
+      ],
+      "ui_status": "Parent-owned integration and browser acceptance must be checked; backend test is not complete leaf evidence",
+      "code_paths": [
+        "packages/business/src/index.ts",
+        "packages/business/src/store.ts",
+        "packages/business/src/catalog.ts",
+        "packages/business/src/evidence.ts",
+        "packages/business/migrations/001_business.sql"
+      ],
+      "test_paths": [
+        "tests/business.test.ts"
+      ]
+    },
+    {
+      "id": "SVC-07-R003",
+      "state": "in_progress",
+      "rollout": "local-synthetic-only;live-disabled",
+      "verified_backend_behaviors": [
+        "Independent synthetic assessment and supplementary evidence request; no payout or policy activation assertion"
+      ],
+      "missing": [
+        "Carrier-authorized decision, adjuster scheduling/loss inspection, formal appeal and settlement authority remain incomplete"
+      ],
+      "ui_status": "Parent-owned integration and browser acceptance must be checked; backend test is not complete leaf evidence",
+      "code_paths": [
+        "packages/business/src/index.ts",
+        "packages/business/src/store.ts",
+        "packages/business/src/catalog.ts",
+        "packages/business/src/evidence.ts",
+        "packages/business/migrations/001_business.sql"
+      ],
+      "test_paths": [
+        "tests/business.test.ts"
+      ]
+    },
+    {
+      "id": "SVC-09-R001",
+      "state": "in_progress",
+      "rollout": "local-synthetic-only;live-disabled",
+      "verified_backend_behaviors": [
+        "Durable support tickets, bounded conversation history and reasoned resolution"
+      ],
+      "missing": [
+        "Attachments, live chat/callback, assistance consent, SLA timers and escalation assignment remain incomplete"
+      ],
+      "ui_status": "Parent-owned integration and browser acceptance must be checked; backend test is not complete leaf evidence",
+      "code_paths": [
+        "packages/business/src/index.ts",
+        "packages/business/src/store.ts",
+        "packages/business/src/catalog.ts",
+        "packages/business/src/evidence.ts",
+        "packages/business/migrations/001_business.sql"
+      ],
+      "test_paths": [
+        "tests/business.test.ts"
+      ]
+    },
+    {
+      "id": "SVC-09-R003",
+      "state": "in_progress",
+      "rollout": "local-synthetic-only;live-disabled",
+      "verified_backend_behaviors": [
+        "Durable support tickets, bounded conversation history and reasoned resolution"
+      ],
+      "missing": [
+        "Attachments, live chat/callback, assistance consent, SLA timers and escalation assignment remain incomplete"
+      ],
+      "ui_status": "Parent-owned integration and browser acceptance must be checked; backend test is not complete leaf evidence",
+      "code_paths": [
+        "packages/business/src/index.ts",
+        "packages/business/src/store.ts",
+        "packages/business/src/catalog.ts",
+        "packages/business/src/evidence.ts",
+        "packages/business/migrations/001_business.sql"
+      ],
+      "test_paths": [
+        "tests/business.test.ts"
+      ]
+    },
+    {
+      "id": "GRW-03-R001",
+      "state": "in_progress",
+      "rollout": "local-synthetic-only;live-disabled",
+      "verified_backend_behaviors": [
+        "Pending/confirmed noncash points, independent qualification, unique sources, transactional reward redemption and no cash conversion"
+      ],
+      "missing": [
+        "Expiry/reversals, missions, full club UI, games/prize draws/charity approval and mechanics remain incomplete"
+      ],
+      "ui_status": "Parent-owned integration and browser acceptance must be checked; backend test is not complete leaf evidence",
+      "code_paths": [
+        "packages/business/src/index.ts",
+        "packages/business/src/store.ts",
+        "packages/business/src/catalog.ts",
+        "packages/business/src/evidence.ts",
+        "packages/business/migrations/001_business.sql"
+      ],
+      "test_paths": [
+        "tests/business.test.ts"
+      ]
+    },
+    {
+      "id": "GRW-03-R002",
+      "state": "in_progress",
+      "rollout": "local-synthetic-only;live-disabled",
+      "verified_backend_behaviors": [
+        "Pending/confirmed noncash points, independent qualification, unique sources, transactional reward redemption and no cash conversion"
+      ],
+      "missing": [
+        "Expiry/reversals, missions, full club UI, games/prize draws/charity approval and mechanics remain incomplete"
+      ],
+      "ui_status": "Parent-owned integration and browser acceptance must be checked; backend test is not complete leaf evidence",
+      "code_paths": [
+        "packages/business/src/index.ts",
+        "packages/business/src/store.ts",
+        "packages/business/src/catalog.ts",
+        "packages/business/src/evidence.ts",
+        "packages/business/migrations/001_business.sql"
+      ],
+      "test_paths": [
+        "tests/business.test.ts"
+      ]
+    },
+    {
+      "id": "GRW-04-R001",
+      "state": "in_progress",
+      "rollout": "local-synthetic-only;live-disabled",
+      "verified_backend_behaviors": [
+        "Personal referral code, explicit qualification reference, self-referral denial"
+      ],
+      "missing": [
+        "Invitation handoff, qualifying event authority, reward reversal/budgets/caps and privacy reporting remain incomplete"
+      ],
+      "ui_status": "Parent-owned integration and browser acceptance must be checked; backend test is not complete leaf evidence",
+      "code_paths": [
+        "packages/business/src/index.ts",
+        "packages/business/src/store.ts",
+        "packages/business/src/catalog.ts",
+        "packages/business/src/evidence.ts",
+        "packages/business/migrations/001_business.sql"
+      ],
+      "test_paths": [
+        "tests/business.test.ts"
+      ]
+    },
+    {
+      "id": "GRW-04-R002",
+      "state": "in_progress",
+      "rollout": "local-synthetic-only;live-disabled",
+      "verified_backend_behaviors": [
+        "Personal referral code, explicit qualification reference, self-referral denial"
+      ],
+      "missing": [
+        "Invitation handoff, qualifying event authority, reward reversal/budgets/caps and privacy reporting remain incomplete"
+      ],
+      "ui_status": "Parent-owned integration and browser acceptance must be checked; backend test is not complete leaf evidence",
+      "code_paths": [
+        "packages/business/src/index.ts",
+        "packages/business/src/store.ts",
+        "packages/business/src/catalog.ts",
+        "packages/business/src/evidence.ts",
+        "packages/business/migrations/001_business.sql"
+      ],
+      "test_paths": [
+        "tests/business.test.ts"
+      ]
+    },
+    {
+      "id": "GRW-04-R003",
+      "state": "in_progress",
+      "rollout": "local-synthetic-only;live-disabled",
+      "verified_backend_behaviors": [
+        "Personal referral code, explicit qualification reference, self-referral denial"
+      ],
+      "missing": [
+        "Invitation handoff, qualifying event authority, reward reversal/budgets/caps and privacy reporting remain incomplete"
+      ],
+      "ui_status": "Parent-owned integration and browser acceptance must be checked; backend test is not complete leaf evidence",
+      "code_paths": [
+        "packages/business/src/index.ts",
+        "packages/business/src/store.ts",
+        "packages/business/src/catalog.ts",
+        "packages/business/src/evidence.ts",
+        "packages/business/migrations/001_business.sql"
+      ],
+      "test_paths": [
+        "tests/business.test.ts"
+      ]
+    },
+    {
+      "id": "GRW-05-R001",
+      "state": "in_progress",
+      "rollout": "local-synthetic-only;live-disabled",
+      "verified_backend_behaviors": [
+        "Persisted local campaign windows/budget, locked exact-money promotion reservation and plain-text content"
+      ],
+      "missing": [
+        "Targeting, segments, insurer/channel restrictions, stacking, release/reversal and experimentation remain incomplete"
+      ],
+      "ui_status": "Parent-owned integration and browser acceptance must be checked; backend test is not complete leaf evidence",
+      "code_paths": [
+        "packages/business/src/index.ts",
+        "packages/business/src/store.ts",
+        "packages/business/src/catalog.ts",
+        "packages/business/src/evidence.ts",
+        "packages/business/migrations/001_business.sql"
+      ],
+      "test_paths": [
+        "tests/business.test.ts"
+      ]
+    },
+    {
+      "id": "GRW-05-R002",
+      "state": "in_progress",
+      "rollout": "local-synthetic-only;live-disabled",
+      "verified_backend_behaviors": [
+        "Persisted local campaign windows/budget, locked exact-money promotion reservation and plain-text content"
+      ],
+      "missing": [
+        "Targeting, segments, insurer/channel restrictions, stacking, release/reversal and experimentation remain incomplete"
+      ],
+      "ui_status": "Parent-owned integration and browser acceptance must be checked; backend test is not complete leaf evidence",
+      "code_paths": [
+        "packages/business/src/index.ts",
+        "packages/business/src/store.ts",
+        "packages/business/src/catalog.ts",
+        "packages/business/src/evidence.ts",
+        "packages/business/migrations/001_business.sql"
+      ],
+      "test_paths": [
+        "tests/business.test.ts"
+      ]
+    },
+    {
+      "id": "GRW-05-R003",
+      "state": "in_progress",
+      "rollout": "local-synthetic-only;live-disabled",
+      "verified_backend_behaviors": [
+        "Persisted local campaign windows/budget, locked exact-money promotion reservation and plain-text content"
+      ],
+      "missing": [
+        "Targeting, segments, insurer/channel restrictions, stacking, release/reversal and experimentation remain incomplete"
+      ],
+      "ui_status": "Parent-owned integration and browser acceptance must be checked; backend test is not complete leaf evidence",
+      "code_paths": [
+        "packages/business/src/index.ts",
+        "packages/business/src/store.ts",
+        "packages/business/src/catalog.ts",
+        "packages/business/src/evidence.ts",
+        "packages/business/migrations/001_business.sql"
+      ],
+      "test_paths": [
+        "tests/business.test.ts"
+      ]
+    },
+    {
+      "id": "GRW-08-R001",
+      "state": "in_progress",
+      "rollout": "local-synthetic-only;live-disabled",
+      "verified_backend_behaviors": [
+        "Published plain-text articles with validated unique slug and bounded body"
+      ],
+      "missing": [
+        "Original insurer/FAQ content library, maker-checker CMS approval, redirects, SEO metadata and indexing controls remain incomplete"
+      ],
+      "ui_status": "Parent-owned integration and browser acceptance must be checked; backend test is not complete leaf evidence",
+      "code_paths": [
+        "packages/business/src/index.ts",
+        "packages/business/src/store.ts",
+        "packages/business/src/catalog.ts",
+        "packages/business/src/evidence.ts",
+        "packages/business/migrations/001_business.sql"
+      ],
+      "test_paths": [
+        "tests/business.test.ts"
+      ]
+    },
+    {
+      "id": "GRW-08-R002",
+      "state": "in_progress",
+      "rollout": "local-synthetic-only;live-disabled",
+      "verified_backend_behaviors": [
+        "Published plain-text articles with validated unique slug and bounded body"
+      ],
+      "missing": [
+        "Original insurer/FAQ content library, maker-checker CMS approval, redirects, SEO metadata and indexing controls remain incomplete"
+      ],
+      "ui_status": "Parent-owned integration and browser acceptance must be checked; backend test is not complete leaf evidence",
+      "code_paths": [
+        "packages/business/src/index.ts",
+        "packages/business/src/store.ts",
+        "packages/business/src/catalog.ts",
+        "packages/business/src/evidence.ts",
+        "packages/business/migrations/001_business.sql"
+      ],
+      "test_paths": [
+        "tests/business.test.ts"
+      ]
+    },
+    {
+      "id": "AUTO-01-R001",
+      "state": "in_progress",
+      "rollout": "local-synthetic-only;live-disabled",
+      "verified_backend_behaviors": [
+        "Garage entry points only to authorized vehicle profile"
+      ],
+      "missing": [
+        "Motorcycle-specific reuse, policy/deadline/document joins, ownership lifecycle and delegation remain incomplete"
+      ],
+      "ui_status": "Parent-owned integration and browser acceptance must be checked; backend test is not complete leaf evidence",
+      "code_paths": [
+        "packages/business/src/index.ts",
+        "packages/business/src/store.ts",
+        "packages/business/src/catalog.ts",
+        "packages/business/src/evidence.ts",
+        "packages/business/migrations/001_business.sql"
+      ],
+      "test_paths": [
+        "tests/business.test.ts"
+      ]
+    },
+    {
+      "id": "AUTO-02-R001",
+      "state": "in_progress",
+      "rollout": "local-synthetic-only;live-disabled",
+      "verified_backend_behaviors": [
+        "Authorized purpose-consented inquiry request preserves unsupported-provider state and never fabricates official data"
+      ],
+      "missing": [
+        "Actual provider schemas, complete inquiry categories, certified authorization and results remain incomplete"
+      ],
+      "ui_status": "Parent-owned integration and browser acceptance must be checked; backend test is not complete leaf evidence",
+      "code_paths": [
+        "packages/business/src/index.ts",
+        "packages/business/src/store.ts",
+        "packages/business/src/catalog.ts",
+        "packages/business/src/evidence.ts",
+        "packages/business/migrations/001_business.sql"
+      ],
+      "test_paths": [
+        "tests/business.test.ts"
+      ]
+    },
+    {
+      "id": "AUTO-02-R002",
+      "state": "in_progress",
+      "rollout": "local-synthetic-only;live-disabled",
+      "verified_backend_behaviors": [
+        "Authorized purpose-consented inquiry request preserves unsupported-provider state and never fabricates official data"
+      ],
+      "missing": [
+        "Actual provider schemas, complete inquiry categories, certified authorization and results remain incomplete"
+      ],
+      "ui_status": "Parent-owned integration and browser acceptance must be checked; backend test is not complete leaf evidence",
+      "code_paths": [
+        "packages/business/src/index.ts",
+        "packages/business/src/store.ts",
+        "packages/business/src/catalog.ts",
+        "packages/business/src/evidence.ts",
+        "packages/business/migrations/001_business.sql"
+      ],
+      "test_paths": [
+        "tests/business.test.ts"
+      ]
+    },
+    {
+      "id": "AUTO-02-R003",
+      "state": "in_progress",
+      "rollout": "local-synthetic-only;live-disabled",
+      "verified_backend_behaviors": [
+        "Authorized purpose-consented inquiry request preserves unsupported-provider state and never fabricates official data"
+      ],
+      "missing": [
+        "Actual provider schemas, complete inquiry categories, certified authorization and results remain incomplete"
+      ],
+      "ui_status": "Parent-owned integration and browser acceptance must be checked; backend test is not complete leaf evidence",
+      "code_paths": [
+        "packages/business/src/index.ts",
+        "packages/business/src/store.ts",
+        "packages/business/src/catalog.ts",
+        "packages/business/src/evidence.ts",
+        "packages/business/migrations/001_business.sql"
+      ],
+      "test_paths": [
+        "tests/business.test.ts"
+      ]
+    },
+    {
+      "id": "AUTO-04-R001",
+      "state": "in_progress",
+      "rollout": "local-synthetic-only;live-disabled",
+      "verified_backend_behaviors": [
+        "Vehicle-owned opt-in local alert preference with explicit channel"
+      ],
+      "missing": [
+        "Durable reminder scheduling, paid SMS subscription/renewal, delivery events and expiry remain incomplete"
+      ],
+      "ui_status": "Parent-owned integration and browser acceptance must be checked; backend test is not complete leaf evidence",
+      "code_paths": [
+        "packages/business/src/index.ts",
+        "packages/business/src/store.ts",
+        "packages/business/src/catalog.ts",
+        "packages/business/src/evidence.ts",
+        "packages/business/migrations/001_business.sql"
+      ],
+      "test_paths": [
+        "tests/business.test.ts"
+      ]
+    },
+    {
+      "id": "AUTO-04-R003",
+      "state": "in_progress",
+      "rollout": "local-synthetic-only;live-disabled",
+      "verified_backend_behaviors": [
+        "Vehicle-owned opt-in local alert preference with explicit channel"
+      ],
+      "missing": [
+        "Durable reminder scheduling, paid SMS subscription/renewal, delivery events and expiry remain incomplete"
+      ],
+      "ui_status": "Parent-owned integration and browser acceptance must be checked; backend test is not complete leaf evidence",
+      "code_paths": [
+        "packages/business/src/index.ts",
+        "packages/business/src/store.ts",
+        "packages/business/src/catalog.ts",
+        "packages/business/src/evidence.ts",
+        "packages/business/migrations/001_business.sql"
+      ],
+      "test_paths": [
+        "tests/business.test.ts"
+      ]
+    },
+    {
+      "id": "AUTO-05-R001",
+      "state": "in_progress",
+      "rollout": "local-synthetic-only;live-disabled",
+      "verified_backend_behaviors": [
+        "Public synthetic provider/services, exact price snapshot, transaction-protected slot reservation, cancellation and manual fulfillment/dispute states"
+      ],
+      "missing": [
+        "Provider calendar synchronization, payment/refunds/commission settlement and complete mobile booking UI remain incomplete"
+      ],
+      "ui_status": "Parent-owned integration and browser acceptance must be checked; backend test is not complete leaf evidence",
+      "code_paths": [
+        "packages/business/src/index.ts",
+        "packages/business/src/store.ts",
+        "packages/business/src/catalog.ts",
+        "packages/business/src/evidence.ts",
+        "packages/business/migrations/001_business.sql"
+      ],
+      "test_paths": [
+        "tests/business.test.ts"
+      ]
+    },
+    {
+      "id": "AUTO-05-R002",
+      "state": "in_progress",
+      "rollout": "local-synthetic-only;live-disabled",
+      "verified_backend_behaviors": [
+        "Public synthetic provider/services, exact price snapshot, transaction-protected slot reservation, cancellation and manual fulfillment/dispute states"
+      ],
+      "missing": [
+        "Provider calendar synchronization, payment/refunds/commission settlement and complete mobile booking UI remain incomplete"
+      ],
+      "ui_status": "Parent-owned integration and browser acceptance must be checked; backend test is not complete leaf evidence",
+      "code_paths": [
+        "packages/business/src/index.ts",
+        "packages/business/src/store.ts",
+        "packages/business/src/catalog.ts",
+        "packages/business/src/evidence.ts",
+        "packages/business/migrations/001_business.sql"
+      ],
+      "test_paths": [
+        "tests/business.test.ts"
+      ]
+    },
+    {
+      "id": "AUTO-05-R003",
+      "state": "in_progress",
+      "rollout": "local-synthetic-only;live-disabled",
+      "verified_backend_behaviors": [
+        "Public synthetic provider/services, exact price snapshot, transaction-protected slot reservation, cancellation and manual fulfillment/dispute states"
+      ],
+      "missing": [
+        "Provider calendar synchronization, payment/refunds/commission settlement and complete mobile booking UI remain incomplete"
+      ],
+      "ui_status": "Parent-owned integration and browser acceptance must be checked; backend test is not complete leaf evidence",
+      "code_paths": [
+        "packages/business/src/index.ts",
+        "packages/business/src/store.ts",
+        "packages/business/src/catalog.ts",
+        "packages/business/src/evidence.ts",
+        "packages/business/migrations/001_business.sql"
+      ],
+      "test_paths": [
+        "tests/business.test.ts"
+      ]
+    },
+    {
+      "id": "AUTO-06-R001",
+      "state": "in_progress",
+      "rollout": "local-synthetic-only;live-disabled",
+      "verified_backend_behaviors": [
+        "Compatibility-checked parts inventory, locked final-unit reservation, exact totals, shipment ordering, cancel/restock and inspected return"
+      ],
+      "missing": [
+        "Real seller/provider identity, purchase payment/refunds, per-line partial returns, settlement and complete commerce UI remain incomplete"
+      ],
+      "ui_status": "Parent-owned integration and browser acceptance must be checked; backend test is not complete leaf evidence",
+      "code_paths": [
+        "packages/business/src/index.ts",
+        "packages/business/src/store.ts",
+        "packages/business/src/catalog.ts",
+        "packages/business/src/evidence.ts",
+        "packages/business/migrations/001_business.sql"
+      ],
+      "test_paths": [
+        "tests/business.test.ts"
+      ]
+    },
+    {
+      "id": "AUTO-06-R002",
+      "state": "in_progress",
+      "rollout": "local-synthetic-only;live-disabled",
+      "verified_backend_behaviors": [
+        "Compatibility-checked parts inventory, locked final-unit reservation, exact totals, shipment ordering, cancel/restock and inspected return"
+      ],
+      "missing": [
+        "Real seller/provider identity, purchase payment/refunds, per-line partial returns, settlement and complete commerce UI remain incomplete"
+      ],
+      "ui_status": "Parent-owned integration and browser acceptance must be checked; backend test is not complete leaf evidence",
+      "code_paths": [
+        "packages/business/src/index.ts",
+        "packages/business/src/store.ts",
+        "packages/business/src/catalog.ts",
+        "packages/business/src/evidence.ts",
+        "packages/business/migrations/001_business.sql"
+      ],
+      "test_paths": [
+        "tests/business.test.ts"
+      ]
+    },
+    {
+      "id": "AUTO-06-R003",
+      "state": "in_progress",
+      "rollout": "local-synthetic-only;live-disabled",
+      "verified_backend_behaviors": [
+        "Compatibility-checked parts inventory, locked final-unit reservation, exact totals, shipment ordering, cancel/restock and inspected return"
+      ],
+      "missing": [
+        "Real seller/provider identity, purchase payment/refunds, per-line partial returns, settlement and complete commerce UI remain incomplete"
+      ],
+      "ui_status": "Parent-owned integration and browser acceptance must be checked; backend test is not complete leaf evidence",
+      "code_paths": [
+        "packages/business/src/index.ts",
+        "packages/business/src/store.ts",
+        "packages/business/src/catalog.ts",
+        "packages/business/src/evidence.ts",
+        "packages/business/migrations/001_business.sql"
+      ],
+      "test_paths": [
+        "tests/business.test.ts"
+      ]
+    },
+    {
+      "id": "AUTO-07-R001",
+      "state": "in_progress",
+      "rollout": "local-synthetic-only;live-disabled",
+      "verified_backend_behaviors": [
+        "Authorized local vehicle listing keeps auction and secure transaction capabilities independently disabled"
+      ],
+      "missing": [
+        "Valuation/history provider integration, auctions, contract/title transfer, escrow and debt settlement remain incomplete"
+      ],
+      "ui_status": "Parent-owned integration and browser acceptance must be checked; backend test is not complete leaf evidence",
+      "code_paths": [
+        "packages/business/src/index.ts",
+        "packages/business/src/store.ts",
+        "packages/business/src/catalog.ts",
+        "packages/business/src/evidence.ts",
+        "packages/business/migrations/001_business.sql"
+      ],
+      "test_paths": [
+        "tests/business.test.ts"
+      ]
+    },
+    {
+      "id": "GRW-03-R003",
+      "state": "not_started",
+      "rollout": "off",
+      "verified_backend_behaviors": [
+        "Missing authority blocks entry before an external operation; this safety gate is not capability completion"
+      ],
+      "missing": [
+        "Local/sandbox domain workflow, interfaces, UI and full acceptance are unimplemented; actual authority/contracts also absent"
+      ],
+      "code_paths": [
+        "packages/business/src/index.ts"
+      ],
+      "test_paths": [
+        "tests/business.test.ts"
+      ]
+    },
+    {
+      "id": "AUTO-07-R002",
+      "state": "not_started",
+      "rollout": "off",
+      "verified_backend_behaviors": [
+        "Missing authority blocks entry before an external operation; this safety gate is not capability completion"
+      ],
+      "missing": [
+        "Local/sandbox domain workflow, interfaces, UI and full acceptance are unimplemented; actual authority/contracts also absent"
+      ],
+      "code_paths": [
+        "packages/business/src/index.ts"
+      ],
+      "test_paths": [
+        "tests/business.test.ts"
+      ]
+    },
+    {
+      "id": "AUTO-07-R003",
+      "state": "not_started",
+      "rollout": "off",
+      "verified_backend_behaviors": [
+        "Missing authority blocks entry before an external operation; this safety gate is not capability completion"
+      ],
+      "missing": [
+        "Local/sandbox domain workflow, interfaces, UI and full acceptance are unimplemented; actual authority/contracts also absent"
+      ],
+      "code_paths": [
+        "packages/business/src/index.ts"
+      ],
+      "test_paths": [
+        "tests/business.test.ts"
+      ]
+    },
+    {
+      "id": "AUTO-07-R004",
+      "state": "not_started",
+      "rollout": "off",
+      "verified_backend_behaviors": [
+        "Missing authority blocks entry before an external operation; this safety gate is not capability completion"
+      ],
+      "missing": [
+        "Local/sandbox domain workflow, interfaces, UI and full acceptance are unimplemented; actual authority/contracts also absent"
+      ],
+      "code_paths": [
+        "packages/business/src/index.ts"
+      ],
+      "test_paths": [
+        "tests/business.test.ts"
+      ]
+    },
+    {
+      "id": "ECO-01-R001",
+      "state": "not_started",
+      "rollout": "off",
+      "verified_backend_behaviors": [
+        "Missing authority blocks entry before an external operation; this safety gate is not capability completion"
+      ],
+      "missing": [
+        "Local/sandbox domain workflow, interfaces, UI and full acceptance are unimplemented; actual authority/contracts also absent"
+      ],
+      "code_paths": [
+        "packages/business/src/index.ts"
+      ],
+      "test_paths": [
+        "tests/business.test.ts"
+      ]
+    },
+    {
+      "id": "ECO-01-R002",
+      "state": "not_started",
+      "rollout": "off",
+      "verified_backend_behaviors": [
+        "Missing authority blocks entry before an external operation; this safety gate is not capability completion"
+      ],
+      "missing": [
+        "Local/sandbox domain workflow, interfaces, UI and full acceptance are unimplemented; actual authority/contracts also absent"
+      ],
+      "code_paths": [
+        "packages/business/src/index.ts"
+      ],
+      "test_paths": [
+        "tests/business.test.ts"
+      ]
+    },
+    {
+      "id": "ECO-01-R003",
+      "state": "not_started",
+      "rollout": "off",
+      "verified_backend_behaviors": [
+        "Missing authority blocks entry before an external operation; this safety gate is not capability completion"
+      ],
+      "missing": [
+        "Local/sandbox domain workflow, interfaces, UI and full acceptance are unimplemented; actual authority/contracts also absent"
+      ],
+      "code_paths": [
+        "packages/business/src/index.ts"
+      ],
+      "test_paths": [
+        "tests/business.test.ts"
+      ]
+    }
+  ],
+  "products": [
+    {
+      "id": "PRD-01",
+      "state": "in_progress",
+      "verified": "Compiled schema and synthetic fixture/negative validation",
+      "missing": "Full family underwriting/rating/rider/servicing UI and actual carrier authority/compatibility"
+    },
+    {
+      "id": "PRD-02",
+      "state": "in_progress",
+      "verified": "Compiled schema and synthetic fixture/negative validation",
+      "missing": "Full family underwriting/rating/rider/servicing UI and actual carrier authority/compatibility"
+    },
+    {
+      "id": "PRD-03",
+      "state": "in_progress",
+      "verified": "Compiled schema and synthetic fixture/negative validation",
+      "missing": "Full family underwriting/rating/rider/servicing UI and actual carrier authority/compatibility"
+    },
+    {
+      "id": "PRD-04",
+      "state": "in_progress",
+      "verified": "Compiled schema and synthetic fixture/negative validation",
+      "missing": "Full family underwriting/rating/rider/servicing UI and actual carrier authority/compatibility"
+    },
+    {
+      "id": "PRD-05",
+      "state": "in_progress",
+      "verified": "Compiled schema and synthetic fixture/negative validation",
+      "missing": "Full family underwriting/rating/rider/servicing UI and actual carrier authority/compatibility"
+    },
+    {
+      "id": "PRD-06",
+      "state": "in_progress",
+      "verified": "Compiled schema and synthetic fixture/negative validation",
+      "missing": "Full family underwriting/rating/rider/servicing UI and actual carrier authority/compatibility"
+    },
+    {
+      "id": "PRD-07",
+      "state": "in_progress",
+      "verified": "Compiled schema and synthetic fixture/negative validation",
+      "missing": "Full family underwriting/rating/rider/servicing UI and actual carrier authority/compatibility"
+    },
+    {
+      "id": "PRD-08",
+      "state": "in_progress",
+      "verified": "Compiled schema and synthetic fixture/negative validation",
+      "missing": "Full family underwriting/rating/rider/servicing UI and actual carrier authority/compatibility"
+    },
+    {
+      "id": "PRD-09",
+      "state": "in_progress",
+      "verified": "Compiled schema and synthetic fixture/negative validation",
+      "missing": "Full family underwriting/rating/rider/servicing UI and actual carrier authority/compatibility"
+    },
+    {
+      "id": "PRD-10",
+      "state": "in_progress",
+      "verified": "Compiled schema and synthetic fixture/negative validation",
+      "missing": "Full family underwriting/rating/rider/servicing UI and actual carrier authority/compatibility"
+    },
+    {
+      "id": "PRD-11",
+      "state": "in_progress",
+      "verified": "Compiled schema and synthetic fixture/negative validation",
+      "missing": "Full family underwriting/rating/rider/servicing UI and actual carrier authority/compatibility"
+    },
+    {
+      "id": "PRD-12",
+      "state": "in_progress",
+      "verified": "Compiled schema and synthetic fixture/negative validation",
+      "missing": "Full family underwriting/rating/rider/servicing UI and actual carrier authority/compatibility"
+    },
+    {
+      "id": "PRD-13",
+      "state": "in_progress",
+      "verified": "Compiled schema and synthetic fixture/negative validation",
+      "missing": "Full family underwriting/rating/rider/servicing UI and actual carrier authority/compatibility"
+    },
+    {
+      "id": "PRD-14",
+      "state": "in_progress",
+      "verified": "Compiled schema and synthetic fixture/negative validation",
+      "missing": "Full family underwriting/rating/rider/servicing UI and actual carrier authority/compatibility"
+    },
+    {
+      "id": "PRD-15",
+      "state": "in_progress",
+      "verified": "Compiled schema and synthetic fixture/negative validation",
+      "missing": "Full family underwriting/rating/rider/servicing UI and actual carrier authority/compatibility"
+    },
+    {
+      "id": "PRD-16",
+      "state": "in_progress",
+      "verified": "Compiled schema and synthetic fixture/negative validation",
+      "missing": "Full family underwriting/rating/rider/servicing UI and actual carrier authority/compatibility"
+    },
+    {
+      "id": "PRD-17",
+      "state": "in_progress",
+      "verified": "Compiled schema and synthetic fixture/negative validation",
+      "missing": "Full family underwriting/rating/rider/servicing UI and actual carrier authority/compatibility"
+    },
+    {
+      "id": "PRD-18",
+      "state": "in_progress",
+      "verified": "Compiled schema and synthetic fixture/negative validation",
+      "missing": "Full family underwriting/rating/rider/servicing UI and actual carrier authority/compatibility"
+    },
+    {
+      "id": "PRD-19",
+      "state": "in_progress",
+      "verified": "Compiled schema and synthetic fixture/negative validation",
+      "missing": "Full family underwriting/rating/rider/servicing UI and actual carrier authority/compatibility"
+    },
+    {
+      "id": "PRD-20",
+      "state": "in_progress",
+      "verified": "Compiled schema and synthetic fixture/negative validation",
+      "missing": "Full family underwriting/rating/rider/servicing UI and actual carrier authority/compatibility"
+    },
+    {
+      "id": "PRD-21",
+      "state": "in_progress",
+      "verified": "Compiled schema and synthetic fixture/negative validation",
+      "missing": "Full family underwriting/rating/rider/servicing UI and actual carrier authority/compatibility"
+    },
+    {
+      "id": "PRD-22",
+      "state": "in_progress",
+      "verified": "Compiled schema and synthetic fixture/negative validation",
+      "missing": "Full family underwriting/rating/rider/servicing UI and actual carrier authority/compatibility"
+    },
+    {
+      "id": "PRD-23",
+      "state": "in_progress",
+      "verified": "Compiled schema and synthetic fixture/negative validation",
+      "missing": "Full family underwriting/rating/rider/servicing UI and actual carrier authority/compatibility"
+    },
+    {
+      "id": "PRD-24",
+      "state": "in_progress",
+      "verified": "Compiled schema and synthetic fixture/negative validation",
+      "missing": "Full family underwriting/rating/rider/servicing UI and actual carrier authority/compatibility"
+    }
+  ],
+  "commands_run": [
+    {
+      "command": "rtk proxy npm run build --workspace @st/business",
+      "result": "pass"
+    },
+    {
+      "command": "rtk proxy node --import tsx --test tests/business.test.ts",
+      "result": "pass",
+      "tests": 12,
+      "failures": 0,
+      "skipped": 0,
+      "duration_ms": 680.5315,
+      "environment": "Node26.12, actual PostgreSQL17.11 atlocalhost55432; synthetic random tenant/user data and private temporary evidence; test duration is not a performance benchmark"
+    }
+  ],
+  "source_hashes": {
+    "packages/business/implementation-evidence.py": "3f14f1e796b5f0814802e624ad23bd3187baecc2e4a737e65b49d14c856c900d",
+    "packages/business/package.json": "53b3290e9407b7f505ad4ec3503f1e939e31df95e45c06cce56bd68c0bab982b",
+    "packages/business/tsconfig.json": "586afcc348e4a0b431166985a5423853a170b7a3115dc57d51200f48d1bb0144",
+    "packages/business/migrations/002_evidence_codes.sql": "f7b7e73e4d19a265559050b3d102f92dc1801f4be423a78672ad3e983ce3891c",
+    "packages/business/migrations/001_business.sql": "5e206066fb20a8c8cbe1b509ab9f3bcaa18a0065b506fbc7d8a1eb027871c431",
+    "packages/business/fixtures/synthetic-policy.pdf": "bbdb8c640eb55d96251ff5c711d440520480a1263650057c7fdedc00960af815",
+    "packages/business/src/validation.ts": "af46c94470b4638e96e3ad04972b82a67695b682e0f0a5b518ead33bbeb019fc",
+    "packages/business/src/evidence.ts": "973d26298d5951d239ad864f16e015689a844fed61e994f45595c59321fd9cd9",
+    "packages/business/src/index.ts": "41c08c6a6484f074a95143616d944711c855c2a75be701271366526b413f189a",
+    "packages/business/src/store.ts": "0d2359b1a8c76ab397fb2ba47743f54cd896e1e6bf6ed2baddf1d30ae5242b14",
+    "packages/business/src/catalog.ts": "8b1fca6ca64c4e5242d2283bd154729f5e4f33507890d1231546d74551924914",
+    "packages/business/src/products/templates.json": "86df89983451fa20b98632654ea0433ad92596e9a50497fb436750a9fae226fc",
+    "tests/business.test.ts": "7f4a567f021126e4dc9d96aa72ee013e8dabac4a1c40fe42946ff1ecf19dca11"
+  },
+  "decisions": [
+    {
+      "id": "BIZ-D01",
+      "status": "proposed",
+      "detail": "Application snapshots correct overescaped decimal-dot patterns in documentation risk schemas, matching the prose decimal fields. Decimal90.50 validation test proves intended behavior; source docs generator needs reconciliation."
+    },
+    {
+      "id": "BIZ-D02",
+      "status": "proposed",
+      "detail": "AJV strictRequired lint false only for legal then.required outer-object definitions; runtime required checks and strict schema/type/format validation remain active."
+    },
+    {
+      "id": "BIZ-D03",
+      "status": "proposed",
+      "detail": "Only known exact synthetic PNG/PDF digests become clean_synthetic. Unknown valid bytes remain quarantined; EICAR/bad magic rejected. This is not a general malware-scanning service."
+    },
+    {
+      "id": "BIZ-D04",
+      "status": "proposed",
+      "detail": "ST_CURSOR_SECRET binds signed cursors across replicas. Without configured secret, cryptographically random per-process local key safely invalidates cursors on restart; production shared-key deployment/rotation evidence pending."
+    }
+  ],
+  "external_blockers": [
+    "Actual insurer/rate/underwriting/servicing contracts",
+    "Authorized official inquiry providers",
+    "Financing and claims payout authority",
+    "Approved arbitrary-file malware scanning and records retention policy",
+    "Trading/referral/regulated rewards authority"
+  ],
+  "review_findings_sent_to_root": [
+    "Credit approval after direct payment can create duplicate monetary obligation without order guard",
+    "Verified duplicate callback must never recommit cancelled/refunded orders",
+    "Partial refund state must preserve remaining refundability",
+    "step_up_until must be enforced, not merely persisted"
+  ]
+}

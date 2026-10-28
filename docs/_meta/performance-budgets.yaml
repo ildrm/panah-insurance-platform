@@ -1,0 +1,454 @@
+{
+  "id": "REG-PERFORMANCE-BUDGETS",
+  "version": "1.0.0",
+  "status": "draft",
+  "updated": "2026-10-28",
+  "entries": [
+    {
+      "id": "PERF-READ",
+      "title": "Own-service bounded reads",
+      "status": "proposed-unmeasured",
+      "target": {
+        "p95_ms": 250,
+        "p99_ms": 750
+      },
+      "start": "API ingress after complete request bytes",
+      "end": "last response byte",
+      "dependency_boundary": "auth, validation, DB and serialization included; external provider work excluded",
+      "workload": "WL-01",
+      "environment": "ENV-PERF-01",
+      "dataset": "WL-01 synthetic seeded fixture with digest",
+      "tools": [
+        "k6 or equivalent pinned load generator",
+        "OpenTelemetry",
+        "PostgreSQL EXPLAIN ANALYZE",
+        "browser performance trace",
+        "web-vitals RUM for PERF-WEB"
+      ],
+      "sampling": "All synthetic requests and failures; RUM consent/minimization with declared sample rate; sufficient sample/CI reported, never silently discard slow failures",
+      "gate": "CI representative performance stage; release baseline",
+      "owner_role": "R06"
+    },
+    {
+      "id": "PERF-WRITE",
+      "title": "Own-service bounded writes",
+      "status": "proposed-unmeasured",
+      "target": {
+        "p95_ms": 500,
+        "p99_ms": 1500
+      },
+      "start": "API ingress after complete request bytes",
+      "end": "committed transaction and complete response",
+      "dependency_boundary": "validation, authorization, audit and outbox included; provider I/O separate",
+      "workload": "WL-01",
+      "environment": "ENV-PERF-01",
+      "dataset": "WL-01 synthetic seeded fixture with digest",
+      "tools": [
+        "k6 or equivalent pinned load generator",
+        "OpenTelemetry",
+        "PostgreSQL EXPLAIN ANALYZE",
+        "browser performance trace",
+        "web-vitals RUM for PERF-WEB"
+      ],
+      "sampling": "All synthetic requests and failures; RUM consent/minimization with declared sample rate; sufficient sample/CI reported, never silently discard slow failures",
+      "gate": "CI representative performance stage; release baseline",
+      "owner_role": "R06"
+    },
+    {
+      "id": "PERF-QUOTE",
+      "title": "Quote aggregation",
+      "status": "proposed-unmeasured",
+      "target": {
+        "first_eligible_p95_ms": 2000,
+        "aggregation_deadline_ms": 8000
+      },
+      "start": "accepted quote request",
+      "end": "first eligible result; separately final partial/complete/timeout",
+      "dependency_boundary": "first target conditional on at least one healthy eligible provider meeting dependency profile; never fabricate offers",
+      "workload": "WL-01",
+      "environment": "ENV-PERF-01",
+      "dataset": "WL-01 synthetic seeded fixture with digest",
+      "tools": [
+        "k6 or equivalent pinned load generator",
+        "OpenTelemetry",
+        "PostgreSQL EXPLAIN ANALYZE",
+        "browser performance trace",
+        "web-vitals RUM for PERF-WEB"
+      ],
+      "sampling": "All synthetic requests and failures; RUM consent/minimization with declared sample rate; sufficient sample/CI reported, never silently discard slow failures",
+      "gate": "Release load/outage gate; report end-to-end and each provider",
+      "owner_role": "R06"
+    },
+    {
+      "id": "PERF-DISPATCH",
+      "title": "Purchase first outbound attempt",
+      "status": "proposed-unmeasured",
+      "target": {
+        "p95_ms": 5000
+      },
+      "start": "durable purchase.committed transaction timestamp",
+      "end": "first outbound attempt start",
+      "dependency_boundary": "healthy worker/queue; report backlog and outage recovery separately",
+      "workload": "WL-01",
+      "environment": "ENV-PERF-01",
+      "dataset": "WL-01 synthetic seeded fixture with digest",
+      "tools": [
+        "k6 or equivalent pinned load generator",
+        "OpenTelemetry",
+        "PostgreSQL EXPLAIN ANALYZE",
+        "browser performance trace",
+        "web-vitals RUM for PERF-WEB"
+      ],
+      "sampling": "All synthetic requests and failures; RUM consent/minimization with declared sample rate; sufficient sample/CI reported, never silently discard slow failures",
+      "gate": "Release with queue crash/restart",
+      "owner_role": "R06"
+    },
+    {
+      "id": "PERF-WEB",
+      "title": "Field Web Vitals",
+      "status": "proposed-unmeasured",
+      "target": {
+        "LCP_p75_ms": 2500,
+        "INP_p75_ms": 200,
+        "CLS_p75": 0.1
+      },
+      "start": "navigation lifecycle or interaction start",
+      "end": "metric-specific Web Vitals endpoint",
+      "dependency_boundary": "mobile and desktop per key journey; field evidence separate from lab",
+      "workload": "WL-FIELD-01",
+      "environment": "ENV-PRODUCTION-PENDING",
+      "dataset": "Consented/minimized actual route sessions for Web Vitals; all eligible platform request outcomes for availability. Production does not exist yet.",
+      "tools": [
+        "k6 or equivalent pinned load generator",
+        "OpenTelemetry",
+        "PostgreSQL EXPLAIN ANALYZE",
+        "browser performance trace",
+        "web-vitals RUM for PERF-WEB"
+      ],
+      "sampling": "All synthetic requests and failures; RUM consent/minimization with declared sample rate; sufficient sample/CI reported, never silently discard slow failures",
+      "gate": "RUM 28-day rolling window once sufficient traffic; synthetic prelaunch cannot establish field pass",
+      "owner_role": "R06"
+    },
+    {
+      "id": "PERF-JS",
+      "title": "Transferred route JavaScript",
+      "status": "proposed-unmeasured",
+      "target": {
+        "landing_initial_gzip_kib": 180,
+        "purchase_initial_gzip_kib": 280,
+        "dashboard_initial_gzip_kib": 400,
+        "full_purchase_journey_gzip_kib": 750
+      },
+      "start": "empty-cache production route navigation",
+      "end": "initial execution dependencies; journey includes lazy chunks",
+      "dependency_boundary": "shared runtime included; gzip explicit; source maps excluded",
+      "workload": "WL-01",
+      "environment": "ENV-PERF-01",
+      "dataset": "WL-01 synthetic seeded fixture with digest",
+      "tools": [
+        "k6 or equivalent pinned load generator",
+        "OpenTelemetry",
+        "PostgreSQL EXPLAIN ANALYZE",
+        "browser performance trace",
+        "web-vitals RUM for PERF-WEB"
+      ],
+      "sampling": "All synthetic requests and failures; RUM consent/minimization with declared sample rate; sufficient sample/CI reported, never silently discard slow failures",
+      "gate": "Production build budget gate",
+      "owner_role": "R06"
+    },
+    {
+      "id": "PERF-AVAIL",
+      "title": "Own-service availability",
+      "status": "proposed-unmeasured",
+      "target": {
+        "monthly_success_percent": 99.9
+      },
+      "start": "eligible valid authenticated/platform request ingress",
+      "end": "successful non-5xx completion with correct durable result",
+      "dependency_boundary": "denominator includes platform failures and maintenance; invalid auth/input separated; external journey failure reported alongside",
+      "workload": "WL-FIELD-01",
+      "environment": "ENV-PRODUCTION-PENDING",
+      "dataset": "Consented/minimized actual route sessions for Web Vitals; all eligible platform request outcomes for availability. Production does not exist yet.",
+      "tools": [
+        "k6 or equivalent pinned load generator",
+        "OpenTelemetry",
+        "PostgreSQL EXPLAIN ANALYZE",
+        "browser performance trace",
+        "web-vitals RUM for PERF-WEB"
+      ],
+      "sampling": "All synthetic requests and failures; RUM consent/minimization with declared sample rate; sufficient sample/CI reported, never silently discard slow failures",
+      "gate": "Monthly SLO/error budget review",
+      "owner_role": "R06"
+    },
+    {
+      "id": "PERF-FLAG",
+      "title": "Feature decision freshness",
+      "status": "proposed-unmeasured",
+      "target": {
+        "cosmetic_staleness_max_ms": 5000,
+        "purchase_commit_staleness_ms": 0
+      },
+      "start": "authoritative configuration revision commit",
+      "end": "presentation reflects revision; business commit checks serialized revision",
+      "dependency_boundary": "commercial reservations use A05; security revocation checked independently",
+      "workload": "WL-01",
+      "environment": "ENV-PERF-01",
+      "dataset": "WL-01 synthetic seeded fixture with digest",
+      "tools": [
+        "k6 or equivalent pinned load generator",
+        "OpenTelemetry",
+        "PostgreSQL EXPLAIN ANALYZE",
+        "browser performance trace",
+        "web-vitals RUM for PERF-WEB"
+      ],
+      "sampling": "All synthetic requests and failures; RUM consent/minimization with declared sample rate; sufficient sample/CI reported, never silently discard slow failures",
+      "gate": "Concurrency/property and multi-replica tests",
+      "owner_role": "R06"
+    },
+    {
+      "id": "PERF-DB",
+      "title": "Database resource bounds",
+      "status": "proposed-unmeasured",
+      "target": {
+        "ordinary_read_queries_max": 6,
+        "bounded_write_queries_max": 12,
+        "api_pool_max_per_process": 20,
+        "worker_pool_max_per_process": 10,
+        "db_connections_max": 100,
+        "operational_reserved_connections": 20,
+        "transaction_soft_deadline_ms": 250
+      },
+      "start": "request DB span/connection request",
+      "end": "last DB span/connection release",
+      "dependency_boundary": "no provider I/O within transactions; target exceptions require profiled ADR",
+      "workload": "WL-01",
+      "environment": "ENV-PERF-01",
+      "dataset": "WL-01 synthetic seeded fixture with digest",
+      "tools": [
+        "k6 or equivalent pinned load generator",
+        "OpenTelemetry",
+        "PostgreSQL EXPLAIN ANALYZE",
+        "browser performance trace",
+        "web-vitals RUM for PERF-WEB"
+      ],
+      "sampling": "All synthetic requests and failures; RUM consent/minimization with declared sample rate; sufficient sample/CI reported, never silently discard slow failures",
+      "gate": "Explain analyze and pool-wait gate under WL-01",
+      "owner_role": "R06"
+    },
+    {
+      "id": "PERF-BULK",
+      "title": "Bulk fairness",
+      "status": "proposed-unmeasured",
+      "target": {
+        "import_chunk_rows_max": 500,
+        "export_page_rows_max": 1000,
+        "per_tenant_active_jobs_max": 2,
+        "import_20000_rows_target_seconds": 600
+      },
+      "start": "durable job accepted",
+      "end": "all validated/applied/rejected rows accounted for",
+      "dependency_boundary": "partial policy explicit; checkout budgets still pass",
+      "workload": "WL-01",
+      "environment": "ENV-PERF-01",
+      "dataset": "WL-01 synthetic seeded fixture with digest",
+      "tools": [
+        "k6 or equivalent pinned load generator",
+        "OpenTelemetry",
+        "PostgreSQL EXPLAIN ANALYZE",
+        "browser performance trace",
+        "web-vitals RUM for PERF-WEB"
+      ],
+      "sampling": "All synthetic requests and failures; RUM consent/minimization with declared sample rate; sufficient sample/CI reported, never silently discard slow failures",
+      "gate": "Release concurrent import/checkout gate",
+      "owner_role": "R06"
+    },
+    {
+      "id": "PERF-QUEUE",
+      "title": "Queue recovery",
+      "status": "proposed-unmeasured",
+      "target": {
+        "normal_oldest_ready_age_seconds": 30,
+        "catchup_target_seconds": 300,
+        "retry_attempts_max": 5,
+        "retry_backoff_seconds": [
+          1,
+          5,
+          30,
+          120,
+          300
+        ]
+      },
+      "start": "work becomes eligible; restart clock separately",
+      "end": "attempt or all recovered eligible jobs completed",
+      "dependency_boundary": "unknown non-idempotent operations excluded from automatic retry and reported; max age is alert threshold",
+      "workload": "WL-01",
+      "environment": "ENV-PERF-01",
+      "dataset": "WL-01 synthetic seeded fixture with digest",
+      "tools": [
+        "k6 or equivalent pinned load generator",
+        "OpenTelemetry",
+        "PostgreSQL EXPLAIN ANALYZE",
+        "browser performance trace",
+        "web-vitals RUM for PERF-WEB"
+      ],
+      "sampling": "All synthetic requests and failures; RUM consent/minimization with declared sample rate; sufficient sample/CI reported, never silently discard slow failures",
+      "gate": "Queue crash/recovery exercise with measured backlog volume",
+      "owner_role": "R06",
+      "recovery_fixture": "Stop workers for60s at40 eligible jobs/s, yielding2400 durable jobs; restore while40/s arrivals continue. Catchup target requires >=48/s surplus plus arrival capacity; measure provider permits. Repeat with unknown-effect jobs held outside retry set and report them separately."
+    },
+    {
+      "id": "PERF-CACHE",
+      "title": "Public data freshness",
+      "status": "proposed-unmeasured",
+      "target": {
+        "public_catalog_max_age_seconds": 60,
+        "public_editorial_max_age_seconds": 300,
+        "private_shared_cache_allowed": false
+      },
+      "start": "authoritative content publication",
+      "end": "last stale public response",
+      "dependency_boundary": "purge/version propagation across replicas; no private negotiated data",
+      "workload": "WL-01",
+      "environment": "ENV-PERF-01",
+      "dataset": "WL-01 synthetic seeded fixture with digest",
+      "tools": [
+        "k6 or equivalent pinned load generator",
+        "OpenTelemetry",
+        "PostgreSQL EXPLAIN ANALYZE",
+        "browser performance trace",
+        "web-vitals RUM for PERF-WEB"
+      ],
+      "sampling": "All synthetic requests and failures; RUM consent/minimization with declared sample rate; sufficient sample/CI reported, never silently discard slow failures",
+      "gate": "Cache isolation/invalidation gate",
+      "owner_role": "R06"
+    },
+    {
+      "id": "PERF-COST",
+      "title": "Cost reporting",
+      "status": "proposed-unmeasured",
+      "target": {
+        "provider_price_baseline": "unpriced",
+        "currency": "unselected",
+        "production_cost_target": "pending business budget"
+      },
+      "start": "monthly resource/provider billing window",
+      "end": "successful issued-order count for same cohort",
+      "dependency_boundary": "include unsuccessful attempts, callbacks, egress, storage, support and committed shared capacity",
+      "workload": "WL-01",
+      "environment": "ENV-PERF-01",
+      "dataset": "WL-01 synthetic seeded fixture with digest",
+      "tools": [
+        "k6 or equivalent pinned load generator",
+        "OpenTelemetry",
+        "PostgreSQL EXPLAIN ANALYZE",
+        "browser performance trace",
+        "web-vitals RUM for PERF-WEB"
+      ],
+      "sampling": "All synthetic requests and failures; RUM consent/minimization with declared sample rate; sufficient sample/CI reported, never silently discard slow failures",
+      "gate": "R01/R06 approve priced baseline before infrastructure commitment",
+      "owner_role": "R06"
+    },
+    {
+      "id": "PERF-OPS",
+      "title": "Proposed recovery and incident targets",
+      "status": "proposed-unmeasured",
+      "target": {
+        "database_RPO_seconds": 300,
+        "database_RTO_seconds": 3600,
+        "object_RPO_seconds": 3600,
+        "object_RTO_seconds": 14400,
+        "paid_unissued_alert_age_seconds": 900,
+        "unknown_outcome_alert_delay_seconds": 0,
+        "oncall_acknowledge_seconds": 900
+      },
+      "start": "RPO: fault point; RTO: declared recovery start; alert: durable exception or committed paid purchase; acknowledgment: alert delivery",
+      "end": "RPO: latest restorable durable point; RTO: integrity-verified service available; alert: delivered to duty owner; acknowledgment: named owner accepts",
+      "dependency_boundary": "Backup/WAL/object-version availability and staffed on-call required; targets do not confer contractual SLA",
+      "workload": "WL-01 restore/recovery fixture with all monetary/outbox and representative document data",
+      "environment": "ENV-PERF-01 isolated restore target; actual disaster deployment region pending",
+      "dataset": "Seeded database and object manifests with hashes; injected loss point recorded",
+      "tools": [
+        "database restore logs",
+        "object version manifest verifier",
+        "synthetic integrity probes",
+        "incident exercise log"
+      ],
+      "sampling": "Every recovery drill; verify payment/outbox/ledger invariants and document access before RTO stop",
+      "gate": "R14/R12/R11 review successful isolated restore and incident rehearsal before production",
+      "owner_role": "R14"
+    }
+  ],
+  "environment": {
+    "id": "ENV-PERF-01",
+    "status": "proposed-unprovisioned",
+    "api": {
+      "replicas": 2,
+      "vcpu_each": 4,
+      "ram_gib_each": 8
+    },
+    "worker": {
+      "replicas": 2,
+      "vcpu_each": 4,
+      "ram_gib_each": 8
+    },
+    "postgres": {
+      "vcpu": 8,
+      "ram_gib": 32,
+      "storage": "SSD, actual IOPS recorded before run"
+    },
+    "region": "unselected; single-region test with declared API-DB RTT",
+    "network": "record provider latency profile separately; proposed same-region API/DB",
+    "browser": "Pinned Chromium build plus real midrange Android and iOS device models recorded per run",
+    "load_generator": "separate host; record CPU/RAM/network and saturation",
+    "dependency_versions": "exact lock and container digests required before measurement"
+  },
+  "workload": {
+    "id": "WL-01",
+    "arrival_model": "open-loop constant arrival, no hidden coordinated omission",
+    "steady_rps": 200,
+    "steady_minutes": 30,
+    "burst_rps": 500,
+    "burst_minutes": 5,
+    "mix_percent": {
+      "authorized_reads": 65,
+      "quote_start_update": 20,
+      "bounded_writes": 10,
+      "callback_status": 5
+    },
+    "operations": {
+      "authorized_reads": "40% policy list/detail,15% dashboard,10% catalog of total traffic",
+      "quote_start_update": "5% starts,15% status/update of total traffic",
+      "bounded_writes": "4% drafts,3% order/approval,2% enrollment,1% refund request",
+      "callback_status": "3% callback,2% reconciliation status"
+    },
+    "policies": 1000000,
+    "people": 500000,
+    "organizations": 50000,
+    "carrier_simulators": 10,
+    "concurrent_import_rows": 20000,
+    "max_read_response_kib": 64,
+    "max_command_kib": 32,
+    "max_quote_response_kib": 128,
+    "quote_provider_fanout_max": 10,
+    "active_connections": 1000,
+    "think_time": "open-loop arrivals; separate E2E session model uses 2–10s seeded think time",
+    "provider_profile": "Fictional: nine healthy eligible endpoints; one injected outage; p95 healthy response <=1500ms for conditional first-result target",
+    "variants": [
+      "warm public cache",
+      "cold public cache",
+      "one-carrier outage",
+      "duplicate callbacks",
+      "cache loss",
+      "queue restart/recovery",
+      "tenant noisy neighbor",
+      "private cache isolation"
+    ]
+  },
+  "observational_workload": {
+    "id": "WL-FIELD-01",
+    "environment": "ENV-PRODUCTION-PENDING",
+    "traffic": "actual production eligible requests/sessions; no synthetic demand substitution",
+    "sampling": "record device/route cohorts, consent/minimization, sample size and confidence; do not infer field pass from lab",
+    "availability_denominator": "all eligible platform requests including planned maintenance failures, plus separately reported external journey outcomes"
+  }
+}

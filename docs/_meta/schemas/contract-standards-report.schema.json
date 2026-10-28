@@ -1,0 +1,192 @@
+{
+  "type": "object",
+  "properties": {
+    "checkedAt": {
+      "type": "string",
+      "minLength": 1
+    },
+    "id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "inputs": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "path": {
+            "type": "string",
+            "minLength": 1
+          },
+          "sha256": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "required": [
+          "path",
+          "sha256"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "outcomes": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "diagnostics": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "code": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "message": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "path": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "minLength": 1
+                  }
+                },
+                "range": {
+                  "type": "object",
+                  "properties": {
+                    "end": {
+                      "type": "object",
+                      "properties": {
+                        "character": {
+                          "type": "integer"
+                        },
+                        "line": {
+                          "type": "integer"
+                        }
+                      },
+                      "required": [
+                        "character",
+                        "line"
+                      ],
+                      "additionalProperties": false
+                    },
+                    "start": {
+                      "type": "object",
+                      "properties": {
+                        "character": {
+                          "type": "integer"
+                        },
+                        "line": {
+                          "type": "integer"
+                        }
+                      },
+                      "required": [
+                        "character",
+                        "line"
+                      ],
+                      "additionalProperties": false
+                    }
+                  },
+                  "required": [
+                    "end",
+                    "start"
+                  ],
+                  "additionalProperties": false
+                },
+                "severity": {
+                  "type": "integer"
+                },
+                "source": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              },
+              "required": [
+                "code",
+                "message",
+                "path",
+                "range",
+                "severity",
+                "source"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "engine": {
+            "type": "string",
+            "minLength": 1
+          },
+          "kind": {
+            "type": "string",
+            "minLength": 1
+          },
+          "operations": {
+            "type": "integer"
+          },
+          "valid": {
+            "type": "boolean"
+          },
+          "version": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "required": [
+          "engine",
+          "kind",
+          "valid",
+          "version"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "runtime": {
+      "type": "string",
+      "minLength": 1
+    },
+    "scope": {
+      "type": "string",
+      "minLength": 1
+    },
+    "status": {
+      "enum": [
+        "draft",
+        "proposed",
+        "partial",
+        "complete",
+        "blocked"
+      ]
+    },
+    "updated": {
+      "type": "string",
+      "minLength": 1
+    },
+    "valid": {
+      "type": "boolean"
+    },
+    "version": {
+      "type": "string",
+      "minLength": 1
+    }
+  },
+  "required": [
+    "checkedAt",
+    "id",
+    "inputs",
+    "outcomes",
+    "runtime",
+    "scope",
+    "status",
+    "updated",
+    "valid",
+    "version"
+  ],
+  "additionalProperties": false,
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://insurance.example.invalid/meta/contract-standards-report.schema.json",
+  "title": "contract-standards-report registry v1"
+}

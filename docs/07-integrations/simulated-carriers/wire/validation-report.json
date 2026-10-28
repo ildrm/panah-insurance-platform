@@ -1,0 +1,28 @@
+{
+  "status": "passed",
+  "scope": "documentation wire artifacts only; no simulator service or provider integration executed",
+  "json_fixtures": 28,
+  "json_negative_fixtures": 7,
+  "json_validator": "local used-keyword subset; full standards parser not available",
+  "xml_fixtures": 11,
+  "xml_validator": "xmllint XSD1.0 --nonet plus cross-field assertions",
+  "xml_negative_fixtures": 1,
+  "hmac_vectors": 2,
+  "independent_hmac": "OpenSSL dgst",
+  "tampered_signature_rejected": true,
+  "calendar_observation": {
+    "node": "v24.22.1",
+    "icu": "78.3",
+    "pairs": [
+      {
+        "gregorian": "2026-11-01",
+        "persian": "1405-08-10"
+      },
+      {
+        "gregorian": "2026-11-02",
+        "persian": "1405-08-11"
+      }
+    ]
+  },
+  "pdf_hash_verified": true
+}

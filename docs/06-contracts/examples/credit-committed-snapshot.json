@@ -1,0 +1,64 @@
+{
+  "purchaseId": "00000000-0000-4000-8000-000000000001",
+  "version": 1,
+  "contextId": "00000000-0000-4000-8000-000000000002",
+  "channel": "corporate",
+  "productId": "PRD-01",
+  "carrierId": "00000000-0000-4000-8000-000000000003",
+  "parties": [
+    {
+      "partyId": "00000000-0000-4000-8000-000000000004",
+      "role": "buyer"
+    },
+    {
+      "partyId": "00000000-0000-4000-8000-000000000004",
+      "role": "payer"
+    },
+    {
+      "partyId": "00000000-0000-4000-8000-000000000004",
+      "role": "policyholder"
+    },
+    {
+      "partyId": "00000000-0000-4000-8000-000000000004",
+      "role": "insured"
+    },
+    {
+      "partyId": "00000000-0000-4000-8000-000000000003",
+      "role": "carrier"
+    }
+  ],
+  "commitmentKind": "approved_credit",
+  "versions": {
+    "product": "synthetic-v1",
+    "form": "synthetic-v1",
+    "risk": "synthetic-v1",
+    "plan": "synthetic-v1",
+    "price": "synthetic-v1",
+    "wording": "synthetic-v1",
+    "consent": "synthetic-v1",
+    "mapping": "synthetic-v1",
+    "featureConfig": "synthetic-v1"
+  },
+  "riskSnapshotRef": "00000000-0000-4000-8000-000000000006",
+  "evidenceManifestRef": "00000000-0000-4000-8000-000000000007",
+  "recipientProjectionRef": "00000000-0000-4000-8000-000000000008",
+  "totalPayable": {
+    "amount": "1000",
+    "currency": "IRR",
+    "unit": "rial"
+  },
+  "allocations": [
+    {
+      "lineId": "00000000-0000-4000-8000-000000000009",
+      "kind": "premium",
+      "money": {
+        "amount": "1000",
+        "currency": "IRR",
+        "unit": "rial"
+      }
+    }
+  ],
+  "committedAt": "2026-10-28T08:00:00Z",
+  "approvalId": "00000000-0000-4000-8000-000000000011",
+  "creditReservationId": "00000000-0000-4000-8000-000000000012"
+}

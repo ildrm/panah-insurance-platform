@@ -1,0 +1,62 @@
+{
+  "id": "REG-ASSUMPTIONS",
+  "version": "1.0.0",
+  "status": "draft",
+  "updated": "2026-10-28",
+  "entries": [
+    {
+      "id": "A01",
+      "title": "Localization and market defaults",
+      "proposal": "Iran-focused product context, Persian-first RTL, English identifiers, canonical IRR where applicable, explicitly labeled toman conversion, Jalali presentation where selected, UTC events. Jurisdiction/residency/deployment region are not inferred.",
+      "owner_role": "R01",
+      "resolution_evidence": "Qualified market/legal decision and user acceptance",
+      "status": "proposed",
+      "reversible": true
+    },
+    {
+      "id": "A02",
+      "title": "Architecture proposal",
+      "proposal": "Modular Nest backend, separate API/worker scaling, Next storefront/portal/admin, PostgreSQL durable outbox, object storage; exact supported dependencies await compatibility/security evidence.",
+      "owner_role": "R05",
+      "resolution_evidence": "ADR review and pinned dependency lock",
+      "status": "proposed",
+      "reversible": true
+    },
+    {
+      "id": "A03",
+      "title": "Workload proposal",
+      "proposal": "Synthetic 200rps steady and 500rps burst plus 20,000-row concurrent import; not known business demand.",
+      "owner_role": "R06",
+      "resolution_evidence": "Measured demand and representative benchmark",
+      "status": "proposed",
+      "reversible": true
+    },
+    {
+      "id": "A04",
+      "title": "Privacy aggregation",
+      "proposal": "Proposed minimum cohort 10 plus complementary suppression for employer health aggregates; privacy review may require stricter suppression.",
+      "owner_role": "R11",
+      "resolution_evidence": "Disclosure-risk analysis",
+      "status": "proposed",
+      "reversible": true
+    },
+    {
+      "id": "A05",
+      "title": "Payment reservation transition",
+      "proposal": "A fixed-expiry reservation accepted before a sales disable may complete only its immutable accepted terms; absent a valid reservation, verified money enters refund review without new commitment.",
+      "owner_role": "R12",
+      "resolution_evidence": "Commercial/legal and implementation race review",
+      "status": "proposed",
+      "reversible": true
+    },
+    {
+      "id": "A06",
+      "title": "Native applications",
+      "proposal": "Native iOS/Android requirement and stack are undecided; responsive web/PWA does not satisfy native scope.",
+      "owner_role": "R21",
+      "resolution_evidence": "Explicit product scope decision",
+      "status": "proposed",
+      "reversible": true
+    }
+  ]
+}

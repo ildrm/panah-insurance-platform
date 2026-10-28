@@ -1,0 +1,1023 @@
+{
+  "type": "object",
+  "properties": {
+    "architecture": {
+      "type": "string",
+      "minLength": 1
+    },
+    "bundle_optimization": {
+      "type": "object",
+      "properties": {
+        "baseline_landing_gzip_bytes": {
+          "type": "integer"
+        },
+        "baseline_path": {
+          "type": "string",
+          "minLength": 1
+        },
+        "baseline_runtime": {
+          "type": "string",
+          "minLength": 1
+        },
+        "budget_unchanged": {
+          "type": "boolean"
+        },
+        "current_landing_gzip_bytes": {
+          "type": "integer"
+        },
+        "current_path": {
+          "type": "string",
+          "minLength": 1
+        },
+        "current_runtime": {
+          "type": "string",
+          "minLength": 1
+        },
+        "note": {
+          "type": "string",
+          "minLength": 1
+        },
+        "saved_bytes": {
+          "type": "integer"
+        }
+      },
+      "required": [
+        "baseline_landing_gzip_bytes",
+        "baseline_path",
+        "baseline_runtime",
+        "budget_unchanged",
+        "current_landing_gzip_bytes",
+        "current_path",
+        "current_runtime",
+        "note",
+        "saved_bytes"
+      ],
+      "additionalProperties": false
+    },
+    "checks": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "b2c_flow_seconds": {
+            "type": "number"
+          },
+          "budget_kib": {
+            "type": "integer"
+          },
+          "budgets_kib": {
+            "type": "object",
+            "properties": {
+              "dashboard": {
+                "type": "integer"
+              },
+              "landing": {
+                "type": "integer"
+              },
+              "purchase": {
+                "type": "integer"
+              }
+            },
+            "required": [
+              "dashboard",
+              "landing",
+              "purchase"
+            ],
+            "additionalProperties": false
+          },
+          "command": {
+            "type": "string",
+            "minLength": 1
+          },
+          "duration_seconds": {
+            "type": "number"
+          },
+          "evidence_path": {
+            "type": "string",
+            "minLength": 1
+          },
+          "failed": {
+            "type": "integer"
+          },
+          "failed_script_responses": {
+            "type": "integer"
+          },
+          "finance_flow_seconds": {
+            "type": "number"
+          },
+          "full_field_performance_proven": {
+            "type": "boolean"
+          },
+          "immutable_evidence_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "measured_gzip_kib": {
+            "type": "number"
+          },
+          "measured_kib": {
+            "type": "object",
+            "properties": {
+              "dashboard": {
+                "type": "number"
+              },
+              "landing": {
+                "type": "number"
+              },
+              "purchase": {
+                "type": "number"
+              }
+            },
+            "required": [
+              "dashboard",
+              "landing",
+              "purchase"
+            ],
+            "additionalProperties": false
+          },
+          "method": {
+            "type": "string",
+            "minLength": 1
+          },
+          "missing_files": {
+            "type": "integer"
+          },
+          "observed_assets": {
+            "type": "integer"
+          },
+          "page_modules": {
+            "type": "integer"
+          },
+          "passed": {
+            "type": "integer"
+          },
+          "result": {
+            "type": "string",
+            "minLength": 1
+          },
+          "scoped_controls_flow_seconds": {
+            "type": "number"
+          },
+          "skipped": {
+            "type": "integer"
+          }
+        },
+        "required": [
+          "command",
+          "result"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "counts": {
+      "type": "object",
+      "properties": {
+        "additional_specialized_routes": {
+          "type": "integer"
+        },
+        "dashboard_navigation_routes": {
+          "type": "integer"
+        },
+        "dashboard_surfaces": {
+          "type": "integer"
+        },
+        "documented_dashboard_navigation_routes": {
+          "type": "integer"
+        }
+      },
+      "required": [
+        "additional_specialized_routes",
+        "dashboard_navigation_routes",
+        "dashboard_surfaces",
+        "documented_dashboard_navigation_routes"
+      ],
+      "additionalProperties": false
+    },
+    "environment": {
+      "type": "object",
+      "properties": {
+        "browser": {
+          "type": "string",
+          "minLength": 1
+        },
+        "frontend_node": {
+          "type": "string",
+          "minLength": 1
+        },
+        "mode": {
+          "type": "string",
+          "minLength": 1
+        },
+        "runner": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "required": [
+        "browser",
+        "frontend_node",
+        "mode",
+        "runner"
+      ],
+      "additionalProperties": false
+    },
+    "final_immutable_evidence": {
+      "type": "object",
+      "properties": {
+        "browser": {
+          "type": "string",
+          "minLength": 1
+        },
+        "build": {
+          "type": "string",
+          "minLength": 1
+        },
+        "initial_bundles": {
+          "type": "string",
+          "minLength": 1
+        },
+        "source_changed_during_all_three_runs": {
+          "type": "boolean"
+        },
+        "source_sha256": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "required": [
+        "browser",
+        "build",
+        "initial_bundles",
+        "source_changed_during_all_three_runs",
+        "source_sha256"
+      ],
+      "additionalProperties": false
+    },
+    "finance_slice": {
+      "type": "object",
+      "properties": {
+        "compiled_unverified_behavior": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "files": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "immutable_evidence_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "not_implemented_or_not_claimed": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "permissions": {
+          "type": "string",
+          "minLength": 1
+        },
+        "routes": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "status": {
+          "type": "string",
+          "minLength": 1
+        },
+        "verified_behavior": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      },
+      "required": [
+        "compiled_unverified_behavior",
+        "files",
+        "immutable_evidence_id",
+        "not_implemented_or_not_claimed",
+        "permissions",
+        "routes",
+        "status",
+        "verified_behavior"
+      ],
+      "additionalProperties": false
+    },
+    "frameworks": {
+      "type": "object",
+      "properties": {
+        "next": {
+          "type": "string",
+          "minLength": 1
+        },
+        "react": {
+          "type": "string",
+          "minLength": 1
+        },
+        "typescript": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "required": [
+        "next",
+        "react",
+        "typescript"
+      ],
+      "additionalProperties": false
+    },
+    "independent_human_review": {
+      "type": "string",
+      "minLength": 1
+    },
+    "leaf_evidence": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "api_operation": {
+            "type": "string",
+            "minLength": 1
+          },
+          "evidence": {
+            "type": "string",
+            "minLength": 1
+          },
+          "files": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "remaining_behavior": {
+            "type": "string",
+            "minLength": 1
+          },
+          "status": {
+            "type": "string",
+            "minLength": 1
+          },
+          "test_paths": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          }
+        },
+        "required": [
+          "api_operation",
+          "files",
+          "id",
+          "status"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "limitations": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "local_browser_evidence": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "owned_paths": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "owner_roles": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "previous_frozen_checkpoints": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "browser": {
+            "type": "string",
+            "minLength": 1
+          },
+          "build": {
+            "type": "string",
+            "minLength": 1
+          },
+          "initial_bundles": {
+            "type": "string",
+            "minLength": 1
+          },
+          "source_changed_during_all_three_runs": {
+            "type": "boolean"
+          },
+          "source_sha256": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "required": [
+          "browser",
+          "build",
+          "initial_bundles",
+          "source_changed_during_all_three_runs",
+          "source_sha256"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "production_ready": {
+      "type": "boolean"
+    },
+    "review_findings_resolved": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "scope_status": {
+      "type": "string",
+      "minLength": 1
+    },
+    "scoped_controls_slice": {
+      "type": "object",
+      "properties": {
+        "code_review": {
+          "type": "object",
+          "properties": {
+            "files_changed_by_reviewer": {
+              "type": "boolean"
+            },
+            "findings_resolved": {
+              "type": "integer"
+            },
+            "kind": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "required": [
+            "files_changed_by_reviewer",
+            "findings_resolved",
+            "kind"
+          ],
+          "additionalProperties": false
+        },
+        "compiled_unverified_browser_behavior": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "contract_source": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "files": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "immutable_evidence_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "internal_contracts_excluded_from_editor": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "loading": {
+          "type": "string",
+          "minLength": 1
+        },
+        "remaining_behavior": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "route": {
+          "type": "string",
+          "minLength": 1
+        },
+        "runtime_enforcement_warning": {
+          "type": "string",
+          "minLength": 1
+        },
+        "status": {
+          "type": "string",
+          "minLength": 1
+        },
+        "verified_browser_behavior": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      },
+      "required": [
+        "code_review",
+        "compiled_unverified_browser_behavior",
+        "contract_source",
+        "files",
+        "immutable_evidence_id",
+        "internal_contracts_excluded_from_editor",
+        "loading",
+        "remaining_behavior",
+        "route",
+        "runtime_enforcement_warning",
+        "status",
+        "verified_browser_behavior"
+      ],
+      "additionalProperties": false
+    },
+    "source_hashes": {
+      "type": "object",
+      "properties": {
+        "apps/web/app/account/[[...section]]/page.tsx": {
+          "type": "string",
+          "minLength": 1
+        },
+        "apps/web/app/admin/[[...section]]/page.tsx": {
+          "type": "string",
+          "minLength": 1
+        },
+        "apps/web/app/applications/[id]/page.tsx": {
+          "type": "string",
+          "minLength": 1
+        },
+        "apps/web/app/auth/recovery/page.tsx": {
+          "type": "string",
+          "minLength": 1
+        },
+        "apps/web/app/auth/sign-in/page.tsx": {
+          "type": "string",
+          "minLength": 1
+        },
+        "apps/web/app/automotive/[kind]/page.tsx": {
+          "type": "string",
+          "minLength": 1
+        },
+        "apps/web/app/benefits/[[...section]]/page.tsx": {
+          "type": "string",
+          "minLength": 1
+        },
+        "apps/web/app/checkout/[applicationId]/page.tsx": {
+          "type": "string",
+          "minLength": 1
+        },
+        "apps/web/app/error.tsx": {
+          "type": "string",
+          "minLength": 1
+        },
+        "apps/web/app/globals.css": {
+          "type": "string",
+          "minLength": 1
+        },
+        "apps/web/app/help/page.tsx": {
+          "type": "string",
+          "minLength": 1
+        },
+        "apps/web/app/icon.svg": {
+          "type": "string",
+          "minLength": 1
+        },
+        "apps/web/app/inspections/[id]/page.tsx": {
+          "type": "string",
+          "minLength": 1
+        },
+        "apps/web/app/insurance/[productId]/page.tsx": {
+          "type": "string",
+          "minLength": 1
+        },
+        "apps/web/app/insurance/page.tsx": {
+          "type": "string",
+          "minLength": 1
+        },
+        "apps/web/app/insurers/[slug]/page.tsx": {
+          "type": "string",
+          "minLength": 1
+        },
+        "apps/web/app/layout.tsx": {
+          "type": "string",
+          "minLength": 1
+        },
+        "apps/web/app/loading.tsx": {
+          "type": "string",
+          "minLength": 1
+        },
+        "apps/web/app/manifest.ts": {
+          "type": "string",
+          "minLength": 1
+        },
+        "apps/web/app/not-found.tsx": {
+          "type": "string",
+          "minLength": 1
+        },
+        "apps/web/app/offline/page.tsx": {
+          "type": "string",
+          "minLength": 1
+        },
+        "apps/web/app/ops/[[...section]]/page.tsx": {
+          "type": "string",
+          "minLength": 1
+        },
+        "apps/web/app/orders/[id]/page.tsx": {
+          "type": "string",
+          "minLength": 1
+        },
+        "apps/web/app/org/[orgId]/[[...section]]/page.tsx": {
+          "type": "string",
+          "minLength": 1
+        },
+        "apps/web/app/org/page.tsx": {
+          "type": "string",
+          "minLength": 1
+        },
+        "apps/web/app/page.tsx": {
+          "type": "string",
+          "minLength": 1
+        },
+        "apps/web/app/partner-referrals/page.tsx": {
+          "type": "string",
+          "minLength": 1
+        },
+        "apps/web/app/partner/[[...section]]/page.tsx": {
+          "type": "string",
+          "minLength": 1
+        },
+        "apps/web/app/policies/[id]/changes/page.tsx": {
+          "type": "string",
+          "minLength": 1
+        },
+        "apps/web/app/policies/[id]/page.tsx": {
+          "type": "string",
+          "minLength": 1
+        },
+        "apps/web/app/quotes/[id]/compare/page.tsx": {
+          "type": "string",
+          "minLength": 1
+        },
+        "apps/web/app/sandbox/payments/[id]/page.tsx": {
+          "type": "string",
+          "minLength": 1
+        },
+        "apps/web/app/search/page.tsx": {
+          "type": "string",
+          "minLength": 1
+        },
+        "apps/web/app/seller/[[...section]]/page.tsx": {
+          "type": "string",
+          "minLength": 1
+        },
+        "apps/web/components/admin-tools.tsx": {
+          "type": "string",
+          "minLength": 1
+        },
+        "apps/web/components/admin/scoped-controls.tsx": {
+          "type": "string",
+          "minLength": 1
+        },
+        "apps/web/components/auth.tsx": {
+          "type": "string",
+          "minLength": 1
+        },
+        "apps/web/components/business-form.tsx": {
+          "type": "string",
+          "minLength": 1
+        },
+        "apps/web/components/catalog.tsx": {
+          "type": "string",
+          "minLength": 1
+        },
+        "apps/web/components/chrome.tsx": {
+          "type": "string",
+          "minLength": 1
+        },
+        "apps/web/components/dashboard.tsx": {
+          "type": "string",
+          "minLength": 1
+        },
+        "apps/web/components/finance.tsx": {
+          "type": "string",
+          "minLength": 1
+        },
+        "apps/web/components/footer.tsx": {
+          "type": "string",
+          "minLength": 1
+        },
+        "apps/web/components/inspection.tsx": {
+          "type": "string",
+          "minLength": 1
+        },
+        "apps/web/components/primitives.tsx": {
+          "type": "string",
+          "minLength": 1
+        },
+        "apps/web/components/protected-session.tsx": {
+          "type": "string",
+          "minLength": 1
+        },
+        "apps/web/components/purchase.tsx": {
+          "type": "string",
+          "minLength": 1
+        },
+        "apps/web/components/pwa.tsx": {
+          "type": "string",
+          "minLength": 1
+        },
+        "apps/web/components/schema-field.tsx": {
+          "type": "string",
+          "minLength": 1
+        },
+        "apps/web/components/session.tsx": {
+          "type": "string",
+          "minLength": 1
+        },
+        "apps/web/components/special-pages.tsx": {
+          "type": "string",
+          "minLength": 1
+        },
+        "apps/web/lib/finance-routes.ts": {
+          "type": "string",
+          "minLength": 1
+        },
+        "apps/web/lib/portal-routes.ts": {
+          "type": "string",
+          "minLength": 1
+        },
+        "apps/web/lib/product-titles.ts": {
+          "type": "string",
+          "minLength": 1
+        },
+        "apps/web/lib/server-api.ts": {
+          "type": "string",
+          "minLength": 1
+        },
+        "apps/web/next-env.d.ts": {
+          "type": "string",
+          "minLength": 1
+        },
+        "apps/web/next.config.ts": {
+          "type": "string",
+          "minLength": 1
+        },
+        "apps/web/package.json": {
+          "type": "string",
+          "minLength": 1
+        },
+        "apps/web/public/sw.js": {
+          "type": "string",
+          "minLength": 1
+        },
+        "apps/web/tsconfig.json": {
+          "type": "string",
+          "minLength": 1
+        },
+        "packages/api-client/package.json": {
+          "type": "string",
+          "minLength": 1
+        },
+        "packages/api-client/src/controls.ts": {
+          "type": "string",
+          "minLength": 1
+        },
+        "packages/api-client/src/csv.ts": {
+          "type": "string",
+          "minLength": 1
+        },
+        "packages/api-client/src/finance.ts": {
+          "type": "string",
+          "minLength": 1
+        },
+        "packages/api-client/src/index.ts": {
+          "type": "string",
+          "minLength": 1
+        },
+        "packages/api-client/src/session-reader.ts": {
+          "type": "string",
+          "minLength": 1
+        },
+        "packages/api-client/src/session-view.ts": {
+          "type": "string",
+          "minLength": 1
+        },
+        "packages/api-client/src/session.ts": {
+          "type": "string",
+          "minLength": 1
+        },
+        "packages/api-client/tsconfig.json": {
+          "type": "string",
+          "minLength": 1
+        },
+        "packages/ui/package.json": {
+          "type": "string",
+          "minLength": 1
+        },
+        "packages/ui/src/index.ts": {
+          "type": "string",
+          "minLength": 1
+        },
+        "packages/ui/tsconfig.json": {
+          "type": "string",
+          "minLength": 1
+        },
+        "tests/e2e/csv.spec.ts": {
+          "type": "string",
+          "minLength": 1
+        },
+        "tests/e2e/finance-contract.spec.ts": {
+          "type": "string",
+          "minLength": 1
+        },
+        "tests/e2e/finance.spec.ts": {
+          "type": "string",
+          "minLength": 1
+        },
+        "tests/e2e/playwright.config.ts": {
+          "type": "string",
+          "minLength": 1
+        },
+        "tests/e2e/purchase.spec.ts": {
+          "type": "string",
+          "minLength": 1
+        },
+        "tests/e2e/scoped-controls.spec.ts": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "required": [
+        "apps/web/app/account/[[...section]]/page.tsx",
+        "apps/web/app/admin/[[...section]]/page.tsx",
+        "apps/web/app/applications/[id]/page.tsx",
+        "apps/web/app/auth/recovery/page.tsx",
+        "apps/web/app/auth/sign-in/page.tsx",
+        "apps/web/app/automotive/[kind]/page.tsx",
+        "apps/web/app/benefits/[[...section]]/page.tsx",
+        "apps/web/app/checkout/[applicationId]/page.tsx",
+        "apps/web/app/error.tsx",
+        "apps/web/app/globals.css",
+        "apps/web/app/help/page.tsx",
+        "apps/web/app/icon.svg",
+        "apps/web/app/inspections/[id]/page.tsx",
+        "apps/web/app/insurance/[productId]/page.tsx",
+        "apps/web/app/insurance/page.tsx",
+        "apps/web/app/insurers/[slug]/page.tsx",
+        "apps/web/app/layout.tsx",
+        "apps/web/app/loading.tsx",
+        "apps/web/app/manifest.ts",
+        "apps/web/app/not-found.tsx",
+        "apps/web/app/offline/page.tsx",
+        "apps/web/app/ops/[[...section]]/page.tsx",
+        "apps/web/app/orders/[id]/page.tsx",
+        "apps/web/app/org/[orgId]/[[...section]]/page.tsx",
+        "apps/web/app/org/page.tsx",
+        "apps/web/app/page.tsx",
+        "apps/web/app/partner-referrals/page.tsx",
+        "apps/web/app/partner/[[...section]]/page.tsx",
+        "apps/web/app/policies/[id]/changes/page.tsx",
+        "apps/web/app/policies/[id]/page.tsx",
+        "apps/web/app/quotes/[id]/compare/page.tsx",
+        "apps/web/app/sandbox/payments/[id]/page.tsx",
+        "apps/web/app/search/page.tsx",
+        "apps/web/app/seller/[[...section]]/page.tsx",
+        "apps/web/components/admin-tools.tsx",
+        "apps/web/components/admin/scoped-controls.tsx",
+        "apps/web/components/auth.tsx",
+        "apps/web/components/business-form.tsx",
+        "apps/web/components/catalog.tsx",
+        "apps/web/components/chrome.tsx",
+        "apps/web/components/dashboard.tsx",
+        "apps/web/components/finance.tsx",
+        "apps/web/components/footer.tsx",
+        "apps/web/components/inspection.tsx",
+        "apps/web/components/primitives.tsx",
+        "apps/web/components/protected-session.tsx",
+        "apps/web/components/purchase.tsx",
+        "apps/web/components/pwa.tsx",
+        "apps/web/components/schema-field.tsx",
+        "apps/web/components/session.tsx",
+        "apps/web/components/special-pages.tsx",
+        "apps/web/lib/finance-routes.ts",
+        "apps/web/lib/portal-routes.ts",
+        "apps/web/lib/product-titles.ts",
+        "apps/web/lib/server-api.ts",
+        "apps/web/next-env.d.ts",
+        "apps/web/next.config.ts",
+        "apps/web/package.json",
+        "apps/web/public/sw.js",
+        "apps/web/tsconfig.json",
+        "packages/api-client/package.json",
+        "packages/api-client/src/controls.ts",
+        "packages/api-client/src/csv.ts",
+        "packages/api-client/src/finance.ts",
+        "packages/api-client/src/index.ts",
+        "packages/api-client/src/session-reader.ts",
+        "packages/api-client/src/session-view.ts",
+        "packages/api-client/src/session.ts",
+        "packages/api-client/tsconfig.json",
+        "packages/ui/package.json",
+        "packages/ui/src/index.ts",
+        "packages/ui/tsconfig.json",
+        "tests/e2e/csv.spec.ts",
+        "tests/e2e/finance-contract.spec.ts",
+        "tests/e2e/finance.spec.ts",
+        "tests/e2e/playwright.config.ts",
+        "tests/e2e/purchase.spec.ts",
+        "tests/e2e/scoped-controls.spec.ts"
+      ],
+      "additionalProperties": false
+    },
+    "status": {
+      "type": "string",
+      "minLength": 1
+    },
+    "updated": {
+      "type": "string",
+      "minLength": 1
+    },
+    "version": {
+      "type": "string",
+      "minLength": 1
+    },
+    "working_flows": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    }
+  },
+  "required": [
+    "architecture",
+    "bundle_optimization",
+    "checks",
+    "counts",
+    "environment",
+    "final_immutable_evidence",
+    "finance_slice",
+    "frameworks",
+    "independent_human_review",
+    "leaf_evidence",
+    "limitations",
+    "local_browser_evidence",
+    "owned_paths",
+    "owner_roles",
+    "previous_frozen_checkpoints",
+    "production_ready",
+    "review_findings_resolved",
+    "scope_status",
+    "scoped_controls_slice",
+    "source_hashes",
+    "status",
+    "updated",
+    "version",
+    "working_flows"
+  ],
+  "additionalProperties": false,
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://insurance.example.invalid/meta/fragment-frontend-implementation.schema.json",
+  "title": "Authored frontend-implementation build input v1"
+}

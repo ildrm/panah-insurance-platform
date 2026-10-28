@@ -1,0 +1,96 @@
+{
+  "id": "PERF-JS-PURCHASE-JOURNEY-LOCAL",
+  "status": "partial",
+  "measured_at": "2026-10-28T10:42:35.309Z",
+  "runtime": "v24.22.1",
+  "build": "Next.js production",
+  "budget_kib": 750,
+  "initial_and_journey_js_gzip_bytes": 195069,
+  "initial_and_journey_js_gzip_kib": 190.5,
+  "asset_count": 13,
+  "pass": true,
+  "stages": [
+    "OTP authentication",
+    "owned asset and schema form",
+    "quote fan-out and comparison",
+    "checkout declarations",
+    "order",
+    "explicit sandbox payment confirmation",
+    "policy and carrier PDF"
+  ],
+  "methodology": "Union of same-origin /_next/static/*.js responses observed by the actual B2C browser test, including visible-link prefetches; each matching production file gzip level6 once.",
+  "limitations": [
+    "Compressed asset union estimate, not actual wire transfer bytes",
+    "One local synthetic journey with the installed Chrome browser",
+    "No field LCP, INP, CLS or representative network/device qualification"
+  ],
+  "failed_script_responses": [],
+  "missing_files": [],
+  "assets": [
+    {
+      "path": "/_next/static/chunks/1o0lbs70is2r6.js",
+      "gzip_bytes": 10134,
+      "sha256": "e700cf57c111b43ee8dbd699daf90785e5b381dc18ae50617a4f0b226597132c"
+    },
+    {
+      "path": "/_next/static/chunks/1qdzbtghzr319.js",
+      "gzip_bytes": 10439,
+      "sha256": "e7b7c5a85654a6f2b16c9a6d4a7046fc7bceb770dc140b865e0d2d0803827113"
+    },
+    {
+      "path": "/_next/static/chunks/1vt8bmihzmaus.js",
+      "gzip_bytes": 11237,
+      "sha256": "156237d10983ec903d41887ccaf16f49e1a3703207ea7aca6b7279b765436da2"
+    },
+    {
+      "path": "/_next/static/chunks/1x6obpmlu1_c2.js",
+      "gzip_bytes": 1975,
+      "sha256": "7c0be00bfd43494dcddc8817168e952d9900555c3e80355686a423eedd2bab22"
+    },
+    {
+      "path": "/_next/static/chunks/262efsoe89m3h.js",
+      "gzip_bytes": 46367,
+      "sha256": "a7b1bbd9f1b594b996f743dd06af8a7ec5d5a786e259123190bbe9e45f90c099"
+    },
+    {
+      "path": "/_next/static/chunks/2ej6e8s_yzctv.js",
+      "gzip_bytes": 10687,
+      "sha256": "07848802971b1dee4f220c6e87698c6effbcfbbe97f608fa674ccd733398fcb9"
+    },
+    {
+      "path": "/_next/static/chunks/2hn86oi5z3igj.js",
+      "gzip_bytes": 401,
+      "sha256": "5068b172c9246132d81d82387ed22c77545b308e5f105a5626432a167b9e5ca1"
+    },
+    {
+      "path": "/_next/static/chunks/2r4s4h5xul1n-.js",
+      "gzip_bytes": 7624,
+      "sha256": "e1d4feb378b6ba6cfc1f31809ecdc03b14b8e0759bbe0065de29fb6646b277a2"
+    },
+    {
+      "path": "/_next/static/chunks/30iprwc2me6xw.js",
+      "gzip_bytes": 4258,
+      "sha256": "f0c5928dd4ad68806d7f20e6b20af2ba888d3e69be3a64de940c83aa14d6ab22"
+    },
+    {
+      "path": "/_next/static/chunks/3p3d1ekh-e_-h.js",
+      "gzip_bytes": 5613,
+      "sha256": "0da40b30d141101cc3bad13f2e22f4b072fdd08b57689063b3eeda678afeb5fc"
+    },
+    {
+      "path": "/_next/static/chunks/3xwwdok8woebp.js",
+      "gzip_bytes": 71970,
+      "sha256": "5bb06d9b8f8a678d7c300df10ddfc592ff5493b8205dd5c6ddb6fdf641d3acef"
+    },
+    {
+      "path": "/_next/static/chunks/455d2mjwdxg0k.js",
+      "gzip_bytes": 10424,
+      "sha256": "bae54d1d7c58ab7c673d1c1d5814c1f28092bb7cc83e67627ad983daa9c3f83b"
+    },
+    {
+      "path": "/_next/static/chunks/turbopack-3-ry682tkyiqk.js",
+      "gzip_bytes": 3940,
+      "sha256": "8bbb58cbfd4633c1d828c6bc37bc32abc768a149c01b1dfc4f5131fd81274551"
+    }
+  ]
+}

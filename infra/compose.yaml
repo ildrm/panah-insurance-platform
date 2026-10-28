@@ -1,0 +1,84 @@
+name: panah-local
+x-runtime: &runtime
+  image: panah-local:0.1.0
+  build:
+    context: ..
+    dockerfile: infra/Dockerfile
+    args: {API_URL: "http://api:3001"}
+  init: true
+  stop_grace_period: 30s
+  networks: [backend]
+x-application-env: &application-env
+  APP_MODE: sandbox
+  DATABASE_URL: postgresql://st:local-synthetic-password@db:5432/st_local
+  CARRIER_BASE_URL: http://simulators:3100
+  SIMULATOR_URL: http://simulators:3100
+  ST_SANDBOX_SERVICE_HOSTS: simulators
+  SIM_SIGNING_SECRET: ${SIM_SIGNING_SECRET:-synthetic-only-key-v1-not-for-live-use}
+  ST_CURSOR_SECRET: ${ST_CURSOR_SECRET:-local-synthetic-cursor-secret-not-for-production}
+  OBJECT_STORAGE_DIR: /app/.local/objects
+services:
+  db:
+    image: postgres:17.11-bookworm
+    environment:
+      POSTGRES_DB: st_local
+      POSTGRES_USER: st
+      POSTGRES_PASSWORD: local-synthetic-password
+    ports: ["127.0.0.1:${ST_DB_PORT:-55432}:5432"]
+    volumes: ["postgres:/var/lib/postgresql/data"]
+    networks: [backend]
+    healthcheck: {test: ["CMD-SHELL", "pg_isready -U st -d st_local"], interval: 5s, timeout: 3s, retries: 20}
+  simulators:
+    <<: *runtime
+    command: ["node", "apps/simulators/dist/main.js"]
+    environment:
+      APP_MODE: sandbox
+      ST_SANDBOX_CONTAINER: "true"
+      SIMULATOR_HOST: "0.0.0.0"
+      SIMULATOR_PORT: 3100
+      ST_SANDBOX_SERVICE_HOSTS: api
+      SIMULATOR_CALLBACK_URL: http://api:3001/callbacks/sim-signed
+      SIM_SIGNING_SECRET: ${SIM_SIGNING_SECRET:-synthetic-only-key-v1-not-for-live-use}
+    ports: ["127.0.0.1:3100:3100"]
+    healthcheck: {test: ["CMD", "node", "-e", "fetch('http://127.0.0.1:3100/health').then(r=>process.exit(r.ok?0:1)).catch(()=>process.exit(1))"], interval: 5s, timeout: 3s, retries: 20}
+  bootstrap:
+    <<: *runtime
+    command: ["node", "infra/bootstrap.mjs"]
+    environment: *application-env
+    volumes: ["objects:/app/.local/objects"]
+    depends_on: {db: {condition: service_healthy}, simulators: {condition: service_healthy}}
+    restart: "no"
+  api:
+    <<: *runtime
+    command: ["node", "apps/api/dist/main.js"]
+    environment:
+      <<: *application-env
+      API_HOST: "0.0.0.0"
+      API_PORT: 3001
+      WEB_ORIGIN: http://127.0.0.1:3000
+    ports: ["127.0.0.1:3001:3001"]
+    networks: [backend, frontend]
+    volumes: ["objects:/app/.local/objects"]
+    depends_on: {bootstrap: {condition: service_completed_successfully}}
+    healthcheck: {test: ["CMD", "node", "-e", "fetch('http://127.0.0.1:3001/health').then(r=>process.exit(r.ok?0:1)).catch(()=>process.exit(1))"], interval: 5s, timeout: 3s, retries: 20}
+  worker:
+    <<: *runtime
+    command: ["node", "apps/worker/dist/main.js"]
+    environment: *application-env
+    volumes: ["objects:/app/.local/objects"]
+    depends_on: {api: {condition: service_healthy}}
+    restart: on-failure:3
+  web:
+    <<: *runtime
+    command: ["node", "node_modules/next/dist/bin/next", "start", "apps/web", "--hostname", "0.0.0.0", "--port", "3000"]
+    environment: {APP_MODE: sandbox, NODE_ENV: production, API_URL: "http://api:3001", API_ORIGIN: "http://api:3001", NEXT_TELEMETRY_DISABLED: "1"}
+    ports: ["127.0.0.1:3000:3000"]
+    networks: [frontend]
+    depends_on: {api: {condition: service_healthy}}
+    healthcheck: {test: ["CMD", "node", "-e", "fetch('http://127.0.0.1:3000').then(r=>process.exit(r.ok?0:1)).catch(()=>process.exit(1))"], interval: 10s, timeout: 5s, retries: 20}
+networks:
+  backend: {internal: true}
+  frontend: {}
+volumes:
+  postgres: {}
+  objects: {}

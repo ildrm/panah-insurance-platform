@@ -1,0 +1,55 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://insurance.invalid/schemas/PRD-01.risk.v1.schema.json",
+  "title": "PRD-01 synthetic risk input syntax",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "vehicleRef",
+    "vehicleClass",
+    "usageCode",
+    "liabilityPlanCode"
+  ],
+  "properties": {
+    "vehicleRef": {
+      "type": "string",
+      "format": "uuid",
+      "description": "required; owned or delegated vehicle record. Sensitivity: confidential. Error: VEHICLE_AUTHORITY_REQUIRED. Eligibility is contract-dependent."
+    },
+    "plate": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 20,
+      "description": "conditional on approved inquiry; 1–20 characters; format from jurisdiction profile. Sensitivity: restricted. Error: PLATE_FORMAT_INVALID. Eligibility is contract-dependent."
+    },
+    "vehicleClass": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 40,
+      "description": "required; versioned carrier-compatible classification. Sensitivity: internal. Error: VEHICLE_CLASS_UNMAPPED. Eligibility is contract-dependent."
+    },
+    "usageCode": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 40,
+      "description": "required; 1–40 characters from product form. Sensitivity: internal. Error: USAGE_NOT_OFFERED. Eligibility is contract-dependent."
+    },
+    "priorPolicyRef": {
+      "type": "string",
+      "format": "uuid",
+      "description": "optional; authorized policy or verified uploaded evidence. Sensitivity: restricted. Error: PRIOR_POLICY_AUTHORITY_REQUIRED. Eligibility is contract-dependent."
+    },
+    "noClaimHistoryRef": {
+      "type": "string",
+      "format": "uuid",
+      "description": "conditional for discount; provenance, as-of time and inquiry version required. Sensitivity: restricted. Error: NO_CLAIM_EVIDENCE_STALE. Eligibility is contract-dependent."
+    },
+    "liabilityPlanCode": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 40,
+      "description": "required; 1–40 characters; offered plan snapshot. Sensitivity: internal. Error: LIABILITY_PLAN_UNAVAILABLE. Eligibility is contract-dependent."
+    }
+  },
+  "description": "Strict syntax baseline. Conditional predicates, cross-field dates/sums/relationships and actual carrier eligibility require the versioned application validator; passing this schema is not underwriting acceptance."
+}

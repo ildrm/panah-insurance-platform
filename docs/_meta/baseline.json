@@ -1,0 +1,499 @@
+{
+  "version": "1.0.0",
+  "source": "S00",
+  "sha256": "277e4bdd358ed0799e747bed01a2002e0b1432657c4053c01fb8f17812f16978",
+  "parents": [
+    {
+      "id": "INS-01",
+      "title": "Insurance catalog",
+      "source_text": "Hierarchical categories, search, featured products, insurer profiles, plans, coverage summaries, product availability and assisted-versus-self-service presentation."
+    },
+    {
+      "id": "INS-02",
+      "title": "Dynamic questionnaire",
+      "source_text": "Versioned product forms, conditional steps and fields, validation, drafts, resume, declarations, manual fallback, document requirements and localization."
+    },
+    {
+      "id": "INS-03",
+      "title": "Customer and insured profiles",
+      "source_text": "Saved individuals, dependents, addresses, vehicles, property/devices and prior policies; relationship-specific reuse, consent and ownership."
+    },
+    {
+      "id": "INS-04",
+      "title": "Official insurance inquiries",
+      "source_text": "Permitted plate/owner and policy-history inquiries, no-claim records, provenance, freshness, eligibility, failure handling and manual correction."
+    },
+    {
+      "id": "INS-05",
+      "title": "Multi-insurer quotation",
+      "source_text": "Carrier eligibility, request fan-out, parallel results, deduplication, coverage normalization, quote expiration and insurer-specific pricing/rating."
+    },
+    {
+      "id": "INS-06",
+      "title": "Comparison interface",
+      "source_text": "Comparable premiums, limits, exclusions, deductibles, eligible payment plans, customer/service information, sorting, filtering, badges and disclosed sponsored ranking."
+    },
+    {
+      "id": "INS-07",
+      "title": "Coverages and riders",
+      "source_text": "Base limits, optional risks, dependencies, deductibles, exclusions, pricing effects and insurer/product-specific validation."
+    },
+    {
+      "id": "INS-08",
+      "title": "Underwriting",
+      "source_text": "Risk declarations, eligibility checks, requests for evidence, manual review, acceptance/rejection and auditable underwriting decisions."
+    },
+    {
+      "id": "INS-09",
+      "title": "Vehicle inspection",
+      "source_text": "Authorized self-photo/video and in-person inspections, booking, checklists, secure uploads, review, retakes, expiry and approval."
+    },
+    {
+      "id": "INS-10",
+      "title": "Quote persistence",
+      "source_text": "Save/resume, eligible sharing with scoped expiring links, quote retrieval, expiry, reminders and abandoned-purchase recovery."
+    },
+    {
+      "id": "INS-11",
+      "title": "Specialized product templates",
+      "source_text": "All product families listed below, each with its own risk schema, pricing inputs, plans, beneficiaries, documents, underwriting and servicing differences."
+    },
+    {
+      "id": "INS-12",
+      "title": "Assisted quotations",
+      "source_text": "Complex commercial/group/cargo/engineering inquiries, lead assignment, callbacks, proposal versions, insurer negotiation and manual offer approval."
+    },
+    {
+      "id": "COM-01",
+      "title": "Digital checkout",
+      "source_text": "Buyer/payer/policyholder/insured relationships, order review, declarations, consents, approvals, order creation and eligibility revalidation."
+    },
+    {
+      "id": "COM-02",
+      "title": "Identity and documents",
+      "source_text": "Permitted identity verification, ownership/previous-policy/medical/property evidence, secure upload, malware handling, review and expiry."
+    },
+    {
+      "id": "COM-03",
+      "title": "Online payments",
+      "source_text": "Provider setup, payment intent/attempt, redirect, authoritative server verification, duplicate callbacks, receipts, failure recovery and payment allocation."
+    },
+    {
+      "id": "COM-04",
+      "title": "Installment purchasing",
+      "source_text": "Eligibility, financing provider, down payment, schedule, terms, guarantor/security requirements where applicable, acceptance and transparent total payable."
+    },
+    {
+      "id": "COM-05",
+      "title": "Discounts and promotions",
+      "source_text": "Codes, insurer/product campaigns, limits, budget reservations, stacking, attribution, expiry, eligibility and abuse controls."
+    },
+    {
+      "id": "COM-06",
+      "title": "Policy issuance",
+      "source_text": "Authorized carrier submission, automated/manual operations, underwriting dependencies, policy references, documents and failure remediation."
+    },
+    {
+      "id": "COM-07",
+      "title": "Policy delivery",
+      "source_text": "Account/PDF access, authorized SMS/email links, optional physical delivery, courier integration and delivery tracking."
+    },
+    {
+      "id": "COM-08",
+      "title": "Order tracking",
+      "source_text": "Separate order, payment, submission, underwriting, issuance and delivery status; customer-safe explanations, timelines and operational escalations."
+    },
+    {
+      "id": "COM-09",
+      "title": "Finance operations",
+      "source_text": "Reconciliation, premium allocation, commissions, refunds, insurer settlements, payouts, accounting permissions and auditability."
+    },
+    {
+      "id": "SVC-01",
+      "title": "Policy vault",
+      "source_text": "Active/pending/expired/cancelled policies, documents, endorsements, coverage, insured subjects, authorized sharing and history."
+    },
+    {
+      "id": "SVC-02",
+      "title": "Renewals",
+      "source_text": "Expiry detection, reminders, prefilled applications, fresh quotes, insurer switching, group/fleet changes and renewal attribution."
+    },
+    {
+      "id": "SVC-03",
+      "title": "Installment servicing",
+      "source_text": "Schedules, balances, receipts, reminders, payment allocation, arrears, disputes and approved collection rules."
+    },
+    {
+      "id": "SVC-04",
+      "title": "Amendments and cancellation",
+      "source_text": "Corrections, endorsements, cancellation eligibility, insurer processing, effective dates, version history and refunds."
+    },
+    {
+      "id": "SVC-05",
+      "title": "Claims guidance",
+      "source_text": "Product/carrier procedures, required documents, service locations, support and escalation without claiming settlement authority."
+    },
+    {
+      "id": "SVC-06",
+      "title": "Digital claims intake",
+      "source_text": "Eligibility, incident form, parties, place/time, evidence, privacy, submission and claimant-facing tracking."
+    },
+    {
+      "id": "SVC-07",
+      "title": "Claim assessment",
+      "source_text": "Adjuster assignment, scheduling, inspection, loss estimate, approval/rejection, supplementary evidence and review rights."
+    },
+    {
+      "id": "SVC-08",
+      "title": "Claims payment",
+      "source_text": "Contract-authorized settlement, approved amount, beneficiary/bank verification, dual control, payment status and reconciliation."
+    },
+    {
+      "id": "SVC-09",
+      "title": "Customer support",
+      "source_text": "Tickets, live chat/callback integrations, complaints, attachments, consent-based account assistance, assignments, SLAs and escalation."
+    },
+    {
+      "id": "GRW-01",
+      "title": "Accounts and authentication",
+      "source_text": "Mobile OTP, optional approved alternatives, profile, sessions, organization switching, MFA for privileged roles, account recovery and consent."
+    },
+    {
+      "id": "GRW-02",
+      "title": "Wallets and credits",
+      "source_text": "Distinct cash/withdrawable, refund, commission and non-cash promotional balances, vouchers, expiry, permitted redemption and ledgers."
+    },
+    {
+      "id": "GRW-03",
+      "title": "Loyalty club",
+      "source_text": "Points, pending/confirmed/reversed accrual, missions, rewards, badges, games, prize draws, charitable redemption, expiry and fraud controls; regulated mechanics require review."
+    },
+    {
+      "id": "GRW-04",
+      "title": "Referrals",
+      "source_text": "Codes/links, invitation attribution, qualifying events, pending/reversed rewards, budgets, caps and anti-self-referral protections."
+    },
+    {
+      "id": "GRW-05",
+      "title": "Campaigns",
+      "source_text": "Banners, landing pages, segments, budgets, scheduling, targeting, experiments and insurer/product/channel restrictions."
+    },
+    {
+      "id": "GRW-06",
+      "title": "Seller/affiliate portal",
+      "source_text": "Onboarding, contracts, customer relationships, leads, quotes, assisted sales, teams, commissions, wallet, payouts, renewals, training and reporting."
+    },
+    {
+      "id": "GRW-07",
+      "title": "Corporate sales",
+      "source_text": "Commercial leads, employer accounts, group quotes, census, negotiated benefits, branches, approvals, billing and account teams."
+    },
+    {
+      "id": "GRW-08",
+      "title": "Content and SEO",
+      "source_text": "Original articles, insurer profiles, FAQs, product guides, searchable CMS, approvals, redirects, structured metadata and indexing control."
+    },
+    {
+      "id": "GRW-09",
+      "title": "Communications",
+      "source_text": "OTP, transactional notices, renewal/installment reminders, email/SMS/push, preferences, consent, templates, throttling and delivery events."
+    },
+    {
+      "id": "GRW-10",
+      "title": "Mobile and web-app experience",
+      "source_text": "Responsive web/PWA, secure uploads, installability, deep links and permission-aware notifications; native apps are a separate explicitly decided deliverable."
+    },
+    {
+      "id": "AUTO-01",
+      "title": "Vehicle garage",
+      "source_text": "Multiple vehicles/motorcycles, ownership/authorization, policy links, deadlines, documents and lifecycle changes."
+    },
+    {
+      "id": "AUTO-02",
+      "title": "Vehicle official inquiries",
+      "source_text": "Car/motorcycle fines, breakdowns, tolls, congestion/traffic charges, municipal charges, transfer taxes, license points/status, active plates/history, registration/ownership, inspection and vehicle history through authorized providers."
+    },
+    {
+      "id": "AUTO-03",
+      "title": "Automotive payment center",
+      "source_text": "Supported fine/toll/tax/charge payments, fee disclosure, allocation, official receipt, pending settlement, duplicate protection and reconciliation."
+    },
+    {
+      "id": "AUTO-04",
+      "title": "Automotive alerts",
+      "source_text": "Obligation reminders, inquiry alerts, paid SMS subscriptions, preference controls, expiry and subscription renewal."
+    },
+    {
+      "id": "AUTO-05",
+      "title": "Maintenance marketplace",
+      "source_text": "Provider/location discovery, oil/service/car-wash/inspection/towing/battery/tire-repair bookings, availability, price, cancellation, fulfillment, commissions and complaints."
+    },
+    {
+      "id": "AUTO-06",
+      "title": "Automotive parts commerce",
+      "source_text": "Sellers, compatible tires/batteries/oils/filters/accessories, catalog, inventory, cart, shipping, returns, refunds and seller settlement."
+    },
+    {
+      "id": "AUTO-07",
+      "title": "Vehicle trading",
+      "source_text": "Price/valuation, listings, history checks, auctions, sale contracts, authorized secure-transaction support and debt settlement; each separately gated with authority and provider dependencies."
+    },
+    {
+      "id": "AUTO-08",
+      "title": "Vehicle app utilities",
+      "source_text": "Digital document wallet, road-condition and technical-report provider utilities, freshness, mobile capabilities and no unsupported official claims."
+    },
+    {
+      "id": "ECO-01",
+      "title": "Adjacent financial referrals",
+      "source_text": "Authorized partner credit/investment referrals, eligibility, disclosures, consent, attribution and boundary between referral and direct regulated execution."
+    },
+    {
+      "id": "CHN-01",
+      "title": "Independent B2C sales mode",
+      "source_text": "Enable/disable direct individual discovery, quote and purchase behavior independently of B2B, with clear transition semantics."
+    },
+    {
+      "id": "CHN-02",
+      "title": "Independent B2B sales mode",
+      "source_text": "Enable/disable organization purchasing and configured partner-sale entry points independently of B2C."
+    },
+    {
+      "id": "CHN-03",
+      "title": "B2B subchannels",
+      "source_text": "Independent corporate, commercial, reseller/agency and B2B2C configuration; employee servicing is separate from new sales."
+    },
+    {
+      "id": "CHN-04",
+      "title": "Scoped availability",
+      "source_text": "Global/product/plan/carrier/organization/region/channel/customer/time configuration, dependencies, approvals, rollout, preview and rollback."
+    },
+    {
+      "id": "CHN-05",
+      "title": "Servicing continuity",
+      "source_text": "Sales shutdown preserves committed orders, permitted issuance, installments, policy access, claims, refunds and partner delivery; security quarantines use separate controls."
+    },
+    {
+      "id": "ORG-01",
+      "title": "Organization model",
+      "source_text": "Legal entities, branches, departments, cost centers, supplier/buyer/distributor relationships, memberships and tenant context."
+    },
+    {
+      "id": "ORG-02",
+      "title": "Organization authorization",
+      "source_text": "RBAC plus resource/relationship scopes, delegated administration, multi-organization users, invitations, revocation, access review and audit."
+    },
+    {
+      "id": "ORG-03",
+      "title": "Corporate approvals and billing",
+      "source_text": "Requester/approver/payer/policyholder separation, maker-checker, delegated limits, budgets, invoices, credit/prepay terms and purchase approvals."
+    },
+    {
+      "id": "ORG-04",
+      "title": "Bulk enrollment",
+      "source_text": "Employees/dependents/assets/fleets, imports, HR/API synchronization, row validation, previews, partial failure policy, approvals and effective-dated changes."
+    },
+    {
+      "id": "DSH-01",
+      "title": "B2C dashboard",
+      "source_text": "Policies, quotes/orders, payments/installments, renewals, insured assets, claims, documents, wallet/loyalty, notifications, support and settings."
+    },
+    {
+      "id": "DSH-02",
+      "title": "Corporate buyer dashboard",
+      "source_text": "Organization portfolio, branches/cost centers, group benefits, census/assets, approvals, bulk quotes, billing, renewals, contracts, reports and restricted claims information."
+    },
+    {
+      "id": "DSH-03",
+      "title": "Employee/beneficiary dashboard",
+      "source_text": "Own coverage, dependents, certificates, private claims, benefit information and optional separate personal purchases; employer cannot view unrelated personal policies."
+    },
+    {
+      "id": "DSH-04",
+      "title": "Seller/distributor dashboard",
+      "source_text": "Leads/CRM, quote/purchase, authorized customer portfolio, sales pipeline, renewals, team, commissions, withdrawals, training and performance."
+    },
+    {
+      "id": "DSH-05",
+      "title": "Carrier/supplier dashboard",
+      "source_text": "Own sales, incoming submissions, underwriting/issuance, policy portfolio, allowed product proposals, claims, settlements, API transactions and staff roles; optional API-only operation."
+    },
+    {
+      "id": "DSH-06",
+      "title": "Dashboard and admin configuration",
+      "source_text": "Menu/widget/action/report configuration for every dashboard, server-enforced permissions, platform super-admin and operational workbenches, localization and accessibility."
+    },
+    {
+      "id": "INT-01",
+      "title": "Canonical purchase/event model",
+      "source_text": "Versioned stable business schemas for buyer, payer, policyholder, insured, coverage, financial references, distribution, permissions and event correlation."
+    },
+    {
+      "id": "INT-02",
+      "title": "Company-specific adapters",
+      "source_text": "Separate versioned carrier/supplier adapters supporting heterogeneous REST/JSON, SOAP/XML and custom supported contracts."
+    },
+    {
+      "id": "INT-03",
+      "title": "Post-purchase transmission",
+      "source_text": "Durably transmit required recipient-scoped data after authoritative commercial/payment confirmation; support approved B2B credit/invoice paths explicitly."
+    },
+    {
+      "id": "INT-04",
+      "title": "Mapping and validation",
+      "source_text": "Request/response mapping, schemas, enums, dates, currency/units, error taxonomy, contract tests and safe transformation rules."
+    },
+    {
+      "id": "INT-05",
+      "title": "Protocol and authentication support",
+      "source_text": "API keys, token/OAuth flows, signatures, certificates/mTLS and partner-specific requirements with secret references and rotation."
+    },
+    {
+      "id": "INT-06",
+      "title": "Partner connection operations",
+      "source_text": "Sandbox/live separation, product/operation/channel availability, onboarding, approved endpoints, credentials, health, degraded and suspended modes."
+    },
+    {
+      "id": "INT-07",
+      "title": "Reliable delivery and reconciliation",
+      "source_text": "Transactional outbox/inbox, at-least-once delivery, idempotency, bounded retry, dead letters, ambiguous-outcome handling, replay and reconciliation."
+    },
+    {
+      "id": "INT-08",
+      "title": "Synchronous/asynchronous workflows",
+      "source_text": "Quote/reserve/submit/issue/status steps, verified callbacks, polling, cancellation/endorsement/claim flows and separate financial/insurance states."
+    },
+    {
+      "id": "INT-09",
+      "title": "Integration testing and observability",
+      "source_text": "Contract simulators, failure injection, masked logs, traces, latency/error metrics, health and operator actions."
+    },
+    {
+      "id": "INT-10",
+      "title": "Versioning and event routing",
+      "source_text": "Versioned mappings/contracts, compatibility, controlled rollout/rollback, recipient-specific projections, authorized exports/webhooks and delivery audit."
+    }
+  ],
+  "products": [
+    {
+      "id": "PRD-01",
+      "title": "Motor third-party",
+      "source_text": "Vehicle/owner and policy history, no-claim data, liability limits, term, penalties only from validated rules, installment eligibility."
+    },
+    {
+      "id": "PRD-02",
+      "title": "Comprehensive motor / body",
+      "source_text": "Vehicle value, insured perils, deductibles, accessories, inspection evidence, geographic and insurer conditions."
+    },
+    {
+      "id": "PRD-03",
+      "title": "Motorcycle third-party",
+      "source_text": "Motorcycle characteristics, ownership, prior policy, permitted usage and liability selections."
+    },
+    {
+      "id": "PRD-04",
+      "title": "Fire / property",
+      "source_text": "Property use/location, construction, building/contents values, inspection, perils and coverage relationships."
+    },
+    {
+      "id": "PRD-05",
+      "title": "Earthquake coverage",
+      "source_text": "Model as standalone or rider only where a carrier contract supports it; geography, insured values and exclusions."
+    },
+    {
+      "id": "PRD-06",
+      "title": "Individual / family supplementary health",
+      "source_text": "Members/dependents, ages, base coverage, declarations, benefit limits, network, waiting/eligibility rules and privacy."
+    },
+    {
+      "id": "PRD-07",
+      "title": "Corporate / group health",
+      "source_text": "Employer/census, dependents, benefits, enrollment windows, effective-dated changes, negotiations, billing and employee privacy."
+    },
+    {
+      "id": "PRD-08",
+      "title": "Life / investment-linked life",
+      "source_text": "Insured age, underwriting, beneficiaries, contributions, term and approved projections/disclosures without invented returns."
+    },
+    {
+      "id": "PRD-09",
+      "title": "Pension / annuity",
+      "source_text": "Contributions, duration, payout options, eligibility and approved benefit illustrations."
+    },
+    {
+      "id": "PRD-10",
+      "title": "Travel",
+      "source_text": "Destination, traveler age, trip dates/duration, plan/assistance limits and destination-specific eligibility."
+    },
+    {
+      "id": "PRD-11",
+      "title": "Pilgrimage / Karbala",
+      "source_text": "Special destination, traveler details, departure/duration, provider-specific plan and assistance rules."
+    },
+    {
+      "id": "PRD-12",
+      "title": "Physicians professional liability",
+      "source_text": "Specialty, professional credentials, practice, limits, prior claims and exclusions."
+    },
+    {
+      "id": "PRD-13",
+      "title": "Elevator liability",
+      "source_text": "Building, equipment, capacity/stops, maintenance/inspection evidence, operator and liability limits."
+    },
+    {
+      "id": "PRD-14",
+      "title": "Sports",
+      "source_text": "Sport/activity, participant identity, risk class, period, benefit and authorized issuer requirements."
+    },
+    {
+      "id": "PRD-15",
+      "title": "Personal accident",
+      "source_text": "Occupation/activity risk, benefits, insured parties and beneficiaries."
+    },
+    {
+      "id": "PRD-16",
+      "title": "Mobile-device protection",
+      "source_text": "Device model/identifier/value, age/condition, proof, inspection, limits and deductibles."
+    },
+    {
+      "id": "PRD-17",
+      "title": "Electronic equipment",
+      "source_text": "Equipment schedule, value, use/location, risk, maintenance and commercial underwriting."
+    },
+    {
+      "id": "PRD-18",
+      "title": "Engineering",
+      "source_text": "Project/type, insured values, period, site, contractors, technical evidence and assisted underwriting."
+    },
+    {
+      "id": "PRD-19",
+      "title": "Cargo / transit",
+      "source_text": "Cargo, values, route, transport, shipment period, coverage and supporting documents."
+    },
+    {
+      "id": "PRD-20",
+      "title": "Commercial property / assets",
+      "source_text": "Organization, asset schedules, valuations, multi-site risks, inspection and negotiated terms."
+    },
+    {
+      "id": "PRD-21",
+      "title": "Other liability",
+      "source_text": "Permitted professional/public/employer risks, insured operations, exposures, limits and assisted underwriting."
+    },
+    {
+      "id": "PRD-22",
+      "title": "Dental implant",
+      "source_text": "Specific eligible treatment/device/provider, benefit conditions, exclusions and sensitive health data handling."
+    },
+    {
+      "id": "PRD-23",
+      "title": "War-related property coverage",
+      "source_text": "Contract-defined eligible coverage/rider only; do not infer availability, legal approval or underwriting terms."
+    },
+    {
+      "id": "PRD-24",
+      "title": "Fleet / other group insurance",
+      "source_text": "Multiple insured vehicles/assets/people, group quotes, schedule changes, approval/billing and individual certificates when applicable."
+    }
+  ]
+}

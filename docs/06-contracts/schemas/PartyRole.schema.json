@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://insurance.example.invalid/schemas/PartyRole.schema.json",
+  "title": "PartyRole",
+  "type": "object",
+  "properties": {
+    "partyId": {
+      "type": "string",
+      "format": "uuid"
+    },
+    "role": {
+      "type": "string",
+      "enum": [
+        "buyer",
+        "payer",
+        "requester",
+        "approver",
+        "policyholder",
+        "insured",
+        "beneficiary",
+        "distributor",
+        "carrier"
+      ]
+    },
+    "relationshipId": {
+      "type": "string",
+      "format": "uuid"
+    }
+  },
+  "required": [
+    "partyId",
+    "role"
+  ],
+  "additionalProperties": false
+}

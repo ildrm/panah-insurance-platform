@@ -1,0 +1,64 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://insurance.invalid/schemas/PRD-19.risk.v1.schema.json",
+  "title": "PRD-19 synthetic risk input syntax",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "cargoDescription",
+    "commodityCode",
+    "insuredValue",
+    "originCode",
+    "destinationCode",
+    "transportMode",
+    "shipmentStart"
+  ],
+  "properties": {
+    "cargoDescription": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 1000,
+      "description": "required; 1–1000 NFC characters; no embedded files. Sensitivity: confidential. Error: CARGO_DESCRIPTION_REQUIRED. Eligibility is contract-dependent."
+    },
+    "commodityCode": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 80,
+      "description": "required; contract-mapped cargo category <= 80. Sensitivity: confidential. Error: COMMODITY_UNMAPPED. Eligibility is contract-dependent."
+    },
+    "insuredValue": {
+      "type": "string",
+      "pattern": "^[1-9][0-9]{0,17}$",
+      "description": "required; positive; value/currency/valuation basis explicit. Sensitivity: financial. Error: CARGO_VALUE_INVALID. Eligibility is contract-dependent."
+    },
+    "originCode": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 40,
+      "description": "required; approved location code <= 80. Sensitivity: confidential. Error: ROUTE_LOCATION_INVALID. Eligibility is contract-dependent."
+    },
+    "destinationCode": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 40,
+      "description": "required; approved location code <= 80. Sensitivity: confidential. Error: ROUTE_LOCATION_INVALID. Eligibility is contract-dependent."
+    },
+    "transportMode": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 40,
+      "description": "required; one or multiple legs explicitly modeled. Sensitivity: internal. Error: TRANSPORT_MODE_UNAVAILABLE. Eligibility is contract-dependent."
+    },
+    "shipmentStart": {
+      "type": "string",
+      "format": "date",
+      "description": "required; route-local effective semantics. Sensitivity: confidential. Error: SHIPMENT_DATE_INVALID. Eligibility is contract-dependent."
+    },
+    "transportEvidenceRef": {
+      "type": "string",
+      "format": "uuid",
+      "description": "conditional; invoice/packing/transport document refs. Sensitivity: restricted. Error: TRANSPORT_EVIDENCE_REQUIRED. Eligibility is contract-dependent."
+    }
+  },
+  "description": "Strict syntax baseline. Conditional predicates, cross-field dates/sums/relationships and actual carrier eligibility require the versioned application validator; passing this schema is not underwriting acceptance."
+}

@@ -1,0 +1,10 @@
+{
+  "kind": "quote_request",
+  "clientApplicationRef": "synthetic-order-001",
+  "productCode": "SIM-MOTOR",
+  "risk": {
+    "subjectRef": "synthetic-vehicle-001",
+    "manufactureYear": 2025
+  },
+  "effectiveDate": "2026-11-01"
+}

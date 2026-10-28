@@ -1,0 +1,365 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://insurance.example.invalid/simulator/signed-wire.schema.json",
+  "$defs": {
+    "SubmitRequest": {
+      "type": "object",
+      "properties": {
+        "client_ref": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 64,
+          "pattern": "^[A-Za-z0-9_-]+$"
+        },
+        "quote_ref": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 64,
+          "pattern": "^[A-Za-z0-9_-]+$"
+        },
+        "premium_toman": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 24,
+          "pattern": "^(0|[1-9][0-9]{0,23})$"
+        },
+        "effective_jalali": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 10,
+          "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$"
+        },
+        "calendar": {
+          "const": "persian"
+        },
+        "mapping_version": {
+          "const": "signed-map-v1"
+        }
+      },
+      "required": [
+        "client_ref",
+        "quote_ref",
+        "premium_toman",
+        "effective_jalali",
+        "calendar",
+        "mapping_version"
+      ],
+      "additionalProperties": false
+    },
+    "QuoteRequest": {
+      "type": "object",
+      "properties": {
+        "client_ref": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 64,
+          "pattern": "^[A-Za-z0-9_-]+$"
+        },
+        "product_code": {
+          "const": "SIM-MOTOR"
+        },
+        "subject_ref": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 64,
+          "pattern": "^[A-Za-z0-9_-]+$"
+        },
+        "effective_jalali": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 10,
+          "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$"
+        },
+        "calendar": {
+          "const": "persian"
+        }
+      },
+      "required": [
+        "client_ref",
+        "product_code",
+        "subject_ref",
+        "effective_jalali",
+        "calendar"
+      ],
+      "additionalProperties": false
+    },
+    "QuoteResponse": {
+      "type": "object",
+      "properties": {
+        "quote_ref": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 64,
+          "pattern": "^[A-Za-z0-9_-]+$"
+        },
+        "premium_toman": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 24,
+          "pattern": "^(0|[1-9][0-9]{0,23})$"
+        },
+        "valid_until_utc": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 32,
+          "format": "date-time"
+        },
+        "mapping_version": {
+          "const": "signed-map-v1"
+        }
+      },
+      "required": [
+        "quote_ref",
+        "premium_toman",
+        "valid_until_utc",
+        "mapping_version"
+      ],
+      "additionalProperties": false
+    },
+    "Acknowledgment": {
+      "type": "object",
+      "properties": {
+        "receipt_ref": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 64,
+          "pattern": "^[A-Za-z0-9_-]+$"
+        },
+        "result": {
+          "const": "accepted"
+        },
+        "issuance": {
+          "const": "pending"
+        }
+      },
+      "required": [
+        "receipt_ref",
+        "result",
+        "issuance"
+      ],
+      "additionalProperties": false
+    },
+    "Callback": {
+      "type": "object",
+      "properties": {
+        "event_id": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 64,
+          "pattern": "^[A-Za-z0-9_-]+$"
+        },
+        "sequence": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 100000
+        },
+        "client_ref": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 64,
+          "pattern": "^[A-Za-z0-9_-]+$"
+        },
+        "receipt_ref": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 64,
+          "pattern": "^[A-Za-z0-9_-]+$"
+        },
+        "issuance": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 128,
+          "enum": [
+            "pending",
+            "issued",
+            "rejected"
+          ]
+        },
+        "occurred_at": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 32,
+          "format": "date-time"
+        },
+        "policy_ref": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 64,
+          "pattern": "^[A-Za-z0-9_-]+$"
+        },
+        "effective_jalali": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 10,
+          "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$"
+        },
+        "until_jalali_exclusive": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 10,
+          "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$"
+        },
+        "calendar": {
+          "const": "persian"
+        },
+        "document_ref": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 64,
+          "pattern": "^[A-Za-z0-9_-]+$"
+        }
+      },
+      "required": [
+        "event_id",
+        "sequence",
+        "client_ref",
+        "receipt_ref",
+        "issuance",
+        "occurred_at"
+      ],
+      "additionalProperties": false,
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "issuance": {
+                "const": "issued"
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "policy_ref",
+              "effective_jalali",
+              "until_jalali_exclusive",
+              "calendar",
+              "document_ref"
+            ]
+          },
+          "else": {
+            "not": {
+              "anyOf": [
+                {
+                  "required": [
+                    "policy_ref"
+                  ]
+                },
+                {
+                  "required": [
+                    "effective_jalali"
+                  ]
+                },
+                {
+                  "required": [
+                    "until_jalali_exclusive"
+                  ]
+                },
+                {
+                  "required": [
+                    "calendar"
+                  ]
+                },
+                {
+                  "required": [
+                    "document_ref"
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "CallbackAck": {
+      "type": "object",
+      "properties": {
+        "received": {
+          "const": true
+        },
+        "duplicate": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "received",
+        "duplicate"
+      ],
+      "additionalProperties": false
+    },
+    "Reject": {
+      "type": "object",
+      "properties": {
+        "result": {
+          "const": "rejected"
+        },
+        "code": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 128,
+          "enum": [
+            "risk_ineligible",
+            "bad_signature",
+            "expired_signature",
+            "nonce_replayed",
+            "capability_unsupported",
+            "invalid_mapping",
+            "throttled",
+            "unavailable"
+          ]
+        },
+        "accepted": {
+          "const": false
+        }
+      },
+      "required": [
+        "result",
+        "code",
+        "accepted"
+      ],
+      "additionalProperties": false
+    },
+    "Document": {
+      "type": "object",
+      "properties": {
+        "kind": {
+          "const": "document"
+        },
+        "documentRef": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 64,
+          "pattern": "^[A-Za-z0-9_-]+$"
+        },
+        "mediaType": {
+          "const": "application/pdf"
+        },
+        "sha256": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 64,
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "sizeBytes": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 32768
+        },
+        "contentBase64": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 43692,
+          "contentEncoding": "base64"
+        }
+      },
+      "required": [
+        "kind",
+        "documentRef",
+        "mediaType",
+        "sha256",
+        "sizeBytes",
+        "contentBase64"
+      ],
+      "additionalProperties": false
+    }
+  }
+}

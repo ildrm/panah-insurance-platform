@@ -1,0 +1,55 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://insurance.invalid/schemas/PRD-17.risk.v1.schema.json",
+  "title": "PRD-17 synthetic risk input syntax",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "organizationRef",
+    "scheduleBatchRef",
+    "equipmentClassCode",
+    "declaredValue",
+    "locationRef",
+    "useCode"
+  ],
+  "properties": {
+    "organizationRef": {
+      "type": "string",
+      "format": "uuid",
+      "description": "required; permitted commercial buyer context. Sensitivity: confidential. Error: ORGANIZATION_REQUIRED. Eligibility is contract-dependent."
+    },
+    "scheduleBatchRef": {
+      "type": "string",
+      "format": "uuid",
+      "description": "required; approved stable equipment row IDs. Sensitivity: restricted. Error: EQUIPMENT_SCHEDULE_INVALID. Eligibility is contract-dependent."
+    },
+    "equipmentClassCode": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 80,
+      "description": "required per row; carrier-mapped category <= 80. Sensitivity: internal. Error: EQUIPMENT_CLASS_UNMAPPED. Eligibility is contract-dependent."
+    },
+    "declaredValue": {
+      "type": "string",
+      "pattern": "^[1-9][0-9]{0,17}$",
+      "description": "required per row; positive with valuation basis. Sensitivity: financial. Error: EQUIPMENT_VALUE_INVALID. Eligibility is contract-dependent."
+    },
+    "locationRef": {
+      "type": "string",
+      "format": "uuid",
+      "description": "required per row; authorized site reference. Sensitivity: restricted. Error: LOCATION_REQUIRED. Eligibility is contract-dependent."
+    },
+    "useCode": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 60,
+      "description": "required per row; declared business use <= 60. Sensitivity: confidential. Error: USE_UNMAPPED. Eligibility is contract-dependent."
+    },
+    "maintenanceEvidenceRef": {
+      "type": "string",
+      "format": "uuid",
+      "description": "conditional; current service evidence. Sensitivity: restricted. Error: MAINTENANCE_REQUIRED. Eligibility is contract-dependent."
+    }
+  },
+  "description": "Strict syntax baseline. Conditional predicates, cross-field dates/sums/relationships and actual carrier eligibility require the versioned application validator; passing this schema is not underwriting acceptance."
+}

@@ -1,0 +1,57 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://insurance.invalid/schemas/PRD-09.risk.v1.schema.json",
+  "title": "PRD-09 synthetic risk input syntax",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "annuitantRef",
+    "birthDate",
+    "contributionAmount",
+    "contributionTermCode",
+    "payoutOptionCode",
+    "plannedStartDate",
+    "illustrationVersion"
+  ],
+  "properties": {
+    "annuitantRef": {
+      "type": "string",
+      "format": "uuid",
+      "description": "required; authorized insured/member relationship. Sensitivity: restricted. Error: ANNUITANT_REQUIRED. Eligibility is contract-dependent."
+    },
+    "birthDate": {
+      "type": "string",
+      "format": "date",
+      "description": "required; valid nonfuture date. Sensitivity: restricted. Error: BIRTH_DATE_INVALID. Eligibility is contract-dependent."
+    },
+    "contributionAmount": {
+      "type": "string",
+      "pattern": "^[1-9][0-9]{0,17}$",
+      "description": "required; positive exact integer amount. Sensitivity: financial. Error: CONTRIBUTION_INVALID. Eligibility is contract-dependent."
+    },
+    "contributionTermCode": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 40,
+      "description": "required; offered term <= 40 characters. Sensitivity: financial. Error: TERM_UNAVAILABLE. Eligibility is contract-dependent."
+    },
+    "payoutOptionCode": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 40,
+      "description": "required; contract-supported benefit option. Sensitivity: financial. Error: PAYOUT_OPTION_UNAVAILABLE. Eligibility is contract-dependent."
+    },
+    "plannedStartDate": {
+      "type": "string",
+      "format": "date",
+      "description": "required; explicit local-date semantics; eligibility from contract. Sensitivity: confidential. Error: START_DATE_INELIGIBLE. Eligibility is contract-dependent."
+    },
+    "illustrationVersion": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 80,
+      "description": "required for benefit display; approved version <= 80. Sensitivity: financial. Error: BENEFIT_ILLUSTRATION_REQUIRED. Eligibility is contract-dependent."
+    }
+  },
+  "description": "Strict syntax baseline. Conditional predicates, cross-field dates/sums/relationships and actual carrier eligibility require the versioned application validator; passing this schema is not underwriting acceptance."
+}

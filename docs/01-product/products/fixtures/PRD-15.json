@@ -1,0 +1,33 @@
+{
+  "fixtureId": "FIX-PRD-15",
+  "synthetic": true,
+  "productId": "PRD-15",
+  "schemaRef": "../schemas/PRD-15.risk.schema.json",
+  "riskExample": {
+    "occupationCode": "SYNTH-OCC-B",
+    "activityCodes": [
+      "SYNTH-ACTIVITY-A"
+    ],
+    "benefitPlanCode": "SYNTH-ACCIDENT-A",
+    "territoryCode": "SYNTH-TERRITORY",
+    "termCode": "SYNTH-ANNUAL",
+    "insuredRefs": [
+      "00000000-0000-4000-8000-000000001501"
+    ]
+  },
+  "canonicalContext": {
+    "currency": "IRR",
+    "unit": "rial",
+    "channel": "b2c",
+    "partyAndAuthorityFixture": "Synthetic authorized buyer/payer/policyholder/insured roles; referenced UUIDs resolve only in the local test harness.",
+    "productRuleVersion": "SYNTH-1",
+    "liveOperationsAllowed": false
+  },
+  "scenarioContext": {},
+  "expected": {
+    "withoutContract": "live_quote_and_purchase_disabled",
+    "syntacticValidation": "pass",
+    "carrierEligibility": "undetermined_without_synthetic_rule_set",
+    "variant": "Employer payer requests an employee's injury attachments: payer permission is insufficient and response excludes medical evidence even when the employer funded the premium."
+  }
+}

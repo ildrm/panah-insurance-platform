@@ -1,0 +1,8 @@
+'use client';
+import Link from 'next/link';
+import { useState } from 'react';
+import { usePathname } from 'next/navigation';
+import { contextHome } from '@st/api-client/session-view';
+import { Icon } from './primitives';
+import { useSession } from './session';
+export function Header() { const { session, loading } = useSession(); const [open, setOpen] = useState(false); const path = usePathname(); return <><div className="environment-strip"><span className="pulse-dot"/>محیط آزمایشی پناه<span className="environment-detail">اطلاعات و پرداخت‌ها ساختگی هستند</span></div><header className="site-header"><div className="container header-inner"><Link className="brand" href="/" aria-label="پناه، خانه"><span className="brand-mark"><Icon size={29}/></span><span>پناه<small>PANAH</small></span></Link><button className="mobile-menu icon-button" aria-label="فهرست" aria-expanded={open} onClick={() => setOpen(!open)}><Icon name="menu"/></button><nav className={open ? 'header-nav nav-open' : 'header-nav'} aria-label="پیمایش اصلی"><Link className={path.startsWith('/insurance') ? 'active' : ''} onClick={() => setOpen(false)} href="/insurance">بیمه‌ها</Link><Link onClick={() => setOpen(false)} href="/automotive/services">خدمات خودرو</Link><Link onClick={() => setOpen(false)} href="/org">بیمه سازمانی</Link><Link onClick={() => setOpen(false)} href="/help">راهنما و پشتیبانی</Link></nav><Link prefetch={false} className="button button-outline header-account" href={session ? contextHome(session.actor) : '/auth/sign-in'}><Icon name="user" size={18}/>{loading ? 'حساب کاربری' : session ? 'پیشخوان من' : 'ورود / ثبت‌نام'}</Link></div></header></>; }

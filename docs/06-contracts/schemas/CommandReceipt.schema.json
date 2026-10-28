@@ -1,0 +1,47 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://insurance.example.invalid/schemas/CommandReceipt.schema.json",
+  "title": "CommandReceipt",
+  "type": "object",
+  "properties": {
+    "commandId": {
+      "type": "string",
+      "format": "uuid"
+    },
+    "resourceId": {
+      "type": "string",
+      "format": "uuid"
+    },
+    "resourceVersion": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 2147483647
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "committed",
+        "queued",
+        "external_outcome_unknown"
+      ]
+    },
+    "acceptedAt": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "statusUrl": {
+      "type": "string",
+      "format": "uri-reference",
+      "maxLength": 512
+    }
+  },
+  "required": [
+    "commandId",
+    "resourceId",
+    "resourceVersion",
+    "status",
+    "acceptedAt",
+    "statusUrl"
+  ],
+  "additionalProperties": false
+}

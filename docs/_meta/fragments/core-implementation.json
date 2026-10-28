@@ -1,0 +1,609 @@
+{
+  "id": "FRAGMENT-CORE-IMPLEMENTATION",
+  "version": "1.0.0",
+  "status": "partial",
+  "updated": "2026-10-28",
+  "requirements": [
+    {
+      "id": "COM-01-R001",
+      "state": "in_progress",
+      "code_paths": [
+        "apps/api/src/commerce.ts",
+        "apps/api/src/main.ts"
+      ],
+      "test_paths": [
+        "tests/platform.test.ts",
+        "tests/finance-platform.test.ts"
+      ],
+      "missing": [
+        "Full leaf acceptance including all party relationships, customer chronology, operational ownership, real provider authority and release qualification"
+      ]
+    },
+    {
+      "id": "COM-01-R002",
+      "state": "in_progress",
+      "code_paths": [
+        "apps/api/src/commerce.ts",
+        "apps/api/src/main.ts"
+      ],
+      "test_paths": [
+        "tests/platform.test.ts",
+        "tests/finance-platform.test.ts"
+      ],
+      "missing": [
+        "Full leaf acceptance including all party relationships, customer chronology, operational ownership, real provider authority and release qualification"
+      ]
+    },
+    {
+      "id": "COM-01-R003",
+      "state": "in_progress",
+      "code_paths": [
+        "apps/api/src/commerce.ts",
+        "apps/api/src/main.ts"
+      ],
+      "test_paths": [
+        "tests/platform.test.ts",
+        "tests/finance-platform.test.ts"
+      ],
+      "missing": [
+        "Full leaf acceptance including all party relationships, customer chronology, operational ownership, real provider authority and release qualification"
+      ]
+    },
+    {
+      "id": "COM-03-R001",
+      "state": "in_progress",
+      "code_paths": [
+        "apps/api/src/commerce.ts",
+        "apps/api/src/main.ts"
+      ],
+      "test_paths": [
+        "tests/platform.test.ts",
+        "tests/finance-platform.test.ts"
+      ],
+      "missing": [
+        "Full leaf acceptance including all party relationships, customer chronology, operational ownership, real provider authority and release qualification"
+      ]
+    },
+    {
+      "id": "COM-03-R002",
+      "state": "in_progress",
+      "code_paths": [
+        "apps/api/src/commerce.ts",
+        "apps/api/src/main.ts"
+      ],
+      "test_paths": [
+        "tests/platform.test.ts",
+        "tests/finance-platform.test.ts"
+      ],
+      "missing": [
+        "Full leaf acceptance including all party relationships, customer chronology, operational ownership, real provider authority and release qualification"
+      ]
+    },
+    {
+      "id": "COM-03-R003",
+      "state": "in_progress",
+      "code_paths": [
+        "apps/api/src/commerce.ts",
+        "apps/api/src/main.ts"
+      ],
+      "test_paths": [
+        "tests/platform.test.ts",
+        "tests/finance-platform.test.ts"
+      ],
+      "missing": [
+        "Full leaf acceptance including all party relationships, customer chronology, operational ownership, real provider authority and release qualification"
+      ]
+    },
+    {
+      "id": "COM-03-R004",
+      "state": "in_progress",
+      "code_paths": [
+        "apps/api/src/commerce.ts",
+        "apps/api/src/main.ts"
+      ],
+      "test_paths": [
+        "tests/platform.test.ts",
+        "tests/finance-platform.test.ts"
+      ],
+      "missing": [
+        "Full leaf acceptance including all party relationships, customer chronology, operational ownership, real provider authority and release qualification"
+      ]
+    },
+    {
+      "id": "COM-08-R001",
+      "state": "in_progress",
+      "code_paths": [
+        "apps/api/src/commerce.ts",
+        "apps/api/src/main.ts"
+      ],
+      "test_paths": [
+        "tests/platform.test.ts",
+        "tests/finance-platform.test.ts"
+      ],
+      "missing": [
+        "Full leaf acceptance including all party relationships, customer chronology, operational ownership, real provider authority and release qualification"
+      ]
+    },
+    {
+      "id": "COM-08-R002",
+      "state": "in_progress",
+      "code_paths": [
+        "apps/api/src/commerce.ts",
+        "apps/api/src/main.ts"
+      ],
+      "test_paths": [
+        "tests/platform.test.ts",
+        "tests/finance-platform.test.ts"
+      ],
+      "missing": [
+        "Full leaf acceptance including all party relationships, customer chronology, operational ownership, real provider authority and release qualification"
+      ]
+    },
+    {
+      "id": "COM-08-R003",
+      "state": "in_progress",
+      "code_paths": [
+        "apps/api/src/commerce.ts",
+        "apps/api/src/main.ts"
+      ],
+      "test_paths": [
+        "tests/platform.test.ts",
+        "tests/finance-platform.test.ts"
+      ],
+      "missing": [
+        "Full leaf acceptance including all party relationships, customer chronology, operational ownership, real provider authority and release qualification"
+      ]
+    },
+    {
+      "id": "COM-09-R001",
+      "state": "in_progress",
+      "code_paths": [
+        "apps/api/src/commerce.ts",
+        "apps/api/src/finance-ports.ts",
+        "packages/finance/src/index.ts"
+      ],
+      "test_paths": [
+        "tests/finance-platform.test.ts",
+        "tests/finance-servicing.test.ts",
+        "tests/platform.test.ts"
+      ],
+      "missing": [
+        "Carrier-authorized settlements, provider contracts, real bank identity verification, complete audit/export and production reconciliation"
+      ]
+    },
+    {
+      "id": "COM-09-R002",
+      "state": "in_progress",
+      "code_paths": [
+        "apps/api/src/commerce.ts",
+        "apps/api/src/finance-ports.ts",
+        "packages/finance/src/index.ts"
+      ],
+      "test_paths": [
+        "tests/finance-platform.test.ts",
+        "tests/finance-servicing.test.ts",
+        "tests/platform.test.ts"
+      ],
+      "missing": [
+        "Carrier-authorized settlements, provider contracts, real bank identity verification, complete audit/export and production reconciliation"
+      ]
+    },
+    {
+      "id": "COM-09-R003",
+      "state": "in_progress",
+      "code_paths": [
+        "apps/api/src/commerce.ts",
+        "apps/api/src/finance-ports.ts",
+        "packages/finance/src/index.ts"
+      ],
+      "test_paths": [
+        "tests/finance-platform.test.ts",
+        "tests/finance-servicing.test.ts",
+        "tests/platform.test.ts"
+      ],
+      "missing": [
+        "Carrier-authorized settlements, provider contracts, real bank identity verification, complete audit/export and production reconciliation"
+      ]
+    },
+    {
+      "id": "COM-09-R004",
+      "state": "in_progress",
+      "code_paths": [
+        "apps/api/src/commerce.ts",
+        "apps/api/src/finance-ports.ts",
+        "packages/finance/src/index.ts"
+      ],
+      "test_paths": [
+        "tests/finance-platform.test.ts",
+        "tests/finance-servicing.test.ts",
+        "tests/platform.test.ts"
+      ],
+      "missing": [
+        "Carrier-authorized settlements, provider contracts, real bank identity verification, complete audit/export and production reconciliation"
+      ]
+    },
+    {
+      "id": "GRW-01-R001",
+      "state": "in_progress",
+      "code_paths": [
+        "apps/api/src/auth.ts"
+      ],
+      "test_paths": [
+        "tests/platform.test.ts"
+      ],
+      "missing": [
+        "Account recovery, consent lifecycle, production OTP authority, qualified ASVS review"
+      ]
+    },
+    {
+      "id": "GRW-01-R002",
+      "state": "in_progress",
+      "code_paths": [
+        "apps/api/src/auth.ts"
+      ],
+      "test_paths": [
+        "tests/platform.test.ts"
+      ],
+      "missing": [
+        "Account recovery, consent lifecycle, production OTP authority, qualified ASVS review"
+      ]
+    },
+    {
+      "id": "GRW-01-R003",
+      "state": "in_progress",
+      "code_paths": [
+        "apps/api/src/auth.ts"
+      ],
+      "test_paths": [
+        "tests/platform.test.ts"
+      ],
+      "missing": [
+        "Account recovery, consent lifecycle, production OTP authority, qualified ASVS review"
+      ]
+    },
+    {
+      "id": "GRW-01-R004",
+      "state": "in_progress",
+      "code_paths": [
+        "apps/api/src/auth.ts"
+      ],
+      "test_paths": [
+        "tests/platform.test.ts"
+      ],
+      "missing": [
+        "Account recovery, consent lifecycle, production OTP authority, qualified ASVS review"
+      ]
+    },
+    {
+      "id": "GRW-02-R001",
+      "state": "in_progress",
+      "code_paths": [
+        "apps/api/src/commerce.ts",
+        "apps/api/src/finance-ports.ts",
+        "packages/finance/src/index.ts"
+      ],
+      "test_paths": [
+        "tests/finance-platform.test.ts",
+        "tests/finance-servicing.test.ts",
+        "tests/platform.test.ts"
+      ],
+      "missing": [
+        "Carrier-authorized settlements, provider contracts, real bank identity verification, complete audit/export and production reconciliation"
+      ]
+    },
+    {
+      "id": "GRW-02-R002",
+      "state": "in_progress",
+      "code_paths": [
+        "apps/api/src/commerce.ts",
+        "apps/api/src/finance-ports.ts",
+        "packages/finance/src/index.ts"
+      ],
+      "test_paths": [
+        "tests/finance-platform.test.ts",
+        "tests/finance-servicing.test.ts",
+        "tests/platform.test.ts"
+      ],
+      "missing": [
+        "Carrier-authorized settlements, provider contracts, real bank identity verification, complete audit/export and production reconciliation"
+      ]
+    },
+    {
+      "id": "GRW-02-R003",
+      "state": "in_progress",
+      "code_paths": [
+        "apps/api/src/commerce.ts",
+        "apps/api/src/finance-ports.ts",
+        "packages/finance/src/index.ts"
+      ],
+      "test_paths": [
+        "tests/finance-platform.test.ts",
+        "tests/finance-servicing.test.ts",
+        "tests/platform.test.ts"
+      ],
+      "missing": [
+        "Carrier-authorized settlements, provider contracts, real bank identity verification, complete audit/export and production reconciliation"
+      ]
+    },
+    {
+      "id": "CHN-01-R001",
+      "state": "in_progress",
+      "code_paths": [
+        "apps/api/src/flags.ts",
+        "apps/api/src/commerce.ts"
+      ],
+      "test_paths": [
+        "tests/platform.test.ts"
+      ],
+      "missing": [
+        "All product/plan/org/region/customer/time rules and full channel-transition matrix, multi-replica freshness evidence"
+      ]
+    },
+    {
+      "id": "CHN-01-R002",
+      "state": "in_progress",
+      "code_paths": [
+        "apps/api/src/flags.ts",
+        "apps/api/src/commerce.ts"
+      ],
+      "test_paths": [
+        "tests/platform.test.ts"
+      ],
+      "missing": [
+        "All product/plan/org/region/customer/time rules and full channel-transition matrix, multi-replica freshness evidence"
+      ]
+    },
+    {
+      "id": "CHN-01-R003",
+      "state": "in_progress",
+      "code_paths": [
+        "apps/api/src/flags.ts",
+        "apps/api/src/commerce.ts"
+      ],
+      "test_paths": [
+        "tests/platform.test.ts"
+      ],
+      "missing": [
+        "All product/plan/org/region/customer/time rules and full channel-transition matrix, multi-replica freshness evidence"
+      ]
+    },
+    {
+      "id": "CHN-02-R001",
+      "state": "in_progress",
+      "code_paths": [
+        "apps/api/src/flags.ts",
+        "apps/api/src/commerce.ts"
+      ],
+      "test_paths": [
+        "tests/platform.test.ts"
+      ],
+      "missing": [
+        "All product/plan/org/region/customer/time rules and full channel-transition matrix, multi-replica freshness evidence"
+      ]
+    },
+    {
+      "id": "CHN-02-R002",
+      "state": "in_progress",
+      "code_paths": [
+        "apps/api/src/flags.ts",
+        "apps/api/src/commerce.ts"
+      ],
+      "test_paths": [
+        "tests/platform.test.ts"
+      ],
+      "missing": [
+        "All product/plan/org/region/customer/time rules and full channel-transition matrix, multi-replica freshness evidence"
+      ]
+    },
+    {
+      "id": "CHN-02-R003",
+      "state": "in_progress",
+      "code_paths": [
+        "apps/api/src/flags.ts",
+        "apps/api/src/commerce.ts"
+      ],
+      "test_paths": [
+        "tests/platform.test.ts"
+      ],
+      "missing": [
+        "All product/plan/org/region/customer/time rules and full channel-transition matrix, multi-replica freshness evidence"
+      ]
+    },
+    {
+      "id": "CHN-03-R001",
+      "state": "in_progress",
+      "code_paths": [
+        "apps/api/src/flags.ts",
+        "apps/api/src/commerce.ts"
+      ],
+      "test_paths": [
+        "tests/platform.test.ts"
+      ],
+      "missing": [
+        "All product/plan/org/region/customer/time rules and full channel-transition matrix, multi-replica freshness evidence"
+      ]
+    },
+    {
+      "id": "CHN-03-R002",
+      "state": "in_progress",
+      "code_paths": [
+        "apps/api/src/flags.ts",
+        "apps/api/src/commerce.ts"
+      ],
+      "test_paths": [
+        "tests/platform.test.ts"
+      ],
+      "missing": [
+        "All product/plan/org/region/customer/time rules and full channel-transition matrix, multi-replica freshness evidence"
+      ]
+    },
+    {
+      "id": "CHN-03-R003",
+      "state": "in_progress",
+      "code_paths": [
+        "apps/api/src/flags.ts",
+        "apps/api/src/commerce.ts"
+      ],
+      "test_paths": [
+        "tests/platform.test.ts"
+      ],
+      "missing": [
+        "All product/plan/org/region/customer/time rules and full channel-transition matrix, multi-replica freshness evidence"
+      ]
+    },
+    {
+      "id": "CHN-04-R001",
+      "state": "in_progress",
+      "code_paths": [
+        "apps/api/src/flags.ts",
+        "apps/api/src/commerce.ts"
+      ],
+      "test_paths": [
+        "tests/platform.test.ts"
+      ],
+      "missing": [
+        "All product/plan/org/region/customer/time rules and full channel-transition matrix, multi-replica freshness evidence"
+      ]
+    },
+    {
+      "id": "CHN-04-R002",
+      "state": "in_progress",
+      "code_paths": [
+        "apps/api/src/flags.ts",
+        "apps/api/src/commerce.ts"
+      ],
+      "test_paths": [
+        "tests/platform.test.ts"
+      ],
+      "missing": [
+        "All product/plan/org/region/customer/time rules and full channel-transition matrix, multi-replica freshness evidence"
+      ]
+    },
+    {
+      "id": "CHN-04-R003",
+      "state": "in_progress",
+      "code_paths": [
+        "apps/api/src/flags.ts",
+        "apps/api/src/commerce.ts"
+      ],
+      "test_paths": [
+        "tests/platform.test.ts"
+      ],
+      "missing": [
+        "All product/plan/org/region/customer/time rules and full channel-transition matrix, multi-replica freshness evidence"
+      ]
+    },
+    {
+      "id": "CHN-04-R004",
+      "state": "in_progress",
+      "code_paths": [
+        "apps/api/src/flags.ts",
+        "apps/api/src/commerce.ts"
+      ],
+      "test_paths": [
+        "tests/platform.test.ts"
+      ],
+      "missing": [
+        "All product/plan/org/region/customer/time rules and full channel-transition matrix, multi-replica freshness evidence"
+      ]
+    },
+    {
+      "id": "CHN-05-R001",
+      "state": "in_progress",
+      "code_paths": [
+        "apps/api/src/flags.ts",
+        "apps/api/src/commerce.ts"
+      ],
+      "test_paths": [
+        "tests/platform.test.ts"
+      ],
+      "missing": [
+        "All product/plan/org/region/customer/time rules and full channel-transition matrix, multi-replica freshness evidence"
+      ]
+    },
+    {
+      "id": "CHN-05-R002",
+      "state": "in_progress",
+      "code_paths": [
+        "apps/api/src/flags.ts",
+        "apps/api/src/commerce.ts"
+      ],
+      "test_paths": [
+        "tests/platform.test.ts"
+      ],
+      "missing": [
+        "All product/plan/org/region/customer/time rules and full channel-transition matrix, multi-replica freshness evidence"
+      ]
+    },
+    {
+      "id": "CHN-05-R003",
+      "state": "in_progress",
+      "code_paths": [
+        "apps/api/src/flags.ts",
+        "apps/api/src/commerce.ts"
+      ],
+      "test_paths": [
+        "tests/platform.test.ts"
+      ],
+      "missing": [
+        "All product/plan/org/region/customer/time rules and full channel-transition matrix, multi-replica freshness evidence"
+      ]
+    },
+    {
+      "id": "ORG-03-R001",
+      "state": "in_progress",
+      "code_paths": [
+        "apps/api/src/commerce.ts",
+        "apps/api/src/finance-ports.ts",
+        "packages/finance/src/index.ts"
+      ],
+      "test_paths": [
+        "tests/finance-platform.test.ts",
+        "tests/finance-servicing.test.ts",
+        "tests/platform.test.ts"
+      ],
+      "missing": [
+        "Carrier-authorized settlements, provider contracts, real bank identity verification, complete audit/export and production reconciliation"
+      ]
+    },
+    {
+      "id": "ORG-03-R002",
+      "state": "in_progress",
+      "code_paths": [
+        "apps/api/src/commerce.ts",
+        "apps/api/src/finance-ports.ts",
+        "packages/finance/src/index.ts"
+      ],
+      "test_paths": [
+        "tests/finance-platform.test.ts",
+        "tests/finance-servicing.test.ts",
+        "tests/platform.test.ts"
+      ],
+      "missing": [
+        "Carrier-authorized settlements, provider contracts, real bank identity verification, complete audit/export and production reconciliation"
+      ]
+    },
+    {
+      "id": "ORG-03-R003",
+      "state": "in_progress",
+      "code_paths": [
+        "apps/api/src/commerce.ts",
+        "apps/api/src/finance-ports.ts",
+        "packages/finance/src/index.ts"
+      ],
+      "test_paths": [
+        "tests/finance-platform.test.ts",
+        "tests/finance-servicing.test.ts",
+        "tests/platform.test.ts"
+      ],
+      "missing": [
+        "Carrier-authorized settlements, provider contracts, real bank identity verification, complete audit/export and production reconciliation"
+      ]
+    }
+  ],
+  "limitations": [
+    "Component tests do not prove full leaf completion",
+    "All live operations disabled; exact command results in implementation-evidence.json",
+    "Uncommitted implementation; no human signoffs"
+  ]
+}

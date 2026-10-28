@@ -1,0 +1,102 @@
+{
+  "type": "object",
+  "properties": {
+    "application_implemented": {
+      "type": "boolean"
+    },
+    "documentation_gaps": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "documents": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "owner": {
+            "type": "string",
+            "minLength": 1
+          },
+          "path": {
+            "type": "string",
+            "minLength": 1
+          },
+          "status": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "required": [
+          "id",
+          "owner",
+          "path",
+          "status"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "external_blockers": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "human_approval": {
+      "type": "string",
+      "minLength": 1
+    },
+    "pending_human_reviews": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "reviews": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "finding": {
+            "type": "string",
+            "minLength": 1
+          },
+          "lens": {
+            "type": "string",
+            "minLength": 1
+          },
+          "status": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "required": [
+          "finding",
+          "lens",
+          "status"
+        ],
+        "additionalProperties": false
+      }
+    }
+  },
+  "required": [
+    "application_implemented",
+    "documentation_gaps",
+    "documents",
+    "external_blockers",
+    "human_approval",
+    "pending_human_reviews",
+    "reviews"
+  ],
+  "additionalProperties": false,
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://insurance.example.invalid/meta/fragment-engineering.schema.json",
+  "title": "Authored engineering build input v1"
+}

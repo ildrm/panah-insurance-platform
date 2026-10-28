@@ -1,0 +1,34 @@
+{
+  "fixtureId": "FIX-PRD-17",
+  "synthetic": true,
+  "productId": "PRD-17",
+  "schemaRef": "../schemas/PRD-17.risk.schema.json",
+  "riskExample": {
+    "equipmentClassCode": "SYNTH-SERVER",
+    "declaredValue": "800000000",
+    "useCode": "SYNTH-DATA-PROCESSING",
+    "organizationRef": "00000000-0000-4000-8000-000000001701",
+    "scheduleBatchRef": "00000000-0000-4000-8000-000000001702",
+    "locationRef": "00000000-0000-4000-8000-000000001705"
+  },
+  "canonicalContext": {
+    "currency": "IRR",
+    "unit": "rial",
+    "channel": "commercial",
+    "partyAndAuthorityFixture": "Synthetic authorized buyer/payer/policyholder/insured roles; referenced UUIDs resolve only in the local test harness.",
+    "productRuleVersion": "SYNTH-1",
+    "liveOperationsAllowed": false
+  },
+  "scenarioContext": {
+    "syntheticSchedule": {
+      "rowCount": 100,
+      "acceptedRows": 99
+    }
+  },
+  "expected": {
+    "withoutContract": "live_quote_and_purchase_disabled",
+    "syntacticValidation": "pass",
+    "carrierEligibility": "undetermined_without_synthetic_rule_set",
+    "variant": "An offer prices 99 of 100 rows: comparison shows the excluded row and commitment requires explicit revised schedule approval, never silently insuring an incomplete fleet of equipment."
+  }
+}

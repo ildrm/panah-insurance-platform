@@ -1,0 +1,2 @@
+<?xml version='1.0' encoding='utf-8'?>
+<soap:Envelope xmlns:c="urn:fictional:carrier:soap:v1" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/"><soap:Body><c:GetSubmissionStatus><c:ClientApplicationRef>synthetic-order-001</c:ClientApplicationRef></c:GetSubmissionStatus></soap:Body></soap:Envelope>

@@ -1,0 +1,2 @@
+import type { MetadataRoute } from 'next';
+export default function manifest(): MetadataRoute.Manifest { return { name: 'پناه، همراه بیمه شما', short_name: 'پناه', description: 'فضای بیمه و خدمات پناه', start_url: '/', display: 'standalone', background_color: '#f4f7fa', theme_color: '#102f3b', lang: 'fa', dir: 'rtl', icons: [{ src: '/icon.svg', sizes: 'any', type: 'image/svg+xml', purpose: 'any' }] }; }

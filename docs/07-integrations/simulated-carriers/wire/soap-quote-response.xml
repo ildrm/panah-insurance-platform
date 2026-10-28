@@ -1,0 +1,2 @@
+<?xml version='1.0' encoding='utf-8'?>
+<soap:Envelope xmlns:c="urn:fictional:carrier:soap:v1" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/"><soap:Body><c:QuoteResponse><c:QuoteRef>SIM-SOAP-Q-1</c:QuoteRef><c:PremiumRial>120000</c:PremiumRial><c:ValidUntilUTC>2026-10-28T08:10:00Z</c:ValidUntilUTC></c:QuoteResponse></soap:Body></soap:Envelope>

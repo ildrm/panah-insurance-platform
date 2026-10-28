@@ -1,0 +1,100 @@
+{
+  "type": "object",
+  "properties": {
+    "entries": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "kind": {
+            "type": "string",
+            "minLength": 1
+          },
+          "launch_consequence": {
+            "type": "string",
+            "minLength": 1
+          },
+          "missing_input": {
+            "type": "string",
+            "minLength": 1
+          },
+          "owner_role": {
+            "type": "string",
+            "minLength": 1
+          },
+          "resolution_evidence": {
+            "type": "null"
+          },
+          "safe_default": {
+            "type": "string",
+            "minLength": 1
+          },
+          "scope_ids": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "status": {
+            "type": "string",
+            "minLength": 1
+          },
+          "title": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "required": [
+          "id",
+          "kind",
+          "launch_consequence",
+          "missing_input",
+          "owner_role",
+          "resolution_evidence",
+          "safe_default",
+          "scope_ids",
+          "status",
+          "title"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "status": {
+      "enum": [
+        "draft",
+        "proposed",
+        "partial",
+        "complete",
+        "blocked"
+      ]
+    },
+    "updated": {
+      "type": "string",
+      "minLength": 1
+    },
+    "version": {
+      "type": "string",
+      "minLength": 1
+    }
+  },
+  "required": [
+    "entries",
+    "id",
+    "status",
+    "updated",
+    "version"
+  ],
+  "additionalProperties": false,
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://insurance.example.invalid/meta/risks-and-blockers.schema.json",
+  "title": "risks-and-blockers registry v1"
+}

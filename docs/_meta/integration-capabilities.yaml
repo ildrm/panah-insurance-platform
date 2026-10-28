@@ -1,0 +1,428 @@
+{
+  "id": "REG-INTEGRATION-CAPABILITIES",
+  "version": "1.0.0",
+  "status": "draft",
+  "updated": "2026-10-28",
+  "entries": [
+    {
+      "id": "CAP-QUOTE",
+      "operation": "quote",
+      "negotiation": "explicit per carrier/product/channel/environment and mapping version",
+      "default": "unsupported",
+      "requires_authority": true,
+      "unsupported_behavior": "Do not invoke; show supported alternate or assigned assisted task; no fabricated result",
+      "ambiguity_rule": "If external effect may have happened, status/idempotency or verified reconciliation required before retry",
+      "recipient_scope": "minimal permitted canonical projection"
+    },
+    {
+      "id": "CAP-RESERVE",
+      "operation": "reserve",
+      "negotiation": "explicit per carrier/product/channel/environment and mapping version",
+      "default": "unsupported",
+      "requires_authority": true,
+      "unsupported_behavior": "Do not invoke; show supported alternate or assigned assisted task; no fabricated result",
+      "ambiguity_rule": "If external effect may have happened, status/idempotency or verified reconciliation required before retry",
+      "recipient_scope": "minimal permitted canonical projection"
+    },
+    {
+      "id": "CAP-SUBMIT",
+      "operation": "submit",
+      "negotiation": "explicit per carrier/product/channel/environment and mapping version",
+      "default": "unsupported",
+      "requires_authority": true,
+      "unsupported_behavior": "Do not invoke; show supported alternate or assigned assisted task; no fabricated result",
+      "ambiguity_rule": "If external effect may have happened, status/idempotency or verified reconciliation required before retry",
+      "recipient_scope": "minimal permitted canonical projection"
+    },
+    {
+      "id": "CAP-STATUS",
+      "operation": "status",
+      "negotiation": "explicit per carrier/product/channel/environment and mapping version",
+      "default": "unsupported",
+      "requires_authority": true,
+      "unsupported_behavior": "Do not invoke; show supported alternate or assigned assisted task; no fabricated result",
+      "ambiguity_rule": "If external effect may have happened, status/idempotency or verified reconciliation required before retry",
+      "recipient_scope": "minimal permitted canonical projection"
+    },
+    {
+      "id": "CAP-ISSUE",
+      "operation": "issue",
+      "negotiation": "explicit per carrier/product/channel/environment and mapping version",
+      "default": "unsupported",
+      "requires_authority": true,
+      "unsupported_behavior": "Do not invoke; show supported alternate or assigned assisted task; no fabricated result",
+      "ambiguity_rule": "If external effect may have happened, status/idempotency or verified reconciliation required before retry",
+      "recipient_scope": "minimal permitted canonical projection"
+    },
+    {
+      "id": "CAP-RETRIEVE_DOCUMENT",
+      "operation": "retrieve_document",
+      "negotiation": "explicit per carrier/product/channel/environment and mapping version",
+      "default": "unsupported",
+      "requires_authority": true,
+      "unsupported_behavior": "Do not invoke; show supported alternate or assigned assisted task; no fabricated result",
+      "ambiguity_rule": "If external effect may have happened, status/idempotency or verified reconciliation required before retry",
+      "recipient_scope": "minimal permitted canonical projection"
+    },
+    {
+      "id": "CAP-ENDORSE",
+      "operation": "endorse",
+      "negotiation": "explicit per carrier/product/channel/environment and mapping version",
+      "default": "unsupported",
+      "requires_authority": true,
+      "unsupported_behavior": "Do not invoke; show supported alternate or assigned assisted task; no fabricated result",
+      "ambiguity_rule": "If external effect may have happened, status/idempotency or verified reconciliation required before retry",
+      "recipient_scope": "minimal permitted canonical projection"
+    },
+    {
+      "id": "CAP-CANCEL",
+      "operation": "cancel",
+      "negotiation": "explicit per carrier/product/channel/environment and mapping version",
+      "default": "unsupported",
+      "requires_authority": true,
+      "unsupported_behavior": "Do not invoke; show supported alternate or assigned assisted task; no fabricated result",
+      "ambiguity_rule": "If external effect may have happened, status/idempotency or verified reconciliation required before retry",
+      "recipient_scope": "minimal permitted canonical projection"
+    },
+    {
+      "id": "CAP-CLAIM",
+      "operation": "claim",
+      "negotiation": "explicit per carrier/product/channel/environment and mapping version",
+      "default": "unsupported",
+      "requires_authority": true,
+      "unsupported_behavior": "Do not invoke; show supported alternate or assigned assisted task; no fabricated result",
+      "ambiguity_rule": "If external effect may have happened, status/idempotency or verified reconciliation required before retry",
+      "recipient_scope": "minimal permitted canonical projection"
+    },
+    {
+      "id": "CAP-CLAIM_STATUS",
+      "operation": "claim_status",
+      "negotiation": "explicit per carrier/product/channel/environment and mapping version",
+      "default": "unsupported",
+      "requires_authority": true,
+      "unsupported_behavior": "Do not invoke; show supported alternate or assigned assisted task; no fabricated result",
+      "ambiguity_rule": "If external effect may have happened, status/idempotency or verified reconciliation required before retry",
+      "recipient_scope": "minimal permitted canonical projection"
+    },
+    {
+      "id": "CAP-CLAIM_PAYOUT",
+      "operation": "claim_payout",
+      "negotiation": "explicit per carrier/product/channel/environment and mapping version",
+      "default": "unsupported",
+      "requires_authority": true,
+      "unsupported_behavior": "Do not invoke; show supported alternate or assigned assisted task; no fabricated result",
+      "ambiguity_rule": "If external effect may have happened, status/idempotency or verified reconciliation required before retry",
+      "recipient_scope": "minimal permitted canonical projection"
+    },
+    {
+      "id": "CAP-AUTOMOTIVEPAYMENT",
+      "operation": "automotivePayment",
+      "negotiation": "explicit per provider/product/channel/environment contract",
+      "default": "unsupported",
+      "requires_authority": true,
+      "unsupported_behavior": "approved assisted path or visible unavailability; no invented provider result",
+      "ambiguity_rule": "potential external effect requires status/idempotency or verified reconciliation before retry",
+      "recipient_scope": "minimal purpose-authorized projection"
+    },
+    {
+      "id": "CAP-AUTOMOTIVESERVICE",
+      "operation": "automotiveService",
+      "negotiation": "explicit per provider/product/channel/environment contract",
+      "default": "unsupported",
+      "requires_authority": true,
+      "unsupported_behavior": "approved assisted path or visible unavailability; no invented provider result",
+      "ambiguity_rule": "potential external effect requires status/idempotency or verified reconciliation before retry",
+      "recipient_scope": "minimal purpose-authorized projection"
+    },
+    {
+      "id": "CAP-CLAIMASSESSMENT",
+      "operation": "claimAssessment",
+      "negotiation": "explicit per provider/product/channel/environment contract",
+      "default": "unsupported",
+      "requires_authority": true,
+      "unsupported_behavior": "approved assisted path or visible unavailability; no invented provider result",
+      "ambiguity_rule": "potential external effect requires status/idempotency or verified reconciliation before retry",
+      "recipient_scope": "minimal purpose-authorized projection"
+    },
+    {
+      "id": "CAP-CLAIMDECISION",
+      "operation": "claimDecision",
+      "negotiation": "explicit per provider/product/channel/environment contract",
+      "default": "unsupported",
+      "requires_authority": true,
+      "unsupported_behavior": "approved assisted path or visible unavailability; no invented provider result",
+      "ambiguity_rule": "potential external effect requires status/idempotency or verified reconciliation before retry",
+      "recipient_scope": "minimal purpose-authorized projection"
+    },
+    {
+      "id": "CAP-CLAIMLOCATIONS",
+      "operation": "claimLocations",
+      "negotiation": "explicit per provider/product/channel/environment contract",
+      "default": "unsupported",
+      "requires_authority": true,
+      "unsupported_behavior": "approved assisted path or visible unavailability; no invented provider result",
+      "ambiguity_rule": "potential external effect requires status/idempotency or verified reconciliation before retry",
+      "recipient_scope": "minimal purpose-authorized projection"
+    },
+    {
+      "id": "CAP-ENROLLMENT",
+      "operation": "enrollment",
+      "negotiation": "explicit per provider/product/channel/environment contract",
+      "default": "unsupported",
+      "requires_authority": true,
+      "unsupported_behavior": "approved assisted path or visible unavailability; no invented provider result",
+      "ambiguity_rule": "potential external effect requires status/idempotency or verified reconciliation before retry",
+      "recipient_scope": "minimal purpose-authorized projection"
+    },
+    {
+      "id": "CAP-FINANCIALREFERRAL",
+      "operation": "financialReferral",
+      "negotiation": "explicit per provider/product/channel/environment contract",
+      "default": "unsupported",
+      "requires_authority": true,
+      "unsupported_behavior": "approved assisted path or visible unavailability; no invented provider result",
+      "ambiguity_rule": "potential external effect requires status/idempotency or verified reconciliation before retry",
+      "recipient_scope": "minimal purpose-authorized projection"
+    },
+    {
+      "id": "CAP-FINANCING",
+      "operation": "financing",
+      "negotiation": "explicit per provider/product/channel/environment contract",
+      "default": "unsupported",
+      "requires_authority": true,
+      "unsupported_behavior": "approved assisted path or visible unavailability; no invented provider result",
+      "ambiguity_rule": "potential external effect requires status/idempotency or verified reconciliation before retry",
+      "recipient_scope": "minimal purpose-authorized projection"
+    },
+    {
+      "id": "CAP-HRSYNC",
+      "operation": "hrSync",
+      "negotiation": "explicit per provider/product/channel/environment contract",
+      "default": "unsupported",
+      "requires_authority": true,
+      "unsupported_behavior": "approved assisted path or visible unavailability; no invented provider result",
+      "ambiguity_rule": "potential external effect requires status/idempotency or verified reconciliation before retry",
+      "recipient_scope": "minimal purpose-authorized projection"
+    },
+    {
+      "id": "CAP-IDENTITYVERIFICATION",
+      "operation": "identityVerification",
+      "negotiation": "explicit per provider/product/channel/environment contract",
+      "default": "unsupported",
+      "requires_authority": true,
+      "unsupported_behavior": "approved assisted path or visible unavailability; no invented provider result",
+      "ambiguity_rule": "potential external effect requires status/idempotency or verified reconciliation before retry",
+      "recipient_scope": "minimal purpose-authorized projection"
+    },
+    {
+      "id": "CAP-INSPECTION",
+      "operation": "inspection",
+      "negotiation": "explicit per provider/product/channel/environment contract",
+      "default": "unsupported",
+      "requires_authority": true,
+      "unsupported_behavior": "approved assisted path or visible unavailability; no invented provider result",
+      "ambiguity_rule": "potential external effect requires status/idempotency or verified reconciliation before retry",
+      "recipient_scope": "minimal purpose-authorized projection"
+    },
+    {
+      "id": "CAP-INSURANCEINQUIRY",
+      "operation": "insuranceInquiry",
+      "negotiation": "explicit per provider/product/channel/environment contract",
+      "default": "unsupported",
+      "requires_authority": true,
+      "unsupported_behavior": "approved assisted path or visible unavailability; no invented provider result",
+      "ambiguity_rule": "potential external effect requires status/idempotency or verified reconciliation before retry",
+      "recipient_scope": "minimal purpose-authorized projection"
+    },
+    {
+      "id": "CAP-LOGISTICS",
+      "operation": "logistics",
+      "negotiation": "explicit per provider/product/channel/environment contract",
+      "default": "unsupported",
+      "requires_authority": true,
+      "unsupported_behavior": "approved assisted path or visible unavailability; no invented provider result",
+      "ambiguity_rule": "potential external effect requires status/idempotency or verified reconciliation before retry",
+      "recipient_scope": "minimal purpose-authorized projection"
+    },
+    {
+      "id": "CAP-NOTIFICATION",
+      "operation": "notification",
+      "negotiation": "explicit per provider/product/channel/environment contract",
+      "default": "unsupported",
+      "requires_authority": true,
+      "unsupported_behavior": "approved assisted path or visible unavailability; no invented provider result",
+      "ambiguity_rule": "potential external effect requires status/idempotency or verified reconciliation before retry",
+      "recipient_scope": "minimal purpose-authorized projection"
+    },
+    {
+      "id": "CAP-PARTNERWEBHOOK",
+      "operation": "partnerWebhook",
+      "negotiation": "explicit per provider/product/channel/environment contract",
+      "default": "unsupported",
+      "requires_authority": true,
+      "unsupported_behavior": "approved assisted path or visible unavailability; no invented provider result",
+      "ambiguity_rule": "potential external effect requires status/idempotency or verified reconciliation before retry",
+      "recipient_scope": "minimal purpose-authorized projection"
+    },
+    {
+      "id": "CAP-PAYMENT",
+      "operation": "payment",
+      "negotiation": "explicit per provider/product/channel/environment contract",
+      "default": "unsupported",
+      "requires_authority": true,
+      "unsupported_behavior": "approved assisted path or visible unavailability; no invented provider result",
+      "ambiguity_rule": "potential external effect requires status/idempotency or verified reconciliation before retry",
+      "recipient_scope": "minimal purpose-authorized projection"
+    },
+    {
+      "id": "CAP-PAYMENTRECONCILIATION",
+      "operation": "paymentReconciliation",
+      "negotiation": "explicit per provider/product/channel/environment contract",
+      "default": "unsupported",
+      "requires_authority": true,
+      "unsupported_behavior": "approved assisted path or visible unavailability; no invented provider result",
+      "ambiguity_rule": "potential external effect requires status/idempotency or verified reconciliation before retry",
+      "recipient_scope": "minimal purpose-authorized projection"
+    },
+    {
+      "id": "CAP-PAYOUT",
+      "operation": "payout",
+      "negotiation": "explicit per provider/product/channel/environment contract",
+      "default": "unsupported",
+      "requires_authority": true,
+      "unsupported_behavior": "approved assisted path or visible unavailability; no invented provider result",
+      "ambiguity_rule": "potential external effect requires status/idempotency or verified reconciliation before retry",
+      "recipient_scope": "minimal purpose-authorized projection"
+    },
+    {
+      "id": "CAP-REFUND",
+      "operation": "refund",
+      "negotiation": "explicit per provider/product/channel/environment contract",
+      "default": "unsupported",
+      "requires_authority": true,
+      "unsupported_behavior": "approved assisted path or visible unavailability; no invented provider result",
+      "ambiguity_rule": "potential external effect requires status/idempotency or verified reconciliation before retry",
+      "recipient_scope": "minimal purpose-authorized projection"
+    },
+    {
+      "id": "CAP-RESTADAPTER",
+      "operation": "restAdapter",
+      "negotiation": "explicit per provider/product/channel/environment contract",
+      "default": "unsupported",
+      "requires_authority": true,
+      "unsupported_behavior": "approved assisted path or visible unavailability; no invented provider result",
+      "ambiguity_rule": "potential external effect requires status/idempotency or verified reconciliation before retry",
+      "recipient_scope": "minimal purpose-authorized projection"
+    },
+    {
+      "id": "CAP-RETRIEVEDOCUMENT",
+      "operation": "retrieveDocument",
+      "negotiation": "explicit per provider/product/channel/environment contract",
+      "default": "unsupported",
+      "requires_authority": true,
+      "unsupported_behavior": "approved assisted path or visible unavailability; no invented provider result",
+      "ambiguity_rule": "potential external effect requires status/idempotency or verified reconciliation before retry",
+      "recipient_scope": "minimal purpose-authorized projection"
+    },
+    {
+      "id": "CAP-ROADCONDITIONS",
+      "operation": "roadConditions",
+      "negotiation": "explicit per provider/product/channel/environment contract",
+      "default": "unsupported",
+      "requires_authority": true,
+      "unsupported_behavior": "approved assisted path or visible unavailability; no invented provider result",
+      "ambiguity_rule": "potential external effect requires status/idempotency or verified reconciliation before retry",
+      "recipient_scope": "minimal purpose-authorized projection"
+    },
+    {
+      "id": "CAP-SERVICING",
+      "operation": "servicing",
+      "negotiation": "explicit per provider/product/channel/environment contract",
+      "default": "unsupported",
+      "requires_authority": true,
+      "unsupported_behavior": "approved assisted path or visible unavailability; no invented provider result",
+      "ambiguity_rule": "potential external effect requires status/idempotency or verified reconciliation before retry",
+      "recipient_scope": "minimal purpose-authorized projection"
+    },
+    {
+      "id": "CAP-SIGNEDHTTPADAPTER",
+      "operation": "signedHttpAdapter",
+      "negotiation": "explicit per provider/product/channel/environment contract",
+      "default": "unsupported",
+      "requires_authority": true,
+      "unsupported_behavior": "approved assisted path or visible unavailability; no invented provider result",
+      "ambiguity_rule": "potential external effect requires status/idempotency or verified reconciliation before retry",
+      "recipient_scope": "minimal purpose-authorized projection"
+    },
+    {
+      "id": "CAP-SOAPADAPTER",
+      "operation": "soapAdapter",
+      "negotiation": "explicit per provider/product/channel/environment contract",
+      "default": "unsupported",
+      "requires_authority": true,
+      "unsupported_behavior": "approved assisted path or visible unavailability; no invented provider result",
+      "ambiguity_rule": "potential external effect requires status/idempotency or verified reconciliation before retry",
+      "recipient_scope": "minimal purpose-authorized projection"
+    },
+    {
+      "id": "CAP-SUPPORTCOMMUNICATIONS",
+      "operation": "supportCommunications",
+      "negotiation": "explicit per provider/product/channel/environment contract",
+      "default": "unsupported",
+      "requires_authority": true,
+      "unsupported_behavior": "approved assisted path or visible unavailability; no invented provider result",
+      "ambiguity_rule": "potential external effect requires status/idempotency or verified reconciliation before retry",
+      "recipient_scope": "minimal purpose-authorized projection"
+    },
+    {
+      "id": "CAP-TECHNICALREPORT",
+      "operation": "technicalReport",
+      "negotiation": "explicit per provider/product/channel/environment contract",
+      "default": "unsupported",
+      "requires_authority": true,
+      "unsupported_behavior": "approved assisted path or visible unavailability; no invented provider result",
+      "ambiguity_rule": "potential external effect requires status/idempotency or verified reconciliation before retry",
+      "recipient_scope": "minimal purpose-authorized projection"
+    },
+    {
+      "id": "CAP-UNDERWRITING",
+      "operation": "underwriting",
+      "negotiation": "explicit per provider/product/channel/environment contract",
+      "default": "unsupported",
+      "requires_authority": true,
+      "unsupported_behavior": "approved assisted path or visible unavailability; no invented provider result",
+      "ambiguity_rule": "potential external effect requires status/idempotency or verified reconciliation before retry",
+      "recipient_scope": "minimal purpose-authorized projection"
+    },
+    {
+      "id": "CAP-VEHICLEINQUIRY",
+      "operation": "vehicleInquiry",
+      "negotiation": "explicit per provider/product/channel/environment contract",
+      "default": "unsupported",
+      "requires_authority": true,
+      "unsupported_behavior": "approved assisted path or visible unavailability; no invented provider result",
+      "ambiguity_rule": "potential external effect requires status/idempotency or verified reconciliation before retry",
+      "recipient_scope": "minimal purpose-authorized projection"
+    },
+    {
+      "id": "CAP-VEHICLETRANSACTION",
+      "operation": "vehicleTransaction",
+      "negotiation": "explicit per provider/product/channel/environment contract",
+      "default": "unsupported",
+      "requires_authority": true,
+      "unsupported_behavior": "approved assisted path or visible unavailability; no invented provider result",
+      "ambiguity_rule": "potential external effect requires status/idempotency or verified reconciliation before retry",
+      "recipient_scope": "minimal purpose-authorized projection"
+    },
+    {
+      "id": "CAP-VEHICLEVALUATION",
+      "operation": "vehicleValuation",
+      "negotiation": "explicit per provider/product/channel/environment contract",
+      "default": "unsupported",
+      "requires_authority": true,
+      "unsupported_behavior": "approved assisted path or visible unavailability; no invented provider result",
+      "ambiguity_rule": "potential external effect requires status/idempotency or verified reconciliation before retry",
+      "recipient_scope": "minimal purpose-authorized projection"
+    }
+  ]
+}

@@ -1,0 +1,4 @@
+# Documentation validators; primary package releases verified 2026-10-28.
+# Transitive lock remains pending a successful install in an isolated environment.
+jsonschema==4.26.0
+openapi-spec-validator==0.9.0

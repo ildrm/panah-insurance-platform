@@ -1,0 +1,328 @@
+{
+  "id": "REG-SOURCE-REGISTRY",
+  "version": "1.0.0",
+  "status": "draft",
+  "updated": "2026-10-28",
+  "entries": [
+    {
+      "id": "S00",
+      "title": "User supplied full documentation brief",
+      "location": "_meta/input/st-docs.md",
+      "kind": "user-requirement",
+      "supports": "All baseline parents, product families, invariants and output contract.",
+      "retrieval_status": "provided",
+      "checked_on": null,
+      "limitations": "No insurer product, legal authority, actual performance or human approval established."
+    },
+    {
+      "id": "S01",
+      "title": "Next.js production checklist",
+      "location": "https://nextjs.org/docs/app/guides/production-checklist",
+      "kind": "primary-technical",
+      "supports": "Production measurements and rendering guidance; current docs identify v16.4.3, not an installed/locked version.",
+      "retrieval_status": "retrieved",
+      "checked_on": "2026-10-28",
+      "limitations": "No insurer product, legal authority, actual performance or human approval established."
+    },
+    {
+      "id": "S02",
+      "title": "Next.js use cache",
+      "location": "https://nextjs.org/docs/app/api-reference/directives/use-cache",
+      "kind": "primary-technical",
+      "supports": "Version-dependent public caching directive; never authority to cache private insurance data.",
+      "retrieval_status": "retrieved",
+      "checked_on": "2026-10-28",
+      "limitations": "No insurer product, legal authority, actual performance or human approval established."
+    },
+    {
+      "id": "S03",
+      "title": "Next.js self-hosting",
+      "location": "https://nextjs.org/docs/app/guides/self-hosting",
+      "kind": "primary-technical",
+      "supports": "Multi-instance hosting/cache coordination requires explicit design.",
+      "retrieval_status": "retrieved",
+      "checked_on": "2026-10-28",
+      "limitations": "No insurer product, legal authority, actual performance or human approval established."
+    },
+    {
+      "id": "S04",
+      "title": "Nest HTTP adapters",
+      "location": "https://docs.nestjs.com/techniques/performance",
+      "kind": "primary-technical",
+      "supports": "Supported adapter abstraction and alternatives; representative performance choice remains unmeasured.",
+      "retrieval_status": "retrieved",
+      "checked_on": "2026-10-28",
+      "limitations": "No insurer product, legal authority, actual performance or human approval established."
+    },
+    {
+      "id": "S05",
+      "title": "Nest queues",
+      "location": "https://docs.nestjs.com/techniques/queues",
+      "kind": "primary-technical",
+      "supports": "Queue integration concepts; does not supply atomic DB/broker guarantees.",
+      "retrieval_status": "retrieved",
+      "checked_on": "2026-10-28",
+      "limitations": "No insurer product, legal authority, actual performance or human approval established."
+    },
+    {
+      "id": "S06",
+      "title": "Google Web Vitals",
+      "location": "https://web.dev/articles/vitals",
+      "kind": "primary-technical",
+      "supports": "p75 LCP2.5s, INP200ms, CLS0.1 thresholds; field/lab distinction.",
+      "retrieval_status": "retrieved",
+      "checked_on": "2026-10-28",
+      "limitations": "No insurer product, legal authority, actual performance or human approval established."
+    },
+    {
+      "id": "S07",
+      "title": "OWASP ASVS overview",
+      "location": "https://asvs.owasp.org/",
+      "kind": "primary-technical",
+      "supports": "Stable ASVS5.0.0 published May30 2025. Verification target only.",
+      "retrieval_status": "retrieved",
+      "checked_on": "2026-10-28",
+      "limitations": "No insurer product, legal authority, actual performance or human approval established."
+    },
+    {
+      "id": "S08",
+      "title": "WCAG2.2",
+      "location": "https://www.w3.org/TR/WCAG22/",
+      "kind": "primary-technical",
+      "supports": "WCAG2.2 W3C recommendation Dec12 2024; target AA; manual verification required.",
+      "retrieval_status": "retrieved",
+      "checked_on": "2026-10-28",
+      "limitations": "No insurer product, legal authority, actual performance or human approval established."
+    },
+    {
+      "id": "S09",
+      "title": "AWS transactional outbox",
+      "location": "https://docs.aws.amazon.com/prescriptive-guidance/latest/cloud-design-patterns/transactional-outbox.html",
+      "kind": "primary-technical",
+      "supports": "Local atomic outbox and duplicate-message/idempotency concerns.",
+      "retrieval_status": "retrieved",
+      "checked_on": "2026-10-28",
+      "limitations": "No insurer product, legal authority, actual performance or human approval established."
+    },
+    {
+      "id": "S10",
+      "title": "OpenAI prompting starting point",
+      "location": "https://developers.openai.com/api/docs/guides/prompt-engineering",
+      "kind": "brief-reference",
+      "supports": "Not relied upon for architecture or coverage; not reverified in this task.",
+      "retrieval_status": "not-retrieved",
+      "checked_on": null,
+      "limitations": "No insurer product, legal authority, actual performance or human approval established."
+    },
+    {
+      "id": "S11",
+      "title": "ASVS5 authorization",
+      "location": "https://raw.githubusercontent.com/OWASP/ASVS/v5.0.0/5.0/en/0x17-V8-Authorization.md",
+      "kind": "primary-technical",
+      "supports": "Exact V8 IDs used by security matrix; L2 target with selected L3.",
+      "retrieval_status": "retrieved-by-engineering-agent",
+      "checked_on": "2026-10-28",
+      "limitations": "No insurer product, legal authority, actual performance or human approval established."
+    },
+    {
+      "id": "S12",
+      "title": "ASVS5 authentication",
+      "location": "https://raw.githubusercontent.com/OWASP/ASVS/v5.0.0/5.0/en/0x15-V6-Authentication.md",
+      "kind": "primary-technical",
+      "supports": "V6.3.3 authentication target conflict with OTP-only retained as pending decision.",
+      "retrieval_status": "retrieved-by-engineering-agent",
+      "checked_on": "2026-10-28",
+      "limitations": "No insurer product, legal authority, actual performance or human approval established."
+    },
+    {
+      "id": "S13",
+      "title": "ASVS5 sessions",
+      "location": "https://raw.githubusercontent.com/OWASP/ASVS/v5.0.0/5.0/en/0x16-V7-Session-Management.md",
+      "kind": "primary-technical",
+      "supports": "Session-control mappings in security matrix.",
+      "retrieval_status": "retrieved-by-engineering-agent",
+      "checked_on": "2026-10-28",
+      "limitations": "No insurer product, legal authority, actual performance or human approval established."
+    },
+    {
+      "id": "S14",
+      "title": "ASVS5 data protection",
+      "location": "https://raw.githubusercontent.com/OWASP/ASVS/v5.0.0/5.0/en/0x23-V14-Data-Protection.md",
+      "kind": "primary-technical",
+      "supports": "Data protection mappings in security matrix.",
+      "retrieval_status": "retrieved-by-engineering-agent",
+      "checked_on": "2026-10-28",
+      "limitations": "No insurer product, legal authority, actual performance or human approval established."
+    },
+    {
+      "id": "S15",
+      "title": "ASVS5 encoding and sanitization",
+      "location": "https://raw.githubusercontent.com/OWASP/ASVS/v5.0.0/5.0/en/0x10-V1-Encoding-and-Sanitization.md",
+      "kind": "primary-technical",
+      "supports": "Exact SQL, SSRF and XXE control references in product threat map",
+      "retrieval_status": "retrieved-by-engineering-agent",
+      "checked_on": "2026-10-28",
+      "limitations": "No insurer product, legal authority, actual performance or human approval established."
+    },
+    {
+      "id": "S16",
+      "title": "ASVS5 validation and business logic",
+      "location": "https://raw.githubusercontent.com/OWASP/ASVS/v5.0.0/5.0/en/0x11-V2-Validation-and-Business-Logic.md",
+      "kind": "primary-technical",
+      "supports": "Trusted input, atomicity/locking and maker-checker references",
+      "retrieval_status": "retrieved-by-engineering-agent",
+      "checked_on": "2026-10-28",
+      "limitations": "No insurer product, legal authority, actual performance or human approval established."
+    },
+    {
+      "id": "S17",
+      "title": "ASVS5 API and web service",
+      "location": "https://raw.githubusercontent.com/OWASP/ASVS/v5.0.0/5.0/en/0x13-V4-API-and-Web-Service.md",
+      "kind": "primary-technical",
+      "supports": "Content type, proxy header and framing references",
+      "retrieval_status": "retrieved-by-engineering-agent",
+      "checked_on": "2026-10-28",
+      "limitations": "No insurer product, legal authority, actual performance or human approval established."
+    },
+    {
+      "id": "S18",
+      "title": "ASVS5 file handling",
+      "location": "https://raw.githubusercontent.com/OWASP/ASVS/v5.0.0/5.0/en/0x14-V5-File-Handling.md",
+      "kind": "primary-technical",
+      "supports": "Upload, validation, storage and download control references",
+      "retrieval_status": "retrieved-by-engineering-agent",
+      "checked_on": "2026-10-28",
+      "limitations": "No insurer product, legal authority, actual performance or human approval established."
+    },
+    {
+      "id": "S19",
+      "title": "ASVS5 cryptography",
+      "location": "https://raw.githubusercontent.com/OWASP/ASVS/v5.0.0/5.0/en/0x20-V11-Cryptography.md",
+      "kind": "primary-technical",
+      "supports": "Key lifecycle, inventory, cryptographic implementation and integrity controls",
+      "retrieval_status": "retrieved-by-engineering-agent",
+      "checked_on": "2026-10-28",
+      "limitations": "No insurer product, legal authority, actual performance or human approval established."
+    },
+    {
+      "id": "S20",
+      "title": "ASVS5 secure communication",
+      "location": "https://raw.githubusercontent.com/OWASP/ASVS/v5.0.0/5.0/en/0x21-V12-Secure-Communication.md",
+      "kind": "primary-technical",
+      "supports": "mTLS and TLS validation control references",
+      "retrieval_status": "retrieved-by-engineering-agent",
+      "checked_on": "2026-10-28",
+      "limitations": "No insurer product, legal authority, actual performance or human approval established."
+    },
+    {
+      "id": "S21",
+      "title": "ASVS5 configuration",
+      "location": "https://raw.githubusercontent.com/OWASP/ASVS/v5.0.0/5.0/en/0x22-V13-Configuration.md",
+      "kind": "primary-technical",
+      "supports": "Egress and secret control references",
+      "retrieval_status": "retrieved-by-engineering-agent",
+      "checked_on": "2026-10-28",
+      "limitations": "No insurer product, legal authority, actual performance or human approval established."
+    },
+    {
+      "id": "S22",
+      "title": "ASVS5 security logging and errors",
+      "location": "https://raw.githubusercontent.com/OWASP/ASVS/v5.0.0/5.0/en/0x25-V16-Security-Logging-and-Error-Handling.md",
+      "kind": "primary-technical",
+      "supports": "Security event, protection and safe error control references",
+      "retrieval_status": "retrieved-by-engineering-agent",
+      "checked_on": "2026-10-28",
+      "limitations": "No insurer product, legal authority, actual performance or human approval established."
+    },
+    {
+      "id": "S23",
+      "title": "JSON Schema validator release",
+      "location": "https://pypi.org/project/jsonschema/",
+      "kind": "primary-technical",
+      "supports": "jsonschema4.26.0 release and draft2020-12 support; package download failed locally",
+      "retrieval_status": "retrieved",
+      "checked_on": "2026-10-28",
+      "limitations": "No insurer product, legal authority, actual performance or human approval established."
+    },
+    {
+      "id": "S24",
+      "title": "OpenAPI validator release",
+      "location": "https://pypi.org/project/openapi-spec-validator/",
+      "kind": "primary-technical",
+      "supports": "openapi-spec-validator0.9.0 release and OpenAPI3.1 support; not installed successfully",
+      "retrieval_status": "retrieved",
+      "checked_on": "2026-10-28",
+      "limitations": "No insurer product, legal authority, actual performance or human approval established."
+    },
+    {
+      "id": "S25",
+      "title": "AsyncAPI parser release",
+      "location": "https://github.com/asyncapi/parser-js/releases",
+      "kind": "primary-technical",
+      "supports": "@asyncapi/parser3.6.6 stable release selected for proposed documentation tooling",
+      "retrieval_status": "retrieved",
+      "checked_on": "2026-10-28",
+      "limitations": "No insurer product, legal authority, actual performance or human approval established."
+    },
+    {
+      "id": "S26",
+      "title": "ECMAScript Internationalization DateTimeFormat",
+      "location": "https://tc39.es/ecma402/#sec-intl.datetimeformat",
+      "kind": "primary-technical",
+      "supports": "Calendar formatting API semantics; concrete simulator conversion separately observed with Node/ICU execution",
+      "retrieval_status": "retrieved-by-engineering-agent",
+      "checked_on": "2026-10-28",
+      "limitations": "No insurer product, legal authority, actual performance or human approval established."
+    },
+    {
+      "id": "S27",
+      "title": "User supplied implementation prompt",
+      "location": "_meta/implementation-input/st-project.md",
+      "kind": "user-requirement",
+      "supports": "Full implementation scope, authority restrictions, evidence and continuation requirements.",
+      "retrieval_status": "provided",
+      "checked_on": null,
+      "limitations": "No insurer product, legal authority, actual performance or human approval established."
+    },
+    {
+      "id": "S28",
+      "title": "User supplied implementation roles",
+      "location": "_meta/implementation-input/st-roles.md",
+      "kind": "user-requirement",
+      "supports": "R01–R21 responsibility lenses; no human sign-off inferred.",
+      "retrieval_status": "provided",
+      "checked_on": null,
+      "limitations": "No insurer product, legal authority, actual performance or human approval established."
+    },
+    {
+      "id": "S29",
+      "title": "User supplied immutable scope baseline",
+      "location": "_meta/implementation-input/st-scope-baseline.json",
+      "kind": "user-requirement",
+      "supports": "Baseline IDs and full-scope preservation for implementation.",
+      "retrieval_status": "provided",
+      "checked_on": null,
+      "limitations": "No insurer product, legal authority, actual performance or human approval established."
+    },
+    {
+      "id": "S30",
+      "title": "OpenAPI standards validator official package",
+      "location": "https://registry.npmjs.org/@apidevtools/swagger-parser/13.1.0",
+      "kind": "primary-technical",
+      "supports": "Exact13.1.0 metadata and installed implementation support OpenAPI3.1 schema validation; local static-contract result is recorded separately.",
+      "retrieval_status": "retrieved",
+      "checked_on": "2026-10-28",
+      "limitations": "No insurer product, legal authority, actual performance or human approval established."
+    },
+    {
+      "id": "S31",
+      "title": "Ajv JSON Schema validator official package",
+      "location": "https://registry.npmjs.org/ajv/8.20.0",
+      "kind": "primary-technical",
+      "supports": "Exact locked Ajv2020 constructor plus ajv-formats used for full Draft2020-12 schema/example validation.",
+      "retrieval_status": "retrieved",
+      "checked_on": "2026-10-28",
+      "limitations": "No insurer product, legal authority, actual performance or human approval established."
+    }
+  ]
+}

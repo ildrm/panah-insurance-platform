@@ -1,0 +1,30 @@
+{
+  "fixtureId": "FIX-PRD-19",
+  "synthetic": true,
+  "productId": "PRD-19",
+  "schemaRef": "../schemas/PRD-19.risk.schema.json",
+  "riskExample": {
+    "cargoDescription": "Synthetic machine components",
+    "commodityCode": "SYNTH-MACHINERY",
+    "insuredValue": "750000000",
+    "originCode": "SYNTH-ORIGIN",
+    "destinationCode": "SYNTH-DESTINATION",
+    "transportMode": "SYNTH-ROAD",
+    "shipmentStart": "2027-05-01"
+  },
+  "canonicalContext": {
+    "currency": "IRR",
+    "unit": "rial",
+    "channel": "commercial",
+    "partyAndAuthorityFixture": "Synthetic authorized buyer/payer/policyholder/insured roles; referenced UUIDs resolve only in the local test harness.",
+    "productRuleVersion": "SYNTH-1",
+    "liveOperationsAllowed": false
+  },
+  "scenarioContext": {},
+  "expected": {
+    "withoutContract": "live_quote_and_purchase_disabled",
+    "syntacticValidation": "pass",
+    "carrierEligibility": "undetermined_without_synthetic_rule_set",
+    "variant": "A route leg changes after quote and the shipment is already underway: automated bind stops and the case requires explicit carrier review without pretending the earlier quote covers the new route."
+  }
+}

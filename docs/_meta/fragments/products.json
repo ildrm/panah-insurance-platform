@@ -1,0 +1,1032 @@
+[
+  {
+    "id": "PRD-01",
+    "title": "Motor third-party",
+    "spec_path": "01-product/products/PRD-01.md",
+    "channels": [
+      "B2C",
+      "B2B.commercial",
+      "B2B.reseller",
+      "B2B2C"
+    ],
+    "canonical_channels": [
+      "b2c",
+      "commercial",
+      "reseller",
+      "b2b2c"
+    ],
+    "kind": "standalone; carrier-dependent plans",
+    "risk_fields": [
+      "vehicleRef",
+      "plate",
+      "vehicleClass",
+      "usageCode",
+      "priorPolicyRef",
+      "noClaimHistoryRef",
+      "liabilityPlanCode"
+    ],
+    "contract_dependencies": [
+      "product authority",
+      "versioned rates and eligibility",
+      "carrier capability and mapping",
+      "jurisdiction and contract review"
+    ],
+    "acceptance_ids": [
+      "AC-PRD-01-RISK",
+      "AC-PRD-01-VARIANT",
+      "AC-PRD-01-DENY",
+      "AC-PRD-01-DISABLE",
+      "AC-PRD-01-RACE",
+      "AC-PRD-01-PROVIDER",
+      "AC-PRD-01-SERVE"
+    ],
+    "fixture": "01-product/products/fixtures/PRD-01.json",
+    "risk_schema": "01-product/products/schemas/PRD-01.risk.schema.json"
+  },
+  {
+    "id": "PRD-02",
+    "title": "Comprehensive motor / body",
+    "spec_path": "01-product/products/PRD-02.md",
+    "channels": [
+      "B2C",
+      "B2B.commercial",
+      "B2B.reseller"
+    ],
+    "canonical_channels": [
+      "b2c",
+      "commercial",
+      "reseller"
+    ],
+    "kind": "standalone with optional riders",
+    "risk_fields": [
+      "vehicleRef",
+      "declaredValue",
+      "accessories",
+      "perilCodes",
+      "deductibleOption",
+      "inspectionRef",
+      "territoryCode"
+    ],
+    "contract_dependencies": [
+      "product authority",
+      "versioned rates and eligibility",
+      "carrier capability and mapping",
+      "jurisdiction and contract review"
+    ],
+    "acceptance_ids": [
+      "AC-PRD-02-RISK",
+      "AC-PRD-02-VARIANT",
+      "AC-PRD-02-DENY",
+      "AC-PRD-02-DISABLE",
+      "AC-PRD-02-RACE",
+      "AC-PRD-02-PROVIDER",
+      "AC-PRD-02-SERVE"
+    ],
+    "fixture": "01-product/products/fixtures/PRD-02.json",
+    "risk_schema": "01-product/products/schemas/PRD-02.risk.schema.json"
+  },
+  {
+    "id": "PRD-03",
+    "title": "Motorcycle third-party",
+    "spec_path": "01-product/products/PRD-03.md",
+    "channels": [
+      "B2C",
+      "B2B.commercial",
+      "B2B.reseller"
+    ],
+    "canonical_channels": [
+      "b2c",
+      "commercial",
+      "reseller"
+    ],
+    "kind": "standalone",
+    "risk_fields": [
+      "motorcycleRef",
+      "engineCapacityCc",
+      "powertrainCode",
+      "modelYear",
+      "usageCode",
+      "priorPolicyRef",
+      "liabilityPlanCode"
+    ],
+    "contract_dependencies": [
+      "product authority",
+      "versioned rates and eligibility",
+      "carrier capability and mapping",
+      "jurisdiction and contract review"
+    ],
+    "acceptance_ids": [
+      "AC-PRD-03-RISK",
+      "AC-PRD-03-VARIANT",
+      "AC-PRD-03-DENY",
+      "AC-PRD-03-DISABLE",
+      "AC-PRD-03-RACE",
+      "AC-PRD-03-PROVIDER",
+      "AC-PRD-03-SERVE"
+    ],
+    "fixture": "01-product/products/fixtures/PRD-03.json",
+    "risk_schema": "01-product/products/schemas/PRD-03.risk.schema.json"
+  },
+  {
+    "id": "PRD-04",
+    "title": "Fire / property",
+    "spec_path": "01-product/products/PRD-04.md",
+    "channels": [
+      "B2C",
+      "B2B.commercial",
+      "B2B.reseller"
+    ],
+    "canonical_channels": [
+      "b2c",
+      "commercial",
+      "reseller"
+    ],
+    "kind": "standalone with peril riders",
+    "risk_fields": [
+      "locationRef",
+      "occupancyCode",
+      "constructionCode",
+      "areaM2",
+      "buildingValue",
+      "contentsValue",
+      "perilCodes"
+    ],
+    "contract_dependencies": [
+      "product authority",
+      "versioned rates and eligibility",
+      "carrier capability and mapping",
+      "jurisdiction and contract review"
+    ],
+    "acceptance_ids": [
+      "AC-PRD-04-RISK",
+      "AC-PRD-04-VARIANT",
+      "AC-PRD-04-DENY",
+      "AC-PRD-04-DISABLE",
+      "AC-PRD-04-RACE",
+      "AC-PRD-04-PROVIDER",
+      "AC-PRD-04-SERVE"
+    ],
+    "fixture": "01-product/products/fixtures/PRD-04.json",
+    "risk_schema": "01-product/products/schemas/PRD-04.risk.schema.json"
+  },
+  {
+    "id": "PRD-05",
+    "title": "Earthquake coverage",
+    "spec_path": "01-product/products/PRD-05.md",
+    "channels": [
+      "B2C",
+      "B2B.commercial",
+      "B2B.reseller"
+    ],
+    "canonical_channels": [
+      "b2c",
+      "commercial",
+      "reseller"
+    ],
+    "kind": "standalone or rider only where contracted",
+    "risk_fields": [
+      "coverageMode",
+      "basePolicyOrQuoteRef",
+      "locationRef",
+      "constructionCode",
+      "insuredValue",
+      "limitOption",
+      "deductibleOption"
+    ],
+    "contract_dependencies": [
+      "product authority",
+      "versioned rates and eligibility",
+      "carrier capability and mapping",
+      "jurisdiction and contract review"
+    ],
+    "acceptance_ids": [
+      "AC-PRD-05-RISK",
+      "AC-PRD-05-VARIANT",
+      "AC-PRD-05-DENY",
+      "AC-PRD-05-DISABLE",
+      "AC-PRD-05-RACE",
+      "AC-PRD-05-PROVIDER",
+      "AC-PRD-05-SERVE"
+    ],
+    "fixture": "01-product/products/fixtures/PRD-05.json",
+    "risk_schema": "01-product/products/schemas/PRD-05.risk.schema.json"
+  },
+  {
+    "id": "PRD-06",
+    "title": "Individual / family supplementary health",
+    "spec_path": "01-product/products/PRD-06.md",
+    "channels": [
+      "B2C",
+      "B2B.reseller",
+      "B2B2C"
+    ],
+    "canonical_channels": [
+      "b2c",
+      "reseller",
+      "b2b2c"
+    ],
+    "kind": "standalone or contract-dependent supplementary plan",
+    "risk_fields": [
+      "memberRefs",
+      "relationshipCodes",
+      "birthDates",
+      "baseCoverageRefs",
+      "healthDeclarationRefs",
+      "benefitPlanCode",
+      "networkCode"
+    ],
+    "contract_dependencies": [
+      "product authority",
+      "versioned rates and eligibility",
+      "carrier capability and mapping",
+      "jurisdiction and contract review"
+    ],
+    "acceptance_ids": [
+      "AC-PRD-06-RISK",
+      "AC-PRD-06-VARIANT",
+      "AC-PRD-06-DENY",
+      "AC-PRD-06-DISABLE",
+      "AC-PRD-06-RACE",
+      "AC-PRD-06-PROVIDER",
+      "AC-PRD-06-SERVE"
+    ],
+    "fixture": "01-product/products/fixtures/PRD-06.json",
+    "risk_schema": "01-product/products/schemas/PRD-06.risk.schema.json"
+  },
+  {
+    "id": "PRD-07",
+    "title": "Corporate / group health",
+    "spec_path": "01-product/products/PRD-07.md",
+    "channels": [
+      "B2B.corporate",
+      "B2B.commercial",
+      "B2B.reseller",
+      "B2B2C"
+    ],
+    "canonical_channels": [
+      "corporate",
+      "commercial",
+      "reseller",
+      "b2b2c"
+    ],
+    "kind": "negotiated group plan with beneficiary servicing",
+    "risk_fields": [
+      "organizationRef",
+      "censusBatchRef",
+      "benefitClassCode",
+      "enrollmentWindowRef",
+      "effectiveDate",
+      "billingBasisCode",
+      "proposalVersion"
+    ],
+    "contract_dependencies": [
+      "product authority",
+      "versioned rates and eligibility",
+      "carrier capability and mapping",
+      "jurisdiction and contract review"
+    ],
+    "acceptance_ids": [
+      "AC-PRD-07-RISK",
+      "AC-PRD-07-VARIANT",
+      "AC-PRD-07-DENY",
+      "AC-PRD-07-DISABLE",
+      "AC-PRD-07-RACE",
+      "AC-PRD-07-PROVIDER",
+      "AC-PRD-07-SERVE"
+    ],
+    "fixture": "01-product/products/fixtures/PRD-07.json",
+    "risk_schema": "01-product/products/schemas/PRD-07.risk.schema.json"
+  },
+  {
+    "id": "PRD-08",
+    "title": "Life / investment-linked life",
+    "spec_path": "01-product/products/PRD-08.md",
+    "channels": [
+      "B2C",
+      "B2B.commercial",
+      "B2B.reseller"
+    ],
+    "canonical_channels": [
+      "b2c",
+      "commercial",
+      "reseller"
+    ],
+    "kind": "standalone; investment-linked only under approved contract",
+    "risk_fields": [
+      "insuredRef",
+      "birthDate",
+      "occupationCode",
+      "beneficiaries",
+      "contributionAmount",
+      "contributionFrequency",
+      "illustrationVersion",
+      "medicalDeclarationRef"
+    ],
+    "contract_dependencies": [
+      "product authority",
+      "versioned rates and eligibility",
+      "carrier capability and mapping",
+      "jurisdiction and contract review"
+    ],
+    "acceptance_ids": [
+      "AC-PRD-08-RISK",
+      "AC-PRD-08-VARIANT",
+      "AC-PRD-08-DENY",
+      "AC-PRD-08-DISABLE",
+      "AC-PRD-08-RACE",
+      "AC-PRD-08-PROVIDER",
+      "AC-PRD-08-SERVE"
+    ],
+    "fixture": "01-product/products/fixtures/PRD-08.json",
+    "risk_schema": "01-product/products/schemas/PRD-08.risk.schema.json"
+  },
+  {
+    "id": "PRD-09",
+    "title": "Pension / annuity",
+    "spec_path": "01-product/products/PRD-09.md",
+    "channels": [
+      "B2C",
+      "B2B.corporate",
+      "B2B.reseller"
+    ],
+    "canonical_channels": [
+      "b2c",
+      "corporate",
+      "reseller"
+    ],
+    "kind": "contract-defined pension or annuity plan",
+    "risk_fields": [
+      "annuitantRef",
+      "birthDate",
+      "contributionAmount",
+      "contributionTermCode",
+      "payoutOptionCode",
+      "plannedStartDate",
+      "illustrationVersion"
+    ],
+    "contract_dependencies": [
+      "product authority",
+      "versioned rates and eligibility",
+      "carrier capability and mapping",
+      "jurisdiction and contract review"
+    ],
+    "acceptance_ids": [
+      "AC-PRD-09-RISK",
+      "AC-PRD-09-VARIANT",
+      "AC-PRD-09-DENY",
+      "AC-PRD-09-DISABLE",
+      "AC-PRD-09-RACE",
+      "AC-PRD-09-PROVIDER",
+      "AC-PRD-09-SERVE"
+    ],
+    "fixture": "01-product/products/fixtures/PRD-09.json",
+    "risk_schema": "01-product/products/schemas/PRD-09.risk.schema.json"
+  },
+  {
+    "id": "PRD-10",
+    "title": "Travel",
+    "spec_path": "01-product/products/PRD-10.md",
+    "channels": [
+      "B2C",
+      "B2B.commercial",
+      "B2B.reseller"
+    ],
+    "canonical_channels": [
+      "b2c",
+      "commercial",
+      "reseller"
+    ],
+    "kind": "standalone trip or contract-defined multi-trip plan",
+    "risk_fields": [
+      "travelerRefs",
+      "destinationCodes",
+      "departureDate",
+      "returnDate",
+      "tripTypeCode",
+      "assistancePlanCode",
+      "passportEvidenceRef"
+    ],
+    "contract_dependencies": [
+      "product authority",
+      "versioned rates and eligibility",
+      "carrier capability and mapping",
+      "jurisdiction and contract review"
+    ],
+    "acceptance_ids": [
+      "AC-PRD-10-RISK",
+      "AC-PRD-10-VARIANT",
+      "AC-PRD-10-DENY",
+      "AC-PRD-10-DISABLE",
+      "AC-PRD-10-RACE",
+      "AC-PRD-10-PROVIDER",
+      "AC-PRD-10-SERVE"
+    ],
+    "fixture": "01-product/products/fixtures/PRD-10.json",
+    "risk_schema": "01-product/products/schemas/PRD-10.risk.schema.json"
+  },
+  {
+    "id": "PRD-11",
+    "title": "Pilgrimage / Karbala",
+    "spec_path": "01-product/products/PRD-11.md",
+    "channels": [
+      "B2C",
+      "B2B.commercial",
+      "B2B.reseller"
+    ],
+    "canonical_channels": [
+      "b2c",
+      "commercial",
+      "reseller"
+    ],
+    "kind": "special-destination travel plan where contracted",
+    "risk_fields": [
+      "travelerRefs",
+      "destinationPlanCode",
+      "departureDate",
+      "durationDays",
+      "organizerRef",
+      "assistancePlanCode",
+      "requiredTravelEvidenceRef"
+    ],
+    "contract_dependencies": [
+      "product authority",
+      "versioned rates and eligibility",
+      "carrier capability and mapping",
+      "jurisdiction and contract review"
+    ],
+    "acceptance_ids": [
+      "AC-PRD-11-RISK",
+      "AC-PRD-11-VARIANT",
+      "AC-PRD-11-DENY",
+      "AC-PRD-11-DISABLE",
+      "AC-PRD-11-RACE",
+      "AC-PRD-11-PROVIDER",
+      "AC-PRD-11-SERVE"
+    ],
+    "fixture": "01-product/products/fixtures/PRD-11.json",
+    "risk_schema": "01-product/products/schemas/PRD-11.risk.schema.json"
+  },
+  {
+    "id": "PRD-12",
+    "title": "Physicians professional liability",
+    "spec_path": "01-product/products/PRD-12.md",
+    "channels": [
+      "B2C",
+      "B2B.commercial",
+      "B2B.reseller"
+    ],
+    "canonical_channels": [
+      "b2c",
+      "commercial",
+      "reseller"
+    ],
+    "kind": "professional liability; assisted variants",
+    "risk_fields": [
+      "professionalRef",
+      "credentialRef",
+      "specialtyCode",
+      "practiceLocations",
+      "procedureCodes",
+      "priorClaimDeclarationRef",
+      "limitOption"
+    ],
+    "contract_dependencies": [
+      "product authority",
+      "versioned rates and eligibility",
+      "carrier capability and mapping",
+      "jurisdiction and contract review"
+    ],
+    "acceptance_ids": [
+      "AC-PRD-12-RISK",
+      "AC-PRD-12-VARIANT",
+      "AC-PRD-12-DENY",
+      "AC-PRD-12-DISABLE",
+      "AC-PRD-12-RACE",
+      "AC-PRD-12-PROVIDER",
+      "AC-PRD-12-SERVE"
+    ],
+    "fixture": "01-product/products/fixtures/PRD-12.json",
+    "risk_schema": "01-product/products/schemas/PRD-12.risk.schema.json"
+  },
+  {
+    "id": "PRD-13",
+    "title": "Elevator liability",
+    "spec_path": "01-product/products/PRD-13.md",
+    "channels": [
+      "B2C",
+      "B2B.commercial",
+      "B2B.reseller"
+    ],
+    "canonical_channels": [
+      "b2c",
+      "commercial",
+      "reseller"
+    ],
+    "kind": "equipment-related liability",
+    "risk_fields": [
+      "buildingRef",
+      "equipmentIdentifier",
+      "capacityPersons",
+      "capacityKg",
+      "stopCount",
+      "maintenanceEvidenceRef",
+      "inspectionEvidenceRef",
+      "limitOption"
+    ],
+    "contract_dependencies": [
+      "product authority",
+      "versioned rates and eligibility",
+      "carrier capability and mapping",
+      "jurisdiction and contract review"
+    ],
+    "acceptance_ids": [
+      "AC-PRD-13-RISK",
+      "AC-PRD-13-VARIANT",
+      "AC-PRD-13-DENY",
+      "AC-PRD-13-DISABLE",
+      "AC-PRD-13-RACE",
+      "AC-PRD-13-PROVIDER",
+      "AC-PRD-13-SERVE"
+    ],
+    "fixture": "01-product/products/fixtures/PRD-13.json",
+    "risk_schema": "01-product/products/schemas/PRD-13.risk.schema.json"
+  },
+  {
+    "id": "PRD-14",
+    "title": "Sports",
+    "spec_path": "01-product/products/PRD-14.md",
+    "channels": [
+      "B2C",
+      "B2B.corporate",
+      "B2B.commercial",
+      "B2B.reseller",
+      "B2B2C"
+    ],
+    "canonical_channels": [
+      "b2c",
+      "corporate",
+      "commercial",
+      "reseller",
+      "b2b2c"
+    ],
+    "kind": "participant/activity cover through authorized issuer",
+    "risk_fields": [
+      "participantRefs",
+      "sportCode",
+      "activityLevelCode",
+      "eventRef",
+      "periodStart",
+      "periodEnd",
+      "issuerPlanCode"
+    ],
+    "contract_dependencies": [
+      "product authority",
+      "versioned rates and eligibility",
+      "carrier capability and mapping",
+      "jurisdiction and contract review"
+    ],
+    "acceptance_ids": [
+      "AC-PRD-14-RISK",
+      "AC-PRD-14-VARIANT",
+      "AC-PRD-14-DENY",
+      "AC-PRD-14-DISABLE",
+      "AC-PRD-14-RACE",
+      "AC-PRD-14-PROVIDER",
+      "AC-PRD-14-SERVE"
+    ],
+    "fixture": "01-product/products/fixtures/PRD-14.json",
+    "risk_schema": "01-product/products/schemas/PRD-14.risk.schema.json"
+  },
+  {
+    "id": "PRD-15",
+    "title": "Personal accident",
+    "spec_path": "01-product/products/PRD-15.md",
+    "channels": [
+      "B2C",
+      "B2B.corporate",
+      "B2B.commercial",
+      "B2B.reseller",
+      "B2B2C"
+    ],
+    "canonical_channels": [
+      "b2c",
+      "corporate",
+      "commercial",
+      "reseller",
+      "b2b2c"
+    ],
+    "kind": "individual/group accident plan",
+    "risk_fields": [
+      "insuredRefs",
+      "occupationCode",
+      "activityCodes",
+      "benefitPlanCode",
+      "beneficiaryRefs",
+      "territoryCode",
+      "termCode"
+    ],
+    "contract_dependencies": [
+      "product authority",
+      "versioned rates and eligibility",
+      "carrier capability and mapping",
+      "jurisdiction and contract review"
+    ],
+    "acceptance_ids": [
+      "AC-PRD-15-RISK",
+      "AC-PRD-15-VARIANT",
+      "AC-PRD-15-DENY",
+      "AC-PRD-15-DISABLE",
+      "AC-PRD-15-RACE",
+      "AC-PRD-15-PROVIDER",
+      "AC-PRD-15-SERVE"
+    ],
+    "fixture": "01-product/products/fixtures/PRD-15.json",
+    "risk_schema": "01-product/products/schemas/PRD-15.risk.schema.json"
+  },
+  {
+    "id": "PRD-16",
+    "title": "Mobile-device protection",
+    "spec_path": "01-product/products/PRD-16.md",
+    "channels": [
+      "B2C",
+      "B2B.commercial",
+      "B2B.reseller"
+    ],
+    "canonical_channels": [
+      "b2c",
+      "commercial",
+      "reseller"
+    ],
+    "kind": "insurance or contract-specific protection; classification disclosed",
+    "risk_fields": [
+      "deviceModelCode",
+      "deviceIdentifier",
+      "purchaseDate",
+      "declaredValue",
+      "conditionCode",
+      "purchaseEvidenceRef",
+      "inspectionRef",
+      "perilPlanCode"
+    ],
+    "contract_dependencies": [
+      "product authority",
+      "versioned rates and eligibility",
+      "carrier capability and mapping",
+      "jurisdiction and contract review"
+    ],
+    "acceptance_ids": [
+      "AC-PRD-16-RISK",
+      "AC-PRD-16-VARIANT",
+      "AC-PRD-16-DENY",
+      "AC-PRD-16-DISABLE",
+      "AC-PRD-16-RACE",
+      "AC-PRD-16-PROVIDER",
+      "AC-PRD-16-SERVE"
+    ],
+    "fixture": "01-product/products/fixtures/PRD-16.json",
+    "risk_schema": "01-product/products/schemas/PRD-16.risk.schema.json"
+  },
+  {
+    "id": "PRD-17",
+    "title": "Electronic equipment",
+    "spec_path": "01-product/products/PRD-17.md",
+    "channels": [
+      "B2B.commercial",
+      "B2B.corporate",
+      "B2B.reseller"
+    ],
+    "canonical_channels": [
+      "commercial",
+      "corporate",
+      "reseller"
+    ],
+    "kind": "scheduled commercial equipment; assisted underwriting",
+    "risk_fields": [
+      "organizationRef",
+      "scheduleBatchRef",
+      "equipmentClassCode",
+      "declaredValue",
+      "locationRef",
+      "useCode",
+      "maintenanceEvidenceRef"
+    ],
+    "contract_dependencies": [
+      "product authority",
+      "versioned rates and eligibility",
+      "carrier capability and mapping",
+      "jurisdiction and contract review"
+    ],
+    "acceptance_ids": [
+      "AC-PRD-17-RISK",
+      "AC-PRD-17-VARIANT",
+      "AC-PRD-17-DENY",
+      "AC-PRD-17-DISABLE",
+      "AC-PRD-17-RACE",
+      "AC-PRD-17-PROVIDER",
+      "AC-PRD-17-SERVE"
+    ],
+    "fixture": "01-product/products/fixtures/PRD-17.json",
+    "risk_schema": "01-product/products/schemas/PRD-17.risk.schema.json"
+  },
+  {
+    "id": "PRD-18",
+    "title": "Engineering",
+    "spec_path": "01-product/products/PRD-18.md",
+    "channels": [
+      "B2B.commercial",
+      "B2B.reseller"
+    ],
+    "canonical_channels": [
+      "commercial",
+      "reseller"
+    ],
+    "kind": "project-specific assisted commercial cover",
+    "risk_fields": [
+      "projectName",
+      "projectTypeCode",
+      "siteRefs",
+      "insuredValue",
+      "projectStart",
+      "projectEnd",
+      "contractorPartyRefs",
+      "technicalDossierRef"
+    ],
+    "contract_dependencies": [
+      "product authority",
+      "versioned rates and eligibility",
+      "carrier capability and mapping",
+      "jurisdiction and contract review"
+    ],
+    "acceptance_ids": [
+      "AC-PRD-18-RISK",
+      "AC-PRD-18-VARIANT",
+      "AC-PRD-18-DENY",
+      "AC-PRD-18-DISABLE",
+      "AC-PRD-18-RACE",
+      "AC-PRD-18-PROVIDER",
+      "AC-PRD-18-SERVE"
+    ],
+    "fixture": "01-product/products/fixtures/PRD-18.json",
+    "risk_schema": "01-product/products/schemas/PRD-18.risk.schema.json"
+  },
+  {
+    "id": "PRD-19",
+    "title": "Cargo / transit",
+    "spec_path": "01-product/products/PRD-19.md",
+    "channels": [
+      "B2B.commercial",
+      "B2B.reseller",
+      "B2C"
+    ],
+    "canonical_channels": [
+      "commercial",
+      "reseller",
+      "b2c"
+    ],
+    "kind": "shipment or contract-defined open-cover declaration",
+    "risk_fields": [
+      "cargoDescription",
+      "commodityCode",
+      "insuredValue",
+      "originCode",
+      "destinationCode",
+      "transportMode",
+      "shipmentStart",
+      "transportEvidenceRef"
+    ],
+    "contract_dependencies": [
+      "product authority",
+      "versioned rates and eligibility",
+      "carrier capability and mapping",
+      "jurisdiction and contract review"
+    ],
+    "acceptance_ids": [
+      "AC-PRD-19-RISK",
+      "AC-PRD-19-VARIANT",
+      "AC-PRD-19-DENY",
+      "AC-PRD-19-DISABLE",
+      "AC-PRD-19-RACE",
+      "AC-PRD-19-PROVIDER",
+      "AC-PRD-19-SERVE"
+    ],
+    "fixture": "01-product/products/fixtures/PRD-19.json",
+    "risk_schema": "01-product/products/schemas/PRD-19.risk.schema.json"
+  },
+  {
+    "id": "PRD-20",
+    "title": "Commercial property / assets",
+    "spec_path": "01-product/products/PRD-20.md",
+    "channels": [
+      "B2B.commercial",
+      "B2B.corporate",
+      "B2B.reseller"
+    ],
+    "canonical_channels": [
+      "commercial",
+      "corporate",
+      "reseller"
+    ],
+    "kind": "multi-site scheduled commercial cover",
+    "risk_fields": [
+      "organizationRef",
+      "siteScheduleRef",
+      "assetScheduleRef",
+      "occupancyCodes",
+      "totalDeclaredValue",
+      "valuationBasisCode",
+      "riskSurveyRefs"
+    ],
+    "contract_dependencies": [
+      "product authority",
+      "versioned rates and eligibility",
+      "carrier capability and mapping",
+      "jurisdiction and contract review"
+    ],
+    "acceptance_ids": [
+      "AC-PRD-20-RISK",
+      "AC-PRD-20-VARIANT",
+      "AC-PRD-20-DENY",
+      "AC-PRD-20-DISABLE",
+      "AC-PRD-20-RACE",
+      "AC-PRD-20-PROVIDER",
+      "AC-PRD-20-SERVE"
+    ],
+    "fixture": "01-product/products/fixtures/PRD-20.json",
+    "risk_schema": "01-product/products/schemas/PRD-20.risk.schema.json"
+  },
+  {
+    "id": "PRD-21",
+    "title": "Other liability",
+    "spec_path": "01-product/products/PRD-21.md",
+    "channels": [
+      "B2C",
+      "B2B.commercial",
+      "B2B.corporate",
+      "B2B.reseller"
+    ],
+    "canonical_channels": [
+      "b2c",
+      "commercial",
+      "corporate",
+      "reseller"
+    ],
+    "kind": "assisted professional/public/employer liability variants",
+    "risk_fields": [
+      "liabilityClassCode",
+      "insuredPartyRef",
+      "operationsDescription",
+      "exposureMeasures",
+      "locationRefs",
+      "limitOption",
+      "priorClaimsRef"
+    ],
+    "contract_dependencies": [
+      "product authority",
+      "versioned rates and eligibility",
+      "carrier capability and mapping",
+      "jurisdiction and contract review"
+    ],
+    "acceptance_ids": [
+      "AC-PRD-21-RISK",
+      "AC-PRD-21-VARIANT",
+      "AC-PRD-21-DENY",
+      "AC-PRD-21-DISABLE",
+      "AC-PRD-21-RACE",
+      "AC-PRD-21-PROVIDER",
+      "AC-PRD-21-SERVE"
+    ],
+    "fixture": "01-product/products/fixtures/PRD-21.json",
+    "risk_schema": "01-product/products/schemas/PRD-21.risk.schema.json"
+  },
+  {
+    "id": "PRD-22",
+    "title": "Dental implant",
+    "spec_path": "01-product/products/PRD-22.md",
+    "channels": [
+      "B2C",
+      "B2B.corporate",
+      "B2B.reseller",
+      "B2B2C"
+    ],
+    "canonical_channels": [
+      "b2c",
+      "corporate",
+      "reseller",
+      "b2b2c"
+    ],
+    "kind": "contract-defined health benefit, device protection or rider; classification explicit",
+    "risk_fields": [
+      "patientRef",
+      "treatmentCode",
+      "providerRef",
+      "deviceModelCode",
+      "treatmentDate",
+      "clinicalEvidenceRef",
+      "benefitPlanCode"
+    ],
+    "contract_dependencies": [
+      "product authority",
+      "versioned rates and eligibility",
+      "carrier capability and mapping",
+      "jurisdiction and contract review"
+    ],
+    "acceptance_ids": [
+      "AC-PRD-22-RISK",
+      "AC-PRD-22-VARIANT",
+      "AC-PRD-22-DENY",
+      "AC-PRD-22-DISABLE",
+      "AC-PRD-22-RACE",
+      "AC-PRD-22-PROVIDER",
+      "AC-PRD-22-SERVE"
+    ],
+    "fixture": "01-product/products/fixtures/PRD-22.json",
+    "risk_schema": "01-product/products/schemas/PRD-22.risk.schema.json"
+  },
+  {
+    "id": "PRD-23",
+    "title": "War-related property coverage",
+    "spec_path": "01-product/products/PRD-23.md",
+    "channels": [
+      "B2C",
+      "B2B.commercial",
+      "B2B.reseller"
+    ],
+    "canonical_channels": [
+      "b2c",
+      "commercial",
+      "reseller"
+    ],
+    "kind": "contract-defined standalone/rider only; live availability unestablished",
+    "risk_fields": [
+      "coverageMode",
+      "basePolicyOrQuoteRef",
+      "propertyRef",
+      "eligibleTerritoryCode",
+      "insuredValue",
+      "perilDefinitionVersion",
+      "authorityEvidenceRef"
+    ],
+    "contract_dependencies": [
+      "product authority",
+      "versioned rates and eligibility",
+      "carrier capability and mapping",
+      "jurisdiction and contract review"
+    ],
+    "acceptance_ids": [
+      "AC-PRD-23-RISK",
+      "AC-PRD-23-VARIANT",
+      "AC-PRD-23-DENY",
+      "AC-PRD-23-DISABLE",
+      "AC-PRD-23-RACE",
+      "AC-PRD-23-PROVIDER",
+      "AC-PRD-23-SERVE"
+    ],
+    "fixture": "01-product/products/fixtures/PRD-23.json",
+    "risk_schema": "01-product/products/schemas/PRD-23.risk.schema.json"
+  },
+  {
+    "id": "PRD-24",
+    "title": "Fleet / other group insurance",
+    "spec_path": "01-product/products/PRD-24.md",
+    "channels": [
+      "B2B.corporate",
+      "B2B.commercial",
+      "B2B.reseller",
+      "B2B2C"
+    ],
+    "canonical_channels": [
+      "corporate",
+      "commercial",
+      "reseller",
+      "b2b2c"
+    ],
+    "kind": "master contract with schedules/certificates where supported",
+    "risk_fields": [
+      "organizationRef",
+      "groupTypeCode",
+      "scheduleBatchRef",
+      "underlyingProductId",
+      "effectiveDate",
+      "allocationCode",
+      "certificateMode",
+      "proposalVersion"
+    ],
+    "contract_dependencies": [
+      "product authority",
+      "versioned rates and eligibility",
+      "carrier capability and mapping",
+      "jurisdiction and contract review"
+    ],
+    "acceptance_ids": [
+      "AC-PRD-24-RISK",
+      "AC-PRD-24-VARIANT",
+      "AC-PRD-24-DENY",
+      "AC-PRD-24-DISABLE",
+      "AC-PRD-24-RACE",
+      "AC-PRD-24-PROVIDER",
+      "AC-PRD-24-SERVE"
+    ],
+    "fixture": "01-product/products/fixtures/PRD-24.json",
+    "risk_schema": "01-product/products/schemas/PRD-24.risk.schema.json"
+  }
+]

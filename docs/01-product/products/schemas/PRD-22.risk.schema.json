@@ -1,0 +1,54 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://insurance.invalid/schemas/PRD-22.risk.v1.schema.json",
+  "title": "PRD-22 synthetic risk input syntax",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "patientRef",
+    "treatmentCode",
+    "providerRef",
+    "benefitPlanCode"
+  ],
+  "properties": {
+    "patientRef": {
+      "type": "string",
+      "format": "uuid",
+      "description": "required; patient/guardian authority for health purpose. Sensitivity: highly restricted. Error: PATIENT_AUTHORITY_REQUIRED. Eligibility is contract-dependent."
+    },
+    "treatmentCode": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 80,
+      "description": "required; contract-approved category <= 80. Sensitivity: highly restricted. Error: TREATMENT_NOT_ELIGIBLE. Eligibility is contract-dependent."
+    },
+    "providerRef": {
+      "type": "string",
+      "format": "uuid",
+      "description": "required; approved provider/network revision. Sensitivity: restricted. Error: PROVIDER_NOT_ELIGIBLE. Eligibility is contract-dependent."
+    },
+    "deviceModelCode": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 80,
+      "description": "conditional by contract; approved device category <= 80. Sensitivity: restricted. Error: DEVICE_NOT_ELIGIBLE. Eligibility is contract-dependent."
+    },
+    "treatmentDate": {
+      "type": "string",
+      "format": "date",
+      "description": "conditional before acceptance; explicit proposed/performed status. Sensitivity: highly restricted. Error: TREATMENT_DATE_INVALID. Eligibility is contract-dependent."
+    },
+    "clinicalEvidenceRef": {
+      "type": "string",
+      "format": "uuid",
+      "description": "conditional for underwriting; purpose-scoped evidence, restricted review. Sensitivity: highly restricted. Error: CLINICAL_EVIDENCE_REQUIRED. Eligibility is contract-dependent."
+    },
+    "benefitPlanCode": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 40,
+      "description": "required; approved benefit/exclusion version. Sensitivity: internal. Error: BENEFIT_PLAN_UNAVAILABLE. Eligibility is contract-dependent."
+    }
+  },
+  "description": "Strict syntax baseline. Conditional predicates, cross-field dates/sums/relationships and actual carrier eligibility require the versioned application validator; passing this schema is not underwriting acceptance."
+}

@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://insurance.example.invalid/schemas/Context.schema.json",
+  "title": "Context",
+  "type": "object",
+  "properties": {
+    "contextId": {
+      "type": "string",
+      "format": "uuid"
+    },
+    "kind": {
+      "type": "string",
+      "enum": [
+        "personal",
+        "organization",
+        "carrier",
+        "seller",
+        "platform"
+      ]
+    },
+    "permissionRevision": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 2147483647
+    }
+  },
+  "required": [
+    "contextId",
+    "kind",
+    "permissionRevision"
+  ],
+  "additionalProperties": false
+}

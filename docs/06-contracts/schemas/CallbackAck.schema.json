@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://insurance.example.invalid/schemas/CallbackAck.schema.json",
+  "title": "CallbackAck",
+  "type": "object",
+  "properties": {
+    "received": {
+      "const": true
+    },
+    "duplicate": {
+      "type": "boolean"
+    },
+    "inboxId": {
+      "type": "string",
+      "format": "uuid"
+    }
+  },
+  "required": [
+    "received",
+    "duplicate",
+    "inboxId"
+  ],
+  "additionalProperties": false
+}

@@ -1,0 +1,9 @@
+{
+  "name": "@st/simulators",
+  "version": "0.1.0",
+  "private": true,
+  "type": "commonjs",
+  "main": "dist/main.js",
+  "scripts": {"build": "tsc -p tsconfig.json", "start": "node dist/main.js", "dev": "tsx src/main.ts"},
+  "dependencies": {"@st/integrations": "*"}
+}

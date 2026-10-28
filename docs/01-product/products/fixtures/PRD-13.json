@@ -1,0 +1,29 @@
+{
+  "fixtureId": "FIX-PRD-13",
+  "synthetic": true,
+  "productId": "PRD-13",
+  "schemaRef": "../schemas/PRD-13.risk.schema.json",
+  "riskExample": {
+    "equipmentIdentifier": "SYNTH-LIFT-01",
+    "capacityPersons": 8,
+    "capacityKg": 600,
+    "stopCount": 6,
+    "limitOption": "SYNTH-LIFT-LIMIT",
+    "buildingRef": "00000000-0000-4000-8000-000000001301"
+  },
+  "canonicalContext": {
+    "currency": "IRR",
+    "unit": "rial",
+    "channel": "b2c",
+    "partyAndAuthorityFixture": "Synthetic authorized buyer/payer/policyholder/insured roles; referenced UUIDs resolve only in the local test harness.",
+    "productRuleVersion": "SYNTH-1",
+    "liveOperationsAllowed": false
+  },
+  "scenarioContext": {},
+  "expected": {
+    "withoutContract": "live_quote_and_purchase_disabled",
+    "syntacticValidation": "pass",
+    "carrierEligibility": "undetermined_without_synthetic_rule_set",
+    "variant": "Inspection expires after quote but before commitment: binding is blocked pending current evidence while policy-vault access for existing coverage continues."
+  }
+}

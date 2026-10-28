@@ -1,0 +1,25 @@
+{
+  "synthetic": true,
+  "canonical": {
+    "amount": "120000",
+    "currency": "IRR",
+    "unit": "rial",
+    "effectiveGregorian": "2026-11-01",
+    "untilGregorianExclusive": "2026-11-02"
+  },
+  "provider": {
+    "premium_toman": "12000",
+    "effective_jalali": "1405-08-10",
+    "until_jalali_exclusive": "1405-08-11",
+    "calendar": "persian"
+  },
+  "moneyRule": "Exact integer divide/multiply by10 under this fictional contract; nondivisible rial input rejects rather than rounds.",
+  "calendarRule": "Date-only fields; no timezone arithmetic in payload. Test anchor uses UTC noon to avoid date rollover.",
+  "observedEvidence": {
+    "node": "v26.12.0",
+    "icu": "78.3",
+    "checked": "2026-10-28",
+    "api": "Intl.DateTimeFormat en-US-u-ca-persian-nu-latn timeZone UTC formatToParts",
+    "source": "S26"
+  }
+}

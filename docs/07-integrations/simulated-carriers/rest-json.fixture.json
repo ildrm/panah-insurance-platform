@@ -1,0 +1,39 @@
+{
+  "id": "SIM-REST",
+  "synthetic": true,
+  "protocol": "REST JSON",
+  "capabilities": {
+    "quote": true,
+    "submit": true,
+    "status": true,
+    "issue": true,
+    "retrieveDocument": true,
+    "idempotency": true,
+    "callbacks": false
+  },
+  "request": {
+    "kind": "submission_request",
+    "clientApplicationRef": "synthetic-order-001",
+    "quoteRef": "SIM-REST-Q-1",
+    "acceptedPremium": {
+      "amount": "120000",
+      "currency": "IRR",
+      "unit": "rial"
+    },
+    "effectiveDate": "2026-11-01",
+    "mappingVersion": "map-v1"
+  },
+  "scenarios": [
+    "normal",
+    "duplicate_callback",
+    "malformed_response",
+    "timeout_after_acceptance",
+    "idempotency_not_supported",
+    "throttled",
+    "expired_token",
+    "partial_outage",
+    "mapping_version_change"
+  ],
+  "requestExamplePath": "wire/rest-submit-request.json",
+  "wireFixtureManifest": "wire/fixture-manifest.json"
+}

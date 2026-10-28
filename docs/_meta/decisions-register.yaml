@@ -1,0 +1,176 @@
+{
+  "id": "REG-DECISIONS-REGISTER",
+  "version": "1.0.0",
+  "status": "draft",
+  "updated": "2026-10-28",
+  "entries": [
+    {
+      "id": "ADR-01",
+      "title": "Modular monolith versus services",
+      "status": "proposed",
+      "owner_role": "R05",
+      "reviewer_roles": [
+        "R08",
+        "R14"
+      ],
+      "spec_path": "04-architecture/adr/ADR-01.md",
+      "approval_evidence": null
+    },
+    {
+      "id": "ADR-02",
+      "title": "Frontend applications and deployment separation",
+      "status": "proposed",
+      "owner_role": "R07",
+      "reviewer_roles": [
+        "R04",
+        "R11"
+      ],
+      "spec_path": "04-architecture/adr/ADR-02.md",
+      "approval_evidence": null
+    },
+    {
+      "id": "ADR-03",
+      "title": "HTTP adapter and version decision",
+      "status": "proposed",
+      "owner_role": "R08",
+      "reviewer_roles": [
+        "R06",
+        "R11"
+      ],
+      "spec_path": "04-architecture/adr/ADR-03.md",
+      "approval_evidence": null
+    },
+    {
+      "id": "ADR-04",
+      "title": "Storage and query approach",
+      "status": "proposed",
+      "owner_role": "R10",
+      "reviewer_roles": [
+        "R08",
+        "R12"
+      ],
+      "spec_path": "04-architecture/adr/ADR-04.md",
+      "approval_evidence": null
+    },
+    {
+      "id": "ADR-05",
+      "title": "Broker and outbox delivery",
+      "status": "proposed",
+      "owner_role": "R09",
+      "reviewer_roles": [
+        "R10",
+        "R14"
+      ],
+      "spec_path": "04-architecture/adr/ADR-05.md",
+      "approval_evidence": null
+    },
+    {
+      "id": "ADR-06",
+      "title": "Tenant and authorization strategy",
+      "status": "proposed",
+      "owner_role": "R11",
+      "reviewer_roles": [
+        "R03",
+        "R10"
+      ],
+      "spec_path": "04-architecture/adr/ADR-06.md",
+      "approval_evidence": null
+    },
+    {
+      "id": "ADR-07",
+      "title": "Next rendering and cache model",
+      "status": "proposed",
+      "owner_role": "R07",
+      "reviewer_roles": [
+        "R06",
+        "R11"
+      ],
+      "spec_path": "04-architecture/adr/ADR-07.md",
+      "approval_evidence": null
+    },
+    {
+      "id": "ADR-08",
+      "title": "Financial ledger",
+      "status": "proposed",
+      "owner_role": "R12",
+      "reviewer_roles": [
+        "R10",
+        "R13"
+      ],
+      "spec_path": "04-architecture/adr/ADR-08.md",
+      "approval_evidence": null
+    },
+    {
+      "id": "ADR-09",
+      "title": "Connector framework",
+      "status": "proposed",
+      "owner_role": "R09",
+      "reviewer_roles": [
+        "R11",
+        "R02"
+      ],
+      "spec_path": "04-architecture/adr/ADR-09.md",
+      "approval_evidence": null
+    },
+    {
+      "id": "ADR-10",
+      "title": "Schema and contract versioning",
+      "status": "proposed",
+      "owner_role": "R08",
+      "reviewer_roles": [
+        "R09",
+        "R17"
+      ],
+      "spec_path": "04-architecture/adr/ADR-10.md",
+      "approval_evidence": null
+    },
+    {
+      "id": "ADR-11",
+      "title": "Observability",
+      "status": "proposed",
+      "owner_role": "R14",
+      "reviewer_roles": [
+        "R06",
+        "R11"
+      ],
+      "spec_path": "04-architecture/adr/ADR-11.md",
+      "approval_evidence": null
+    },
+    {
+      "id": "ADR-12",
+      "title": "PWA and native boundaries",
+      "status": "proposed",
+      "owner_role": "R21",
+      "reviewer_roles": [
+        "R04",
+        "R11"
+      ],
+      "spec_path": "04-architecture/adr/ADR-12.md",
+      "approval_evidence": null
+    },
+    {
+      "id": "ADR-13",
+      "title": "Infrastructure and region",
+      "status": "proposed",
+      "owner_role": "R14",
+      "reviewer_roles": [
+        "R19",
+        "R11"
+      ],
+      "spec_path": "04-architecture/adr/ADR-13.md",
+      "approval_evidence": null
+    },
+    {
+      "id": "ADR-14",
+      "title": "Feature-control consistency",
+      "status": "proposed",
+      "owner_role": "R05",
+      "reviewer_roles": [
+        "R01",
+        "R11"
+      ],
+      "spec_path": "04-architecture/adr/ADR-14.md",
+      "approval_evidence": null
+    }
+  ]
+}

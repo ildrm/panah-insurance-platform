@@ -1,0 +1,38 @@
+{
+  "name": "@st/api-client",
+  "version": "0.1.0",
+  "private": true,
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit"
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    },
+    "./finance": {
+      "types": "./dist/finance.d.ts",
+      "default": "./dist/finance.js"
+    },
+    "./session": {
+      "types": "./dist/session.d.ts",
+      "default": "./dist/session.js"
+    },
+    "./session-view": {
+      "types": "./dist/session-view.d.ts",
+      "default": "./dist/session-view.js"
+    },
+    "./session-reader": {
+      "types": "./dist/session-reader.d.ts",
+      "default": "./dist/session-reader.js"
+    },
+    "./controls": {
+      "types": "./dist/controls.d.ts",
+      "default": "./dist/controls.js"
+    }
+  },
+  "type": "module"
+}

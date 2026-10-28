@@ -1,0 +1,61 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://insurance.invalid/schemas/PRD-11.risk.v1.schema.json",
+  "title": "PRD-11 synthetic risk input syntax",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "travelerRefs",
+    "destinationPlanCode",
+    "departureDate",
+    "durationDays",
+    "assistancePlanCode"
+  ],
+  "properties": {
+    "travelerRefs": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 100,
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "format": "uuid"
+      },
+      "description": "required; 1–100 authorized refs; larger groups use bulk workflow. Sensitivity: restricted. Error: TRAVELER_AUTHORITY_REQUIRED. Eligibility is contract-dependent."
+    },
+    "destinationPlanCode": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 40,
+      "description": "required; explicit offered pilgrimage destination/program <= 40. Sensitivity: confidential. Error: PILGRIMAGE_PLAN_UNAVAILABLE. Eligibility is contract-dependent."
+    },
+    "departureDate": {
+      "type": "string",
+      "format": "date",
+      "description": "required; explicit calendar/timezone context. Sensitivity: confidential. Error: DEPARTURE_DATE_INVALID. Eligibility is contract-dependent."
+    },
+    "durationDays": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 3660,
+      "description": "required; 1–3660 technical bound; actual max from carrier. Sensitivity: internal. Error: DURATION_NOT_OFFERED. Eligibility is contract-dependent."
+    },
+    "organizerRef": {
+      "type": "string",
+      "format": "uuid",
+      "description": "optional; authorized organizer relationship. Sensitivity: confidential. Error: ORGANIZER_AUTHORITY_REQUIRED. Eligibility is contract-dependent."
+    },
+    "assistancePlanCode": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 40,
+      "description": "required; versioned emergency/assistance plan. Sensitivity: internal. Error: ASSISTANCE_PLAN_UNAVAILABLE. Eligibility is contract-dependent."
+    },
+    "requiredTravelEvidenceRef": {
+      "type": "string",
+      "format": "uuid",
+      "description": "conditional; contract-defined evidence only. Sensitivity: highly restricted. Error: TRAVEL_EVIDENCE_REQUIRED. Eligibility is contract-dependent."
+    }
+  },
+  "description": "Strict syntax baseline. Conditional predicates, cross-field dates/sums/relationships and actual carrier eligibility require the versioned application validator; passing this schema is not underwriting acceptance."
+}

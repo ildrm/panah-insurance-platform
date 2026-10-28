@@ -1,0 +1,1 @@
+{"name":"@st/api","version":"0.1.0","private":true,"scripts":{"build":"tsc -p tsconfig.json","dev":"tsx watch src/main.ts"},"dependencies":{"@st/contracts":"0.1.0","@st/database":"0.1.0","@st/business":"0.1.0","@st/integrations":"0.1.0","@st/finance":"0.1.0","@st/controls":"0.1.0"}}

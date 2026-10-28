@@ -1,0 +1,73 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://insurance.example.invalid/schemas/FeatureRevisionProposal.schema.json",
+  "title": "FeatureRevisionProposal",
+  "type": "object",
+  "properties": {
+    "controlId": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 128,
+      "pattern": "^[A-Za-z0-9_.:-]+$"
+    },
+    "scope": {
+      "type": "object",
+      "properties": {
+        "kind": {
+          "type": "string",
+          "enum": [
+            "global",
+            "channel",
+            "organization",
+            "product",
+            "plan",
+            "carrier",
+            "region",
+            "cohort"
+          ]
+        },
+        "key": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 128,
+          "pattern": "^[A-Za-z0-9_.:-]+$"
+        }
+      },
+      "required": [
+        "kind",
+        "key"
+      ],
+      "additionalProperties": false
+    },
+    "enabled": {
+      "type": "boolean"
+    },
+    "effectiveAt": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "expectedVersion": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 2147483647
+    },
+    "reason": {
+      "type": "string",
+      "minLength": 10,
+      "maxLength": 1000
+    },
+    "servicingImpactReviewed": {
+      "const": true
+    }
+  },
+  "required": [
+    "controlId",
+    "scope",
+    "enabled",
+    "effectiveAt",
+    "expectedVersion",
+    "reason",
+    "servicingImpactReviewed"
+  ],
+  "additionalProperties": false
+}

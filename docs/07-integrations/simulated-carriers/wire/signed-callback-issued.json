@@ -1,0 +1,13 @@
+{
+  "event_id": "SIM-SIGNED-E-1",
+  "sequence": 2,
+  "client_ref": "synthetic-order-001",
+  "receipt_ref": "SIM-SIGNED-S-1",
+  "issuance": "issued",
+  "occurred_at": "2026-10-28T08:00:02Z",
+  "policy_ref": "SIM-SIGNED-P-1",
+  "effective_jalali": "1405-08-10",
+  "until_jalali_exclusive": "1405-08-11",
+  "calendar": "persian",
+  "document_ref": "SIM-DOC-1"
+}

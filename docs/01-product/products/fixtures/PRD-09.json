@@ -1,0 +1,30 @@
+{
+  "fixtureId": "FIX-PRD-09",
+  "synthetic": true,
+  "productId": "PRD-09",
+  "schemaRef": "../schemas/PRD-09.risk.schema.json",
+  "riskExample": {
+    "birthDate": "1985-01-01",
+    "contributionAmount": "2000000",
+    "contributionTermCode": "SYNTH-TERM-A",
+    "payoutOptionCode": "SYNTH-PAYOUT-A",
+    "plannedStartDate": "2040-01-01",
+    "illustrationVersion": "SYNTH-PENSION-ILL-1",
+    "annuitantRef": "00000000-0000-4000-8000-000000000901"
+  },
+  "canonicalContext": {
+    "currency": "IRR",
+    "unit": "rial",
+    "channel": "b2c",
+    "partyAndAuthorityFixture": "Synthetic authorized buyer/payer/policyholder/insured roles; referenced UUIDs resolve only in the local test harness.",
+    "productRuleVersion": "SYNTH-1",
+    "liveOperationsAllowed": false
+  },
+  "scenarioContext": {},
+  "expected": {
+    "withoutContract": "live_quote_and_purchase_disabled",
+    "syntacticValidation": "pass",
+    "carrierEligibility": "undetermined_without_synthetic_rule_set",
+    "variant": "An expired illustration is selected after the contribution frequency changes: commitment requires a new approved illustration and renewed acknowledgment."
+  }
+}

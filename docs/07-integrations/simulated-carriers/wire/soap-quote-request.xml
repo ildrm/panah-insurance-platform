@@ -1,0 +1,2 @@
+<?xml version='1.0' encoding='utf-8'?>
+<soap:Envelope xmlns:c="urn:fictional:carrier:soap:v1" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/"><soap:Body><c:RequestQuote><c:ClientApplicationRef>synthetic-order-001</c:ClientApplicationRef><c:SubjectRef>synthetic-vehicle-001</c:SubjectRef><c:EffectiveGregorianDate>2026-11-01</c:EffectiveGregorianDate></c:RequestQuote></soap:Body></soap:Envelope>

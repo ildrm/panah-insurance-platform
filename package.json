@@ -1,0 +1,49 @@
+{
+  "name": "panah-insurance-platform",
+  "version": "0.1.0",
+  "private": true,
+  "workspaces": [
+    "packages/*",
+    "apps/*"
+  ],
+  "packageManager": "npm@11.19.1",
+  "engines": {
+    "node": ">=24.22.1 <27"
+  },
+  "scripts": {
+    "build:packages": "npm run build -w @st/contracts && npm run build -w @st/database && npm run build -w @st/controls && npm run build -w @st/integrations && npm run build -w @st/business && npm run build -w @st/finance && npm run build -w @st/api-client && npm run build -w @st/ui",
+    "build": "npm run build:packages && npm run build -w @st/api && npm run build -w @st/worker && npm run build -w @st/simulators && npm run build -w @st/web",
+    "dev": "node scripts/dev.mjs",
+    "db:migrate": "node --env-file-if-exists=.env.local --import tsx scripts/migrate.ts",
+    "db:seed": "node --env-file-if-exists=.env.local --import tsx scripts/seed.ts",
+    "test": "node --import tsx --test --test-concurrency=1 tests/*.test.ts",
+    "test:e2e": "playwright test -c tests/e2e/playwright.config.ts",
+    "typecheck": "npm run build:packages && tsc -p apps/api/tsconfig.json --noEmit && tsc -p apps/worker/tsconfig.json --noEmit && tsc -p apps/web/tsconfig.json --noEmit",
+    "lint": "node scripts/check-boundaries.mjs",
+    "docs:validate": "python3 -B docs/_meta/validation/validate.py",
+    "local:setup": "node scripts/local-setup.mjs",
+    "start:api": "node --env-file-if-exists=.env.local apps/api/dist/main.js",
+    "start:worker": "node --env-file-if-exists=.env.local apps/worker/dist/main.js",
+    "start:simulators": "node --env-file-if-exists=.env.local apps/simulators/dist/main.js",
+    "perf:smoke": "tsx scripts/performance-smoke.ts",
+    "sandbox:publish": "node --env-file-if-exists=.env.local --import tsx scripts/seed-carriers.ts",
+    "local:database": "node scripts/local-postgres.mjs",
+    "sandbox:controls": "node --env-file-if-exists=.env.local --import tsx scripts/seed-controls.ts"
+  },
+  "dependencies": {
+    "@nestjs/common": "12.3.2",
+    "@nestjs/core": "12.3.2",
+    "@nestjs/platform-express": "12.3.2",
+    "express": "5.3.0",
+    "reflect-metadata": "0.2.2",
+    "rxjs": "7.8.2"
+  },
+  "devDependencies": {
+    "typescript": "5.9.3",
+    "tsx": "4.23.15",
+    "@types/node": "26.6.5",
+    "@types/pg": "8.23.1",
+    "@types/express": "5.0.6",
+    "@playwright/test": "1.64.1"
+  }
+}

@@ -1,0 +1,214 @@
+{
+  "type": "object",
+  "properties": {
+    "application_implemented": {
+      "type": "string",
+      "minLength": 1
+    },
+    "application_tests_run": {
+      "type": "boolean"
+    },
+    "completion_class": {
+      "type": "string",
+      "minLength": 1
+    },
+    "counts": {
+      "type": "object",
+      "properties": {
+        "adrs": {
+          "type": "integer"
+        },
+        "api_operations": {
+          "type": "integer"
+        },
+        "child_requirements": {
+          "type": "integer"
+        },
+        "dashboard_routes": {
+          "type": "integer"
+        },
+        "dashboards": {
+          "type": "integer"
+        },
+        "event_channels": {
+          "type": "integer"
+        },
+        "feature_acceptance_scenarios": {
+          "type": "integer"
+        },
+        "parent_features": {
+          "type": "integer"
+        },
+        "product_acceptance_scenarios": {
+          "type": "integer"
+        },
+        "product_families": {
+          "type": "integer"
+        },
+        "workflows": {
+          "type": "integer"
+        }
+      },
+      "required": [
+        "adrs",
+        "api_operations",
+        "child_requirements",
+        "dashboard_routes",
+        "dashboards",
+        "event_channels",
+        "feature_acceptance_scenarios",
+        "parent_features",
+        "product_acceptance_scenarios",
+        "product_families",
+        "workflows"
+      ],
+      "additionalProperties": false
+    },
+    "deployed": {
+      "type": "boolean"
+    },
+    "documentation_complete": {
+      "type": "boolean"
+    },
+    "documentation_scope_written": {
+      "type": "boolean"
+    },
+    "external_blockers": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "human_approval": {
+      "type": "string",
+      "minLength": 1
+    },
+    "id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "open_gaps": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "missing": {
+            "type": "string",
+            "minLength": 1
+          },
+          "next_action": {
+            "type": "string",
+            "minLength": 1
+          },
+          "owner_role": {
+            "type": "string",
+            "minLength": 1
+          },
+          "path": {
+            "type": "string",
+            "minLength": 1
+          },
+          "safe_default": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "required": [
+          "id",
+          "missing",
+          "next_action",
+          "owner_role",
+          "path",
+          "safe_default"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "source_brief_sha256": {
+      "type": "string",
+      "minLength": 1
+    },
+    "status": {
+      "enum": [
+        "draft",
+        "proposed",
+        "partial",
+        "complete",
+        "blocked"
+      ]
+    },
+    "structural_validation": {
+      "type": "string",
+      "minLength": 1
+    },
+    "updated": {
+      "type": "string",
+      "minLength": 1
+    },
+    "validation_evidence": {
+      "type": "object",
+      "properties": {
+        "drift_result": {
+          "type": "string",
+          "minLength": 1
+        },
+        "generation_drift": {
+          "type": "string",
+          "minLength": 1
+        },
+        "structure": {
+          "type": "string",
+          "minLength": 1
+        },
+        "wire_artifacts": {
+          "type": "string",
+          "minLength": 1
+        },
+        "wire_result": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "required": [
+        "drift_result",
+        "generation_drift",
+        "structure",
+        "wire_artifacts",
+        "wire_result"
+      ],
+      "additionalProperties": false
+    },
+    "version": {
+      "type": "string",
+      "minLength": 1
+    }
+  },
+  "required": [
+    "application_implemented",
+    "application_tests_run",
+    "completion_class",
+    "counts",
+    "deployed",
+    "documentation_complete",
+    "documentation_scope_written",
+    "external_blockers",
+    "human_approval",
+    "id",
+    "open_gaps",
+    "source_brief_sha256",
+    "status",
+    "structural_validation",
+    "updated",
+    "validation_evidence",
+    "version"
+  ],
+  "additionalProperties": false,
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://insurance.example.invalid/meta/documentation-status.schema.json",
+  "title": "documentation-status registry v1"
+}

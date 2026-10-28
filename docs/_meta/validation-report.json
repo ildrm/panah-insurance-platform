@@ -1,0 +1,35 @@
+{
+  "id": "REPORT-VALIDATION",
+  "version": "1.0.0",
+  "status": "complete",
+  "updated": "2026-10-28",
+  "result": "pass-structural-with-limitations",
+  "checks": {
+    "jsonschema_ajv_standard": true,
+    "jsonschema_ajv_cases": 866,
+    "asyncapi_standard": true,
+    "parent_features": 74,
+    "child_requirements": 230,
+    "product_families": 24,
+    "product_negative_checks": 48,
+    "dashboards": 7,
+    "dashboard_routes": 100,
+    "traceability_rows": 230,
+    "normative_documents": 299,
+    "manifest_artifacts": 732,
+    "local_links_checked": 1741,
+    "api_operations": 238,
+    "api_examples_checked": 497,
+    "event_channels": 195,
+    "jsonschema_standard": false,
+    "openapi_standard": true,
+    "negative_validator_checks": 3,
+    "domain_negative_checks": 5
+  },
+  "errors": [],
+  "limitations": [
+    "Full JSON Schema2020-12 checks used locked Ajv8 with formats; Python jsonschema was unavailable. Contract standards evidence is a separate hash-bound local run, not proof of runtime operation compatibility."
+  ],
+  "semantic_completeness_proven": false,
+  "application_tests_run": false
+}

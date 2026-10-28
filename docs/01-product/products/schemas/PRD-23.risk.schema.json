@@ -1,0 +1,77 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://insurance.invalid/schemas/PRD-23.risk.v1.schema.json",
+  "title": "PRD-23 synthetic risk input syntax",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "coverageMode",
+    "propertyRef",
+    "eligibleTerritoryCode",
+    "insuredValue",
+    "perilDefinitionVersion",
+    "authorityEvidenceRef"
+  ],
+  "properties": {
+    "coverageMode": {
+      "type": "string",
+      "enum": [
+        "standalone",
+        "rider"
+      ],
+      "description": "required; standalone or rider only if contract supports. Sensitivity: internal. Error: WAR_COVER_MODE_UNAVAILABLE. Eligibility is contract-dependent."
+    },
+    "basePolicyOrQuoteRef": {
+      "type": "string",
+      "format": "uuid",
+      "description": "required for rider; compatible approved property interest. Sensitivity: confidential. Error: BASE_POLICY_INCOMPATIBLE. Eligibility is contract-dependent."
+    },
+    "propertyRef": {
+      "type": "string",
+      "format": "uuid",
+      "description": "required; authorized property/location. Sensitivity: restricted. Error: PROPERTY_AUTHORITY_REQUIRED. Eligibility is contract-dependent."
+    },
+    "eligibleTerritoryCode": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 80,
+      "description": "required; explicit contract-mapped geography <= 80. Sensitivity: restricted. Error: TERRITORY_NOT_APPROVED. Eligibility is contract-dependent."
+    },
+    "insuredValue": {
+      "type": "string",
+      "pattern": "^[1-9][0-9]{0,17}$",
+      "description": "required; positive with explicit valuation basis. Sensitivity: financial. Error: VALUE_INVALID. Eligibility is contract-dependent."
+    },
+    "perilDefinitionVersion": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 100,
+      "description": "required; approved exact wording/version <= 100. Sensitivity: restricted. Error: PERIL_DEFINITION_UNAPPROVED. Eligibility is contract-dependent."
+    },
+    "authorityEvidenceRef": {
+      "type": "string",
+      "format": "uuid",
+      "description": "required before any live offer; reviewed carrier/commercial/legal authority record. Sensitivity: restricted. Error: LIVE_AUTHORITY_MISSING. Eligibility is contract-dependent."
+    }
+  },
+  "description": "Strict syntax baseline. Conditional predicates, cross-field dates/sums/relationships and actual carrier eligibility require the versioned application validator; passing this schema is not underwriting acceptance.",
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "coverageMode": {
+            "const": "rider"
+          }
+        },
+        "required": [
+          "coverageMode"
+        ]
+      },
+      "then": {
+        "required": [
+          "basePolicyOrQuoteRef"
+        ]
+      }
+    }
+  ]
+}

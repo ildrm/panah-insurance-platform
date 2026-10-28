@@ -1,0 +1,64 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://insurance.invalid/schemas/PRD-04.risk.v1.schema.json",
+  "title": "PRD-04 synthetic risk input syntax",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "locationRef",
+    "occupancyCode",
+    "constructionCode",
+    "areaM2",
+    "perilCodes"
+  ],
+  "properties": {
+    "locationRef": {
+      "type": "string",
+      "format": "uuid",
+      "description": "required; authorized address with jurisdiction precision. Sensitivity: restricted. Error: LOCATION_REQUIRED. Eligibility is contract-dependent."
+    },
+    "occupancyCode": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 40,
+      "description": "required; versioned residential/commercial use code. Sensitivity: internal. Error: OCCUPANCY_UNMAPPED. Eligibility is contract-dependent."
+    },
+    "constructionCode": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 40,
+      "description": "required; carrier-mapped construction class. Sensitivity: internal. Error: CONSTRUCTION_REQUIRED. Eligibility is contract-dependent."
+    },
+    "areaM2": {
+      "type": "string",
+      "pattern": "^[0-9]{1,12}(\\.[0-9]{1,2})?$",
+      "not": {
+        "pattern": "^0+(\\.0+)?$"
+      },
+      "description": "required; positive, <= 12 digits and 2 decimals. Sensitivity: confidential. Error: AREA_INVALID. Eligibility is contract-dependent."
+    },
+    "buildingValue": {
+      "type": "string",
+      "pattern": "^(0|[1-9][0-9]{0,17})$",
+      "description": "conditional for building cover; nonnegative; positive if building selected. Sensitivity: financial. Error: BUILDING_VALUE_REQUIRED. Eligibility is contract-dependent."
+    },
+    "contentsValue": {
+      "type": "string",
+      "pattern": "^(0|[1-9][0-9]{0,17})$",
+      "description": "conditional for contents cover; nonnegative; positive if contents selected. Sensitivity: financial. Error: CONTENTS_VALUE_REQUIRED. Eligibility is contract-dependent."
+    },
+    "perilCodes": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 30,
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 100
+      },
+      "description": "required; 1–30 unique carrier-offered codes. Sensitivity: internal. Error: PERIL_DEPENDENCY_INVALID. Eligibility is contract-dependent."
+    }
+  },
+  "description": "Strict syntax baseline. Conditional predicates, cross-field dates/sums/relationships and actual carrier eligibility require the versioned application validator; passing this schema is not underwriting acceptance."
+}

@@ -1,0 +1,88 @@
+{
+  "type": "object",
+  "properties": {
+    "builders": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "builder": {
+            "type": "string",
+            "minLength": 1
+          },
+          "error": {
+            "type": "string",
+            "minLength": 0
+          },
+          "exit_code": {
+            "type": "integer"
+          },
+          "output": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "required": [
+          "builder",
+          "error",
+          "exit_code",
+          "output"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "changed_files": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "compared_files": {
+      "type": "integer"
+    },
+    "id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "result": {
+      "type": "string",
+      "minLength": 1
+    },
+    "scope": {
+      "type": "string",
+      "minLength": 1
+    },
+    "status": {
+      "enum": [
+        "draft",
+        "proposed",
+        "partial",
+        "complete",
+        "blocked"
+      ]
+    },
+    "updated": {
+      "type": "string",
+      "minLength": 1
+    },
+    "version": {
+      "type": "string",
+      "minLength": 1
+    }
+  },
+  "required": [
+    "builders",
+    "changed_files",
+    "compared_files",
+    "id",
+    "result",
+    "scope",
+    "status",
+    "updated",
+    "version"
+  ],
+  "additionalProperties": false,
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://insurance.example.invalid/meta/generation-drift-report.schema.json",
+  "title": "generation-drift-report registry v1"
+}

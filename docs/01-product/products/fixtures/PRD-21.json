@@ -1,0 +1,30 @@
+{
+  "fixtureId": "FIX-PRD-21",
+  "synthetic": true,
+  "productId": "PRD-21",
+  "schemaRef": "../schemas/PRD-21.risk.schema.json",
+  "riskExample": {
+    "liabilityClassCode": "SYNTH-PUBLIC-LIABILITY",
+    "operationsDescription": "Synthetic warehouse visitors",
+    "exposureMeasures": {
+      "visitorCount": 100
+    },
+    "limitOption": "SYNTH-LIABILITY-LIMIT",
+    "insuredPartyRef": "00000000-0000-4000-8000-000000002102"
+  },
+  "canonicalContext": {
+    "currency": "IRR",
+    "unit": "rial",
+    "channel": "b2c",
+    "partyAndAuthorityFixture": "Synthetic authorized buyer/payer/policyholder/insured roles; referenced UUIDs resolve only in the local test harness.",
+    "productRuleVersion": "SYNTH-1",
+    "liveOperationsAllowed": false
+  },
+  "scenarioContext": {},
+  "expected": {
+    "withoutContract": "live_quote_and_purchase_disabled",
+    "syntacticValidation": "pass",
+    "carrierEligibility": "undetermined_without_synthetic_rule_set",
+    "variant": "An administrator creates a new liability category without an approved form and adapter mapping: it may be drafted but cannot become purchasable."
+  }
+}

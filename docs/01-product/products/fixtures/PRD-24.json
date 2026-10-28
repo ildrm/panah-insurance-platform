@@ -1,0 +1,36 @@
+{
+  "fixtureId": "FIX-PRD-24",
+  "synthetic": true,
+  "productId": "PRD-24",
+  "schemaRef": "../schemas/PRD-24.risk.schema.json",
+  "riskExample": {
+    "groupTypeCode": "SYNTH-FLEET",
+    "underlyingProductId": "PRD-01",
+    "effectiveDate": "2027-01-01",
+    "allocationCode": "SYNTH-COST-A",
+    "certificateMode": "SYNTH-INDIVIDUAL",
+    "proposalVersion": 2,
+    "organizationRef": "00000000-0000-4000-8000-000000002401",
+    "scheduleBatchRef": "00000000-0000-4000-8000-000000002403"
+  },
+  "canonicalContext": {
+    "currency": "IRR",
+    "unit": "rial",
+    "channel": "corporate",
+    "partyAndAuthorityFixture": "Synthetic authorized buyer/payer/policyholder/insured roles; referenced UUIDs resolve only in the local test harness.",
+    "productRuleVersion": "SYNTH-1",
+    "liveOperationsAllowed": false
+  },
+  "scenarioContext": {
+    "syntheticSchedule": {
+      "rows": 20000,
+      "invalidRows": 3
+    }
+  },
+  "expected": {
+    "withoutContract": "live_quote_and_purchase_disabled",
+    "syntacticValidation": "pass",
+    "carrierEligibility": "undetermined_without_synthetic_rule_set",
+    "variant": "A 20,000-row import includes a duplicate vehicle and two invalid relationships: preview reports all row errors; approved valid rows commit under the chosen partial policy, and retries cannot duplicate certificates or charges."
+  }
+}

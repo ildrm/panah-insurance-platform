@@ -1,0 +1,821 @@
+{
+  "type": "object",
+  "properties": {
+    "baseline_count": {
+      "type": "integer"
+    },
+    "entries": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "acceptance_ids": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "boundary": {
+            "type": "string",
+            "minLength": 1
+          },
+          "channels": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "children": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "acceptance_ids": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "minLength": 1
+                  }
+                },
+                "acceptance_scenario_ids": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "minLength": 1
+                  }
+                },
+                "api_method": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "api_operation": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "api_path": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "assumption_refs": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "minLength": 1
+                  }
+                },
+                "business_rule": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "business_rule_ids": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "minLength": 1
+                  }
+                },
+                "channels": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "minLength": 1
+                  }
+                },
+                "dashboards": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "minLength": 1
+                  }
+                },
+                "dependencies": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "minLength": 1
+                  }
+                },
+                "desired_capability": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "entity": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "event": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "failure": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "feature_control_evaluation": {
+                  "type": "object",
+                  "properties": {
+                    "mode": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "rule": {
+                      "type": "string",
+                      "minLength": 1
+                    }
+                  },
+                  "required": [
+                    "mode",
+                    "rule"
+                  ],
+                  "additionalProperties": false
+                },
+                "fields": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "authority": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "constraints": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "default": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "example": {
+                        "anyOf": [
+                          {
+                            "type": "array",
+                            "items": {
+                              "anyOf": [
+                                {
+                                  "type": "object",
+                                  "properties": {
+                                    "action": {
+                                      "type": "string",
+                                      "minLength": 1
+                                    },
+                                    "authorityEvidenceId": {
+                                      "type": "string",
+                                      "minLength": 1
+                                    },
+                                    "channel": {
+                                      "type": "string",
+                                      "minLength": 1
+                                    },
+                                    "field": {
+                                      "type": "string",
+                                      "minLength": 1
+                                    },
+                                    "fieldCode": {
+                                      "type": "string",
+                                      "minLength": 1
+                                    },
+                                    "operator": {
+                                      "type": "string",
+                                      "minLength": 1
+                                    },
+                                    "partyId": {
+                                      "type": "string",
+                                      "minLength": 1
+                                    },
+                                    "partyType": {
+                                      "type": "string",
+                                      "minLength": 1
+                                    },
+                                    "priceVersion": {
+                                      "type": "integer"
+                                    },
+                                    "productCode": {
+                                      "type": "string",
+                                      "minLength": 1
+                                    },
+                                    "quantity": {
+                                      "type": "integer"
+                                    },
+                                    "role": {
+                                      "type": "string",
+                                      "minLength": 1
+                                    },
+                                    "sku": {
+                                      "type": "string",
+                                      "minLength": 1
+                                    },
+                                    "value": {
+                                      "type": "string",
+                                      "minLength": 1
+                                    }
+                                  },
+                                  "required": [],
+                                  "additionalProperties": false
+                                },
+                                {
+                                  "type": "string",
+                                  "minLength": 1
+                                }
+                              ]
+                            }
+                          },
+                          {
+                            "type": "boolean"
+                          },
+                          {
+                            "type": "integer"
+                          },
+                          {
+                            "type": "object",
+                            "properties": {
+                              "amount": {
+                                "type": "string",
+                                "minLength": 1
+                              },
+                              "currency": {
+                                "type": "string",
+                                "minLength": 1
+                              },
+                              "global": {
+                                "type": "boolean"
+                              },
+                              "unit": {
+                                "type": "string",
+                                "minLength": 1
+                              }
+                            },
+                            "required": [],
+                            "additionalProperties": false
+                          },
+                          {
+                            "type": "string",
+                            "minLength": 1
+                          }
+                        ]
+                      },
+                      "name": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "normalization": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "required": {
+                        "type": "boolean"
+                      },
+                      "schema": {
+                        "type": "object",
+                        "properties": {
+                          "$ref": {
+                            "type": "string",
+                            "minLength": 1
+                          }
+                        },
+                        "required": [
+                          "$ref"
+                        ],
+                        "additionalProperties": false
+                      },
+                      "sensitivity": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "type": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "validation_message": {
+                        "type": "string",
+                        "minLength": 1
+                      }
+                    },
+                    "required": [
+                      "authority",
+                      "constraints",
+                      "default",
+                      "example",
+                      "name",
+                      "normalization",
+                      "required",
+                      "schema",
+                      "sensitivity",
+                      "type",
+                      "validation_message"
+                    ],
+                    "additionalProperties": false
+                  }
+                },
+                "flag_ids": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "minLength": 1
+                  }
+                },
+                "id": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "implementation_expectation": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "implementation_path": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "implementation_status": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "integration": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "performance_budget": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "permission_ids": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "minLength": 1
+                  }
+                },
+                "product_scope": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "minLength": 1
+                  }
+                },
+                "release_slice": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "response_fields": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "authority": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "constraints": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "default": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "example": {
+                        "anyOf": [
+                          {
+                            "type": "array",
+                            "items": {
+                              "type": "object",
+                              "properties": {
+                                "authorityEvidenceId": {
+                                  "type": "string",
+                                  "minLength": 1
+                                },
+                                "partyId": {
+                                  "type": "string",
+                                  "minLength": 1
+                                },
+                                "partyType": {
+                                  "type": "string",
+                                  "minLength": 1
+                                },
+                                "role": {
+                                  "type": "string",
+                                  "minLength": 1
+                                }
+                              },
+                              "required": [
+                                "authorityEvidenceId",
+                                "partyId",
+                                "partyType",
+                                "role"
+                              ],
+                              "additionalProperties": false
+                            }
+                          },
+                          {
+                            "type": "boolean"
+                          },
+                          {
+                            "type": "integer"
+                          },
+                          {
+                            "type": "object",
+                            "properties": {
+                              "amount": {
+                                "type": "string",
+                                "minLength": 1
+                              },
+                              "currency": {
+                                "type": "string",
+                                "minLength": 1
+                              },
+                              "unit": {
+                                "type": "string",
+                                "minLength": 1
+                              }
+                            },
+                            "required": [
+                              "amount",
+                              "currency",
+                              "unit"
+                            ],
+                            "additionalProperties": false
+                          },
+                          {
+                            "type": "string",
+                            "minLength": 1
+                          }
+                        ]
+                      },
+                      "name": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "normalization": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "required": {
+                        "type": "boolean"
+                      },
+                      "schema": {
+                        "type": "object",
+                        "properties": {
+                          "$ref": {
+                            "type": "string",
+                            "minLength": 1
+                          }
+                        },
+                        "required": [
+                          "$ref"
+                        ],
+                        "additionalProperties": false
+                      },
+                      "sensitivity": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "type": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "validation_message": {
+                        "type": "string",
+                        "minLength": 1
+                      }
+                    },
+                    "required": [
+                      "authority",
+                      "constraints",
+                      "default",
+                      "example",
+                      "name",
+                      "normalization",
+                      "required",
+                      "schema",
+                      "sensitivity",
+                      "type",
+                      "validation_message"
+                    ],
+                    "additionalProperties": false
+                  }
+                },
+                "rollout_default": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "screen": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "screen_authority_specs": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "purpose": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "role": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "route": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "spec_path": {
+                        "type": "string",
+                        "minLength": 1
+                      }
+                    },
+                    "required": [
+                      "purpose",
+                      "role",
+                      "route",
+                      "spec_path"
+                    ],
+                    "additionalProperties": false
+                  }
+                },
+                "screens": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "minLength": 1
+                  }
+                },
+                "source_refs": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "minLength": 1
+                  }
+                },
+                "specification_paths": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "minLength": 1
+                  }
+                },
+                "status": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "title": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "transition": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              },
+              "required": [
+                "acceptance_ids",
+                "acceptance_scenario_ids",
+                "api_method",
+                "api_operation",
+                "api_path",
+                "assumption_refs",
+                "business_rule",
+                "business_rule_ids",
+                "channels",
+                "dashboards",
+                "dependencies",
+                "desired_capability",
+                "entity",
+                "event",
+                "failure",
+                "feature_control_evaluation",
+                "fields",
+                "flag_ids",
+                "id",
+                "implementation_expectation",
+                "implementation_path",
+                "implementation_status",
+                "integration",
+                "performance_budget",
+                "permission_ids",
+                "product_scope",
+                "release_slice",
+                "response_fields",
+                "rollout_default",
+                "screen",
+                "screen_authority_specs",
+                "screens",
+                "source_refs",
+                "specification_paths",
+                "status",
+                "title",
+                "transition"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "completion_status": {
+            "type": "string",
+            "minLength": 1
+          },
+          "dashboards": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "dependencies": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "desired_capability": {
+            "type": "string",
+            "minLength": 1
+          },
+          "entity": {
+            "type": "string",
+            "minLength": 1
+          },
+          "finance": {
+            "type": "string",
+            "minLength": 1
+          },
+          "gaps": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "implementation_expectation": {
+            "type": "string",
+            "minLength": 1
+          },
+          "module": {
+            "type": "string",
+            "minLength": 1
+          },
+          "owner_role": {
+            "type": "string",
+            "minLength": 1
+          },
+          "rollout_default": {
+            "type": "string",
+            "minLength": 1
+          },
+          "source_refs": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "source_text": {
+            "type": "string",
+            "minLength": 1
+          },
+          "spec_path": {
+            "type": "string",
+            "minLength": 1
+          },
+          "specification_paths": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "status": {
+            "type": "string",
+            "minLength": 1
+          },
+          "surface_applicability": {
+            "type": "object",
+            "properties": {
+              "kind": {
+                "type": "string",
+                "minLength": 1
+              },
+              "reason": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "required": [
+              "kind",
+              "reason"
+            ],
+            "additionalProperties": false
+          },
+          "surface_specifications": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "purpose": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "role": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "route": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "spec_path": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              },
+              "required": [
+                "purpose",
+                "role",
+                "route",
+                "spec_path"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "title": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "required": [
+          "acceptance_ids",
+          "boundary",
+          "channels",
+          "children",
+          "completion_status",
+          "dashboards",
+          "dependencies",
+          "desired_capability",
+          "entity",
+          "finance",
+          "gaps",
+          "id",
+          "implementation_expectation",
+          "module",
+          "owner_role",
+          "rollout_default",
+          "source_refs",
+          "source_text",
+          "spec_path",
+          "specification_paths",
+          "status",
+          "surface_applicability",
+          "surface_specifications",
+          "title"
+        ],
+        "additionalProperties": false
+      },
+      "minItems": 74,
+      "maxItems": 74
+    },
+    "id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "native_app_status": {
+      "type": "string",
+      "minLength": 1
+    },
+    "status": {
+      "enum": [
+        "draft",
+        "proposed",
+        "partial",
+        "complete",
+        "blocked"
+      ]
+    },
+    "updated": {
+      "type": "string",
+      "minLength": 1
+    },
+    "version": {
+      "type": "string",
+      "minLength": 1
+    }
+  },
+  "required": [
+    "baseline_count",
+    "entries",
+    "id",
+    "native_app_status",
+    "status",
+    "updated",
+    "version"
+  ],
+  "additionalProperties": false,
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://insurance.example.invalid/meta/feature-catalog.schema.json",
+  "title": "feature-catalog registry v1"
+}

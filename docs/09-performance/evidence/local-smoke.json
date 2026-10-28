@@ -1,0 +1,46 @@
+{
+  "id": "PERF-LOCAL-SMOKE",
+  "version": "1.0.0",
+  "status": "partial",
+  "updated": "2026-10-28",
+  "started_at": "2026-10-28T10:10:28.652Z",
+  "duration_ms": 10034,
+  "runtime": "v24.22.1",
+  "environment": {
+    "platform": "darwin",
+    "arch": "arm64",
+    "cpu_model": "Apple M2",
+    "cpu_count": 8,
+    "ram_bytes": 8589934592
+  },
+  "dataset": {
+    "policies": "7",
+    "orders": "13",
+    "users": "18"
+  },
+  "operation": "authenticated GET /v1/dashboard/customer?section=orders including real authorization and PostgreSQL reads",
+  "arrival": "open-loop200rps for10seconds; catch up due scheduled arrivals with max128inflight; client latency includes generator scheduling lag",
+  "warmup": {
+    "requests": 10,
+    "duration_ms": 19
+  },
+  "target_requests": 2000,
+  "scheduled_requests": 2000,
+  "requests": 2000,
+  "max_arrival_lag_ms": 39.62,
+  "throughput_rps": 199.31,
+  "p50_ms": 9.01,
+  "p95_ms": 11.88,
+  "p99_ms": 15.49,
+  "errors": {},
+  "admission_misses": 0,
+  "max_inflight": 11,
+  "smoke_budget_pass": true,
+  "release_budget_proven": false,
+  "limitations": [
+    "Small current synthetic dataset; not WL-01 million-policy demand",
+    "10second warm smoke, not30minute/soak/burst gate",
+    "Single API/worker on local machine; no field Web Vitals or production capacity conclusion",
+    "Scheduling lag measured in latency and reported; no accepted failures dropped"
+  ]
+}

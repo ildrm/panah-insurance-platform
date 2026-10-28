@@ -1,0 +1,300 @@
+{
+  "id": "REG-ROLES-AND-RACI",
+  "version": "1.0.0",
+  "status": "draft",
+  "updated": "2026-10-28",
+  "entries": [
+    {
+      "id": "R01",
+      "title": "Product lead",
+      "accountable_for": "Product lead",
+      "review_state": "human-review-pending",
+      "assignment": "unassigned-human",
+      "consulted_roles": [
+        "R17"
+      ],
+      "informed_roles": [
+        "R17"
+      ]
+    },
+    {
+      "id": "R02",
+      "title": "Insurance domain specialist",
+      "accountable_for": "Insurance domain specialist",
+      "review_state": "human-review-pending",
+      "assignment": "unassigned-human",
+      "consulted_roles": [
+        "R01",
+        "R18"
+      ],
+      "informed_roles": [
+        "R17"
+      ]
+    },
+    {
+      "id": "R03",
+      "title": "Business systems analyst",
+      "accountable_for": "Business systems analyst",
+      "review_state": "human-review-pending",
+      "assignment": "unassigned-human",
+      "consulted_roles": [
+        "R01",
+        "R18"
+      ],
+      "informed_roles": [
+        "R17"
+      ]
+    },
+    {
+      "id": "R04",
+      "title": "UX accessibility localization",
+      "accountable_for": "UX accessibility localization",
+      "review_state": "human-review-pending",
+      "assignment": "unassigned-human",
+      "consulted_roles": [
+        "R01",
+        "R18"
+      ],
+      "informed_roles": [
+        "R17"
+      ]
+    },
+    {
+      "id": "R05",
+      "title": "Solution architect",
+      "accountable_for": "Solution architect",
+      "review_state": "human-review-pending",
+      "assignment": "unassigned-human",
+      "consulted_roles": [
+        "R01",
+        "R18"
+      ],
+      "informed_roles": [
+        "R17"
+      ]
+    },
+    {
+      "id": "R06",
+      "title": "Performance engineer",
+      "accountable_for": "Performance engineer",
+      "review_state": "human-review-pending",
+      "assignment": "unassigned-human",
+      "consulted_roles": [
+        "R01",
+        "R18"
+      ],
+      "informed_roles": [
+        "R17"
+      ]
+    },
+    {
+      "id": "R07",
+      "title": "Next.js frontend engineer",
+      "accountable_for": "Next.js frontend engineer",
+      "review_state": "human-review-pending",
+      "assignment": "unassigned-human",
+      "consulted_roles": [
+        "R01",
+        "R18"
+      ],
+      "informed_roles": [
+        "R17"
+      ]
+    },
+    {
+      "id": "R08",
+      "title": "NestJS domain engineer",
+      "accountable_for": "NestJS domain engineer",
+      "review_state": "human-review-pending",
+      "assignment": "unassigned-human",
+      "consulted_roles": [
+        "R01",
+        "R18"
+      ],
+      "informed_roles": [
+        "R17"
+      ]
+    },
+    {
+      "id": "R09",
+      "title": "Partner integration engineer",
+      "accountable_for": "Partner integration engineer",
+      "review_state": "human-review-pending",
+      "assignment": "unassigned-human",
+      "consulted_roles": [
+        "R01",
+        "R18"
+      ],
+      "informed_roles": [
+        "R17"
+      ]
+    },
+    {
+      "id": "R10",
+      "title": "Database engineer",
+      "accountable_for": "Database engineer",
+      "review_state": "human-review-pending",
+      "assignment": "unassigned-human",
+      "consulted_roles": [
+        "R01",
+        "R18"
+      ],
+      "informed_roles": [
+        "R17"
+      ]
+    },
+    {
+      "id": "R11",
+      "title": "Security privacy engineer",
+      "accountable_for": "Security privacy engineer",
+      "review_state": "human-review-pending",
+      "assignment": "unassigned-human",
+      "consulted_roles": [
+        "R01",
+        "R18"
+      ],
+      "informed_roles": [
+        "R17"
+      ]
+    },
+    {
+      "id": "R12",
+      "title": "Payments accounting specialist",
+      "accountable_for": "Payments accounting specialist",
+      "review_state": "human-review-pending",
+      "assignment": "unassigned-human",
+      "consulted_roles": [
+        "R01",
+        "R18"
+      ],
+      "informed_roles": [
+        "R17"
+      ]
+    },
+    {
+      "id": "R13",
+      "title": "Quality engineer",
+      "accountable_for": "Quality engineer",
+      "review_state": "human-review-pending",
+      "assignment": "unassigned-human",
+      "consulted_roles": [
+        "R01",
+        "R18"
+      ],
+      "informed_roles": [
+        "R17"
+      ]
+    },
+    {
+      "id": "R14",
+      "title": "Platform SRE",
+      "accountable_for": "Platform SRE",
+      "review_state": "human-review-pending",
+      "assignment": "unassigned-human",
+      "consulted_roles": [
+        "R01",
+        "R18"
+      ],
+      "informed_roles": [
+        "R17"
+      ]
+    },
+    {
+      "id": "R15",
+      "title": "Analytics engineer",
+      "accountable_for": "Analytics engineer",
+      "review_state": "human-review-pending",
+      "assignment": "unassigned-human",
+      "consulted_roles": [
+        "R01",
+        "R18"
+      ],
+      "informed_roles": [
+        "R17"
+      ]
+    },
+    {
+      "id": "R16",
+      "title": "Content SEO growth",
+      "accountable_for": "Content SEO growth",
+      "review_state": "human-review-pending",
+      "assignment": "unassigned-human",
+      "consulted_roles": [
+        "R01",
+        "R18"
+      ],
+      "informed_roles": [
+        "R17"
+      ]
+    },
+    {
+      "id": "R17",
+      "title": "Documentation engineer",
+      "accountable_for": "Documentation engineer",
+      "review_state": "human-review-pending",
+      "assignment": "unassigned-human",
+      "consulted_roles": [
+        "R01",
+        "R18"
+      ],
+      "informed_roles": [
+        "R17"
+      ]
+    },
+    {
+      "id": "R18",
+      "title": "Delivery release lead",
+      "accountable_for": "Delivery release lead",
+      "review_state": "human-review-pending",
+      "assignment": "unassigned-human",
+      "consulted_roles": [
+        "R17"
+      ],
+      "informed_roles": [
+        "R17"
+      ]
+    },
+    {
+      "id": "R19",
+      "title": "Regulatory legal reviewer",
+      "accountable_for": "Regulatory legal reviewer",
+      "review_state": "human-review-pending",
+      "assignment": "unassigned-human",
+      "consulted_roles": [
+        "R01",
+        "R18"
+      ],
+      "informed_roles": [
+        "R17"
+      ]
+    },
+    {
+      "id": "R20",
+      "title": "Insurance operations specialist",
+      "accountable_for": "Insurance operations specialist",
+      "review_state": "human-review-pending",
+      "assignment": "unassigned-human",
+      "consulted_roles": [
+        "R01",
+        "R18"
+      ],
+      "informed_roles": [
+        "R17"
+      ]
+    },
+    {
+      "id": "R21",
+      "title": "Mobile PWA engineer",
+      "accountable_for": "Mobile PWA engineer",
+      "review_state": "human-review-pending",
+      "assignment": "unassigned-human",
+      "consulted_roles": [
+        "R01",
+        "R18"
+      ],
+      "informed_roles": [
+        "R17"
+      ]
+    }
+  ]
+}

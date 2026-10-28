@@ -1,0 +1,2 @@
+<?xml version='1.0' encoding='utf-8'?>
+<soap:Envelope xmlns:c="urn:fictional:carrier:soap:v1" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/"><soap:Body><c:SubmitApplication><c:ClientApplicationRef>synthetic-order-001</c:ClientApplicationRef><c:QuoteRef>SIM-SOAP-Q-1</c:QuoteRef><c:PremiumRial>120000</c:PremiumRial><c:EffectiveGregorianDate>2026-11-01</c:EffectiveGregorianDate><c:MappingVersion>soap-map-v1</c:MappingVersion></c:SubmitApplication></soap:Body></soap:Envelope>

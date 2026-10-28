@@ -1,0 +1,2200 @@
+[
+  {
+    "id": "INS-01",
+    "status": "draft",
+    "source_refs": [
+      "S00"
+    ],
+    "surfaces": [
+      {
+        "route": "/insurance",
+        "spec_path": "03-experience/screen-and-route-inventory.md",
+        "role": "public visitor",
+        "purpose": "Browse hierarchical products, search and availability"
+      },
+      {
+        "route": "/insurers/:slug",
+        "spec_path": "03-experience/screen-and-route-inventory.md",
+        "role": "public visitor",
+        "purpose": "Read approved insurer profile/plan information"
+      },
+      {
+        "route": "/admin/catalog",
+        "spec_path": "03-experience/dashboards/admin.md",
+        "role": "catalog/content editor",
+        "purpose": "Version category, featured-product and availability presentation"
+      }
+    ],
+    "applicability": {
+      "kind": "interactive",
+      "reason": "Interactive task is presented on the listed authored route(s); action/field authorization and domain state are checked separately from dashboard entry."
+    }
+  },
+  {
+    "id": "INS-02",
+    "status": "draft",
+    "source_refs": [
+      "S00"
+    ],
+    "surfaces": [
+      {
+        "route": "/applications/:id",
+        "spec_path": "03-experience/screen-and-route-inventory.md",
+        "role": "authorized applicant/customer",
+        "purpose": "Complete conditional versioned fields, declarations and save/resume"
+      },
+      {
+        "route": "/admin/catalog",
+        "spec_path": "03-experience/dashboards/admin.md",
+        "role": "catalog/content editor",
+        "purpose": "Draft/test/publish approved form schema and localization"
+      }
+    ],
+    "applicability": {
+      "kind": "interactive",
+      "reason": "Interactive task is presented on the listed authored route(s); action/field authorization and domain state are checked separately from dashboard entry."
+    }
+  },
+  {
+    "id": "INS-03",
+    "status": "draft",
+    "source_refs": [
+      "S00"
+    ],
+    "surfaces": [
+      {
+        "route": "/account/people-and-assets",
+        "spec_path": "03-experience/dashboards/customer.md",
+        "role": "personal customer; authorized guardian/delegate",
+        "purpose": "Manage purpose-authorized people, dependents, addresses and assets"
+      },
+      {
+        "route": "/org/:orgId/census",
+        "spec_path": "03-experience/dashboards/corporate.md",
+        "role": "enrollment administrator",
+        "purpose": "Manage scoped enrollment relationships without private medical disclosure"
+      }
+    ],
+    "applicability": {
+      "kind": "interactive",
+      "reason": "Interactive task is presented on the listed authored route(s); action/field authorization and domain state are checked separately from dashboard entry."
+    }
+  },
+  {
+    "id": "INS-04",
+    "status": "draft",
+    "source_refs": [
+      "S00"
+    ],
+    "surfaces": [
+      {
+        "route": "/applications/:id",
+        "spec_path": "03-experience/screen-and-route-inventory.md",
+        "role": "authorized applicant/customer",
+        "purpose": "Request permitted insurance history/owner inquiry and review provenance/manual correction"
+      },
+      {
+        "route": "/ops/underwriting",
+        "spec_path": "03-experience/dashboards/operations.md",
+        "role": "underwriting/inspection operator",
+        "purpose": "Resolve inquiry failure or conflicting evidence without replacing provenance"
+      }
+    ],
+    "applicability": {
+      "kind": "interactive",
+      "reason": "Interactive task is presented on the listed authored route(s); action/field authorization and domain state are checked separately from dashboard entry."
+    }
+  },
+  {
+    "id": "INS-05",
+    "status": "draft",
+    "source_refs": [
+      "S00"
+    ],
+    "surfaces": [
+      {
+        "route": "/quotes/:id/compare",
+        "spec_path": "03-experience/screen-and-route-inventory.md",
+        "role": "authorized applicant/customer",
+        "purpose": "Start and observe eligible carrier fan-out, partial results and expiry"
+      },
+      {
+        "route": "/seller/quotes",
+        "spec_path": "03-experience/dashboards/seller.md",
+        "role": "seller",
+        "purpose": "Compare assigned customer's permitted proposals"
+      },
+      {
+        "route": "/org/:orgId/quotes",
+        "spec_path": "03-experience/dashboards/corporate.md",
+        "role": "requester",
+        "purpose": "Review scoped commercial/group carrier offers"
+      }
+    ],
+    "applicability": {
+      "kind": "interactive",
+      "reason": "Interactive task is presented on the listed authored route(s); action/field authorization and domain state are checked separately from dashboard entry."
+    }
+  },
+  {
+    "id": "INS-06",
+    "status": "draft",
+    "source_refs": [
+      "S00"
+    ],
+    "surfaces": [
+      {
+        "route": "/quotes/:id/compare",
+        "spec_path": "03-experience/screen-and-route-inventory.md",
+        "role": "authorized applicant/customer",
+        "purpose": "Sort/filter comparable premium, limits, deductible, exclusions and disclosed sponsorship"
+      },
+      {
+        "route": "/org/:orgId/quotes",
+        "spec_path": "03-experience/dashboards/corporate.md",
+        "role": "requester; approver/checker",
+        "purpose": "Compare consistent schedule/proposal revisions and negotiated deviations"
+      }
+    ],
+    "applicability": {
+      "kind": "interactive",
+      "reason": "Interactive task is presented on the listed authored route(s); action/field authorization and domain state are checked separately from dashboard entry."
+    }
+  },
+  {
+    "id": "INS-07",
+    "status": "draft",
+    "source_refs": [
+      "S00"
+    ],
+    "surfaces": [
+      {
+        "route": "/applications/:id",
+        "spec_path": "03-experience/screen-and-route-inventory.md",
+        "role": "authorized applicant/customer",
+        "purpose": "Select contract-offered coverages/riders and resolve dependencies"
+      },
+      {
+        "route": "/quotes/:id/compare",
+        "spec_path": "03-experience/screen-and-route-inventory.md",
+        "role": "authorized applicant/customer",
+        "purpose": "Review coverage/pricing effects and incomparable limits"
+      },
+      {
+        "route": "/admin/catalog",
+        "spec_path": "03-experience/dashboards/admin.md",
+        "role": "catalog/content editor",
+        "purpose": "Version plan/rider constraints with approved carrier rules"
+      }
+    ],
+    "applicability": {
+      "kind": "interactive",
+      "reason": "Interactive task is presented on the listed authored route(s); action/field authorization and domain state are checked separately from dashboard entry."
+    }
+  },
+  {
+    "id": "INS-08",
+    "status": "draft",
+    "source_refs": [
+      "S00"
+    ],
+    "surfaces": [
+      {
+        "route": "/ops/underwriting",
+        "spec_path": "03-experience/dashboards/operations.md",
+        "role": "underwriting/inspection operator",
+        "purpose": "Review assigned risk/evidence and record only delegated decisions"
+      },
+      {
+        "route": "/partner/underwriting",
+        "spec_path": "03-experience/dashboards/carrier.md",
+        "role": "carrier underwriter",
+        "purpose": "Request evidence and accept/reject within carrier authority"
+      },
+      {
+        "route": "/applications/:id",
+        "spec_path": "03-experience/screen-and-route-inventory.md",
+        "role": "authorized applicant/customer",
+        "purpose": "Respond to underwriting declarations/evidence requests"
+      }
+    ],
+    "applicability": {
+      "kind": "interactive",
+      "reason": "Interactive task is presented on the listed authored route(s); action/field authorization and domain state are checked separately from dashboard entry."
+    }
+  },
+  {
+    "id": "INS-09",
+    "status": "draft",
+    "source_refs": [
+      "S00"
+    ],
+    "surfaces": [
+      {
+        "route": "/inspections/:id",
+        "spec_path": "03-experience/screen-and-route-inventory.md",
+        "role": "authorized vehicle applicant",
+        "purpose": "Book inspection, upload checklist evidence and resolve retakes"
+      },
+      {
+        "route": "/ops/inspections",
+        "spec_path": "03-experience/dashboards/operations.md",
+        "role": "underwriting/inspection operator",
+        "purpose": "Assign/review inspection, expiry and retake workflow"
+      }
+    ],
+    "applicability": {
+      "kind": "interactive",
+      "reason": "Interactive task is presented on the listed authored route(s); action/field authorization and domain state are checked separately from dashboard entry."
+    }
+  },
+  {
+    "id": "INS-10",
+    "status": "draft",
+    "source_refs": [
+      "S00"
+    ],
+    "surfaces": [
+      {
+        "route": "/account/quotes",
+        "spec_path": "03-experience/dashboards/customer.md",
+        "role": "personal customer",
+        "purpose": "Save/resume and retrieve authorized quotes, expiry and reminder state"
+      },
+      {
+        "route": "/quotes/:id/compare",
+        "spec_path": "03-experience/screen-and-route-inventory.md",
+        "role": "authorized applicant or scoped share recipient",
+        "purpose": "Open authorized expiring quote share and revalidate before action"
+      }
+    ],
+    "applicability": {
+      "kind": "interactive",
+      "reason": "Interactive task is presented on the listed authored route(s); action/field authorization and domain state are checked separately from dashboard entry."
+    }
+  },
+  {
+    "id": "INS-11",
+    "status": "draft",
+    "source_refs": [
+      "S00"
+    ],
+    "surfaces": [
+      {
+        "route": "/insurance/:productId",
+        "spec_path": "03-experience/screen-and-route-inventory.md",
+        "role": "public visitor; authorized applicant",
+        "purpose": "Read family-specific product terms and enter its distinct risk form"
+      },
+      {
+        "route": "/applications/:id",
+        "spec_path": "03-experience/screen-and-route-inventory.md",
+        "role": "authorized applicant/customer",
+        "purpose": "Complete the chosen product-family fields and evidence"
+      },
+      {
+        "route": "/admin/catalog",
+        "spec_path": "03-experience/dashboards/admin.md",
+        "role": "catalog/content editor",
+        "purpose": "Maintain each family schema, plan and live-authority gate"
+      }
+    ],
+    "applicability": {
+      "kind": "interactive",
+      "reason": "Interactive task is presented on the listed authored route(s); action/field authorization and domain state are checked separately from dashboard entry."
+    }
+  },
+  {
+    "id": "INS-12",
+    "status": "draft",
+    "source_refs": [
+      "S00"
+    ],
+    "surfaces": [
+      {
+        "route": "/assisted-requests/:id",
+        "spec_path": "03-experience/screen-and-route-inventory.md",
+        "role": "mandated applicant and assigned commercial staff",
+        "purpose": "Track complex inquiry, callback, negotiation and approved proposal versions"
+      },
+      {
+        "route": "/seller/quotes",
+        "spec_path": "03-experience/dashboards/seller.md",
+        "role": "seller",
+        "purpose": "Prepare a mandated assisted proposal"
+      },
+      {
+        "route": "/org/:orgId/quotes",
+        "spec_path": "03-experience/dashboards/corporate.md",
+        "role": "requester; approver/checker",
+        "purpose": "Review group/commercial negotiation and approval"
+      }
+    ],
+    "applicability": {
+      "kind": "interactive",
+      "reason": "Interactive task is presented on the listed authored route(s); action/field authorization and domain state are checked separately from dashboard entry."
+    }
+  },
+  {
+    "id": "COM-01",
+    "status": "draft",
+    "source_refs": [
+      "S00"
+    ],
+    "surfaces": [
+      {
+        "route": "/checkout/:applicationId",
+        "spec_path": "03-experience/screen-and-route-inventory.md",
+        "role": "authorized buyer/payer",
+        "purpose": "Review party roles, consents, eligibility and exact total before commitment"
+      },
+      {
+        "route": "/org/:orgId/approvals",
+        "spec_path": "03-experience/dashboards/corporate.md",
+        "role": "approver/checker",
+        "purpose": "Approve exact corporate purchase version within delegated limit"
+      }
+    ],
+    "applicability": {
+      "kind": "interactive",
+      "reason": "Interactive task is presented on the listed authored route(s); action/field authorization and domain state are checked separately from dashboard entry."
+    }
+  },
+  {
+    "id": "COM-02",
+    "status": "draft",
+    "source_refs": [
+      "S00"
+    ],
+    "surfaces": [
+      {
+        "route": "/applications/:id",
+        "spec_path": "03-experience/screen-and-route-inventory.md",
+        "role": "authorized applicant/customer",
+        "purpose": "Provide purpose-required identity/ownership/medical/property evidence"
+      },
+      {
+        "route": "/account/documents",
+        "spec_path": "03-experience/dashboards/customer.md",
+        "role": "personal customer; authorized guardian/delegate",
+        "purpose": "Retrieve own permitted reviewed evidence/documents"
+      },
+      {
+        "route": "/ops/underwriting",
+        "spec_path": "03-experience/dashboards/operations.md",
+        "role": "underwriting/inspection operator",
+        "purpose": "Review assigned clean-scanned evidence and expiry"
+      }
+    ],
+    "applicability": {
+      "kind": "interactive",
+      "reason": "Interactive task is presented on the listed authored route(s); action/field authorization and domain state are checked separately from dashboard entry."
+    }
+  },
+  {
+    "id": "COM-03",
+    "status": "draft",
+    "source_refs": [
+      "S00"
+    ],
+    "surfaces": [
+      {
+        "route": "/checkout/:applicationId",
+        "spec_path": "03-experience/screen-and-route-inventory.md",
+        "role": "authorized payer",
+        "purpose": "Create provider payment attempt and review exact allocation"
+      },
+      {
+        "route": "/orders/:id",
+        "spec_path": "03-experience/screen-and-route-inventory.md",
+        "role": "authorized buyer/payer",
+        "purpose": "Observe authoritative verification and recover existing attempt"
+      },
+      {
+        "route": "/ops/reconciliation",
+        "spec_path": "03-experience/dashboards/operations.md",
+        "role": "finance maker/checker",
+        "purpose": "Resolve duplicate/unmatched provider payment evidence"
+      }
+    ],
+    "applicability": {
+      "kind": "interactive",
+      "reason": "Interactive task is presented on the listed authored route(s); action/field authorization and domain state are checked separately from dashboard entry."
+    }
+  },
+  {
+    "id": "COM-04",
+    "status": "draft",
+    "source_refs": [
+      "S00"
+    ],
+    "surfaces": [
+      {
+        "route": "/checkout/:applicationId",
+        "spec_path": "03-experience/screen-and-route-inventory.md",
+        "role": "authorized buyer/payer",
+        "purpose": "Review installment eligibility, financing terms, down payment and total payable"
+      },
+      {
+        "route": "/account/installments",
+        "spec_path": "03-experience/dashboards/customer.md",
+        "role": "personal customer or authorized payer",
+        "purpose": "View accepted schedule and resulting obligations"
+      },
+      {
+        "route": "/org/:orgId/billing",
+        "spec_path": "03-experience/dashboards/corporate.md",
+        "role": "finance payer",
+        "purpose": "Review permitted organization financing/billing obligations"
+      }
+    ],
+    "applicability": {
+      "kind": "interactive",
+      "reason": "Interactive task is presented on the listed authored route(s); action/field authorization and domain state are checked separately from dashboard entry."
+    }
+  },
+  {
+    "id": "COM-05",
+    "status": "draft",
+    "source_refs": [
+      "S00"
+    ],
+    "surfaces": [
+      {
+        "route": "/checkout/:applicationId",
+        "spec_path": "03-experience/screen-and-route-inventory.md",
+        "role": "authorized buyer/payer",
+        "purpose": "Apply eligible promotion and see validated total/stacking result"
+      },
+      {
+        "route": "/admin/marketing",
+        "spec_path": "03-experience/dashboards/admin.md",
+        "role": "catalog/content editor; configuration checker",
+        "purpose": "Propose/approve campaign limits, budgets, stacking and expiry"
+      }
+    ],
+    "applicability": {
+      "kind": "interactive",
+      "reason": "Interactive task is presented on the listed authored route(s); action/field authorization and domain state are checked separately from dashboard entry."
+    }
+  },
+  {
+    "id": "COM-06",
+    "status": "draft",
+    "source_refs": [
+      "S00"
+    ],
+    "surfaces": [
+      {
+        "route": "/ops/issuance",
+        "spec_path": "03-experience/dashboards/operations.md",
+        "role": "issuance operator",
+        "purpose": "Process committed submissions, evidence dependencies and exceptions"
+      },
+      {
+        "route": "/partner/issuance",
+        "spec_path": "03-experience/dashboards/carrier.md",
+        "role": "carrier operations",
+        "purpose": "Provide authorized policy reference/document/effective dates"
+      },
+      {
+        "route": "/orders/:id",
+        "spec_path": "03-experience/screen-and-route-inventory.md",
+        "role": "authorized buyer/policyholder",
+        "purpose": "Track issuance separately from payment and delivery"
+      }
+    ],
+    "applicability": {
+      "kind": "interactive",
+      "reason": "Interactive task is presented on the listed authored route(s); action/field authorization and domain state are checked separately from dashboard entry."
+    }
+  },
+  {
+    "id": "COM-07",
+    "status": "draft",
+    "source_refs": [
+      "S00"
+    ],
+    "surfaces": [
+      {
+        "route": "/account/documents",
+        "spec_path": "03-experience/dashboards/customer.md",
+        "role": "personal customer; authorized policy recipient",
+        "purpose": "Access authorized insurer document/PDF"
+      },
+      {
+        "route": "/ops/policy-delivery",
+        "spec_path": "03-experience/dashboards/operations.md",
+        "role": "policy servicing/delivery operator",
+        "purpose": "Resolve account/link/SMS/email/physical courier delivery and safe redelivery"
+      },
+      {
+        "route": "/orders/:id",
+        "spec_path": "03-experience/screen-and-route-inventory.md",
+        "role": "authorized buyer/policyholder",
+        "purpose": "Track delivery without changing issuance state"
+      }
+    ],
+    "applicability": {
+      "kind": "interactive",
+      "reason": "Interactive task is presented on the listed authored route(s); action/field authorization and domain state are checked separately from dashboard entry."
+    }
+  },
+  {
+    "id": "COM-08",
+    "status": "draft",
+    "source_refs": [
+      "S00"
+    ],
+    "surfaces": [
+      {
+        "route": "/orders/:id",
+        "spec_path": "03-experience/screen-and-route-inventory.md",
+        "role": "authorized buyer/payer/policyholder",
+        "purpose": "Read independent order/payment/submission/underwriting/issuance/delivery timeline"
+      },
+      {
+        "route": "/account/orders",
+        "spec_path": "03-experience/dashboards/customer.md",
+        "role": "personal customer",
+        "purpose": "Find existing order and required action"
+      },
+      {
+        "route": "/admin/orders-policies",
+        "spec_path": "03-experience/dashboards/admin.md",
+        "role": "platform configuration maker with domain read grant",
+        "purpose": "Inspect masked cross-domain exception state; no inferred coverage"
+      }
+    ],
+    "applicability": {
+      "kind": "interactive",
+      "reason": "Interactive task is presented on the listed authored route(s); action/field authorization and domain state are checked separately from dashboard entry."
+    }
+  },
+  {
+    "id": "COM-09",
+    "status": "draft",
+    "source_refs": [
+      "S00"
+    ],
+    "surfaces": [
+      {
+        "route": "/ops/reconciliation",
+        "spec_path": "03-experience/dashboards/operations.md",
+        "role": "finance maker/checker",
+        "purpose": "Resolve allocation, payment and ledger/provider discrepancies"
+      },
+      {
+        "route": "/ops/refunds-settlements",
+        "spec_path": "03-experience/dashboards/operations.md",
+        "role": "finance maker/checker",
+        "purpose": "Propose/check controlled refunds, settlements and payouts"
+      },
+      {
+        "route": "/partner/settlements",
+        "spec_path": "03-experience/dashboards/carrier.md",
+        "role": "carrier finance",
+        "purpose": "Review own carrier statement/dispute"
+      },
+      {
+        "route": "/seller/commissions",
+        "spec_path": "03-experience/dashboards/seller.md",
+        "role": "seller finance",
+        "purpose": "Review own commission accrual/reversal and dispute"
+      }
+    ],
+    "applicability": {
+      "kind": "interactive",
+      "reason": "Interactive task is presented on the listed authored route(s); action/field authorization and domain state are checked separately from dashboard entry."
+    }
+  },
+  {
+    "id": "SVC-01",
+    "status": "draft",
+    "source_refs": [
+      "S00"
+    ],
+    "surfaces": [
+      {
+        "route": "/account/policies",
+        "spec_path": "03-experience/dashboards/customer.md",
+        "role": "personal customer; authorized policy delegate",
+        "purpose": "Browse authorized policy vault and versions"
+      },
+      {
+        "route": "/policies/:id",
+        "spec_path": "03-experience/screen-and-route-inventory.md",
+        "role": "authorized policyholder/insured/beneficiary",
+        "purpose": "Read permitted coverage/documents/history"
+      },
+      {
+        "route": "/benefits/certificates",
+        "spec_path": "03-experience/dashboards/beneficiary.md",
+        "role": "employee/beneficiary",
+        "purpose": "Retrieve own accepted group certificate"
+      }
+    ],
+    "applicability": {
+      "kind": "interactive",
+      "reason": "Interactive task is presented on the listed authored route(s); action/field authorization and domain state are checked separately from dashboard entry."
+    }
+  },
+  {
+    "id": "SVC-02",
+    "status": "draft",
+    "source_refs": [
+      "S00"
+    ],
+    "surfaces": [
+      {
+        "route": "/account/renewals",
+        "spec_path": "03-experience/dashboards/customer.md",
+        "role": "personal customer",
+        "purpose": "Start fresh renewal from permitted prior policy data"
+      },
+      {
+        "route": "/org/:orgId/renewals",
+        "spec_path": "03-experience/dashboards/corporate.md",
+        "role": "requester; approver/checker",
+        "purpose": "Reconcile group/fleet changes and negotiate renewal"
+      },
+      {
+        "route": "/seller/renewals",
+        "spec_path": "03-experience/dashboards/seller.md",
+        "role": "seller",
+        "purpose": "Work assigned renewal with current mandate and attribution"
+      }
+    ],
+    "applicability": {
+      "kind": "interactive",
+      "reason": "Interactive task is presented on the listed authored route(s); action/field authorization and domain state are checked separately from dashboard entry."
+    }
+  },
+  {
+    "id": "SVC-03",
+    "status": "draft",
+    "source_refs": [
+      "S00"
+    ],
+    "surfaces": [
+      {
+        "route": "/account/installments",
+        "spec_path": "03-experience/dashboards/customer.md",
+        "role": "personal customer or authorized payer",
+        "purpose": "Read schedule/balance, pay eligible installment and submit dispute"
+      },
+      {
+        "route": "/org/:orgId/billing",
+        "spec_path": "03-experience/dashboards/corporate.md",
+        "role": "finance payer",
+        "purpose": "Manage scoped organization schedules/allocations"
+      },
+      {
+        "route": "/ops/reconciliation",
+        "spec_path": "03-experience/dashboards/operations.md",
+        "role": "finance maker/checker",
+        "purpose": "Resolve receipts, arrears allocation and disputed payment evidence"
+      }
+    ],
+    "applicability": {
+      "kind": "interactive",
+      "reason": "Interactive task is presented on the listed authored route(s); action/field authorization and domain state are checked separately from dashboard entry."
+    }
+  },
+  {
+    "id": "SVC-04",
+    "status": "draft",
+    "source_refs": [
+      "S00"
+    ],
+    "surfaces": [
+      {
+        "route": "/policies/:id/changes",
+        "spec_path": "03-experience/screen-and-route-inventory.md",
+        "role": "authorized policyholder/delegate",
+        "purpose": "Request correction, endorsement or cancellation and track effective status"
+      },
+      {
+        "route": "/ops/policy-changes",
+        "spec_path": "03-experience/dashboards/operations.md",
+        "role": "policy servicing/delivery operator",
+        "purpose": "Process carrier-approved amendments/cancellation with versioned evidence"
+      },
+      {
+        "route": "/ops/refunds-settlements",
+        "spec_path": "03-experience/dashboards/operations.md",
+        "role": "finance maker/checker",
+        "purpose": "Approve resulting refund adjustment under separate authority"
+      }
+    ],
+    "applicability": {
+      "kind": "interactive",
+      "reason": "Interactive task is presented on the listed authored route(s); action/field authorization and domain state are checked separately from dashboard entry."
+    }
+  },
+  {
+    "id": "SVC-05",
+    "status": "draft",
+    "source_refs": [
+      "S00"
+    ],
+    "surfaces": [
+      {
+        "route": "/help",
+        "spec_path": "03-experience/screen-and-route-inventory.md",
+        "role": "public visitor; policy customer",
+        "purpose": "Find approved claims procedures and support/escalation guidance"
+      },
+      {
+        "route": "/policies/:id",
+        "spec_path": "03-experience/screen-and-route-inventory.md",
+        "role": "authorized policyholder/insured",
+        "purpose": "Read policy/carrier-specific claim instructions"
+      },
+      {
+        "route": "/benefits/providers",
+        "spec_path": "03-experience/dashboards/beneficiary.md",
+        "role": "employee/beneficiary",
+        "purpose": "Find verified contracted service/assistance locations"
+      }
+    ],
+    "applicability": {
+      "kind": "interactive",
+      "reason": "Interactive task is presented on the listed authored route(s); action/field authorization and domain state are checked separately from dashboard entry."
+    }
+  },
+  {
+    "id": "SVC-06",
+    "status": "draft",
+    "source_refs": [
+      "S00"
+    ],
+    "surfaces": [
+      {
+        "route": "/account/claims",
+        "spec_path": "03-experience/dashboards/customer.md",
+        "role": "authorized claimant/guardian",
+        "purpose": "Submit policy-linked incident form, evidence and private status"
+      },
+      {
+        "route": "/benefits/claims",
+        "spec_path": "03-experience/dashboards/beneficiary.md",
+        "role": "employee/beneficiary; authorized guardian",
+        "purpose": "Submit private group-benefit claim without employer disclosure"
+      },
+      {
+        "route": "/ops/claims",
+        "spec_path": "03-experience/dashboards/operations.md",
+        "role": "claims handler/assessor",
+        "purpose": "Triage assigned intake and supplementary evidence"
+      }
+    ],
+    "applicability": {
+      "kind": "interactive",
+      "reason": "Interactive task is presented on the listed authored route(s); action/field authorization and domain state are checked separately from dashboard entry."
+    }
+  },
+  {
+    "id": "SVC-07",
+    "status": "draft",
+    "source_refs": [
+      "S00"
+    ],
+    "surfaces": [
+      {
+        "route": "/ops/claims",
+        "spec_path": "03-experience/dashboards/operations.md",
+        "role": "claims handler/assessor",
+        "purpose": "Assign assessment, inspect loss, request evidence and track review rights"
+      },
+      {
+        "route": "/partner/claims",
+        "spec_path": "03-experience/dashboards/carrier.md",
+        "role": "carrier underwriter or delegated claims role",
+        "purpose": "Record contract-authorized assessment/decision"
+      },
+      {
+        "route": "/account/claims",
+        "spec_path": "03-experience/dashboards/customer.md",
+        "role": "authorized claimant",
+        "purpose": "See safe decision/review status and requested next action"
+      }
+    ],
+    "applicability": {
+      "kind": "interactive",
+      "reason": "Interactive task is presented on the listed authored route(s); action/field authorization and domain state are checked separately from dashboard entry."
+    }
+  },
+  {
+    "id": "SVC-08",
+    "status": "draft",
+    "source_refs": [
+      "S00"
+    ],
+    "surfaces": [
+      {
+        "route": "/ops/refunds-settlements",
+        "spec_path": "03-experience/dashboards/operations.md",
+        "role": "finance maker/checker with claims payout authority",
+        "purpose": "Verify approved claim amount/recipient, check and reconcile payout"
+      },
+      {
+        "route": "/ops/claims",
+        "spec_path": "03-experience/dashboards/operations.md",
+        "role": "claims handler/assessor",
+        "purpose": "Link approved claim decision to distinct payment request/status"
+      },
+      {
+        "route": "/account/claims",
+        "spec_path": "03-experience/dashboards/customer.md",
+        "role": "authorized claimant/beneficiary",
+        "purpose": "View permitted payment status without assuming settlement from assessment"
+      }
+    ],
+    "applicability": {
+      "kind": "interactive",
+      "reason": "Interactive task is presented on the listed authored route(s); action/field authorization and domain state are checked separately from dashboard entry."
+    }
+  },
+  {
+    "id": "SVC-09",
+    "status": "draft",
+    "source_refs": [
+      "S00"
+    ],
+    "surfaces": [
+      {
+        "route": "/account/support",
+        "spec_path": "03-experience/dashboards/customer.md",
+        "role": "personal customer",
+        "purpose": "Create ticket/complaint, upload scoped attachments and grant limited assistance"
+      },
+      {
+        "route": "/benefits/support",
+        "spec_path": "03-experience/dashboards/beneficiary.md",
+        "role": "employee/beneficiary",
+        "purpose": "Request private benefit support"
+      },
+      {
+        "route": "/ops/support",
+        "spec_path": "03-experience/dashboards/operations.md",
+        "role": "support agent",
+        "purpose": "Assign/respond/escalate cases within consent and queue scope"
+      }
+    ],
+    "applicability": {
+      "kind": "interactive",
+      "reason": "Interactive task is presented on the listed authored route(s); action/field authorization and domain state are checked separately from dashboard entry."
+    }
+  },
+  {
+    "id": "GRW-01",
+    "status": "draft",
+    "source_refs": [
+      "S00"
+    ],
+    "surfaces": [
+      {
+        "route": "/auth/sign-in",
+        "spec_path": "03-experience/screen-and-route-inventory.md",
+        "role": "unauthenticated account holder",
+        "purpose": "Use approved OTP/authentication flow with enumeration resistance"
+      },
+      {
+        "route": "/auth/recovery",
+        "spec_path": "03-experience/screen-and-route-inventory.md",
+        "role": "account recovery claimant",
+        "purpose": "Complete verified recovery without bypassing privileged MFA"
+      },
+      {
+        "route": "/account/settings",
+        "spec_path": "03-experience/dashboards/customer.md",
+        "role": "personal customer",
+        "purpose": "Manage sessions, profile, consent and mandates"
+      },
+      {
+        "route": "/org/:orgId/team",
+        "spec_path": "03-experience/dashboards/corporate.md",
+        "role": "organization admin",
+        "purpose": "Invite/revoke scoped organization membership"
+      }
+    ],
+    "applicability": {
+      "kind": "interactive",
+      "reason": "Interactive task is presented on the listed authored route(s); action/field authorization and domain state are checked separately from dashboard entry."
+    }
+  },
+  {
+    "id": "GRW-02",
+    "status": "draft",
+    "source_refs": [
+      "S00"
+    ],
+    "surfaces": [
+      {
+        "route": "/account/wallet-and-rewards",
+        "spec_path": "03-experience/dashboards/customer.md",
+        "role": "personal customer",
+        "purpose": "Read separated cash/refund/promo balances and permitted redemption"
+      },
+      {
+        "route": "/seller/wallet",
+        "spec_path": "03-experience/dashboards/seller.md",
+        "role": "seller finance",
+        "purpose": "Read confirmed commission/holds and request eligible withdrawal"
+      },
+      {
+        "route": "/ops/refunds-settlements",
+        "spec_path": "03-experience/dashboards/operations.md",
+        "role": "finance maker/checker",
+        "purpose": "Check/reconcile approved wallet withdrawal or refund"
+      }
+    ],
+    "applicability": {
+      "kind": "interactive",
+      "reason": "Interactive task is presented on the listed authored route(s); action/field authorization and domain state are checked separately from dashboard entry."
+    }
+  },
+  {
+    "id": "GRW-03",
+    "status": "draft",
+    "source_refs": [
+      "S00"
+    ],
+    "surfaces": [
+      {
+        "route": "/account/wallet-and-rewards",
+        "spec_path": "03-experience/dashboards/customer.md",
+        "role": "personal customer",
+        "purpose": "View points, missions, rewards, badges, expiry and separately approved games/draw/charity options"
+      },
+      {
+        "route": "/admin/marketing",
+        "spec_path": "03-experience/dashboards/admin.md",
+        "role": "catalog/content editor; configuration checker",
+        "purpose": "Version/review loyalty rules, reward budgets, fraud and regulated-mechanic gates"
+      }
+    ],
+    "applicability": {
+      "kind": "interactive",
+      "reason": "Interactive task is presented on the listed authored route(s); action/field authorization and domain state are checked separately from dashboard entry."
+    }
+  },
+  {
+    "id": "GRW-04",
+    "status": "draft",
+    "source_refs": [
+      "S00"
+    ],
+    "surfaces": [
+      {
+        "route": "/account/referrals",
+        "spec_path": "03-experience/dashboards/customer.md",
+        "role": "personal customer",
+        "purpose": "Manage own referral code/link and pending/confirmed/reversed qualifying rewards"
+      },
+      {
+        "route": "/seller/settings",
+        "spec_path": "03-experience/dashboards/seller.md",
+        "role": "seller",
+        "purpose": "View contract-authorized attribution codes"
+      },
+      {
+        "route": "/admin/marketing",
+        "spec_path": "03-experience/dashboards/admin.md",
+        "role": "catalog/content editor; configuration checker",
+        "purpose": "Review attribution, caps, budgets and anti-self-referral controls"
+      }
+    ],
+    "applicability": {
+      "kind": "interactive",
+      "reason": "Interactive task is presented on the listed authored route(s); action/field authorization and domain state are checked separately from dashboard entry."
+    }
+  },
+  {
+    "id": "GRW-05",
+    "status": "draft",
+    "source_refs": [
+      "S00"
+    ],
+    "surfaces": [
+      {
+        "route": "/",
+        "spec_path": "03-experience/screen-and-route-inventory.md",
+        "role": "public visitor under applicable consent",
+        "purpose": "View eligible original campaign placement/landing content"
+      },
+      {
+        "route": "/admin/marketing",
+        "spec_path": "03-experience/dashboards/admin.md",
+        "role": "catalog/content editor; configuration checker",
+        "purpose": "Plan/schedule/approve segments, budgets, targeting and channel/product restrictions"
+      }
+    ],
+    "applicability": {
+      "kind": "interactive",
+      "reason": "Interactive task is presented on the listed authored route(s); action/field authorization and domain state are checked separately from dashboard entry."
+    }
+  },
+  {
+    "id": "GRW-06",
+    "status": "draft",
+    "source_refs": [
+      "S00"
+    ],
+    "surfaces": [
+      {
+        "route": "/seller/onboarding",
+        "spec_path": "03-experience/dashboards/seller.md",
+        "role": "seller",
+        "purpose": "Submit contract/evidence and training prerequisites"
+      },
+      {
+        "route": "/seller/leads",
+        "spec_path": "03-experience/dashboards/seller.md",
+        "role": "seller; team manager",
+        "purpose": "Work scoped CRM, assignment and assisted-sale pipeline"
+      },
+      {
+        "route": "/seller/commissions",
+        "spec_path": "03-experience/dashboards/seller.md",
+        "role": "seller finance",
+        "purpose": "View own commission statement/disputes"
+      },
+      {
+        "route": "/seller/reports",
+        "spec_path": "03-experience/dashboards/seller.md",
+        "role": "seller; team manager",
+        "purpose": "Review scoped sales/renewal performance"
+      }
+    ],
+    "applicability": {
+      "kind": "interactive",
+      "reason": "Interactive task is presented on the listed authored route(s); action/field authorization and domain state are checked separately from dashboard entry."
+    }
+  },
+  {
+    "id": "GRW-07",
+    "status": "draft",
+    "source_refs": [
+      "S00"
+    ],
+    "surfaces": [
+      {
+        "route": "/org/:orgId/quotes",
+        "spec_path": "03-experience/dashboards/corporate.md",
+        "role": "requester; approver/checker",
+        "purpose": "Request/review negotiated group/commercial proposals"
+      },
+      {
+        "route": "/org/:orgId/contracts",
+        "spec_path": "03-experience/dashboards/corporate.md",
+        "role": "organization admin; requester",
+        "purpose": "Review own agreement and account-team handoff"
+      },
+      {
+        "route": "/admin/corporate",
+        "spec_path": "03-experience/dashboards/admin.md",
+        "role": "tenant administrator with commercial scope",
+        "purpose": "Coordinate corporate leads/accounts and exceptions"
+      }
+    ],
+    "applicability": {
+      "kind": "interactive",
+      "reason": "Interactive task is presented on the listed authored route(s); action/field authorization and domain state are checked separately from dashboard entry."
+    }
+  },
+  {
+    "id": "GRW-08",
+    "status": "draft",
+    "source_refs": [
+      "S00"
+    ],
+    "surfaces": [
+      {
+        "route": "/guides/:slug",
+        "spec_path": "03-experience/screen-and-route-inventory.md",
+        "role": "public visitor",
+        "purpose": "Read original approved articles/FAQs/product guidance"
+      },
+      {
+        "route": "/search",
+        "spec_path": "03-experience/screen-and-route-inventory.md",
+        "role": "public visitor",
+        "purpose": "Search only public approved content"
+      },
+      {
+        "route": "/insurers/:slug",
+        "spec_path": "03-experience/screen-and-route-inventory.md",
+        "role": "public visitor",
+        "purpose": "Read original approved insurer profiles"
+      },
+      {
+        "route": "/admin/marketing",
+        "spec_path": "03-experience/dashboards/admin.md",
+        "role": "catalog/content editor; configuration checker",
+        "purpose": "Manage CMS revisions, redirects, metadata and indexing approval"
+      }
+    ],
+    "applicability": {
+      "kind": "interactive",
+      "reason": "Interactive task is presented on the listed authored route(s); action/field authorization and domain state are checked separately from dashboard entry."
+    }
+  },
+  {
+    "id": "GRW-09",
+    "status": "draft",
+    "source_refs": [
+      "S00"
+    ],
+    "surfaces": [
+      {
+        "route": "/account/notifications",
+        "spec_path": "03-experience/dashboards/customer.md",
+        "role": "personal customer",
+        "purpose": "Read safe transactional/reminder delivery and authorized destination"
+      },
+      {
+        "route": "/account/settings",
+        "spec_path": "03-experience/dashboards/customer.md",
+        "role": "personal customer",
+        "purpose": "Manage communication preferences and separate marketing consent"
+      },
+      {
+        "route": "/admin/settings",
+        "spec_path": "03-experience/dashboards/admin.md",
+        "role": "platform configuration maker; configuration checker",
+        "purpose": "Version approved templates/audiences and dashboard communication configuration"
+      },
+      {
+        "route": "/ops/notifications",
+        "spec_path": "03-experience/dashboards/operations.md",
+        "role": "support agent or assigned operational role",
+        "purpose": "Read assigned case/shift messages"
+      }
+    ],
+    "applicability": {
+      "kind": "interactive",
+      "reason": "Interactive task is presented on the listed authored route(s); action/field authorization and domain state are checked separately from dashboard entry."
+    }
+  },
+  {
+    "id": "GRW-10",
+    "status": "draft",
+    "source_refs": [
+      "S00"
+    ],
+    "surfaces": [
+      {
+        "route": "/applications/:id",
+        "spec_path": "03-experience/screen-and-route-inventory.md",
+        "role": "authorized applicant/customer",
+        "purpose": "Use responsive form, secure mobile upload and truthful reconnect behavior"
+      },
+      {
+        "route": "/account/settings",
+        "spec_path": "03-experience/dashboards/customer.md",
+        "role": "personal customer",
+        "purpose": "Manage permission-aware web/PWA notifications and preferences"
+      },
+      {
+        "route": "/account",
+        "spec_path": "03-experience/dashboards/customer.md",
+        "role": "personal customer",
+        "purpose": "Use installable responsive portal; native-app scope remains separate undecided work"
+      }
+    ],
+    "applicability": {
+      "kind": "interactive",
+      "reason": "Interactive task is presented on the listed authored route(s); action/field authorization and domain state are checked separately from dashboard entry."
+    }
+  },
+  {
+    "id": "AUTO-01",
+    "status": "draft",
+    "source_refs": [
+      "S00"
+    ],
+    "surfaces": [
+      {
+        "route": "/account/garage",
+        "spec_path": "03-experience/dashboards/customer.md",
+        "role": "personal customer; authorized vehicle delegate",
+        "purpose": "Manage multiple vehicle/motorcycle relationships, policy links and deadlines"
+      },
+      {
+        "route": "/account/people-and-assets",
+        "spec_path": "03-experience/dashboards/customer.md",
+        "role": "personal customer",
+        "purpose": "Maintain authorized asset identity and ownership changes"
+      }
+    ],
+    "applicability": {
+      "kind": "interactive",
+      "reason": "Interactive task is presented on the listed authored route(s); action/field authorization and domain state are checked separately from dashboard entry."
+    }
+  },
+  {
+    "id": "AUTO-02",
+    "status": "draft",
+    "source_refs": [
+      "S00"
+    ],
+    "surfaces": [
+      {
+        "route": "/account/garage",
+        "spec_path": "03-experience/dashboards/customer.md",
+        "role": "personal customer; authorized vehicle delegate",
+        "purpose": "Request supported official fine/toll/tax/license/plate/registration/inspection/history inquiry with provenance/freshness"
+      },
+      {
+        "route": "/ops/partner-exceptions",
+        "spec_path": "03-experience/dashboards/operations.md",
+        "role": "provider operations with inquiry scope",
+        "purpose": "Resolve provider failures, unsupported inquiry and disputed provenance"
+      }
+    ],
+    "applicability": {
+      "kind": "interactive",
+      "reason": "Interactive task is presented on the listed authored route(s); action/field authorization and domain state are checked separately from dashboard entry."
+    }
+  },
+  {
+    "id": "AUTO-03",
+    "status": "draft",
+    "source_refs": [
+      "S00"
+    ],
+    "surfaces": [
+      {
+        "route": "/account/garage",
+        "spec_path": "03-experience/dashboards/customer.md",
+        "role": "authorized vehicle payer",
+        "purpose": "Review eligible official obligations, fee disclosure and supported payment request"
+      },
+      {
+        "route": "/account/payments",
+        "spec_path": "03-experience/dashboards/customer.md",
+        "role": "personal customer or authorized payer",
+        "purpose": "Read official receipt/pending settlement and allocation"
+      },
+      {
+        "route": "/ops/reconciliation",
+        "spec_path": "03-experience/dashboards/operations.md",
+        "role": "finance maker/checker",
+        "purpose": "Resolve duplicate/unmatched automotive provider settlement"
+      }
+    ],
+    "applicability": {
+      "kind": "interactive",
+      "reason": "Interactive task is presented on the listed authored route(s); action/field authorization and domain state are checked separately from dashboard entry."
+    }
+  },
+  {
+    "id": "AUTO-04",
+    "status": "draft",
+    "source_refs": [
+      "S00"
+    ],
+    "surfaces": [
+      {
+        "route": "/account/vehicle-alerts",
+        "spec_path": "03-experience/dashboards/customer.md",
+        "role": "personal customer; authorized vehicle delegate",
+        "purpose": "Manage reminders/inquiry alerts and explicit paid SMS subscription/renewal"
+      },
+      {
+        "route": "/account/settings",
+        "spec_path": "03-experience/dashboards/customer.md",
+        "role": "personal customer",
+        "purpose": "Set allowed communication preferences without hidden subscription consent"
+      },
+      {
+        "route": "/admin/automotive",
+        "spec_path": "03-experience/dashboards/admin.md",
+        "role": "platform configuration maker; configuration checker",
+        "purpose": "Review provider capability and alert/subscription offering"
+      }
+    ],
+    "applicability": {
+      "kind": "interactive",
+      "reason": "Interactive task is presented on the listed authored route(s); action/field authorization and domain state are checked separately from dashboard entry."
+    }
+  },
+  {
+    "id": "AUTO-05",
+    "status": "draft",
+    "source_refs": [
+      "S00"
+    ],
+    "surfaces": [
+      {
+        "route": "/automotive/services",
+        "spec_path": "03-experience/screen-and-route-inventory.md",
+        "role": "authorized service customer",
+        "purpose": "Discover permitted providers/locations and book compatible maintenance service/slot"
+      },
+      {
+        "route": "/partner/service-orders",
+        "spec_path": "03-experience/dashboards/carrier.md",
+        "role": "supplier operator",
+        "purpose": "Accept/fulfill own contracted booking"
+      },
+      {
+        "route": "/ops/fulfillment",
+        "spec_path": "03-experience/dashboards/operations.md",
+        "role": "provider operations",
+        "purpose": "Resolve cancellation, rebooking, commission and complaint handoff"
+      }
+    ],
+    "applicability": {
+      "kind": "interactive",
+      "reason": "Interactive task is presented on the listed authored route(s); action/field authorization and domain state are checked separately from dashboard entry."
+    }
+  },
+  {
+    "id": "AUTO-06",
+    "status": "draft",
+    "source_refs": [
+      "S00"
+    ],
+    "surfaces": [
+      {
+        "route": "/automotive/parts",
+        "spec_path": "03-experience/screen-and-route-inventory.md",
+        "role": "authorized commerce customer",
+        "purpose": "Check compatibility/inventory, cart, shipping and permitted returns"
+      },
+      {
+        "route": "/partner/service-orders",
+        "spec_path": "03-experience/dashboards/carrier.md",
+        "role": "supplier operator",
+        "purpose": "Fulfill own parts order and return workflow"
+      },
+      {
+        "route": "/admin/automotive",
+        "spec_path": "03-experience/dashboards/admin.md",
+        "role": "platform configuration maker",
+        "purpose": "Review seller/catalog/provider configuration"
+      },
+      {
+        "route": "/ops/fulfillment",
+        "spec_path": "03-experience/dashboards/operations.md",
+        "role": "provider operations",
+        "purpose": "Resolve shipping/returns and finance handoff"
+      }
+    ],
+    "applicability": {
+      "kind": "interactive",
+      "reason": "Interactive task is presented on the listed authored route(s); action/field authorization and domain state are checked separately from dashboard entry."
+    }
+  },
+  {
+    "id": "AUTO-07",
+    "status": "draft",
+    "source_refs": [
+      "S00"
+    ],
+    "surfaces": [
+      {
+        "route": "/automotive/trading",
+        "spec_path": "03-experience/screen-and-route-inventory.md",
+        "role": "authorized vehicle owner/buyer under separately approved capability",
+        "purpose": "Use separately gated valuation/listing/history/auction/contract/secure-transaction/debt-settlement workflow"
+      },
+      {
+        "route": "/admin/automotive",
+        "spec_path": "03-experience/dashboards/admin.md",
+        "role": "platform configuration maker; configuration checker",
+        "purpose": "Review each vehicle-trading provider/authority gate separately"
+      },
+      {
+        "route": "/ops/partner-exceptions",
+        "spec_path": "03-experience/dashboards/operations.md",
+        "role": "provider operations",
+        "purpose": "Resolve trading-provider exception without assuming transaction authority"
+      }
+    ],
+    "applicability": {
+      "kind": "interactive",
+      "reason": "Interactive task is presented on the listed authored route(s); action/field authorization and domain state are checked separately from dashboard entry."
+    }
+  },
+  {
+    "id": "AUTO-08",
+    "status": "draft",
+    "source_refs": [
+      "S00"
+    ],
+    "surfaces": [
+      {
+        "route": "/account/vehicle-utilities",
+        "spec_path": "03-experience/dashboards/customer.md",
+        "role": "personal customer; authorized vehicle delegate",
+        "purpose": "View protected digital vehicle documents and provider road-condition/technical-report utilities with freshness"
+      },
+      {
+        "route": "/account/documents",
+        "spec_path": "03-experience/dashboards/customer.md",
+        "role": "personal customer",
+        "purpose": "Retrieve own authorized vehicle document reference"
+      },
+      {
+        "route": "/admin/automotive",
+        "spec_path": "03-experience/dashboards/admin.md",
+        "role": "platform configuration maker",
+        "purpose": "Review utility provenance, supported capability and official-claim restrictions"
+      }
+    ],
+    "applicability": {
+      "kind": "interactive",
+      "reason": "Interactive task is presented on the listed authored route(s); action/field authorization and domain state are checked separately from dashboard entry."
+    }
+  },
+  {
+    "id": "ECO-01",
+    "status": "draft",
+    "source_refs": [
+      "S00"
+    ],
+    "surfaces": [
+      {
+        "route": "/partner-referrals",
+        "spec_path": "03-experience/screen-and-route-inventory.md",
+        "role": "authorized prospective referral customer",
+        "purpose": "Review partner credit/investment disclosure, consent and referral boundary"
+      },
+      {
+        "route": "/admin/marketing",
+        "spec_path": "03-experience/dashboards/admin.md",
+        "role": "platform configuration maker; configuration checker",
+        "purpose": "Review approved referral campaign/attribution and authority restriction"
+      },
+      {
+        "route": "/ops/partner-exceptions",
+        "spec_path": "03-experience/dashboards/operations.md",
+        "role": "provider operations with referral scope",
+        "purpose": "Resolve referral handoff without direct regulated execution"
+      }
+    ],
+    "applicability": {
+      "kind": "interactive",
+      "reason": "Interactive task is presented on the listed authored route(s); action/field authorization and domain state are checked separately from dashboard entry."
+    }
+  },
+  {
+    "id": "CHN-01",
+    "status": "draft",
+    "source_refs": [
+      "S00"
+    ],
+    "surfaces": [
+      {
+        "route": "/admin/features",
+        "spec_path": "03-experience/dashboards/admin.md",
+        "role": "platform configuration maker; configuration checker",
+        "purpose": "Preview/approve independent B2C new-sales availability and cutoff"
+      },
+      {
+        "route": "/insurance",
+        "spec_path": "03-experience/screen-and-route-inventory.md",
+        "role": "public visitor",
+        "purpose": "See direct discovery availability distinct from other channels"
+      },
+      {
+        "route": "/checkout/:applicationId",
+        "spec_path": "03-experience/screen-and-route-inventory.md",
+        "role": "authorized buyer/payer",
+        "purpose": "Receive authoritative B2C commitment availability decision"
+      }
+    ],
+    "applicability": {
+      "kind": "interactive",
+      "reason": "Interactive task is presented on the listed authored route(s); action/field authorization and domain state are checked separately from dashboard entry."
+    }
+  },
+  {
+    "id": "CHN-02",
+    "status": "draft",
+    "source_refs": [
+      "S00"
+    ],
+    "surfaces": [
+      {
+        "route": "/admin/features",
+        "spec_path": "03-experience/dashboards/admin.md",
+        "role": "platform configuration maker; configuration checker",
+        "purpose": "Preview/approve independent B2B new-sales mode without disabling carriers"
+      },
+      {
+        "route": "/org/:orgId/quotes",
+        "spec_path": "03-experience/dashboards/corporate.md",
+        "role": "requester",
+        "purpose": "See corporate/commercial sales availability within organization scope"
+      },
+      {
+        "route": "/seller/quotes",
+        "spec_path": "03-experience/dashboards/seller.md",
+        "role": "seller",
+        "purpose": "See partner-sale availability under separate reseller rules"
+      }
+    ],
+    "applicability": {
+      "kind": "interactive",
+      "reason": "Interactive task is presented on the listed authored route(s); action/field authorization and domain state are checked separately from dashboard entry."
+    }
+  },
+  {
+    "id": "CHN-03",
+    "status": "draft",
+    "source_refs": [
+      "S00"
+    ],
+    "surfaces": [
+      {
+        "route": "/admin/features",
+        "spec_path": "03-experience/dashboards/admin.md",
+        "role": "platform configuration maker; configuration checker",
+        "purpose": "Configure independent corporate/commercial/reseller/B2B2C subchannels"
+      },
+      {
+        "route": "/benefits/dependents",
+        "spec_path": "03-experience/dashboards/beneficiary.md",
+        "role": "employee/beneficiary; authorized guardian",
+        "purpose": "See enrollment eligibility separately from existing benefit servicing"
+      },
+      {
+        "route": "/org/:orgId/quotes",
+        "spec_path": "03-experience/dashboards/corporate.md",
+        "role": "requester",
+        "purpose": "Use only enabled organization subchannel"
+      }
+    ],
+    "applicability": {
+      "kind": "interactive",
+      "reason": "Interactive task is presented on the listed authored route(s); action/field authorization and domain state are checked separately from dashboard entry."
+    }
+  },
+  {
+    "id": "CHN-04",
+    "status": "draft",
+    "source_refs": [
+      "S00"
+    ],
+    "surfaces": [
+      {
+        "route": "/admin/features",
+        "spec_path": "03-experience/dashboards/admin.md",
+        "role": "platform configuration maker; configuration checker",
+        "purpose": "Propose/preview/schedule scoped availability, dependencies and rollback"
+      },
+      {
+        "route": "/admin/settings",
+        "spec_path": "03-experience/dashboards/admin.md",
+        "role": "platform configuration maker",
+        "purpose": "Apply menu/widget presentation after server availability and permission intersection"
+      }
+    ],
+    "applicability": {
+      "kind": "interactive",
+      "reason": "Interactive task is presented on the listed authored route(s); action/field authorization and domain state are checked separately from dashboard entry."
+    }
+  },
+  {
+    "id": "CHN-05",
+    "status": "draft",
+    "source_refs": [
+      "S00"
+    ],
+    "surfaces": [
+      {
+        "route": "/admin/features",
+        "spec_path": "03-experience/dashboards/admin.md",
+        "role": "platform configuration maker; configuration checker",
+        "purpose": "Review servicing/partner-delivery impact independently of new sales and quarantine"
+      },
+      {
+        "route": "/orders/:id",
+        "spec_path": "03-experience/screen-and-route-inventory.md",
+        "role": "authorized buyer/policyholder",
+        "purpose": "Track previously committed order during sales shutdown"
+      },
+      {
+        "route": "/ops/issuance",
+        "spec_path": "03-experience/dashboards/operations.md",
+        "role": "issuance operator",
+        "purpose": "Continue permitted committed delivery or handle separate quarantine"
+      },
+      {
+        "route": "/account/policies",
+        "spec_path": "03-experience/dashboards/customer.md",
+        "role": "personal customer",
+        "purpose": "Retain entitled policy access and servicing"
+      }
+    ],
+    "applicability": {
+      "kind": "interactive",
+      "reason": "Interactive task is presented on the listed authored route(s); action/field authorization and domain state are checked separately from dashboard entry."
+    }
+  },
+  {
+    "id": "ORG-01",
+    "status": "draft",
+    "source_refs": [
+      "S00"
+    ],
+    "surfaces": [
+      {
+        "route": "/admin/organizations",
+        "spec_path": "03-experience/dashboards/admin.md",
+        "role": "tenant administrator",
+        "purpose": "Onboard legal entity and buyer/supplier/distributor relationships"
+      },
+      {
+        "route": "/org/:orgId/branches",
+        "spec_path": "03-experience/dashboards/corporate.md",
+        "role": "organization admin",
+        "purpose": "Manage delegated branch/department/cost-center hierarchy"
+      },
+      {
+        "route": "/org/:orgId",
+        "spec_path": "03-experience/dashboards/corporate.md",
+        "role": "corporate viewer",
+        "purpose": "See explicit organization context and portfolio"
+      }
+    ],
+    "applicability": {
+      "kind": "interactive",
+      "reason": "Interactive task is presented on the listed authored route(s); action/field authorization and domain state are checked separately from dashboard entry."
+    }
+  },
+  {
+    "id": "ORG-02",
+    "status": "draft",
+    "source_refs": [
+      "S00"
+    ],
+    "surfaces": [
+      {
+        "route": "/org/:orgId/team",
+        "spec_path": "03-experience/dashboards/corporate.md",
+        "role": "organization admin",
+        "purpose": "Invite/revoke/review scoped memberships and delegated roles"
+      },
+      {
+        "route": "/account/settings",
+        "spec_path": "03-experience/dashboards/customer.md",
+        "role": "personal customer",
+        "purpose": "Review personal sessions and mandate/context relationships"
+      },
+      {
+        "route": "/admin/security-audit",
+        "spec_path": "03-experience/dashboards/admin.md",
+        "role": "security administrator",
+        "purpose": "Audit grants, revocations and cross-context denials"
+      }
+    ],
+    "applicability": {
+      "kind": "interactive",
+      "reason": "Interactive task is presented on the listed authored route(s); action/field authorization and domain state are checked separately from dashboard entry."
+    }
+  },
+  {
+    "id": "ORG-03",
+    "status": "draft",
+    "source_refs": [
+      "S00"
+    ],
+    "surfaces": [
+      {
+        "route": "/org/:orgId/approvals",
+        "spec_path": "03-experience/dashboards/corporate.md",
+        "role": "requester; approver/checker",
+        "purpose": "Separate request/check/commit with exact version, limits and budgets"
+      },
+      {
+        "route": "/org/:orgId/billing",
+        "spec_path": "03-experience/dashboards/corporate.md",
+        "role": "finance payer",
+        "purpose": "Review invoices, approved credit/prepay and allocations"
+      },
+      {
+        "route": "/ops/refunds-settlements",
+        "spec_path": "03-experience/dashboards/operations.md",
+        "role": "finance maker/checker",
+        "purpose": "Handle authorized finance exceptions with segregation of duties"
+      }
+    ],
+    "applicability": {
+      "kind": "interactive",
+      "reason": "Interactive task is presented on the listed authored route(s); action/field authorization and domain state are checked separately from dashboard entry."
+    }
+  },
+  {
+    "id": "ORG-04",
+    "status": "draft",
+    "source_refs": [
+      "S00"
+    ],
+    "surfaces": [
+      {
+        "route": "/org/:orgId/census",
+        "spec_path": "03-experience/dashboards/corporate.md",
+        "role": "enrollment administrator",
+        "purpose": "Import/preview/approve permitted employee/dependent changes and HR conflicts"
+      },
+      {
+        "route": "/org/:orgId/assets",
+        "spec_path": "03-experience/dashboards/corporate.md",
+        "role": "enrollment administrator with asset scope",
+        "purpose": "Import/preview approved fleet/asset schedule"
+      },
+      {
+        "route": "/ops/import-export",
+        "spec_path": "03-experience/dashboards/operations.md",
+        "role": "assigned bulk-processing operator",
+        "purpose": "Resolve row errors, partial policy, replay and export authorization"
+      }
+    ],
+    "applicability": {
+      "kind": "interactive",
+      "reason": "Interactive task is presented on the listed authored route(s); action/field authorization and domain state are checked separately from dashboard entry."
+    }
+  },
+  {
+    "id": "DSH-01",
+    "status": "draft",
+    "source_refs": [
+      "S00"
+    ],
+    "surfaces": [
+      {
+        "route": "/account",
+        "spec_path": "03-experience/dashboards/customer.md",
+        "role": "personal customer",
+        "purpose": "Enter B2C portfolio/task summary under personal scope"
+      },
+      {
+        "route": "/account/settings",
+        "spec_path": "03-experience/dashboards/customer.md",
+        "role": "personal customer",
+        "purpose": "Configure permitted preferences and sessions"
+      }
+    ],
+    "applicability": {
+      "kind": "interactive",
+      "reason": "Interactive task is presented on the listed authored route(s); action/field authorization and domain state are checked separately from dashboard entry."
+    }
+  },
+  {
+    "id": "DSH-02",
+    "status": "draft",
+    "source_refs": [
+      "S00"
+    ],
+    "surfaces": [
+      {
+        "route": "/org/:orgId",
+        "spec_path": "03-experience/dashboards/corporate.md",
+        "role": "corporate viewer; organization admin",
+        "purpose": "Enter organization portfolio, approval and billing summary"
+      },
+      {
+        "route": "/org/:orgId/reports",
+        "spec_path": "03-experience/dashboards/corporate.md",
+        "role": "corporate viewer with report grant",
+        "purpose": "Read restricted aggregate reports with suppression"
+      }
+    ],
+    "applicability": {
+      "kind": "interactive",
+      "reason": "Interactive task is presented on the listed authored route(s); action/field authorization and domain state are checked separately from dashboard entry."
+    }
+  },
+  {
+    "id": "DSH-03",
+    "status": "draft",
+    "source_refs": [
+      "S00"
+    ],
+    "surfaces": [
+      {
+        "route": "/benefits",
+        "spec_path": "03-experience/dashboards/beneficiary.md",
+        "role": "employee/beneficiary",
+        "purpose": "Enter own accepted benefits and pending enrollment"
+      },
+      {
+        "route": "/benefits/:enrollmentId/coverage",
+        "spec_path": "03-experience/dashboards/beneficiary.md",
+        "role": "employee/beneficiary; authorized guardian",
+        "purpose": "Read own coverage and documents without employer/peer access"
+      }
+    ],
+    "applicability": {
+      "kind": "interactive",
+      "reason": "Interactive task is presented on the listed authored route(s); action/field authorization and domain state are checked separately from dashboard entry."
+    }
+  },
+  {
+    "id": "DSH-04",
+    "status": "draft",
+    "source_refs": [
+      "S00"
+    ],
+    "surfaces": [
+      {
+        "route": "/seller",
+        "spec_path": "03-experience/dashboards/seller.md",
+        "role": "seller; team manager",
+        "purpose": "Enter delegated leads/sales/renewal summary"
+      },
+      {
+        "route": "/seller/reports",
+        "spec_path": "03-experience/dashboards/seller.md",
+        "role": "seller; team manager",
+        "purpose": "Read scoped performance/commission reporting"
+      }
+    ],
+    "applicability": {
+      "kind": "interactive",
+      "reason": "Interactive task is presented on the listed authored route(s); action/field authorization and domain state are checked separately from dashboard entry."
+    }
+  },
+  {
+    "id": "DSH-05",
+    "status": "draft",
+    "source_refs": [
+      "S00"
+    ],
+    "surfaces": [
+      {
+        "route": "/partner",
+        "spec_path": "03-experience/dashboards/carrier.md",
+        "role": "carrier operations; supplier operator",
+        "purpose": "Enter own carrier/supplier work summary under distinct capability grants"
+      },
+      {
+        "route": "/partner/settings",
+        "spec_path": "03-experience/dashboards/carrier.md",
+        "role": "carrier admin",
+        "purpose": "Manage approved organization settings/API-only metadata without exposing secrets"
+      }
+    ],
+    "applicability": {
+      "kind": "interactive",
+      "reason": "Interactive task is presented on the listed authored route(s); action/field authorization and domain state are checked separately from dashboard entry."
+    }
+  },
+  {
+    "id": "DSH-06",
+    "status": "draft",
+    "source_refs": [
+      "S00"
+    ],
+    "surfaces": [
+      {
+        "route": "/admin/settings",
+        "spec_path": "03-experience/dashboards/admin.md",
+        "role": "platform configuration maker; configuration checker",
+        "purpose": "Version/preview menu, widget, action and report definitions with server permission intersection"
+      },
+      {
+        "route": "/admin",
+        "spec_path": "03-experience/dashboards/admin.md",
+        "role": "platform configuration maker",
+        "purpose": "Navigate role-limited administration surfaces"
+      },
+      {
+        "route": "/ops",
+        "spec_path": "03-experience/dashboards/operations.md",
+        "role": "assigned operational staff",
+        "purpose": "Enter separate role-limited task queues and handover"
+      }
+    ],
+    "applicability": {
+      "kind": "interactive",
+      "reason": "Interactive task is presented on the listed authored route(s); action/field authorization and domain state are checked separately from dashboard entry."
+    }
+  },
+  {
+    "id": "INT-01",
+    "status": "draft",
+    "source_refs": [
+      "S00"
+    ],
+    "surfaces": [
+      {
+        "route": "/admin/integrations",
+        "spec_path": "03-experience/dashboards/admin.md",
+        "role": "platform configuration maker; configuration checker",
+        "purpose": "Inspect/review versioned canonical schema and recipient projection compatibility"
+      },
+      {
+        "route": "/ops/issuance",
+        "spec_path": "03-experience/dashboards/operations.md",
+        "role": "issuance operator",
+        "purpose": "Inspect committed purchase correlation/version references in assigned case"
+      }
+    ],
+    "applicability": {
+      "kind": "background_with_workbench",
+      "reason": "N/A standalone customer screen: canonical business/event schemas are internal contracts; the named workbenches inspect schema versions and committed correlation without exposing raw persistence data."
+    }
+  },
+  {
+    "id": "INT-02",
+    "status": "draft",
+    "source_refs": [
+      "S00"
+    ],
+    "surfaces": [
+      {
+        "route": "/admin/integrations",
+        "spec_path": "03-experience/dashboards/admin.md",
+        "role": "platform configuration maker; configuration checker",
+        "purpose": "Review per-carrier adapter versions, capabilities and safe promotion"
+      },
+      {
+        "route": "/partner/api-transactions",
+        "spec_path": "03-experience/dashboards/carrier.md",
+        "role": "carrier operations with diagnostic grant",
+        "purpose": "Inspect own masked protocol/mapping transaction evidence"
+      }
+    ],
+    "applicability": {
+      "kind": "background_with_workbench",
+      "reason": "N/A standalone customer screen: adapter execution is a backend boundary; integration studio and partner diagnostics expose approved version/capability evidence only."
+    }
+  },
+  {
+    "id": "INT-03",
+    "status": "draft",
+    "source_refs": [
+      "S00"
+    ],
+    "surfaces": [
+      {
+        "route": "/ops/issuance",
+        "spec_path": "03-experience/dashboards/operations.md",
+        "role": "issuance operator",
+        "purpose": "Observe durable committed transmission, first attempt and exceptions"
+      },
+      {
+        "route": "/orders/:id",
+        "spec_path": "03-experience/screen-and-route-inventory.md",
+        "role": "authorized buyer/policyholder",
+        "purpose": "See committed order awaiting carrier without false issuance"
+      },
+      {
+        "route": "/partner/submissions",
+        "spec_path": "03-experience/dashboards/carrier.md",
+        "role": "carrier operations",
+        "purpose": "Receive own required recipient-scoped submission"
+      }
+    ],
+    "applicability": {
+      "kind": "background_with_workbench",
+      "reason": "N/A customer send button: post-purchase transmission is triggered by durable authoritative commitment; customers see safe status and staff use issuance exceptions."
+    }
+  },
+  {
+    "id": "INT-04",
+    "status": "draft",
+    "source_refs": [
+      "S00"
+    ],
+    "surfaces": [
+      {
+        "route": "/admin/integrations",
+        "spec_path": "03-experience/dashboards/admin.md",
+        "role": "platform configuration maker; configuration checker",
+        "purpose": "Validate versioned canonical/provider fields, enums, dates, money and mapping errors"
+      },
+      {
+        "route": "/ops/partner-exceptions",
+        "spec_path": "03-experience/dashboards/operations.md",
+        "role": "assigned integration operator",
+        "purpose": "Resolve mapping/permanent/transient/ambiguous failure classification"
+      }
+    ],
+    "applicability": {
+      "kind": "background_with_workbench",
+      "reason": "N/A customer mapping editor: schema transformation runs at partner boundaries; only approved configuration/review and masked exception handling are interactive."
+    }
+  },
+  {
+    "id": "INT-05",
+    "status": "draft",
+    "source_refs": [
+      "S00"
+    ],
+    "surfaces": [
+      {
+        "route": "/admin/integrations",
+        "spec_path": "03-experience/dashboards/admin.md",
+        "role": "security administrator with integration configuration grant",
+        "purpose": "Review endpoint/authentication/secret-reference/rotation evidence without secret disclosure"
+      },
+      {
+        "route": "/partner/settings",
+        "spec_path": "03-experience/dashboards/carrier.md",
+        "role": "carrier admin",
+        "purpose": "Request approved credential rotation and inspect metadata"
+      }
+    ],
+    "applicability": {
+      "kind": "background_with_workbench",
+      "reason": "N/A customer authentication surface: partner credentials/protocols are backend configuration; restricted metadata/rotation workflow never returns secret values."
+    }
+  },
+  {
+    "id": "INT-06",
+    "status": "draft",
+    "source_refs": [
+      "S00"
+    ],
+    "surfaces": [
+      {
+        "route": "/admin/integrations",
+        "spec_path": "03-experience/dashboards/admin.md",
+        "role": "platform configuration maker; configuration checker",
+        "purpose": "Onboard/preview/certify/suspend environment-specific capabilities and endpoints"
+      },
+      {
+        "route": "/partner/settings",
+        "spec_path": "03-experience/dashboards/carrier.md",
+        "role": "carrier admin",
+        "purpose": "View own sandbox/live, degraded and API-only connection state"
+      }
+    ],
+    "applicability": {
+      "kind": "interactive",
+      "reason": "Interactive task is presented on the listed authored route(s); action/field authorization and domain state are checked separately from dashboard entry."
+    }
+  },
+  {
+    "id": "INT-07",
+    "status": "draft",
+    "source_refs": [
+      "S00"
+    ],
+    "surfaces": [
+      {
+        "route": "/ops/partner-exceptions",
+        "spec_path": "03-experience/dashboards/operations.md",
+        "role": "assigned integration operator",
+        "purpose": "Review retries/dead letters/unknown outcomes and permitted recovery action"
+      },
+      {
+        "route": "/ops/issuance",
+        "spec_path": "03-experience/dashboards/operations.md",
+        "role": "issuance operator",
+        "purpose": "Serialize safe replay only after required external outcome evidence"
+      },
+      {
+        "route": "/ops/reconciliation",
+        "spec_path": "03-experience/dashboards/operations.md",
+        "role": "finance maker/checker",
+        "purpose": "Resolve paid/unissued or monetary ambiguity against authoritative evidence"
+      }
+    ],
+    "applicability": {
+      "kind": "background_with_workbench",
+      "reason": "N/A customer retry control for external effects: outbox/inbox/deduplication are backend mechanisms; staff receive evidence-gated exception/reconciliation controls."
+    }
+  },
+  {
+    "id": "INT-08",
+    "status": "draft",
+    "source_refs": [
+      "S00"
+    ],
+    "surfaces": [
+      {
+        "route": "/ops/issuance",
+        "spec_path": "03-experience/dashboards/operations.md",
+        "role": "issuance operator",
+        "purpose": "Observe submit/status/issue/callback/polling state and independent finance state"
+      },
+      {
+        "route": "/partner/api-transactions",
+        "spec_path": "03-experience/dashboards/carrier.md",
+        "role": "carrier operations with diagnostic grant",
+        "purpose": "Inspect own sequence/correlation and deduplicated callbacks"
+      },
+      {
+        "route": "/ops/policy-changes",
+        "spec_path": "03-experience/dashboards/operations.md",
+        "role": "policy servicing/delivery operator",
+        "purpose": "Follow endorsement/cancellation asynchronous outcomes"
+      }
+    ],
+    "applicability": {
+      "kind": "background_with_workbench",
+      "reason": "N/A standalone workflow-engine page: synchronous/asynchronous execution is backend state; authorized parties inspect the associated issuance/servicing transaction."
+    }
+  },
+  {
+    "id": "INT-09",
+    "status": "draft",
+    "source_refs": [
+      "S00"
+    ],
+    "surfaces": [
+      {
+        "route": "/admin/integrations",
+        "spec_path": "03-experience/dashboards/admin.md",
+        "role": "platform configuration maker; configuration checker",
+        "purpose": "Review fictional simulator/conformance evidence and masked health/latency metrics"
+      },
+      {
+        "route": "/ops/partner-exceptions",
+        "spec_path": "03-experience/dashboards/operations.md",
+        "role": "assigned integration operator",
+        "purpose": "Investigate bounded failure injection/observability and recovery evidence"
+      },
+      {
+        "route": "/partner/api-transactions",
+        "spec_path": "03-experience/dashboards/carrier.md",
+        "role": "carrier operations with diagnostic grant",
+        "purpose": "Review own masked transaction diagnostics"
+      }
+    ],
+    "applicability": {
+      "kind": "background_with_workbench",
+      "reason": "N/A production customer test console: simulator/fault tests are local/sandbox release evidence; integration studio and scoped diagnostics expose approved results and incidents."
+    }
+  },
+  {
+    "id": "INT-10",
+    "status": "draft",
+    "source_refs": [
+      "S00"
+    ],
+    "surfaces": [
+      {
+        "route": "/admin/integrations",
+        "spec_path": "03-experience/dashboards/admin.md",
+        "role": "platform configuration maker; configuration checker",
+        "purpose": "Review mapping/contract compatibility, recipient routing and controlled version rollout/rollback"
+      },
+      {
+        "route": "/admin/security-audit",
+        "spec_path": "03-experience/dashboards/admin.md",
+        "role": "security administrator",
+        "purpose": "Inspect authorized delivery/export/webhook audit"
+      },
+      {
+        "route": "/partner/api-transactions",
+        "spec_path": "03-experience/dashboards/carrier.md",
+        "role": "carrier operations with diagnostic grant",
+        "purpose": "Read own delivery contract/mapping version and status"
+      }
+    ],
+    "applicability": {
+      "kind": "background_with_workbench",
+      "reason": "N/A customer event-routing page: routing/version compatibility is backend configuration; restricted studio/audit surfaces review changes and recipient delivery evidence."
+    }
+  }
+]

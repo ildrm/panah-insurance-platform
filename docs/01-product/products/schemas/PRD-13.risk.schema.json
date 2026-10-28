@@ -1,0 +1,62 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://insurance.invalid/schemas/PRD-13.risk.v1.schema.json",
+  "title": "PRD-13 synthetic risk input syntax",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "buildingRef",
+    "equipmentIdentifier",
+    "capacityKg",
+    "stopCount",
+    "limitOption"
+  ],
+  "properties": {
+    "buildingRef": {
+      "type": "string",
+      "format": "uuid",
+      "description": "required; authorized building/address. Sensitivity: confidential. Error: BUILDING_AUTHORITY_REQUIRED. Eligibility is contract-dependent."
+    },
+    "equipmentIdentifier": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 100,
+      "description": "required; 1–100 NFC characters, unique within building. Sensitivity: confidential. Error: ELEVATOR_IDENTIFIER_REQUIRED. Eligibility is contract-dependent."
+    },
+    "capacityPersons": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 10000,
+      "description": "conditional by equipment type; 1–10000 technical bound. Sensitivity: internal. Error: CAPACITY_INVALID. Eligibility is contract-dependent."
+    },
+    "capacityKg": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 1000000,
+      "description": "required; 1–1000000 technical bound. Sensitivity: internal. Error: CAPACITY_INVALID. Eligibility is contract-dependent."
+    },
+    "stopCount": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 1000,
+      "description": "required; 1–1000 technical bound. Sensitivity: internal. Error: STOP_COUNT_INVALID. Eligibility is contract-dependent."
+    },
+    "maintenanceEvidenceRef": {
+      "type": "string",
+      "format": "uuid",
+      "description": "conditional by carrier; current agreement/service evidence. Sensitivity: restricted. Error: MAINTENANCE_EVIDENCE_REQUIRED. Eligibility is contract-dependent."
+    },
+    "inspectionEvidenceRef": {
+      "type": "string",
+      "format": "uuid",
+      "description": "conditional before issue; approved provider inspection with expiry. Sensitivity: restricted. Error: INSPECTION_EXPIRED. Eligibility is contract-dependent."
+    },
+    "limitOption": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 40,
+      "description": "required; offered per-person/per-event basis. Sensitivity: financial. Error: LIMIT_UNAVAILABLE. Eligibility is contract-dependent."
+    }
+  },
+  "description": "Strict syntax baseline. Conditional predicates, cross-field dates/sums/relationships and actual carrier eligibility require the versioned application validator; passing this schema is not underwriting acceptance."
+}

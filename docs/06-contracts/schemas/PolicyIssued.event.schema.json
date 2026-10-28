@@ -1,0 +1,107 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://insurance.example.invalid/schemas/PolicyIssued.event.schema.json",
+  "title": "PolicyIssued",
+  "type": "object",
+  "properties": {
+    "eventId": {
+      "type": "string",
+      "format": "uuid"
+    },
+    "eventType": {
+      "const": "policy.issued.v1"
+    },
+    "schemaVersion": {
+      "const": 1
+    },
+    "occurredAt": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "correlationId": {
+      "type": "string",
+      "format": "uuid"
+    },
+    "causationId": {
+      "type": "string",
+      "format": "uuid"
+    },
+    "aggregateId": {
+      "type": "string",
+      "format": "uuid"
+    },
+    "aggregateVersion": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 2147483647
+    },
+    "contextRef": {
+      "type": "string",
+      "format": "uuid"
+    },
+    "data": {
+      "type": "object",
+      "properties": {
+        "policyId": {
+          "type": "string",
+          "format": "uuid"
+        },
+        "policyVersion": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 2147483647
+        },
+        "purchaseId": {
+          "type": "string",
+          "format": "uuid"
+        },
+        "carrierReference": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 128
+        },
+        "effectiveFrom": {
+          "type": "string",
+          "format": "date"
+        },
+        "effectiveUntil": {
+          "type": "string",
+          "format": "date"
+        },
+        "dateSemanticsRef": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 128,
+          "pattern": "^[A-Za-z0-9_.:-]+$"
+        },
+        "documentManifestRef": {
+          "type": "string",
+          "format": "uuid"
+        }
+      },
+      "required": [
+        "policyId",
+        "policyVersion",
+        "purchaseId",
+        "carrierReference",
+        "effectiveFrom",
+        "effectiveUntil",
+        "dateSemanticsRef",
+        "documentManifestRef"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "required": [
+    "eventId",
+    "eventType",
+    "schemaVersion",
+    "occurredAt",
+    "correlationId",
+    "aggregateId",
+    "aggregateVersion",
+    "contextRef",
+    "data"
+  ],
+  "additionalProperties": false
+}

@@ -1,0 +1,80 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://insurance.invalid/schemas/PRD-06.risk.v1.schema.json",
+  "title": "PRD-06 synthetic risk input syntax",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "memberRefs",
+    "relationshipCodes",
+    "birthDates",
+    "benefitPlanCode"
+  ],
+  "properties": {
+    "memberRefs": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 100,
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "format": "uuid"
+      },
+      "description": "required; 1–100 stable authorized person refs; batch above this. Sensitivity: restricted. Error: MEMBER_AUTHORITY_REQUIRED. Eligibility is contract-dependent."
+    },
+    "relationshipCodes": {
+      "type": "object",
+      "minProperties": 1,
+      "maxProperties": 100,
+      "additionalProperties": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 100
+      },
+      "description": "required; one carrier-compatible relationship per member. Sensitivity: restricted. Error: RELATIONSHIP_INVALID. Eligibility is contract-dependent."
+    },
+    "birthDates": {
+      "type": "object",
+      "minProperties": 1,
+      "maxProperties": 100,
+      "additionalProperties": {
+        "type": "string",
+        "format": "date"
+      },
+      "description": "required by rating; valid dates, not future; restricted projection. Sensitivity: restricted. Error: BIRTH_DATE_INVALID. Eligibility is contract-dependent."
+    },
+    "baseCoverageRefs": {
+      "type": "object",
+      "minProperties": 1,
+      "maxProperties": 100,
+      "additionalProperties": {
+        "type": "string",
+        "format": "uuid"
+      },
+      "description": "conditional by plan; verified evidence and current status. Sensitivity: restricted. Error: BASE_COVERAGE_REQUIRED. Eligibility is contract-dependent."
+    },
+    "healthDeclarationRefs": {
+      "type": "object",
+      "minProperties": 1,
+      "maxProperties": 100,
+      "additionalProperties": {
+        "type": "string",
+        "format": "uuid"
+      },
+      "description": "conditional by underwriting; member-specific restricted evidence. Sensitivity: highly restricted. Error: DECLARATION_REQUIRED. Eligibility is contract-dependent."
+    },
+    "benefitPlanCode": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 40,
+      "description": "required; carrier plan version <= 40 code points. Sensitivity: internal. Error: BENEFIT_PLAN_INVALID. Eligibility is contract-dependent."
+    },
+    "networkCode": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 40,
+      "description": "conditional; offered provider-network revision. Sensitivity: internal. Error: NETWORK_UNAVAILABLE. Eligibility is contract-dependent."
+    }
+  },
+  "description": "Strict syntax baseline. Conditional predicates, cross-field dates/sums/relationships and actual carrier eligibility require the versioned application validator; passing this schema is not underwriting acceptance."
+}

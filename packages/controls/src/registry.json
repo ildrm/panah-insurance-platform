@@ -1,0 +1,700 @@
+[
+  {
+    "key": "sales.b2c",
+    "mandatory": false,
+    "default": false,
+    "dependencies": []
+  },
+  {
+    "key": "sales.b2b",
+    "mandatory": false,
+    "default": false,
+    "dependencies": []
+  },
+  {
+    "key": "sales.b2b.corporate",
+    "mandatory": false,
+    "default": false,
+    "dependencies": [
+      "sales.b2b"
+    ]
+  },
+  {
+    "key": "sales.b2b.commercial",
+    "mandatory": false,
+    "default": false,
+    "dependencies": [
+      "sales.b2b"
+    ]
+  },
+  {
+    "key": "sales.b2b.reseller",
+    "mandatory": false,
+    "default": false,
+    "dependencies": [
+      "sales.b2b"
+    ]
+  },
+  {
+    "key": "sales.b2b.b2b2c",
+    "mandatory": false,
+    "default": false,
+    "dependencies": [
+      "sales.b2b"
+    ]
+  },
+  {
+    "key": "servicing.enabled",
+    "mandatory": false,
+    "default": true,
+    "dependencies": []
+  },
+  {
+    "key": "partner_delivery.enabled",
+    "mandatory": false,
+    "default": true,
+    "dependencies": []
+  },
+  {
+    "key": "security.quarantine",
+    "mandatory": false,
+    "default": false,
+    "dependencies": []
+  },
+  {
+    "key": "feature.INS-01.enabled",
+    "mandatory": false,
+    "default": false,
+    "dependencies": []
+  },
+  {
+    "key": "feature.INS-02.enabled",
+    "mandatory": false,
+    "default": false,
+    "dependencies": []
+  },
+  {
+    "key": "feature.INS-03.enabled",
+    "mandatory": false,
+    "default": false,
+    "dependencies": []
+  },
+  {
+    "key": "feature.INS-04.enabled",
+    "mandatory": false,
+    "default": false,
+    "dependencies": []
+  },
+  {
+    "key": "feature.INS-05.enabled",
+    "mandatory": false,
+    "default": false,
+    "dependencies": []
+  },
+  {
+    "key": "feature.INS-06.enabled",
+    "mandatory": false,
+    "default": false,
+    "dependencies": []
+  },
+  {
+    "key": "feature.INS-07.enabled",
+    "mandatory": false,
+    "default": false,
+    "dependencies": []
+  },
+  {
+    "key": "feature.INS-08.enabled",
+    "mandatory": false,
+    "default": false,
+    "dependencies": []
+  },
+  {
+    "key": "feature.INS-09.enabled",
+    "mandatory": false,
+    "default": false,
+    "dependencies": []
+  },
+  {
+    "key": "feature.INS-10.enabled",
+    "mandatory": false,
+    "default": false,
+    "dependencies": []
+  },
+  {
+    "key": "feature.INS-11.enabled",
+    "mandatory": false,
+    "default": false,
+    "dependencies": []
+  },
+  {
+    "key": "feature.INS-12.enabled",
+    "mandatory": false,
+    "default": false,
+    "dependencies": []
+  },
+  {
+    "key": "feature.COM-01.enabled",
+    "mandatory": false,
+    "default": false,
+    "dependencies": []
+  },
+  {
+    "key": "feature.COM-02.enabled",
+    "mandatory": false,
+    "default": false,
+    "dependencies": []
+  },
+  {
+    "key": "feature.COM-03.enabled",
+    "mandatory": false,
+    "default": false,
+    "dependencies": []
+  },
+  {
+    "key": "feature.COM-04.enabled",
+    "mandatory": false,
+    "default": false,
+    "dependencies": []
+  },
+  {
+    "key": "feature.COM-05.enabled",
+    "mandatory": false,
+    "default": false,
+    "dependencies": []
+  },
+  {
+    "key": "feature.COM-06.enabled",
+    "mandatory": false,
+    "default": false,
+    "dependencies": []
+  },
+  {
+    "key": "feature.COM-07.enabled",
+    "mandatory": false,
+    "default": false,
+    "dependencies": []
+  },
+  {
+    "key": "feature.COM-08.enabled",
+    "mandatory": false,
+    "default": false,
+    "dependencies": []
+  },
+  {
+    "key": "feature.COM-09.enabled",
+    "mandatory": false,
+    "default": false,
+    "dependencies": []
+  },
+  {
+    "key": "feature.SVC-01.servicing",
+    "mandatory": false,
+    "default": false,
+    "dependencies": []
+  },
+  {
+    "key": "feature.SVC-02.servicing",
+    "mandatory": false,
+    "default": false,
+    "dependencies": []
+  },
+  {
+    "key": "feature.SVC-03.servicing",
+    "mandatory": false,
+    "default": false,
+    "dependencies": []
+  },
+  {
+    "key": "feature.SVC-04.servicing",
+    "mandatory": false,
+    "default": false,
+    "dependencies": []
+  },
+  {
+    "key": "feature.SVC-05.servicing",
+    "mandatory": false,
+    "default": false,
+    "dependencies": []
+  },
+  {
+    "key": "feature.SVC-06.servicing",
+    "mandatory": false,
+    "default": false,
+    "dependencies": []
+  },
+  {
+    "key": "feature.SVC-07.servicing",
+    "mandatory": false,
+    "default": false,
+    "dependencies": []
+  },
+  {
+    "key": "feature.SVC-08.servicing",
+    "mandatory": false,
+    "default": false,
+    "dependencies": []
+  },
+  {
+    "key": "feature.SVC-09.servicing",
+    "mandatory": false,
+    "default": false,
+    "dependencies": []
+  },
+  {
+    "key": "feature.GRW-01.enabled",
+    "mandatory": true,
+    "default": true,
+    "dependencies": []
+  },
+  {
+    "key": "feature.GRW-02.enabled",
+    "mandatory": false,
+    "default": false,
+    "dependencies": []
+  },
+  {
+    "key": "feature.GRW-03.enabled",
+    "mandatory": false,
+    "default": false,
+    "dependencies": []
+  },
+  {
+    "key": "feature.GRW-04.enabled",
+    "mandatory": false,
+    "default": false,
+    "dependencies": []
+  },
+  {
+    "key": "feature.GRW-05.enabled",
+    "mandatory": false,
+    "default": false,
+    "dependencies": []
+  },
+  {
+    "key": "feature.GRW-06.enabled",
+    "mandatory": false,
+    "default": false,
+    "dependencies": []
+  },
+  {
+    "key": "feature.GRW-07.enabled",
+    "mandatory": false,
+    "default": false,
+    "dependencies": []
+  },
+  {
+    "key": "feature.GRW-08.enabled",
+    "mandatory": false,
+    "default": false,
+    "dependencies": []
+  },
+  {
+    "key": "feature.GRW-09.enabled",
+    "mandatory": false,
+    "default": false,
+    "dependencies": []
+  },
+  {
+    "key": "feature.GRW-10.enabled",
+    "mandatory": false,
+    "default": false,
+    "dependencies": []
+  },
+  {
+    "key": "feature.AUTO-01.enabled",
+    "mandatory": false,
+    "default": false,
+    "dependencies": []
+  },
+  {
+    "key": "feature.AUTO-02.enabled",
+    "mandatory": false,
+    "default": false,
+    "dependencies": []
+  },
+  {
+    "key": "feature.AUTO-03.enabled",
+    "mandatory": false,
+    "default": false,
+    "dependencies": []
+  },
+  {
+    "key": "feature.AUTO-04.enabled",
+    "mandatory": false,
+    "default": false,
+    "dependencies": []
+  },
+  {
+    "key": "feature.AUTO-05.enabled",
+    "mandatory": false,
+    "default": false,
+    "dependencies": []
+  },
+  {
+    "key": "feature.AUTO-06.enabled",
+    "mandatory": false,
+    "default": false,
+    "dependencies": []
+  },
+  {
+    "key": "feature.AUTO-07.enabled",
+    "mandatory": false,
+    "default": false,
+    "dependencies": []
+  },
+  {
+    "key": "feature.AUTO-08.enabled",
+    "mandatory": false,
+    "default": false,
+    "dependencies": []
+  },
+  {
+    "key": "feature.ECO-01.enabled",
+    "mandatory": false,
+    "default": false,
+    "dependencies": []
+  },
+  {
+    "key": "feature.CHN-01.enabled",
+    "mandatory": true,
+    "default": true,
+    "dependencies": []
+  },
+  {
+    "key": "feature.CHN-02.enabled",
+    "mandatory": true,
+    "default": true,
+    "dependencies": []
+  },
+  {
+    "key": "feature.CHN-03.enabled",
+    "mandatory": true,
+    "default": true,
+    "dependencies": []
+  },
+  {
+    "key": "feature.CHN-04.enabled",
+    "mandatory": true,
+    "default": true,
+    "dependencies": []
+  },
+  {
+    "key": "feature.CHN-05.enabled",
+    "mandatory": true,
+    "default": true,
+    "dependencies": []
+  },
+  {
+    "key": "feature.ORG-01.enabled",
+    "mandatory": false,
+    "default": false,
+    "dependencies": []
+  },
+  {
+    "key": "feature.ORG-02.enabled",
+    "mandatory": true,
+    "default": true,
+    "dependencies": []
+  },
+  {
+    "key": "feature.ORG-03.enabled",
+    "mandatory": false,
+    "default": false,
+    "dependencies": []
+  },
+  {
+    "key": "feature.ORG-04.enabled",
+    "mandatory": false,
+    "default": false,
+    "dependencies": []
+  },
+  {
+    "key": "feature.DSH-01.servicing",
+    "mandatory": false,
+    "default": false,
+    "dependencies": []
+  },
+  {
+    "key": "feature.DSH-02.servicing",
+    "mandatory": false,
+    "default": false,
+    "dependencies": []
+  },
+  {
+    "key": "feature.DSH-03.servicing",
+    "mandatory": false,
+    "default": false,
+    "dependencies": []
+  },
+  {
+    "key": "feature.DSH-04.servicing",
+    "mandatory": false,
+    "default": false,
+    "dependencies": []
+  },
+  {
+    "key": "feature.DSH-05.servicing",
+    "mandatory": false,
+    "default": false,
+    "dependencies": []
+  },
+  {
+    "key": "feature.DSH-06.servicing",
+    "mandatory": false,
+    "default": false,
+    "dependencies": []
+  },
+  {
+    "key": "feature.INT-01.enabled",
+    "mandatory": true,
+    "default": true,
+    "dependencies": []
+  },
+  {
+    "key": "feature.INT-02.enabled",
+    "mandatory": false,
+    "default": false,
+    "dependencies": []
+  },
+  {
+    "key": "feature.INT-03.enabled",
+    "mandatory": false,
+    "default": false,
+    "dependencies": []
+  },
+  {
+    "key": "feature.INT-04.enabled",
+    "mandatory": true,
+    "default": true,
+    "dependencies": []
+  },
+  {
+    "key": "feature.INT-05.enabled",
+    "mandatory": true,
+    "default": true,
+    "dependencies": []
+  },
+  {
+    "key": "feature.INT-06.enabled",
+    "mandatory": false,
+    "default": false,
+    "dependencies": []
+  },
+  {
+    "key": "feature.INT-07.enabled",
+    "mandatory": true,
+    "default": true,
+    "dependencies": []
+  },
+  {
+    "key": "feature.INT-08.enabled",
+    "mandatory": false,
+    "default": false,
+    "dependencies": []
+  },
+  {
+    "key": "feature.INT-09.enabled",
+    "mandatory": false,
+    "default": false,
+    "dependencies": []
+  },
+  {
+    "key": "feature.INT-10.enabled",
+    "mandatory": true,
+    "default": true,
+    "dependencies": []
+  },
+  {
+    "key": "product.PRD-01.new_sales",
+    "mandatory": false,
+    "default": false,
+    "dependencies": [
+      "feature.INS-11.enabled"
+    ]
+  },
+  {
+    "key": "product.PRD-02.new_sales",
+    "mandatory": false,
+    "default": false,
+    "dependencies": [
+      "feature.INS-11.enabled"
+    ]
+  },
+  {
+    "key": "product.PRD-03.new_sales",
+    "mandatory": false,
+    "default": false,
+    "dependencies": [
+      "feature.INS-11.enabled"
+    ]
+  },
+  {
+    "key": "product.PRD-04.new_sales",
+    "mandatory": false,
+    "default": false,
+    "dependencies": [
+      "feature.INS-11.enabled"
+    ]
+  },
+  {
+    "key": "product.PRD-05.new_sales",
+    "mandatory": false,
+    "default": false,
+    "dependencies": [
+      "feature.INS-11.enabled"
+    ]
+  },
+  {
+    "key": "product.PRD-06.new_sales",
+    "mandatory": false,
+    "default": false,
+    "dependencies": [
+      "feature.INS-11.enabled"
+    ]
+  },
+  {
+    "key": "product.PRD-07.new_sales",
+    "mandatory": false,
+    "default": false,
+    "dependencies": [
+      "feature.INS-11.enabled"
+    ]
+  },
+  {
+    "key": "product.PRD-08.new_sales",
+    "mandatory": false,
+    "default": false,
+    "dependencies": [
+      "feature.INS-11.enabled"
+    ]
+  },
+  {
+    "key": "product.PRD-09.new_sales",
+    "mandatory": false,
+    "default": false,
+    "dependencies": [
+      "feature.INS-11.enabled"
+    ]
+  },
+  {
+    "key": "product.PRD-10.new_sales",
+    "mandatory": false,
+    "default": false,
+    "dependencies": [
+      "feature.INS-11.enabled"
+    ]
+  },
+  {
+    "key": "product.PRD-11.new_sales",
+    "mandatory": false,
+    "default": false,
+    "dependencies": [
+      "feature.INS-11.enabled"
+    ]
+  },
+  {
+    "key": "product.PRD-12.new_sales",
+    "mandatory": false,
+    "default": false,
+    "dependencies": [
+      "feature.INS-11.enabled"
+    ]
+  },
+  {
+    "key": "product.PRD-13.new_sales",
+    "mandatory": false,
+    "default": false,
+    "dependencies": [
+      "feature.INS-11.enabled"
+    ]
+  },
+  {
+    "key": "product.PRD-14.new_sales",
+    "mandatory": false,
+    "default": false,
+    "dependencies": [
+      "feature.INS-11.enabled"
+    ]
+  },
+  {
+    "key": "product.PRD-15.new_sales",
+    "mandatory": false,
+    "default": false,
+    "dependencies": [
+      "feature.INS-11.enabled"
+    ]
+  },
+  {
+    "key": "product.PRD-16.new_sales",
+    "mandatory": false,
+    "default": false,
+    "dependencies": [
+      "feature.INS-11.enabled"
+    ]
+  },
+  {
+    "key": "product.PRD-17.new_sales",
+    "mandatory": false,
+    "default": false,
+    "dependencies": [
+      "feature.INS-11.enabled"
+    ]
+  },
+  {
+    "key": "product.PRD-18.new_sales",
+    "mandatory": false,
+    "default": false,
+    "dependencies": [
+      "feature.INS-11.enabled"
+    ]
+  },
+  {
+    "key": "product.PRD-19.new_sales",
+    "mandatory": false,
+    "default": false,
+    "dependencies": [
+      "feature.INS-11.enabled"
+    ]
+  },
+  {
+    "key": "product.PRD-20.new_sales",
+    "mandatory": false,
+    "default": false,
+    "dependencies": [
+      "feature.INS-11.enabled"
+    ]
+  },
+  {
+    "key": "product.PRD-21.new_sales",
+    "mandatory": false,
+    "default": false,
+    "dependencies": [
+      "feature.INS-11.enabled"
+    ]
+  },
+  {
+    "key": "product.PRD-22.new_sales",
+    "mandatory": false,
+    "default": false,
+    "dependencies": [
+      "feature.INS-11.enabled"
+    ]
+  },
+  {
+    "key": "product.PRD-23.new_sales",
+    "mandatory": false,
+    "default": false,
+    "dependencies": [
+      "feature.INS-11.enabled"
+    ]
+  },
+  {
+    "key": "product.PRD-24.new_sales",
+    "mandatory": false,
+    "default": false,
+    "dependencies": [
+      "feature.INS-11.enabled"
+    ]
+  }
+]

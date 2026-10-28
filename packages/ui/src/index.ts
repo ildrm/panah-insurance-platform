@@ -1,0 +1,3 @@
+export const designTokens = { text: '#172b4d', muted: '#52627a', surface: '#ffffff', subtle: '#f4f7fa', border: '#d5dfe7', action: '#005a78', focus: '#6b3fa0', success: '#166534', warning: '#854d0e', danger: '#b42318' } as const;
+export function formatRials(amount: string): string { try { return new Intl.NumberFormat('fa-IR').format(BigInt(amount)); } catch { return '—'; } }
+export function formatToman(amount: string): string { try { const signed = BigInt(amount); const n = signed < 0n ? -signed : signed; const units = n / 10n; const remainder = n % 10n; return (signed < 0n ? '−' : '') + formatRials(units.toString()) + (remainder ? '٫' + formatRials(remainder.toString()) : ''); } catch { return '—'; } }

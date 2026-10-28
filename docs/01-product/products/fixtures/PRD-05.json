@@ -1,0 +1,30 @@
+{
+  "fixtureId": "FIX-PRD-05",
+  "synthetic": true,
+  "productId": "PRD-05",
+  "schemaRef": "../schemas/PRD-05.risk.schema.json",
+  "riskExample": {
+    "coverageMode": "rider",
+    "constructionCode": "SYNTH-STRUCTURE-A",
+    "insuredValue": "9000000000",
+    "limitOption": "SYNTH-EQ-LIMIT",
+    "deductibleOption": "SYNTH-EQ-DEDUCT",
+    "basePolicyOrQuoteRef": "00000000-0000-4000-8000-000000000502",
+    "locationRef": "00000000-0000-4000-8000-000000000503"
+  },
+  "canonicalContext": {
+    "currency": "IRR",
+    "unit": "rial",
+    "channel": "b2c",
+    "partyAndAuthorityFixture": "Synthetic authorized buyer/payer/policyholder/insured roles; referenced UUIDs resolve only in the local test harness.",
+    "productRuleVersion": "SYNTH-1",
+    "liveOperationsAllowed": false
+  },
+  "scenarioContext": {},
+  "expected": {
+    "withoutContract": "live_quote_and_purchase_disabled",
+    "syntacticValidation": "pass",
+    "carrierEligibility": "undetermined_without_synthetic_rule_set",
+    "variant": "The base policy is cancelled between quote and purchase: the rider commitment fails dependency validation and offers an authorized assisted path without charging for invalid cover."
+  }
+}

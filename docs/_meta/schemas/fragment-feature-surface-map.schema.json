@@ -1,0 +1,83 @@
+{
+  "type": "array",
+  "items": {
+    "type": "object",
+    "properties": {
+      "applicability": {
+        "type": "object",
+        "properties": {
+          "kind": {
+            "type": "string",
+            "minLength": 1
+          },
+          "reason": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "required": [
+          "kind",
+          "reason"
+        ],
+        "additionalProperties": false
+      },
+      "id": {
+        "type": "string",
+        "minLength": 1
+      },
+      "source_refs": {
+        "type": "array",
+        "items": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "status": {
+        "type": "string",
+        "minLength": 1
+      },
+      "surfaces": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "purpose": {
+              "type": "string",
+              "minLength": 1
+            },
+            "role": {
+              "type": "string",
+              "minLength": 1
+            },
+            "route": {
+              "type": "string",
+              "minLength": 1
+            },
+            "spec_path": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "required": [
+            "purpose",
+            "role",
+            "route",
+            "spec_path"
+          ],
+          "additionalProperties": false
+        }
+      }
+    },
+    "required": [
+      "applicability",
+      "id",
+      "source_refs",
+      "status",
+      "surfaces"
+    ],
+    "additionalProperties": false
+  },
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://insurance.example.invalid/meta/fragment-feature-surface-map.schema.json",
+  "title": "Authored feature-surface-map build input v1"
+}

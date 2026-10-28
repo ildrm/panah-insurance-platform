@@ -1,0 +1,471 @@
+{
+  "id": "REG-ASVS-PRODUCT-CONTROLS",
+  "title": "Product threat controls mapped to verified ASVS requirements",
+  "version": "1.0.0",
+  "status": "draft",
+  "owner_role": "R11",
+  "reviewer_roles": [
+    "R13"
+  ],
+  "scope_ids": [
+    "ORG-02",
+    "COM-02",
+    "COM-03",
+    "INT-05",
+    "INT-07",
+    "GRW-01"
+  ],
+  "source_refs": [
+    "S11",
+    "S12",
+    "S13",
+    "S14",
+    "S15",
+    "S16",
+    "S17",
+    "S18",
+    "S19",
+    "S20",
+    "S21",
+    "S22"
+  ],
+  "assumption_refs": [
+    "A01"
+  ],
+  "updated": "2026-10-28",
+  "schema_ref": "asvs-product-control-map.schema.json",
+  "entries": [
+    {
+      "id": "SEC-MAP-01",
+      "threat": "Cross-context object/property access",
+      "standard": "OWASP ASVS",
+      "standard_version": "5.0.0",
+      "requirement_ids": [
+        "8.1.1",
+        "8.1.2",
+        "8.2.1",
+        "8.2.2",
+        "8.2.3",
+        "8.3.1",
+        "8.3.2",
+        "8.3.3",
+        "8.4.1"
+      ],
+      "source_refs": [
+        "S11"
+      ],
+      "checked": "2026-10-28",
+      "status": "design-mapped-not-tested",
+      "owner_role": "R11",
+      "reviewer_roles": [
+        "R13"
+      ],
+      "test_ids": [
+        "SEC-AUTH-01",
+        "SEC-AUTH-02",
+        "SEC-AUTH-03",
+        "SEC-AUTH-04"
+      ],
+      "specification_path": "08-security/authorization-and-tenant-isolation.md",
+      "control": "Current subject/context/relationship and field policy at trusted service boundary; selected L3 revocation/origin rules."
+    },
+    {
+      "id": "SEC-MAP-02",
+      "threat": "Account takeover and OTP replay",
+      "standard": "OWASP ASVS",
+      "standard_version": "5.0.0",
+      "requirement_ids": [
+        "6.1.1",
+        "6.3.1",
+        "6.3.3",
+        "6.3.4",
+        "6.4.3",
+        "6.5.1",
+        "6.5.3"
+      ],
+      "source_refs": [
+        "S12"
+      ],
+      "checked": "2026-10-28",
+      "status": "design-mapped-not-tested",
+      "owner_role": "R11",
+      "reviewer_roles": [
+        "R13"
+      ],
+      "test_ids": [
+        "SEC-ABUSE-03",
+        "SEC-POL-001",
+        "SEC-POL-003",
+        "SEC-POL-016"
+      ],
+      "specification_path": "08-security/authentication-sessions-and-privileged-access.md",
+      "control": "Single-use challenges, aggregate anti-automation and privileged MFA; OTP-only customer L2 gap stays an explicit decision."
+    },
+    {
+      "id": "SEC-MAP-03",
+      "threat": "Session fixation and stale sessions",
+      "standard": "OWASP ASVS",
+      "standard_version": "5.0.0",
+      "requirement_ids": [
+        "7.1.1",
+        "7.1.2",
+        "7.2.1",
+        "7.2.3",
+        "7.2.4",
+        "7.3.1",
+        "7.3.2",
+        "7.4.1",
+        "7.4.2",
+        "7.5.1"
+      ],
+      "source_refs": [
+        "S13"
+      ],
+      "checked": "2026-10-28",
+      "status": "design-mapped-not-tested",
+      "owner_role": "R11",
+      "reviewer_roles": [
+        "R13"
+      ],
+      "test_ids": [
+        "OPS-ACCESS-01",
+        "SEC-POL-008",
+        "SEC-POL-012",
+        "SEC-POL-015"
+      ],
+      "specification_path": "08-security/authentication-sessions-and-privileged-access.md",
+      "control": "Reference sessions rotate/revoke; proposed lifetimes, concurrency and step-up require risk review."
+    },
+    {
+      "id": "SEC-MAP-04",
+      "threat": "Cache, telemetry and employer health leakage",
+      "standard": "OWASP ASVS",
+      "standard_version": "5.0.0",
+      "requirement_ids": [
+        "14.1.1",
+        "14.1.2",
+        "14.2.1",
+        "14.2.2",
+        "14.2.3",
+        "14.3.1",
+        "14.3.2",
+        "14.3.3"
+      ],
+      "source_refs": [
+        "S14"
+      ],
+      "checked": "2026-10-28",
+      "status": "design-mapped-not-tested",
+      "owner_role": "R11",
+      "reviewer_roles": [
+        "R13"
+      ],
+      "test_ids": [
+        "SEC-PRIV-01",
+        "SEC-PRIV-02",
+        "CACHE-01",
+        "CACHE-02",
+        "CACHE-03"
+      ],
+      "specification_path": "08-security/privacy-data-classification-and-consent.md",
+      "control": "Classified recipient projection, no shared private cache and client clearing on context/session changes."
+    },
+    {
+      "id": "SEC-MAP-05",
+      "threat": "SQL, script, CMS and spreadsheet injection",
+      "standard": "OWASP ASVS",
+      "standard_version": "5.0.0",
+      "requirement_ids": [
+        "1.1.1",
+        "1.1.2",
+        "1.2.1",
+        "1.2.3",
+        "1.2.4",
+        "1.2.10",
+        "1.3.1",
+        "1.3.2",
+        "1.3.7"
+      ],
+      "source_refs": [
+        "S15"
+      ],
+      "checked": "2026-10-28",
+      "status": "design-mapped-not-tested",
+      "owner_role": "R11",
+      "reviewer_roles": [
+        "R13"
+      ],
+      "test_ids": [
+        "SEC-API-02",
+        "BULK-04",
+        "MAP-03"
+      ],
+      "specification_path": "08-security/secure-development-and-api-controls.md",
+      "control": "Parameterized SQL and allowed sort fields; context encoding, sanitized CMS, formula-safe export and no administrator eval."
+    },
+    {
+      "id": "SEC-MAP-06",
+      "threat": "SSRF, unsafe XML and parser manipulation",
+      "standard": "OWASP ASVS",
+      "standard_version": "5.0.0",
+      "requirement_ids": [
+        "1.3.6",
+        "1.5.1",
+        "1.5.2",
+        "1.5.3"
+      ],
+      "source_refs": [
+        "S15"
+      ],
+      "checked": "2026-10-28",
+      "status": "design-mapped-not-tested",
+      "owner_role": "R11",
+      "reviewer_roles": [
+        "R13"
+      ],
+      "test_ids": [
+        "NET-01",
+        "SEC-API-03",
+        "SDK-03"
+      ],
+      "specification_path": "04-architecture/deployment-and-network.md",
+      "control": "Protocol/host/path/port allowlists, connection-time destination checking, disabled XML entities, consistent parsing."
+    },
+    {
+      "id": "SEC-MAP-07",
+      "threat": "Invalid input, double spend and approval bypass",
+      "standard": "OWASP ASVS",
+      "standard_version": "5.0.0",
+      "requirement_ids": [
+        "2.1.1",
+        "2.1.2",
+        "2.1.3",
+        "2.2.1",
+        "2.2.2",
+        "2.2.3",
+        "2.3.1",
+        "2.3.2",
+        "2.3.3",
+        "2.3.4",
+        "2.3.5",
+        "2.4.1"
+      ],
+      "source_refs": [
+        "S16"
+      ],
+      "checked": "2026-10-28",
+      "status": "design-mapped-not-tested",
+      "owner_role": "R11",
+      "reviewer_roles": [
+        "R13"
+      ],
+      "test_ids": [
+        "FIN-01",
+        "FIN-02",
+        "SEC-API-01",
+        "SEC-ABUSE-01",
+        "BATCH-TX-01"
+      ],
+      "specification_path": "05-data/aggregate-and-transaction-boundaries.md",
+      "control": "Boundary schemas, contextual money/party checks, atomicity, locking, dual control and bounded fan-out."
+    },
+    {
+      "id": "SEC-MAP-08",
+      "threat": "Proxy header spoofing and HTTP ambiguity",
+      "standard": "OWASP ASVS",
+      "standard_version": "5.0.0",
+      "requirement_ids": [
+        "4.1.1",
+        "4.1.3",
+        "4.2.1"
+      ],
+      "source_refs": [
+        "S17"
+      ],
+      "checked": "2026-10-28",
+      "status": "design-mapped-not-tested",
+      "owner_role": "R11",
+      "reviewer_roles": [
+        "R13"
+      ],
+      "test_ids": [
+        "SEC-HTTP-01",
+        "SEC-HTTP-02",
+        "SEC-API-04"
+      ],
+      "specification_path": "08-security/secure-development-and-api-controls.md",
+      "control": "Strip untrusted forwarded/user headers at ingress; add identity only in verified service context; consistent HTTP framing/content types."
+    },
+    {
+      "id": "SEC-MAP-09",
+      "threat": "Malicious uploads and document paths",
+      "standard": "OWASP ASVS",
+      "standard_version": "5.0.0",
+      "requirement_ids": [
+        "5.1.1",
+        "5.2.1",
+        "5.2.2",
+        "5.2.3",
+        "5.2.4",
+        "5.2.6",
+        "5.3.1",
+        "5.3.2",
+        "5.4.1",
+        "5.4.2"
+      ],
+      "source_refs": [
+        "S18"
+      ],
+      "checked": "2026-10-28",
+      "status": "design-mapped-not-tested",
+      "owner_role": "R11",
+      "reviewer_roles": [
+        "R13"
+      ],
+      "test_ids": [
+        "FILE-01",
+        "FILE-02",
+        "FILE-03",
+        "FILE-04"
+      ],
+      "specification_path": "05-data/files-and-document-security.md",
+      "control": "Permitted types/limits, scan quarantine, bounded processing, opaque keys and safe authorized download names; selected L3 quotas/pixel bounds."
+    },
+    {
+      "id": "SEC-MAP-10",
+      "threat": "Weak cryptography and key reuse",
+      "standard": "OWASP ASVS",
+      "standard_version": "5.0.0",
+      "requirement_ids": [
+        "11.1.1",
+        "11.1.2",
+        "11.2.1",
+        "11.2.2",
+        "11.3.3",
+        "11.4.1",
+        "11.5.1"
+      ],
+      "source_refs": [
+        "S19"
+      ],
+      "checked": "2026-10-28",
+      "status": "design-mapped-not-tested",
+      "owner_role": "R11",
+      "reviewer_roles": [
+        "R13"
+      ],
+      "test_ids": [
+        "SEC-AUDIT-02",
+        "SECRET-01",
+        "SEC-POL-014"
+      ],
+      "specification_path": "08-security/secrets-encryption-and-audit.md",
+      "control": "Key purpose/version/lifecycle inventory; maintained implementations, authenticated encryption, CSPRNG and replaceable algorithms."
+    },
+    {
+      "id": "SEC-MAP-11",
+      "threat": "Forged service identity and insecure transport",
+      "standard": "OWASP ASVS",
+      "standard_version": "5.0.0",
+      "requirement_ids": [
+        "12.1.3",
+        "12.2.1",
+        "12.2.2",
+        "12.3.1",
+        "12.3.2",
+        "12.3.3",
+        "12.3.4"
+      ],
+      "source_refs": [
+        "S20"
+      ],
+      "checked": "2026-10-28",
+      "status": "design-mapped-not-tested",
+      "owner_role": "R11",
+      "reviewer_roles": [
+        "R13"
+      ],
+      "test_ids": [
+        "SECRET-02",
+        "NET-01",
+        "OPS-ENV-01"
+      ],
+      "specification_path": "07-integrations/authentication-and-secrets.md",
+      "control": "Authenticated boundaries and trusted certificate verification; TLS without fallback; mTLS conditional on actual contract."
+    },
+    {
+      "id": "SEC-MAP-12",
+      "threat": "Secret exposure and unauthorized egress",
+      "standard": "OWASP ASVS",
+      "standard_version": "5.0.0",
+      "requirement_ids": [
+        "13.1.1",
+        "13.2.1",
+        "13.2.2",
+        "13.2.4",
+        "13.2.5",
+        "13.3.1",
+        "13.3.2",
+        "13.3.4"
+      ],
+      "source_refs": [
+        "S21"
+      ],
+      "checked": "2026-10-28",
+      "status": "design-mapped-not-tested",
+      "owner_role": "R11",
+      "reviewer_roles": [
+        "R13"
+      ],
+      "test_ids": [
+        "SECRET-01",
+        "SECRET-02",
+        "NET-01",
+        "OPS-ACCESS-02"
+      ],
+      "specification_path": "08-security/secrets-encryption-and-audit.md",
+      "control": "Secret-store references, least privilege, allowlisted destinations and reviewed rotation; partner static-key exception requires review."
+    },
+    {
+      "id": "SEC-MAP-13",
+      "threat": "Audit tampering, log leaks and fail-open errors",
+      "standard": "OWASP ASVS",
+      "standard_version": "5.0.0",
+      "requirement_ids": [
+        "16.1.1",
+        "16.2.1",
+        "16.2.2",
+        "16.2.3",
+        "16.2.4",
+        "16.2.5",
+        "16.3.1",
+        "16.3.2",
+        "16.3.3",
+        "16.3.4",
+        "16.4.1",
+        "16.4.2",
+        "16.4.3",
+        "16.5.1",
+        "16.5.2",
+        "16.5.3"
+      ],
+      "source_refs": [
+        "S22"
+      ],
+      "checked": "2026-10-28",
+      "status": "design-mapped-not-tested",
+      "owner_role": "R11",
+      "reviewer_roles": [
+        "R13"
+      ],
+      "test_ids": [
+        "SEC-AUDIT-01",
+        "SEC-AUDIT-03",
+        "SEC-AUDIT-04",
+        "OPS-OBS-02"
+      ],
+      "specification_path": "08-security/secrets-encryption-and-audit.md",
+      "control": "Structured minimal audit, protected independent collection, safe errors, redaction and fail-closed critical checks."
+    }
+  ]
+}

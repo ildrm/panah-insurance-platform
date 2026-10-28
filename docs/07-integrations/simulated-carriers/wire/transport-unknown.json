@@ -1,0 +1,8 @@
+{
+  "kind": "transport_unknown",
+  "scenario": "timeout_after_acceptance",
+  "responseReceived": false,
+  "requestMayHaveBeenAccepted": true,
+  "expectedLocalState": "external_outcome_unknown",
+  "automaticResubmitAllowed": false
+}

@@ -1,0 +1,35 @@
+{
+  "fixtureId": "FIX-PRD-18",
+  "synthetic": true,
+  "productId": "PRD-18",
+  "schemaRef": "../schemas/PRD-18.risk.schema.json",
+  "riskExample": {
+    "projectName": "Synthetic Bridge Project",
+    "projectTypeCode": "SYNTH-CIVIL",
+    "insuredValue": "200000000000",
+    "projectStart": "2027-01-01",
+    "projectEnd": "2028-06-30",
+    "siteRefs": [
+      "00000000-0000-4000-8000-000000001803"
+    ],
+    "contractorPartyRefs": [
+      "00000000-0000-4000-8000-000000001807"
+    ],
+    "technicalDossierRef": "00000000-0000-4000-8000-000000001808"
+  },
+  "canonicalContext": {
+    "currency": "IRR",
+    "unit": "rial",
+    "channel": "commercial",
+    "partyAndAuthorityFixture": "Synthetic authorized buyer/payer/policyholder/insured roles; referenced UUIDs resolve only in the local test harness.",
+    "productRuleVersion": "SYNTH-1",
+    "liveOperationsAllowed": false
+  },
+  "scenarioContext": {},
+  "expected": {
+    "withoutContract": "live_quote_and_purchase_disabled",
+    "syntacticValidation": "pass",
+    "carrierEligibility": "undetermined_without_synthetic_rule_set",
+    "variant": "A contractor changes the project completion date after checker approval: the approval and quote become stale, requiring a revised proposal before commitment."
+  }
+}

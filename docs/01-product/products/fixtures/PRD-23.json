@@ -1,0 +1,32 @@
+{
+  "fixtureId": "FIX-PRD-23",
+  "synthetic": true,
+  "productId": "PRD-23",
+  "schemaRef": "../schemas/PRD-23.risk.schema.json",
+  "riskExample": {
+    "coverageMode": "rider",
+    "eligibleTerritoryCode": "SYNTH-TERRITORY-A",
+    "insuredValue": "9000000000",
+    "perilDefinitionVersion": "SYNTH-WAR-DEFINITION-1",
+    "basePolicyOrQuoteRef": "00000000-0000-4000-8000-000000002302",
+    "propertyRef": "00000000-0000-4000-8000-000000002303",
+    "authorityEvidenceRef": "00000000-0000-4000-8000-000000002307"
+  },
+  "canonicalContext": {
+    "currency": "IRR",
+    "unit": "rial",
+    "channel": "b2c",
+    "partyAndAuthorityFixture": "Synthetic authorized buyer/payer/policyholder/insured roles; referenced UUIDs resolve only in the local test harness.",
+    "productRuleVersion": "SYNTH-1",
+    "liveOperationsAllowed": false
+  },
+  "scenarioContext": {
+    "simulationOnly": true
+  },
+  "expected": {
+    "withoutContract": "live_quote_and_purchase_disabled",
+    "syntacticValidation": "pass",
+    "carrierEligibility": "undetermined_without_synthetic_rule_set",
+    "variant": "A simulated plan exists but authorityEvidenceRef is absent: live discovery cannot show it as available and every live quote/purchase request is rejected with an unavailable/assisted explanation."
+  }
+}

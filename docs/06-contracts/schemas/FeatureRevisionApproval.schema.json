@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://insurance.example.invalid/schemas/FeatureRevisionApproval.schema.json",
+  "title": "FeatureRevisionApproval",
+  "type": "object",
+  "properties": {
+    "proposalId": {
+      "type": "string",
+      "format": "uuid"
+    },
+    "expectedVersion": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 2147483647
+    },
+    "reason": {
+      "type": "string",
+      "minLength": 10,
+      "maxLength": 1000
+    }
+  },
+  "required": [
+    "proposalId",
+    "expectedVersion",
+    "reason"
+  ],
+  "additionalProperties": false
+}

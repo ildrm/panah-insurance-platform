@@ -1,0 +1,6 @@
+{
+  "kind": "rejection",
+  "code": "risk_ineligible",
+  "accepted": false,
+  "retriable": false
+}

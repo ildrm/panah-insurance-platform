@@ -1,0 +1,87 @@
+{
+  "type": "object",
+  "properties": {
+    "entries": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "ambiguity_rule": {
+            "type": "string",
+            "minLength": 1
+          },
+          "default": {
+            "type": "string",
+            "minLength": 1
+          },
+          "id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "negotiation": {
+            "type": "string",
+            "minLength": 1
+          },
+          "operation": {
+            "type": "string",
+            "minLength": 1
+          },
+          "recipient_scope": {
+            "type": "string",
+            "minLength": 1
+          },
+          "requires_authority": {
+            "type": "boolean"
+          },
+          "unsupported_behavior": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "required": [
+          "ambiguity_rule",
+          "default",
+          "id",
+          "negotiation",
+          "operation",
+          "recipient_scope",
+          "requires_authority",
+          "unsupported_behavior"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "status": {
+      "enum": [
+        "draft",
+        "proposed",
+        "partial",
+        "complete",
+        "blocked"
+      ]
+    },
+    "updated": {
+      "type": "string",
+      "minLength": 1
+    },
+    "version": {
+      "type": "string",
+      "minLength": 1
+    }
+  },
+  "required": [
+    "entries",
+    "id",
+    "status",
+    "updated",
+    "version"
+  ],
+  "additionalProperties": false,
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://insurance.example.invalid/meta/integration-capabilities.schema.json",
+  "title": "integration-capabilities registry v1"
+}

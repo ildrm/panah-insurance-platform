@@ -1,0 +1,66 @@
+{
+  "id": "STATUS-DOCUMENTATION",
+  "version": "1.0.0",
+  "status": "partial",
+  "updated": "2026-10-28",
+  "documentation_complete": false,
+  "completion_class": "full-scope-draft-with-open-validation-and-review",
+  "counts": {
+    "parent_features": 74,
+    "child_requirements": 230,
+    "product_families": 24,
+    "dashboards": 7,
+    "dashboard_routes": 100,
+    "workflows": 16,
+    "adrs": 14,
+    "api_operations": 238,
+    "event_channels": 195,
+    "feature_acceptance_scenarios": 1610,
+    "product_acceptance_scenarios": 168
+  },
+  "structural_validation": "pass-structural-with-limitations",
+  "application_implemented": "partial-local-sandbox",
+  "application_tests_run": true,
+  "deployed": false,
+  "human_approval": "pending",
+  "external_blockers": [
+    "BLK-01",
+    "BLK-02",
+    "BLK-03",
+    "BLK-04",
+    "BLK-05",
+    "BLK-06",
+    "BLK-07",
+    "BLK-08",
+    "BLK-09",
+    "BLK-10",
+    "BLK-11"
+  ],
+  "open_gaps": [
+    {
+      "id": "GAP-ASVS-REVIEW",
+      "owner_role": "R11",
+      "path": "08-security/security-verification-matrix.md",
+      "missing": "Qualified applicability/verification review of the intended ASVS5 L2 scope, including the recorded OTP-only authentication decision; product-threat mappings do not establish formal complete L2 conformance.",
+      "safe_default": "No compliance or security certification claim",
+      "next_action": "Review threat-to-control map and each remaining applicable ASVS requirement; resolve authentication target and record actual evidence"
+    },
+    {
+      "id": "GAP-STACK-EVIDENCE",
+      "owner_role": "R05",
+      "path": "10-engineering/supported-stack-and-version-policy.md",
+      "missing": "Local application dependencies are pinned and selected compatibility tests now run. Full runtime matrix, representative performance qualification and production certification remain open; consult implementation evidence.",
+      "safe_default": "Architecture and adapter selection remain proposed",
+      "next_action": "During authorized implementation bootstrap pin supported releases and execute middleware/auth/serialization/database/adapter comparison and package audit"
+    }
+  ],
+  "source_brief_sha256": "277e4bdd358ed0799e747bed01a2002e0b1432657c4053c01fb8f17812f16978",
+  "documentation_scope_written": true,
+  "validation_evidence": {
+    "structure": "_meta/validation-report.json",
+    "wire_artifacts": "07-integrations/simulated-carriers/wire/validation-report.json",
+    "generation_drift": "_meta/generation-drift-report.json",
+    "wire_result": "passed",
+    "drift_result": "pass"
+  }
+}

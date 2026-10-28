@@ -1,0 +1,659 @@
+{
+  "documents": [
+    {
+      "id": "DOC-04-ARCHITECTURE-OVERVIEW",
+      "path": "04-architecture/architecture-overview.md",
+      "owner": "R05",
+      "status": "proposed"
+    },
+    {
+      "id": "DOC-04-C4-CONTEXT-CONTAINERS-COMPONENTS",
+      "path": "04-architecture/c4-context-containers-components.md",
+      "owner": "R05",
+      "status": "proposed"
+    },
+    {
+      "id": "DOC-04-DEPLOYMENT-AND-NETWORK",
+      "path": "04-architecture/deployment-and-network.md",
+      "owner": "R05",
+      "status": "proposed"
+    },
+    {
+      "id": "DOC-04-MODULAR-BOUNDARIES-AND-DEPENDENCIES",
+      "path": "04-architecture/modular-boundaries-and-dependencies.md",
+      "owner": "R05",
+      "status": "proposed"
+    },
+    {
+      "id": "DOC-04-NEXTJS-ARCHITECTURE",
+      "path": "04-architecture/nextjs-architecture.md",
+      "owner": "R05",
+      "status": "proposed"
+    },
+    {
+      "id": "DOC-04-NESTJS-ARCHITECTURE",
+      "path": "04-architecture/nestjs-architecture.md",
+      "owner": "R05",
+      "status": "proposed"
+    },
+    {
+      "id": "DOC-04-TENANCY-IDENTITY-AUTHORIZATION",
+      "path": "04-architecture/tenancy-identity-authorization.md",
+      "owner": "R05",
+      "status": "proposed"
+    },
+    {
+      "id": "DOC-04-CONFIGURATION-AND-FEATURE-CONTROL",
+      "path": "04-architecture/configuration-and-feature-control.md",
+      "owner": "R05",
+      "status": "proposed"
+    },
+    {
+      "id": "DOC-04-TRANSACTIONS-EVENTS-WORKFLOWS",
+      "path": "04-architecture/transactions-events-workflows.md",
+      "owner": "R05",
+      "status": "proposed"
+    },
+    {
+      "id": "DOC-04-CACHING-AND-CONSISTENCY",
+      "path": "04-architecture/caching-and-consistency.md",
+      "owner": "R05",
+      "status": "proposed"
+    },
+    {
+      "id": "DOC-04-RESILIENCY-AND-DEPENDENCY-ISOLATION",
+      "path": "04-architecture/resiliency-and-dependency-isolation.md",
+      "owner": "R05",
+      "status": "proposed"
+    },
+    {
+      "id": "DOC-04-SCALABILITY-AND-CAPACITY",
+      "path": "04-architecture/scalability-and-capacity.md",
+      "owner": "R05",
+      "status": "proposed"
+    },
+    {
+      "id": "DOC-04-ADR-01",
+      "path": "04-architecture/adr/ADR-01.md",
+      "owner": "R05",
+      "status": "proposed"
+    },
+    {
+      "id": "DOC-04-ADR-02",
+      "path": "04-architecture/adr/ADR-02.md",
+      "owner": "R07",
+      "status": "proposed"
+    },
+    {
+      "id": "DOC-04-ADR-03",
+      "path": "04-architecture/adr/ADR-03.md",
+      "owner": "R08",
+      "status": "proposed"
+    },
+    {
+      "id": "DOC-04-ADR-04",
+      "path": "04-architecture/adr/ADR-04.md",
+      "owner": "R10",
+      "status": "proposed"
+    },
+    {
+      "id": "DOC-04-ADR-05",
+      "path": "04-architecture/adr/ADR-05.md",
+      "owner": "R09",
+      "status": "proposed"
+    },
+    {
+      "id": "DOC-04-ADR-06",
+      "path": "04-architecture/adr/ADR-06.md",
+      "owner": "R11",
+      "status": "proposed"
+    },
+    {
+      "id": "DOC-04-ADR-07",
+      "path": "04-architecture/adr/ADR-07.md",
+      "owner": "R07",
+      "status": "proposed"
+    },
+    {
+      "id": "DOC-04-ADR-08",
+      "path": "04-architecture/adr/ADR-08.md",
+      "owner": "R12",
+      "status": "proposed"
+    },
+    {
+      "id": "DOC-04-ADR-09",
+      "path": "04-architecture/adr/ADR-09.md",
+      "owner": "R09",
+      "status": "proposed"
+    },
+    {
+      "id": "DOC-04-ADR-10",
+      "path": "04-architecture/adr/ADR-10.md",
+      "owner": "R08",
+      "status": "proposed"
+    },
+    {
+      "id": "DOC-04-ADR-11",
+      "path": "04-architecture/adr/ADR-11.md",
+      "owner": "R14",
+      "status": "proposed"
+    },
+    {
+      "id": "DOC-04-ADR-12",
+      "path": "04-architecture/adr/ADR-12.md",
+      "owner": "R21",
+      "status": "proposed"
+    },
+    {
+      "id": "DOC-04-ADR-13",
+      "path": "04-architecture/adr/ADR-13.md",
+      "owner": "R14",
+      "status": "proposed"
+    },
+    {
+      "id": "DOC-04-ADR-14",
+      "path": "04-architecture/adr/ADR-14.md",
+      "owner": "R05",
+      "status": "proposed"
+    },
+    {
+      "id": "DOC-05-DOMAIN-MODEL-AND-ERD",
+      "path": "05-data/domain-model-and-erd.md",
+      "owner": "R10",
+      "status": "proposed"
+    },
+    {
+      "id": "DOC-05-DATA-DICTIONARY",
+      "path": "05-data/data-dictionary.md",
+      "owner": "R10",
+      "status": "proposed"
+    },
+    {
+      "id": "DOC-05-AGGREGATE-AND-TRANSACTION-BOUNDARIES",
+      "path": "05-data/aggregate-and-transaction-boundaries.md",
+      "owner": "R10",
+      "status": "proposed"
+    },
+    {
+      "id": "DOC-05-DATABASE-INDEXING-AND-QUERY-PLANS",
+      "path": "05-data/database-indexing-and-query-plans.md",
+      "owner": "R10",
+      "status": "proposed"
+    },
+    {
+      "id": "DOC-05-LEDGER-AND-MONEY",
+      "path": "05-data/ledger-and-money.md",
+      "owner": "R12",
+      "status": "proposed"
+    },
+    {
+      "id": "DOC-05-MIGRATIONS-BACKFILLS-AND-VERSIONING",
+      "path": "05-data/migrations-backfills-and-versioning.md",
+      "owner": "R10",
+      "status": "proposed"
+    },
+    {
+      "id": "DOC-05-RETENTION-PRIVACY-AND-RECORD-LIFECYCLE",
+      "path": "05-data/retention-privacy-and-record-lifecycle.md",
+      "owner": "R10",
+      "status": "proposed"
+    },
+    {
+      "id": "DOC-05-FILES-AND-DOCUMENT-SECURITY",
+      "path": "05-data/files-and-document-security.md",
+      "owner": "R10",
+      "status": "proposed"
+    },
+    {
+      "id": "DOC-05-IMPORT-EXPORT-AND-BULK-PROCESSING",
+      "path": "05-data/import-export-and-bulk-processing.md",
+      "owner": "R10",
+      "status": "proposed"
+    },
+    {
+      "id": "DOC-05-ANALYTICS-DATA-BOUNDARIES",
+      "path": "05-data/analytics-data-boundaries.md",
+      "owner": "R10",
+      "status": "proposed"
+    },
+    {
+      "id": "DOC-07-PARTNER-INTEGRATION-HUB",
+      "path": "07-integrations/partner-integration-hub.md",
+      "owner": "R09",
+      "status": "proposed"
+    },
+    {
+      "id": "DOC-07-ADAPTER-SDK-CONTRACT",
+      "path": "07-integrations/adapter-sdk-contract.md",
+      "owner": "R09",
+      "status": "proposed"
+    },
+    {
+      "id": "DOC-07-CAPABILITY-NEGOTIATION",
+      "path": "07-integrations/capability-negotiation.md",
+      "owner": "R09",
+      "status": "proposed"
+    },
+    {
+      "id": "DOC-07-MAPPING-TRANSFORMATION-AND-VALIDATION",
+      "path": "07-integrations/mapping-transformation-and-validation.md",
+      "owner": "R09",
+      "status": "proposed"
+    },
+    {
+      "id": "DOC-07-AUTHENTICATION-AND-SECRETS",
+      "path": "07-integrations/authentication-and-secrets.md",
+      "owner": "R09",
+      "status": "proposed"
+    },
+    {
+      "id": "DOC-07-PURCHASE-SUBMISSION-AND-ISSUANCE",
+      "path": "07-integrations/purchase-submission-and-issuance.md",
+      "owner": "R09",
+      "status": "proposed"
+    },
+    {
+      "id": "DOC-07-CALLBACKS-POLLING-AND-RECONCILIATION",
+      "path": "07-integrations/callbacks-polling-and-reconciliation.md",
+      "owner": "R09",
+      "status": "proposed"
+    },
+    {
+      "id": "DOC-07-DELIVERY-RETRIES-DEDUPLICATION",
+      "path": "07-integrations/delivery-retries-deduplication.md",
+      "owner": "R09",
+      "status": "proposed"
+    },
+    {
+      "id": "DOC-07-INTEGRATION-STUDIO",
+      "path": "07-integrations/integration-studio.md",
+      "owner": "R09",
+      "status": "proposed"
+    },
+    {
+      "id": "DOC-07-PARTNER-ONBOARDING-CERTIFICATION",
+      "path": "07-integrations/partner-onboarding-certification.md",
+      "owner": "R09",
+      "status": "proposed"
+    },
+    {
+      "id": "DOC-07-CARRIER-CONTRACT-TEMPLATE",
+      "path": "07-integrations/carrier-contract-template.md",
+      "owner": "R09",
+      "status": "proposed"
+    },
+    {
+      "id": "DOC-07-PAYMENT-PROVIDER-CONTRACT-TEMPLATE",
+      "path": "07-integrations/payment-provider-contract-template.md",
+      "owner": "R09",
+      "status": "proposed"
+    },
+    {
+      "id": "DOC-07-AUTOMOTIVE-PROVIDER-CONTRACT-TEMPLATE",
+      "path": "07-integrations/automotive-provider-contract-template.md",
+      "owner": "R09",
+      "status": "proposed"
+    },
+    {
+      "id": "DOC-07-NOTIFICATION-HR-LOGISTICS-CONTRACTS",
+      "path": "07-integrations/notification-hr-logistics-contracts.md",
+      "owner": "R09",
+      "status": "proposed"
+    },
+    {
+      "id": "DOC-07-REST-JSON",
+      "path": "07-integrations/simulated-carriers/rest-json.md",
+      "owner": "R09",
+      "status": "proposed"
+    },
+    {
+      "id": "DOC-07-SOAP-XML",
+      "path": "07-integrations/simulated-carriers/soap-xml.md",
+      "owner": "R09",
+      "status": "proposed"
+    },
+    {
+      "id": "DOC-07-SIGNED-HTTP",
+      "path": "07-integrations/simulated-carriers/signed-http.md",
+      "owner": "R09",
+      "status": "proposed"
+    },
+    {
+      "id": "DOC-08-THREAT-MODEL-AND-TRUST-BOUNDARIES",
+      "path": "08-security/threat-model-and-trust-boundaries.md",
+      "owner": "R11",
+      "status": "proposed"
+    },
+    {
+      "id": "DOC-08-AUTHORIZATION-AND-TENANT-ISOLATION",
+      "path": "08-security/authorization-and-tenant-isolation.md",
+      "owner": "R11",
+      "status": "proposed"
+    },
+    {
+      "id": "DOC-08-PRIVACY-DATA-CLASSIFICATION-AND-CONSENT",
+      "path": "08-security/privacy-data-classification-and-consent.md",
+      "owner": "R11",
+      "status": "proposed"
+    },
+    {
+      "id": "DOC-08-AUTHENTICATION-SESSIONS-AND-PRIVILEGED-ACCESS",
+      "path": "08-security/authentication-sessions-and-privileged-access.md",
+      "owner": "R11",
+      "status": "proposed"
+    },
+    {
+      "id": "DOC-08-SECURE-DEVELOPMENT-AND-API-CONTROLS",
+      "path": "08-security/secure-development-and-api-controls.md",
+      "owner": "R11",
+      "status": "proposed"
+    },
+    {
+      "id": "DOC-08-SECRETS-ENCRYPTION-AND-AUDIT",
+      "path": "08-security/secrets-encryption-and-audit.md",
+      "owner": "R11",
+      "status": "proposed"
+    },
+    {
+      "id": "DOC-08-ABUSE-FRAUD-AND-RATE-LIMITS",
+      "path": "08-security/abuse-fraud-and-rate-limits.md",
+      "owner": "R11",
+      "status": "proposed"
+    },
+    {
+      "id": "DOC-08-SECURITY-VERIFICATION-MATRIX",
+      "path": "08-security/security-verification-matrix.md",
+      "owner": "R11",
+      "status": "proposed"
+    },
+    {
+      "id": "DOC-09-PERFORMANCE-STRATEGY-AND-BUDGETS",
+      "path": "09-performance/performance-strategy-and-budgets.md",
+      "owner": "R06",
+      "status": "proposed"
+    },
+    {
+      "id": "DOC-09-WORKLOADS-DATA-AND-CAPACITY-ASSUMPTIONS",
+      "path": "09-performance/workloads-data-and-capacity-assumptions.md",
+      "owner": "R06",
+      "status": "proposed"
+    },
+    {
+      "id": "DOC-09-FRONTEND-RENDERING-BUNDLES-AND-WEB-VITALS",
+      "path": "09-performance/frontend-rendering-bundles-and-web-vitals.md",
+      "owner": "R06",
+      "status": "proposed"
+    },
+    {
+      "id": "DOC-09-BACKEND-EVENT-LOOP-AND-RESOURCE-BUDGETS",
+      "path": "09-performance/backend-event-loop-and-resource-budgets.md",
+      "owner": "R06",
+      "status": "proposed"
+    },
+    {
+      "id": "DOC-09-DATABASE-QUERIES-AND-POOLING",
+      "path": "09-performance/database-queries-and-pooling.md",
+      "owner": "R06",
+      "status": "proposed"
+    },
+    {
+      "id": "DOC-09-CACHE-DESIGN-AND-INVALIDATION",
+      "path": "09-performance/cache-design-and-invalidation.md",
+      "owner": "R06",
+      "status": "proposed"
+    },
+    {
+      "id": "DOC-09-QUOTE-AGGREGATION-AND-PROVIDER-LATENCY",
+      "path": "09-performance/quote-aggregation-and-provider-latency.md",
+      "owner": "R06",
+      "status": "proposed"
+    },
+    {
+      "id": "DOC-09-QUEUES-BATCH-PROCESSING-AND-BACKPRESSURE",
+      "path": "09-performance/queues-batch-processing-and-backpressure.md",
+      "owner": "R06",
+      "status": "proposed"
+    },
+    {
+      "id": "DOC-09-LOAD-STRESS-SOAK-AND-RECOVERY-PLAN",
+      "path": "09-performance/load-stress-soak-and-recovery-plan.md",
+      "owner": "R06",
+      "status": "proposed"
+    },
+    {
+      "id": "DOC-09-PROFILING-AND-REGRESSION-GATES",
+      "path": "09-performance/profiling-and-regression-gates.md",
+      "owner": "R06",
+      "status": "proposed"
+    },
+    {
+      "id": "DOC-09-COST-MODEL-AND-CAPACITY-PLANNING",
+      "path": "09-performance/cost-model-and-capacity-planning.md",
+      "owner": "R06",
+      "status": "proposed"
+    },
+    {
+      "id": "DOC-10-SUPPORTED-STACK-AND-VERSION-POLICY",
+      "path": "10-engineering/supported-stack-and-version-policy.md",
+      "owner": "R08",
+      "status": "proposed"
+    },
+    {
+      "id": "DOC-10-REPOSITORY-AND-MODULE-LAYOUT",
+      "path": "10-engineering/repository-and-module-layout.md",
+      "owner": "R08",
+      "status": "proposed"
+    },
+    {
+      "id": "DOC-10-CLEAN-CODE-AND-TYPESCRIPT",
+      "path": "10-engineering/clean-code-and-typescript.md",
+      "owner": "R08",
+      "status": "proposed"
+    },
+    {
+      "id": "DOC-10-FRONTEND-STANDARDS",
+      "path": "10-engineering/frontend-standards.md",
+      "owner": "R08",
+      "status": "proposed"
+    },
+    {
+      "id": "DOC-10-BACKEND-STANDARDS",
+      "path": "10-engineering/backend-standards.md",
+      "owner": "R08",
+      "status": "proposed"
+    },
+    {
+      "id": "DOC-10-API-SCHEMA-AND-CLIENT-GENERATION",
+      "path": "10-engineering/api-schema-and-client-generation.md",
+      "owner": "R08",
+      "status": "proposed"
+    },
+    {
+      "id": "DOC-10-DEPENDENCY-AND-PACKAGE-POLICY",
+      "path": "10-engineering/dependency-and-package-policy.md",
+      "owner": "R08",
+      "status": "proposed"
+    },
+    {
+      "id": "DOC-10-GIT-REVIEW-AND-COMMIT-POLICY",
+      "path": "10-engineering/git-review-and-commit-policy.md",
+      "owner": "R08",
+      "status": "proposed"
+    },
+    {
+      "id": "DOC-10-TESTING-AND-TESTABILITY-STANDARDS",
+      "path": "10-engineering/testing-and-testability-standards.md",
+      "owner": "R08",
+      "status": "proposed"
+    },
+    {
+      "id": "DOC-10-CONFIGURATION-AND-ENVIRONMENT-VARIABLES",
+      "path": "10-engineering/configuration-and-environment-variables.md",
+      "owner": "R08",
+      "status": "proposed"
+    },
+    {
+      "id": "DOC-10-LOCAL-DEVELOPMENT-AND-BUILDS",
+      "path": "10-engineering/local-development-and-builds.md",
+      "owner": "R08",
+      "status": "proposed"
+    },
+    {
+      "id": "DOC-10-DOCUMENTATION-AS-CODE",
+      "path": "10-engineering/documentation-as-code.md",
+      "owner": "R08",
+      "status": "proposed"
+    },
+    {
+      "id": "DOC-10-AGENT-WORKFLOW-AND-CONTEXT-POLICY",
+      "path": "10-engineering/agent-workflow-and-context-policy.md",
+      "owner": "R08",
+      "status": "proposed"
+    },
+    {
+      "id": "DOC-12-ENVIRONMENTS-AND-INFRASTRUCTURE",
+      "path": "12-operations/environments-and-infrastructure.md",
+      "owner": "R14",
+      "status": "proposed"
+    },
+    {
+      "id": "DOC-12-CI-CD-AND-ARTIFACT-SECURITY",
+      "path": "12-operations/ci-cd-and-artifact-security.md",
+      "owner": "R14",
+      "status": "proposed"
+    },
+    {
+      "id": "DOC-12-DEPLOYMENT-MIGRATIONS-AND-ROLLBACK",
+      "path": "12-operations/deployment-migrations-and-rollback.md",
+      "owner": "R14",
+      "status": "proposed"
+    },
+    {
+      "id": "DOC-12-OBSERVABILITY-LOGS-METRICS-TRACES",
+      "path": "12-operations/observability-logs-metrics-traces.md",
+      "owner": "R14",
+      "status": "proposed"
+    },
+    {
+      "id": "DOC-12-SLI-SLO-ALERTS-AND-ONCALL",
+      "path": "12-operations/sli-slo-alerts-and-oncall.md",
+      "owner": "R14",
+      "status": "proposed"
+    },
+    {
+      "id": "DOC-12-BACKUP-RESTORE-AND-DISASTER-RECOVERY",
+      "path": "12-operations/backup-restore-and-disaster-recovery.md",
+      "owner": "R14",
+      "status": "proposed"
+    },
+    {
+      "id": "DOC-12-BUSINESS-CONTINUITY-AND-MANUAL-OPERATIONS",
+      "path": "12-operations/business-continuity-and-manual-operations.md",
+      "owner": "R14",
+      "status": "proposed"
+    },
+    {
+      "id": "DOC-12-INTEGRATION-INCIDENT-RUNBOOKS",
+      "path": "12-operations/integration-incident-runbooks.md",
+      "owner": "R14",
+      "status": "proposed"
+    },
+    {
+      "id": "DOC-12-PAYMENT-ISSUANCE-AND-RECONCILIATION-RUNBOOKS",
+      "path": "12-operations/payment-issuance-and-reconciliation-runbooks.md",
+      "owner": "R14",
+      "status": "proposed"
+    },
+    {
+      "id": "DOC-12-SUPPORT-CLAIMS-AND-PROVIDER-OPERATIONS",
+      "path": "12-operations/support-claims-and-provider-operations.md",
+      "owner": "R14",
+      "status": "proposed"
+    },
+    {
+      "id": "DOC-12-ACCESS-AND-SECRET-ROTATION",
+      "path": "12-operations/access-and-secret-rotation.md",
+      "owner": "R14",
+      "status": "proposed"
+    },
+    {
+      "id": "DOC-12-RELEASE-PRODUCTION-READINESS",
+      "path": "12-operations/release-production-readiness.md",
+      "owner": "R14",
+      "status": "proposed"
+    },
+    {
+      "id": "DOC-13-EVENT-TAXONOMY-AND-CONSENT",
+      "path": "13-analytics/event-taxonomy-and-consent.md",
+      "owner": "R15",
+      "status": "proposed"
+    },
+    {
+      "id": "DOC-13-METRICS-AND-KPI-DICTIONARY",
+      "path": "13-analytics/metrics-and-kpi-dictionary.md",
+      "owner": "R15",
+      "status": "proposed"
+    },
+    {
+      "id": "DOC-13-DASHBOARDS-AND-REPORTING-ACCESS",
+      "path": "13-analytics/dashboards-and-reporting-access.md",
+      "owner": "R15",
+      "status": "proposed"
+    },
+    {
+      "id": "DOC-13-EXPERIMENTS-ATTRIBUTION-AND-DATA-QUALITY",
+      "path": "13-analytics/experiments-attribution-and-data-quality.md",
+      "owner": "R15",
+      "status": "proposed"
+    },
+    {
+      "id": "DOC-08-ASVS-APPLICABILITY-SCOPE",
+      "path": "08-security/asvs-applicability-scope.md",
+      "owner": "R11",
+      "status": "proposed"
+    },
+    {
+      "id": "DOC-08-ASVS-PRODUCT-CONTROL-MAPPING",
+      "path": "08-security/asvs-product-control-mapping.md",
+      "owner": "R11",
+      "status": "proposed"
+    }
+  ],
+  "human_approval": "pending",
+  "application_implemented": false,
+  "external_blockers": [
+    "real carrier/payment/automotive/HR/notification/logistics contracts and certification",
+    "jurisdiction, licensing, retention, residency and commercial authority",
+    "exact supported application versions, lockfile and compatibility evidence",
+    "accounting, financing, payout and collection authority",
+    "measured performance, security, accessibility, restore and rollback evidence"
+  ],
+  "documentation_gaps": [],
+  "pending_human_reviews": [
+    "Formal standard-wide ASVS applicability/independent assessment; 13 modeled threat groups map to verified exact controls across 12 chapters, no conformance claimed",
+    "OTP-only customer L2 authentication decision",
+    "Proposed security/session defaults and operational recovery/staffing targets"
+  ],
+  "reviews": [
+    {
+      "lens": "R09",
+      "finding": "Unknown provider outcomes require reconciliation, not automatic replay",
+      "status": "incorporated"
+    },
+    {
+      "lens": "R11",
+      "finding": "OTP-only customer entry cannot be asserted ASVS L2 compliant",
+      "status": "pending_decision"
+    },
+    {
+      "lens": "R12",
+      "finding": "Credit commitment differs from cash verification; monetary records are append-only",
+      "status": "incorporated"
+    },
+    {
+      "lens": "R06",
+      "finding": "No benchmark executed; all numerical hard budgets centralized",
+      "status": "incorporated"
+    }
+  ]
+}

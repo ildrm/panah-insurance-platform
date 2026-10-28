@@ -1,0 +1,68 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://insurance.invalid/schemas/PRD-10.risk.v1.schema.json",
+  "title": "PRD-10 synthetic risk input syntax",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "travelerRefs",
+    "destinationCodes",
+    "departureDate",
+    "returnDate",
+    "tripTypeCode",
+    "assistancePlanCode"
+  ],
+  "properties": {
+    "travelerRefs": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 100,
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "format": "uuid"
+      },
+      "description": "required; 1–100 authorized traveler records. Sensitivity: restricted. Error: TRAVELER_AUTHORITY_REQUIRED. Eligibility is contract-dependent."
+    },
+    "destinationCodes": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 100,
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 100
+      },
+      "description": "required; 1–100 ISO/configured destination codes, unique. Sensitivity: confidential. Error: DESTINATION_UNSUPPORTED. Eligibility is contract-dependent."
+    },
+    "departureDate": {
+      "type": "string",
+      "format": "date",
+      "description": "required; valid itinerary-local date. Sensitivity: confidential. Error: DEPARTURE_DATE_INVALID. Eligibility is contract-dependent."
+    },
+    "returnDate": {
+      "type": "string",
+      "format": "date",
+      "description": "required for single trip; not before departure; duration contract-validated. Sensitivity: confidential. Error: RETURN_DATE_INVALID. Eligibility is contract-dependent."
+    },
+    "tripTypeCode": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 40,
+      "description": "required; offered single/multi-trip category. Sensitivity: internal. Error: TRIP_TYPE_UNAVAILABLE. Eligibility is contract-dependent."
+    },
+    "assistancePlanCode": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 40,
+      "description": "required; versioned assistance/coverage plan. Sensitivity: internal. Error: ASSISTANCE_PLAN_UNAVAILABLE. Eligibility is contract-dependent."
+    },
+    "passportEvidenceRef": {
+      "type": "string",
+      "format": "uuid",
+      "description": "conditional by contract; restricted evidence, never analytics payload. Sensitivity: highly restricted. Error: TRAVEL_DOCUMENT_REQUIRED. Eligibility is contract-dependent."
+    }
+  },
+  "description": "Strict syntax baseline. Conditional predicates, cross-field dates/sums/relationships and actual carrier eligibility require the versioned application validator; passing this schema is not underwriting acceptance."
+}

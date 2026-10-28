@@ -1,0 +1,260 @@
+{
+  "id": "REG-SECURITY-POLICY-DEFAULTS",
+  "title": "Proposed security policy defaults",
+  "status": "proposed",
+  "version": "1.0.0",
+  "owner_role": "R11",
+  "reviewer_roles": [
+    "R11",
+    "R13",
+    "R14"
+  ],
+  "scope_ids": [
+    "GRW-01",
+    "INT-07"
+  ],
+  "source_refs": [
+    "S00",
+    "S07"
+  ],
+  "assumption_refs": [
+    "A01"
+  ],
+  "updated": "2026-10-28",
+  "schema_ref": "security-policy-defaults.schema.json",
+  "description": "Reversible security policy proposals, not latency budgets or evidence of deployed controls. R11/R13 review before release; OTP-only customer ASVS L2 decision remains unresolved. Cross-field invariant: idle lifetime <= absolute lifetime, step-up lifetime <= privileged idle lifetime, all rate windows shared across replicas. No actual legal requirement is inferred.",
+  "entries": [
+    {
+      "id": "SEC-POL-001",
+      "control": "otp.length_digits",
+      "value": 8,
+      "unit": "digits",
+      "rationale": "Random numeric challenge balances entry effort and guessing space; never sequential.",
+      "verification": "CSPRNG generation and format check; accept Persian digit input only through explicit normalization."
+    },
+    {
+      "id": "SEC-POL-002",
+      "control": "otp.validity",
+      "value": 180,
+      "unit": "seconds",
+      "rationale": "Short-lived proposed challenge; expiry uses injected server clock.",
+      "verification": "Reject at expiry boundary even if resend/read replicas lag."
+    },
+    {
+      "id": "SEC-POL-003",
+      "control": "otp.verify_attempts",
+      "value": 5,
+      "unit": "attempts_per_challenge",
+      "rationale": "Bound guessing without permanent account lockout.",
+      "verification": "Fifth failure consumes challenge; fresh challenge still obeys aggregate limits."
+    },
+    {
+      "id": "SEC-POL-004",
+      "control": "otp.resend_interval",
+      "value": 60,
+      "unit": "seconds",
+      "rationale": "Limit messaging abuse and duplicate codes.",
+      "verification": "Concurrent resends across replicas create at most one new challenge; invalidate prior code."
+    },
+    {
+      "id": "SEC-POL-005",
+      "control": "otp.subject_sends_per_hour",
+      "value": 5,
+      "unit": "sends_per_hour",
+      "rationale": "Bound one account-targeted SMS abuse; support recovery stays available.",
+      "verification": "Sixth request gives generic safe response and no provider send."
+    },
+    {
+      "id": "SEC-POL-006",
+      "control": "otp.device_sends_per_hour",
+      "value": 10,
+      "unit": "sends_per_hour",
+      "rationale": "Additional nonidentity abuse control with privacy review.",
+      "verification": "Shared device limit enforced without revealing account existence."
+    },
+    {
+      "id": "SEC-POL-007",
+      "control": "otp.network_sends_per_hour",
+      "value": 30,
+      "unit": "sends_per_hour",
+      "rationale": "Provisional coarse network cap; shared-network accessibility requires monitored tuning.",
+      "verification": "Concurrent nodes cannot exceed global bucket; approved assisted recovery is offered."
+    },
+    {
+      "id": "SEC-POL-008",
+      "control": "session.customer_idle",
+      "value": 1800,
+      "unit": "seconds",
+      "rationale": "Limit unattended customer access; warning permits accessible reauthentication.",
+      "verification": "Expired session denied on API and client clears private content."
+    },
+    {
+      "id": "SEC-POL-009",
+      "control": "session.customer_absolute",
+      "value": 43200,
+      "unit": "seconds",
+      "rationale": "Bound total customer session lifetime even with activity.",
+      "verification": "Refresh cannot extend beyond original absolute expiry."
+    },
+    {
+      "id": "SEC-POL-010",
+      "control": "session.customer_concurrent",
+      "value": 5,
+      "unit": "sessions",
+      "rationale": "Allow normal devices while making sessions manageable.",
+      "verification": "New login beyond cap requires user choice to revoke existing session, never silent takeover."
+    },
+    {
+      "id": "SEC-POL-011",
+      "control": "session.privileged_idle",
+      "value": 900,
+      "unit": "seconds",
+      "rationale": "Shorter idle exposure for staff/finance/provider administration.",
+      "verification": "Background polling does not count as user activity."
+    },
+    {
+      "id": "SEC-POL-012",
+      "control": "session.privileged_absolute",
+      "value": 28800,
+      "unit": "seconds",
+      "rationale": "Bound one working-session duration before full authentication.",
+      "verification": "Refresh and organization switch do not reset absolute expiry."
+    },
+    {
+      "id": "SEC-POL-013",
+      "control": "session.privileged_concurrent",
+      "value": 2,
+      "unit": "sessions",
+      "rationale": "Limit simultaneous privileged sessions and support explicit revocation.",
+      "verification": "Third login requires revoking an existing session after authentication."
+    },
+    {
+      "id": "SEC-POL-014",
+      "control": "session.entropy_bits",
+      "value": 256,
+      "unit": "bits",
+      "rationale": "Opaque CSPRNG session identifiers; exceeds pinned ASVS minimum.",
+      "verification": "Statistical uniqueness fixture plus implementation CSPRNG review; tokens never logged."
+    },
+    {
+      "id": "SEC-POL-015",
+      "control": "step_up.max_age",
+      "value": 300,
+      "unit": "seconds",
+      "rationale": "Fresh authentication for payout, bank/factor change, replay and live connector/config approval.",
+      "verification": "Old step-up cannot authorize changed proposal digest or different action."
+    },
+    {
+      "id": "SEC-POL-016",
+      "control": "privileged.mfa_required",
+      "value": true,
+      "unit": "boolean",
+      "rationale": "Requested privileged MFA; ordinary flags cannot disable it.",
+      "verification": "All alternative login/recovery routes preserve strength."
+    },
+    {
+      "id": "SEC-POL-017",
+      "control": "cookie.secure",
+      "value": true,
+      "unit": "boolean",
+      "rationale": "Transport-only session cookie.",
+      "verification": "Browser receives Secure flag; HTTP request cannot establish a live session."
+    },
+    {
+      "id": "SEC-POL-018",
+      "control": "cookie.http_only",
+      "value": true,
+      "unit": "boolean",
+      "rationale": "Prevent script access to reference session.",
+      "verification": "Document scripts cannot read session value."
+    },
+    {
+      "id": "SEC-POL-019",
+      "control": "cookie.same_site",
+      "value": "Lax",
+      "unit": "enum",
+      "rationale": "Supports return navigation while CSRF token/origin validation protects mutations.",
+      "verification": "Cross-site mutation fails; legitimate payment return requires authoritative verification."
+    },
+    {
+      "id": "SEC-POL-020",
+      "control": "recovery.default_privileged_path",
+      "value": "manual_identity_review_plus_existing_factor_or_equivalent_proof",
+      "unit": "workflow",
+      "rationale": "No phone-only bypass for privileged MFA.",
+      "verification": "Independent reviewer checks evidence and revokes old sessions before factor reset."
+    },
+    {
+      "id": "SEC-POL-021",
+      "control": "upload.evidence_mime_types",
+      "value": "application/pdf,image/jpeg,image/png",
+      "unit": "comma_separated_allowlist",
+      "rationale": "Identity/health/property evidence excludes active formats and archives.",
+      "verification": "Extension, magic bytes and parser content agree; unknown MIME rejected."
+    },
+    {
+      "id": "SEC-POL-022",
+      "control": "upload.inspection_mime_types",
+      "value": "image/jpeg,image/png,video/mp4",
+      "unit": "comma_separated_allowlist",
+      "rationale": "Video only for inspection workflows with explicit requirement.",
+      "verification": "Inspection media receives scanner/transcoding validation; other evidence routes reject video."
+    },
+    {
+      "id": "SEC-POL-023",
+      "control": "upload.bulk_mime_types",
+      "value": "text/csv",
+      "unit": "comma_separated_allowlist",
+      "rationale": "Bulk input uses versioned CSV only initially; no active spreadsheet macros.",
+      "verification": "Content parser enforces encoding/row/column limits and rejects executable spreadsheet content."
+    },
+    {
+      "id": "SEC-POL-024",
+      "control": "upload.document_max_bytes",
+      "value": 10485760,
+      "unit": "bytes",
+      "rationale": "Proposed document/photo bound below canonical FBytes transport ceiling.",
+      "verification": "Reject larger body before processing; metadata claim and actual byte count must agree."
+    },
+    {
+      "id": "SEC-POL-025",
+      "control": "upload.inspection_video_max_bytes",
+      "value": 26214400,
+      "unit": "bytes",
+      "rationale": "Matches canonical FBytes proposed transport ceiling; larger video needs a separate reviewed streaming contract.",
+      "verification": "Actual uploaded object cannot exceed grant bound."
+    },
+    {
+      "id": "SEC-POL-026",
+      "control": "upload.image_max_pixels",
+      "value": 25000000,
+      "unit": "pixels",
+      "rationale": "Bound decompression/memory exposure of compressed images.",
+      "verification": "Header dimensions and decoded dimensions checked in isolated worker."
+    },
+    {
+      "id": "SEC-POL-027",
+      "control": "upload.case_file_count_max",
+      "value": 30,
+      "unit": "files_per_case",
+      "rationale": "Limit case storage abuse; additional evidence requires authorized reviewed extension.",
+      "verification": "Concurrent uploads reserve file quota transactionally."
+    },
+    {
+      "id": "SEC-POL-028",
+      "control": "upload.archives_allowed",
+      "value": false,
+      "unit": "boolean",
+      "rationale": "No archive support selected; avoids unsafe extraction and hidden executable content.",
+      "verification": "ZIP/GZIP/DOCX containers rejected even with misleading MIME/extension."
+    },
+    {
+      "id": "SEC-POL-029",
+      "control": "upload.pending_subject_bytes_max",
+      "value": 262144000,
+      "unit": "bytes",
+      "rationale": "Bound unreviewed temporary storage for one subject/context.",
+      "verification": "Distributed pending-upload quota cannot be exceeded by concurrent grants; expiry releases reservation."
+    }
+  ]
+}

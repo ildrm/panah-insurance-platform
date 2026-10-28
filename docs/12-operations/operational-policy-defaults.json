@@ -1,0 +1,108 @@
+{
+  "id": "REG-OPERATIONAL-POLICY-DEFAULTS",
+  "title": "Proposed operational policy defaults",
+  "status": "proposed",
+  "version": "1.0.0",
+  "owner_role": "R14",
+  "reviewer_roles": [
+    "R11",
+    "R13",
+    "R14"
+  ],
+  "scope_ids": [
+    "GRW-01",
+    "INT-07"
+  ],
+  "source_refs": [
+    "S00",
+    "S07"
+  ],
+  "assumption_refs": [
+    "A01"
+  ],
+  "updated": "2026-10-28",
+  "schema_ref": "operational-policy-defaults.schema.json",
+  "description": "Unapproved operating design; numeric alert/recovery/acknowledgment targets live solely in PERF-OPS/PERF-QUEUE under _meta/performance-budgets.yaml. Not contractual insurer SLAs, observed recovery results or an actual staffed rota.",
+  "entries": [
+    {
+      "id": "OPS-POL-001",
+      "control": "recovery.database",
+      "value": "PERF-OPS.database_RPO_seconds/database_RTO_seconds",
+      "unit": "central_budget_reference",
+      "rationale": "Single numeric source in performance registry; includes transaction log shipping and committed-outbox recovery.",
+      "verification": "Restore to isolated network, measure recoverable commit window and reopening time; reconcile external acceptance."
+    },
+    {
+      "id": "OPS-POL-002",
+      "control": "recovery.objects",
+      "value": "PERF-OPS.object_RPO_seconds/object_RTO_seconds",
+      "unit": "central_budget_reference",
+      "rationale": "Object/document recovery may differ from transactional database but cannot fabricate missing policy evidence.",
+      "verification": "Recover hashes and authorized document manifests; unavailable files remain explicit."
+    },
+    {
+      "id": "OPS-POL-003",
+      "control": "alert.paid_unissued",
+      "value": "PERF-OPS.paid_unissued_alert_age_seconds",
+      "unit": "central_budget_reference",
+      "rationale": "Alert on paid unissued age while classifying underwriting and external dependencies.",
+      "verification": "Inject old verified receipt and assert owner notification with safe customer status."
+    },
+    {
+      "id": "OPS-POL-004",
+      "control": "alert.unknown_outcome",
+      "value": "PERF-OPS.unknown_outcome_alert_delay_seconds",
+      "unit": "central_budget_reference",
+      "rationale": "Potential duplicate financial/insurance effect requires prompt owned investigation.",
+      "verification": "Persist unknown state, stop unsafe replay and emit deduplicated alert."
+    },
+    {
+      "id": "OPS-POL-005",
+      "control": "incident.acknowledge",
+      "value": "PERF-OPS.oncall_acknowledge_seconds",
+      "unit": "central_budget_reference",
+      "rationale": "Proposed acknowledgment target is not a contractual customer resolution SLA.",
+      "verification": "Exercise primary then backup escalation; record actual timing."
+    },
+    {
+      "id": "OPS-POL-006",
+      "control": "incident.primary_owner",
+      "value": "R14",
+      "unit": "role",
+      "rationale": "Platform coordinator; delegates money R12, partner R09, support R20, disclosure R11.",
+      "verification": "Incident has one coordinator and named functional owners."
+    },
+    {
+      "id": "OPS-POL-007",
+      "control": "incident.coverage",
+      "value": "continuous primary and backup for live financial/issuance obligations",
+      "unit": "staffing_model",
+      "rationale": "Do not sell continuously without coverage for committed obligations; human rota remains pending.",
+      "verification": "Before launch record named primary/backup/timezone/hand-off and successful contact drill."
+    },
+    {
+      "id": "OPS-POL-008",
+      "control": "incident.escalation",
+      "value": "on acknowledgment target breach contact backup, then incident coordinator; suspected disclosure also R11",
+      "unit": "workflow",
+      "rationale": "Automatic acknowledgment is not a human response; preserve hand-off evidence.",
+      "verification": "Simulate unavailable primary and confirm backup takes ownership."
+    },
+    {
+      "id": "OPS-POL-009",
+      "control": "queue.response",
+      "value": "PERF-QUEUE.normal_oldest_ready_age_seconds",
+      "unit": "central_budget_reference",
+      "rationale": "Durable queue age is separate from provider acknowledgment/issuance latency.",
+      "verification": "Delay worker and ensure age alert identifies local queue cause."
+    },
+    {
+      "id": "OPS-POL-010",
+      "control": "servicing.customer_due_time",
+      "value": "contract_defined_before_live_activation",
+      "unit": "external_contract_reference",
+      "rationale": "Insurer/claims/fulfillment deadlines cannot be invented from internal alert targets.",
+      "verification": "Missing contracted due-time rule blocks affected live operation and identifies R20/R02 owner."
+    }
+  ]
+}

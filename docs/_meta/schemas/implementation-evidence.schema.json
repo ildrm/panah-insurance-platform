@@ -1,0 +1,120 @@
+{
+  "type": "object",
+  "properties": {
+    "entries": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "command": {
+            "type": "string",
+            "minLength": 1
+          },
+          "duration_ms": {
+            "type": "integer"
+          },
+          "ended_at": {
+            "type": "string",
+            "minLength": 1
+          },
+          "exit_code": {
+            "type": "integer"
+          },
+          "id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "log_path": {
+            "type": "string",
+            "minLength": 1
+          },
+          "log_sha256": {
+            "type": "string",
+            "minLength": 1
+          },
+          "revision": {
+            "type": "string",
+            "minLength": 1
+          },
+          "runtime": {
+            "type": "string",
+            "minLength": 1
+          },
+          "scope": {
+            "type": "string",
+            "minLength": 1
+          },
+          "source_after_sha256": {
+            "type": "string",
+            "minLength": 1
+          },
+          "source_changed_during_run": {
+            "type": "boolean"
+          },
+          "source_sha256": {
+            "type": "string",
+            "minLength": 1
+          },
+          "source_snapshot_path": {
+            "type": "string",
+            "minLength": 1
+          },
+          "started_at": {
+            "type": "string",
+            "minLength": 1
+          },
+          "worktree": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "required": [
+          "command",
+          "duration_ms",
+          "ended_at",
+          "exit_code",
+          "id",
+          "log_path",
+          "log_sha256",
+          "revision",
+          "scope",
+          "started_at",
+          "worktree"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "status": {
+      "enum": [
+        "draft",
+        "proposed",
+        "partial",
+        "complete",
+        "blocked"
+      ]
+    },
+    "updated": {
+      "type": "string",
+      "minLength": 1
+    },
+    "version": {
+      "type": "string",
+      "minLength": 1
+    }
+  },
+  "required": [
+    "entries",
+    "id",
+    "status",
+    "updated",
+    "version"
+  ],
+  "additionalProperties": false,
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://insurance.example.invalid/meta/implementation-evidence.schema.json",
+  "title": "implementation-evidence registry v1"
+}

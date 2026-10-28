@@ -1,0 +1,30 @@
+{
+  "fixtureId": "FIX-PRD-02",
+  "synthetic": true,
+  "productId": "PRD-02",
+  "schemaRef": "../schemas/PRD-02.risk.schema.json",
+  "riskExample": {
+    "declaredValue": "1200000000",
+    "perilCodes": [
+      "SYNTH-COLLISION"
+    ],
+    "deductibleOption": "SYNTH-DEDUCT-A",
+    "territoryCode": "SYNTH-TERRITORY",
+    "vehicleRef": "00000000-0000-4000-8000-000000000201"
+  },
+  "canonicalContext": {
+    "currency": "IRR",
+    "unit": "rial",
+    "channel": "b2c",
+    "partyAndAuthorityFixture": "Synthetic authorized buyer/payer/policyholder/insured roles; referenced UUIDs resolve only in the local test harness.",
+    "productRuleVersion": "SYNTH-1",
+    "liveOperationsAllowed": false
+  },
+  "scenarioContext": {},
+  "expected": {
+    "withoutContract": "live_quote_and_purchase_disabled",
+    "syntacticValidation": "pass",
+    "carrierEligibility": "undetermined_without_synthetic_rule_set",
+    "variant": "A customer adds an accessory after inspection approval: affected evidence and quote are revalidated, and issuance cannot reuse an inspection that excludes the changed risk."
+  }
+}

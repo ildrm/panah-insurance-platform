@@ -1,0 +1,113 @@
+{
+  "id": "REG-GLOSSARY",
+  "version": "1.0.0",
+  "status": "draft",
+  "updated": "2026-10-28",
+  "entries": [
+    {
+      "id": "TERM-BUYER",
+      "term": "buyer",
+      "definition": "Party entering the purchase relationship; may differ from payer."
+    },
+    {
+      "id": "TERM-PAYER",
+      "term": "payer",
+      "definition": "Party providing funds or owing the approved invoice."
+    },
+    {
+      "id": "TERM-REQUESTER",
+      "term": "requester",
+      "definition": "Actor preparing a purchase or privileged action."
+    },
+    {
+      "id": "TERM-APPROVER",
+      "term": "approver",
+      "definition": "Independent authorized checker within delegated limits."
+    },
+    {
+      "id": "TERM-POLICYHOLDER",
+      "term": "policyholder",
+      "definition": "Party holding the insurance contract."
+    },
+    {
+      "id": "TERM-INSURED",
+      "term": "insured",
+      "definition": "Person, asset or exposure covered by the policy."
+    },
+    {
+      "id": "TERM-BENEFICIARY",
+      "term": "beneficiary",
+      "definition": "Party entitled to specified benefits, distinct from employer visibility."
+    },
+    {
+      "id": "TERM-DISTRIBUTOR",
+      "term": "distributor",
+      "definition": "Authorized seller/referrer/agency relationship."
+    },
+    {
+      "id": "TERM-CARRIER",
+      "term": "carrier",
+      "definition": "Insurer/provider assuming contract-defined coverage obligations."
+    },
+    {
+      "id": "TERM-TENANT",
+      "term": "tenant",
+      "definition": "Administrative isolation boundary, not synonym for insurer or sales channel."
+    },
+    {
+      "id": "TERM-CHANNEL",
+      "term": "channel",
+      "definition": "B2C or explicit B2B commercial entry/servicing context."
+    },
+    {
+      "id": "TERM-COMMITMENT",
+      "term": "commitment",
+      "definition": "Durable commercial acceptance backed by verified payment or approved credit terms."
+    },
+    {
+      "id": "TERM-ISSUANCE",
+      "term": "issuance",
+      "definition": "Carrier-confirmed policy creation, separate from payment and activation."
+    },
+    {
+      "id": "TERM-EXTERNAL_OUTCOME_UNKNOWN",
+      "term": "external_outcome_unknown",
+      "definition": "Request may have succeeded externally; replay requires status/idempotency or verified reconciliation."
+    },
+    {
+      "id": "TERM-OUTBOX",
+      "term": "outbox",
+      "definition": "Durable event rows inserted in the same local transaction as business state."
+    },
+    {
+      "id": "TERM-INBOX",
+      "term": "inbox",
+      "definition": "Receiver deduplication record for consumed external/internal messages."
+    },
+    {
+      "id": "TERM-SERVICING",
+      "term": "servicing",
+      "definition": "Contracted post-sale policy, payment, claim and support operations."
+    },
+    {
+      "id": "TERM-QUARANTINE",
+      "term": "quarantine",
+      "definition": "Separate privileged security suspension preserving durable obligations."
+    },
+    {
+      "id": "TERM-IRR",
+      "term": "IRR",
+      "definition": "Proposed canonical rial currency; integer amount with explicit unit."
+    },
+    {
+      "id": "TERM-TOMAN",
+      "term": "toman",
+      "definition": "Display unit equal to ten rials; explicitly labeled and not an accounting currency substitution."
+    },
+    {
+      "id": "TERM-EFFECTIVE_DATE",
+      "term": "effective_date",
+      "definition": "Contract-specific coverage date with explicit calendar/timezone semantics, not event ingestion time."
+    }
+  ]
+}

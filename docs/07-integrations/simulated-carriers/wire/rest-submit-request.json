@@ -1,0 +1,12 @@
+{
+  "kind": "submission_request",
+  "clientApplicationRef": "synthetic-order-001",
+  "quoteRef": "SIM-REST-Q-1",
+  "acceptedPremium": {
+    "amount": "120000",
+    "currency": "IRR",
+    "unit": "rial"
+  },
+  "effectiveDate": "2026-11-01",
+  "mappingVersion": "map-v1"
+}

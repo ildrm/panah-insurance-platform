@@ -1,0 +1,22 @@
+{
+  "id": "CLEAN-LOCKED-INSTALL-CONTROLS",
+  "version": "1.0.0",
+  "status": "partial",
+  "updated": "2026-10-28",
+  "checkedAt": "2026-10-28T10:52:14.393320+00:00",
+  "node": "24.22.1",
+  "npm": "11.19.1",
+  "command": "npm ci --ignore-scripts --no-audit --no-fund --offline --cache=<verified local npm cache>",
+  "cwd": "/private/tmp/st-clean-controls-1793184383896",
+  "package_count": 171,
+  "exit_code": 0,
+  "lock_sha256": "aebce4847d3f64ff1ac212f1621f0e04e49e1077aca0fd47ab3ce3aebb9ee50b",
+  "lock_unchanged": true,
+  "official_registry_urls_only": true,
+  "workspace_controls_link": "/private/tmp/st-clean-controls-1793184383896/packages/controls",
+  "build_evidence_id": "clean-controls-build-node24",
+  "limitations": [
+    "Independent checkout outside source ancestors; offline cache prepopulated from official registry with lock integrity",
+    "No remote CI, container runtime or production deployment qualification"
+  ]
+}

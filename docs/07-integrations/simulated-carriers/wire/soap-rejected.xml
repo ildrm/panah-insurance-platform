@@ -1,0 +1,2 @@
+<?xml version='1.0' encoding='utf-8'?>
+<soap:Envelope xmlns:c="urn:fictional:carrier:soap:v1" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/"><soap:Body><c:Reject><c:Code>risk_ineligible</c:Code><c:Accepted>false</c:Accepted><c:Retriable>false</c:Retriable></c:Reject></soap:Body></soap:Envelope>

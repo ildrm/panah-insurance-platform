@@ -1,0 +1,19 @@
+{
+  "id": "DEPENDENCY-ADVISORIES-LOCAL",
+  "version": "1.0.0",
+  "status": "partial",
+  "updated": "2026-10-28",
+  "endpoint": "https://registry.npmjs.org/-/npm/v1/security/advisories/bulk",
+  "checked_at": "2026-10-28T10:44:19.024Z",
+  "method": "Official npm advisory bulk endpoint POST via curl; exact versions from package-lock.json",
+  "lock_sha256": "aebce4847d3f64ff1ac212f1621f0e04e49e1077aca0fd47ab3ce3aebb9ee50b",
+  "request_sha256": "f48bd24e7a2416a67cb634c65388dc6c722ad00c75616f50c984e0b8596e2dff",
+  "response_sha256": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+  "dependency_names": 212,
+  "advisories": {},
+  "result": "no-reported-advisories",
+  "limitations": [
+    "Point-in-time registry result, not a complete code/security audit",
+    "Unknown vulnerabilities, provenance review, production configuration and formal ASVS verification remain open"
+  ]
+}

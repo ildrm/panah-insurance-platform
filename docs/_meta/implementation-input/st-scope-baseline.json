@@ -1,0 +1,628 @@
+{
+  "version": "1.0",
+  "date": "2026-10-28",
+  "status": "user-requested capability baseline, not independently verified competitor facts",
+  "parent_feature_count": 74,
+  "features": [
+    {
+      "id": "INS-01",
+      "name": "Insurance catalog",
+      "scope": "Hierarchical categories, search, featured products, insurer profiles, plans, coverage summaries, product availability and assisted-versus-self-service presentation."
+    },
+    {
+      "id": "INS-02",
+      "name": "Dynamic questionnaire",
+      "scope": "Versioned product forms, conditional steps and fields, validation, drafts, resume, declarations, manual fallback, document requirements and localization."
+    },
+    {
+      "id": "INS-03",
+      "name": "Customer and insured profiles",
+      "scope": "Saved individuals, dependents, addresses, vehicles, property/devices and prior policies; relationship-specific reuse, consent and ownership."
+    },
+    {
+      "id": "INS-04",
+      "name": "Official insurance inquiries",
+      "scope": "Permitted plate/owner and policy-history inquiries, no-claim records, provenance, freshness, eligibility, failure handling and manual correction."
+    },
+    {
+      "id": "INS-05",
+      "name": "Multi-insurer quotation",
+      "scope": "Carrier eligibility, request fan-out, parallel results, deduplication, coverage normalization, quote expiration and insurer-specific pricing/rating."
+    },
+    {
+      "id": "INS-06",
+      "name": "Comparison interface",
+      "scope": "Comparable premiums, limits, exclusions, deductibles, eligible payment plans, customer/service information, sorting, filtering, badges and disclosed sponsored ranking."
+    },
+    {
+      "id": "INS-07",
+      "name": "Coverages and riders",
+      "scope": "Base limits, optional risks, dependencies, deductibles, exclusions, pricing effects and insurer/product-specific validation."
+    },
+    {
+      "id": "INS-08",
+      "name": "Underwriting",
+      "scope": "Risk declarations, eligibility checks, requests for evidence, manual review, acceptance/rejection and auditable underwriting decisions."
+    },
+    {
+      "id": "INS-09",
+      "name": "Vehicle inspection",
+      "scope": "Authorized self-photo/video and in-person inspections, booking, checklists, secure uploads, review, retakes, expiry and approval."
+    },
+    {
+      "id": "INS-10",
+      "name": "Quote persistence",
+      "scope": "Save/resume, eligible sharing with scoped expiring links, quote retrieval, expiry, reminders and abandoned-purchase recovery."
+    },
+    {
+      "id": "INS-11",
+      "name": "Specialized product templates",
+      "scope": "All product families listed below, each with its own risk schema, pricing inputs, plans, beneficiaries, documents, underwriting and servicing differences."
+    },
+    {
+      "id": "INS-12",
+      "name": "Assisted quotations",
+      "scope": "Complex commercial/group/cargo/engineering inquiries, lead assignment, callbacks, proposal versions, insurer negotiation and manual offer approval."
+    },
+    {
+      "id": "COM-01",
+      "name": "Digital checkout",
+      "scope": "Buyer/payer/policyholder/insured relationships, order review, declarations, consents, approvals, order creation and eligibility revalidation."
+    },
+    {
+      "id": "COM-02",
+      "name": "Identity and documents",
+      "scope": "Permitted identity verification, ownership/previous-policy/medical/property evidence, secure upload, malware handling, review and expiry."
+    },
+    {
+      "id": "COM-03",
+      "name": "Online payments",
+      "scope": "Provider setup, payment intent/attempt, redirect, authoritative server verification, duplicate callbacks, receipts, failure recovery and payment allocation."
+    },
+    {
+      "id": "COM-04",
+      "name": "Installment purchasing",
+      "scope": "Eligibility, financing provider, down payment, schedule, terms, guarantor/security requirements where applicable, acceptance and transparent total payable."
+    },
+    {
+      "id": "COM-05",
+      "name": "Discounts and promotions",
+      "scope": "Codes, insurer/product campaigns, limits, budget reservations, stacking, attribution, expiry, eligibility and abuse controls."
+    },
+    {
+      "id": "COM-06",
+      "name": "Policy issuance",
+      "scope": "Authorized carrier submission, automated/manual operations, underwriting dependencies, policy references, documents and failure remediation."
+    },
+    {
+      "id": "COM-07",
+      "name": "Policy delivery",
+      "scope": "Account/PDF access, authorized SMS/email links, optional physical delivery, courier integration and delivery tracking."
+    },
+    {
+      "id": "COM-08",
+      "name": "Order tracking",
+      "scope": "Separate order, payment, submission, underwriting, issuance and delivery status; customer-safe explanations, timelines and operational escalations."
+    },
+    {
+      "id": "COM-09",
+      "name": "Finance operations",
+      "scope": "Reconciliation, premium allocation, commissions, refunds, insurer settlements, payouts, accounting permissions and auditability."
+    },
+    {
+      "id": "SVC-01",
+      "name": "Policy vault",
+      "scope": "Active/pending/expired/cancelled policies, documents, endorsements, coverage, insured subjects, authorized sharing and history."
+    },
+    {
+      "id": "SVC-02",
+      "name": "Renewals",
+      "scope": "Expiry detection, reminders, prefilled applications, fresh quotes, insurer switching, group/fleet changes and renewal attribution."
+    },
+    {
+      "id": "SVC-03",
+      "name": "Installment servicing",
+      "scope": "Schedules, balances, receipts, reminders, payment allocation, arrears, disputes and approved collection rules."
+    },
+    {
+      "id": "SVC-04",
+      "name": "Amendments and cancellation",
+      "scope": "Corrections, endorsements, cancellation eligibility, insurer processing, effective dates, version history and refunds."
+    },
+    {
+      "id": "SVC-05",
+      "name": "Claims guidance",
+      "scope": "Product/carrier procedures, required documents, service locations, support and escalation without claiming settlement authority."
+    },
+    {
+      "id": "SVC-06",
+      "name": "Digital claims intake",
+      "scope": "Eligibility, incident form, parties, place/time, evidence, privacy, submission and claimant-facing tracking."
+    },
+    {
+      "id": "SVC-07",
+      "name": "Claim assessment",
+      "scope": "Adjuster assignment, scheduling, inspection, loss estimate, approval/rejection, supplementary evidence and review rights."
+    },
+    {
+      "id": "SVC-08",
+      "name": "Claims payment",
+      "scope": "Contract-authorized settlement, approved amount, beneficiary/bank verification, dual control, payment status and reconciliation."
+    },
+    {
+      "id": "SVC-09",
+      "name": "Customer support",
+      "scope": "Tickets, live chat/callback integrations, complaints, attachments, consent-based account assistance, assignments, SLAs and escalation."
+    },
+    {
+      "id": "GRW-01",
+      "name": "Accounts and authentication",
+      "scope": "Mobile OTP, optional approved alternatives, profile, sessions, organization switching, MFA for privileged roles, account recovery and consent."
+    },
+    {
+      "id": "GRW-02",
+      "name": "Wallets and credits",
+      "scope": "Distinct cash/withdrawable, refund, commission and non-cash promotional balances, vouchers, expiry, permitted redemption and ledgers."
+    },
+    {
+      "id": "GRW-03",
+      "name": "Loyalty club",
+      "scope": "Points, pending/confirmed/reversed accrual, missions, rewards, badges, games, prize draws, charitable redemption, expiry and fraud controls; regulated mechanics require review."
+    },
+    {
+      "id": "GRW-04",
+      "name": "Referrals",
+      "scope": "Codes/links, invitation attribution, qualifying events, pending/reversed rewards, budgets, caps and anti-self-referral protections."
+    },
+    {
+      "id": "GRW-05",
+      "name": "Campaigns",
+      "scope": "Banners, landing pages, segments, budgets, scheduling, targeting, experiments and insurer/product/channel restrictions."
+    },
+    {
+      "id": "GRW-06",
+      "name": "Seller/affiliate portal",
+      "scope": "Onboarding, contracts, customer relationships, leads, quotes, assisted sales, teams, commissions, wallet, payouts, renewals, training and reporting."
+    },
+    {
+      "id": "GRW-07",
+      "name": "Corporate sales",
+      "scope": "Commercial leads, employer accounts, group quotes, census, negotiated benefits, branches, approvals, billing and account teams."
+    },
+    {
+      "id": "GRW-08",
+      "name": "Content and SEO",
+      "scope": "Original articles, insurer profiles, FAQs, product guides, searchable CMS, approvals, redirects, structured metadata and indexing control."
+    },
+    {
+      "id": "GRW-09",
+      "name": "Communications",
+      "scope": "OTP, transactional notices, renewal/installment reminders, email/SMS/push, preferences, consent, templates, throttling and delivery events."
+    },
+    {
+      "id": "GRW-10",
+      "name": "Mobile and web-app experience",
+      "scope": "Responsive web/PWA, secure uploads, installability, deep links and permission-aware notifications; native apps are a separate explicitly decided deliverable."
+    },
+    {
+      "id": "AUTO-01",
+      "name": "Vehicle garage",
+      "scope": "Multiple vehicles/motorcycles, ownership/authorization, policy links, deadlines, documents and lifecycle changes."
+    },
+    {
+      "id": "AUTO-02",
+      "name": "Vehicle official inquiries",
+      "scope": "Car/motorcycle fines, breakdowns, tolls, congestion/traffic charges, municipal charges, transfer taxes, license points/status, active plates/history, registration/ownership, inspection and vehicle history through authorized providers."
+    },
+    {
+      "id": "AUTO-03",
+      "name": "Automotive payment center",
+      "scope": "Supported fine/toll/tax/charge payments, fee disclosure, allocation, official receipt, pending settlement, duplicate protection and reconciliation."
+    },
+    {
+      "id": "AUTO-04",
+      "name": "Automotive alerts",
+      "scope": "Obligation reminders, inquiry alerts, paid SMS subscriptions, preference controls, expiry and subscription renewal."
+    },
+    {
+      "id": "AUTO-05",
+      "name": "Maintenance marketplace",
+      "scope": "Provider/location discovery, oil/service/car-wash/inspection/towing/battery/tire-repair bookings, availability, price, cancellation, fulfillment, commissions and complaints."
+    },
+    {
+      "id": "AUTO-06",
+      "name": "Automotive parts commerce",
+      "scope": "Sellers, compatible tires/batteries/oils/filters/accessories, catalog, inventory, cart, shipping, returns, refunds and seller settlement."
+    },
+    {
+      "id": "AUTO-07",
+      "name": "Vehicle trading",
+      "scope": "Price/valuation, listings, history checks, auctions, sale contracts, authorized secure-transaction support and debt settlement; each separately gated with authority and provider dependencies."
+    },
+    {
+      "id": "AUTO-08",
+      "name": "Vehicle app utilities",
+      "scope": "Digital document wallet, road-condition and technical-report provider utilities, freshness, mobile capabilities and no unsupported official claims."
+    },
+    {
+      "id": "ECO-01",
+      "name": "Adjacent financial referrals",
+      "scope": "Authorized partner credit/investment referrals, eligibility, disclosures, consent, attribution and boundary between referral and direct regulated execution."
+    },
+    {
+      "id": "CHN-01",
+      "name": "Independent B2C sales mode",
+      "scope": "Enable/disable direct individual discovery, quote and purchase behavior independently of B2B, with clear transition semantics."
+    },
+    {
+      "id": "CHN-02",
+      "name": "Independent B2B sales mode",
+      "scope": "Enable/disable organization purchasing and configured partner-sale entry points independently of B2C."
+    },
+    {
+      "id": "CHN-03",
+      "name": "B2B subchannels",
+      "scope": "Independent corporate, commercial, reseller/agency and B2B2C configuration; employee servicing is separate from new sales."
+    },
+    {
+      "id": "CHN-04",
+      "name": "Scoped availability",
+      "scope": "Global/product/plan/carrier/organization/region/channel/customer/time configuration, dependencies, approvals, rollout, preview and rollback."
+    },
+    {
+      "id": "CHN-05",
+      "name": "Servicing continuity",
+      "scope": "Sales shutdown preserves committed orders, permitted issuance, installments, policy access, claims, refunds and partner delivery; security quarantines use separate controls."
+    },
+    {
+      "id": "ORG-01",
+      "name": "Organization model",
+      "scope": "Legal entities, branches, departments, cost centers, supplier/buyer/distributor relationships, memberships and tenant context."
+    },
+    {
+      "id": "ORG-02",
+      "name": "Organization authorization",
+      "scope": "RBAC plus resource/relationship scopes, delegated administration, multi-organization users, invitations, revocation, access review and audit."
+    },
+    {
+      "id": "ORG-03",
+      "name": "Corporate approvals and billing",
+      "scope": "Requester/approver/payer/policyholder separation, maker-checker, delegated limits, budgets, invoices, credit/prepay terms and purchase approvals."
+    },
+    {
+      "id": "ORG-04",
+      "name": "Bulk enrollment",
+      "scope": "Employees/dependents/assets/fleets, imports, HR/API synchronization, row validation, previews, partial failure policy, approvals and effective-dated changes."
+    },
+    {
+      "id": "DSH-01",
+      "name": "B2C dashboard",
+      "scope": "Policies, quotes/orders, payments/installments, renewals, insured assets, claims, documents, wallet/loyalty, notifications, support and settings."
+    },
+    {
+      "id": "DSH-02",
+      "name": "Corporate buyer dashboard",
+      "scope": "Organization portfolio, branches/cost centers, group benefits, census/assets, approvals, bulk quotes, billing, renewals, contracts, reports and restricted claims information."
+    },
+    {
+      "id": "DSH-03",
+      "name": "Employee/beneficiary dashboard",
+      "scope": "Own coverage, dependents, certificates, private claims, benefit information and optional separate personal purchases; employer cannot view unrelated personal policies."
+    },
+    {
+      "id": "DSH-04",
+      "name": "Seller/distributor dashboard",
+      "scope": "Leads/CRM, quote/purchase, authorized customer portfolio, sales pipeline, renewals, team, commissions, withdrawals, training and performance."
+    },
+    {
+      "id": "DSH-05",
+      "name": "Carrier/supplier dashboard",
+      "scope": "Own sales, incoming submissions, underwriting/issuance, policy portfolio, allowed product proposals, claims, settlements, API transactions and staff roles; optional API-only operation."
+    },
+    {
+      "id": "DSH-06",
+      "name": "Dashboard and admin configuration",
+      "scope": "Menu/widget/action/report configuration for every dashboard, server-enforced permissions, platform super-admin and operational workbenches, localization and accessibility."
+    },
+    {
+      "id": "INT-01",
+      "name": "Canonical purchase/event model",
+      "scope": "Versioned stable business schemas for buyer, payer, policyholder, insured, coverage, financial references, distribution, permissions and event correlation."
+    },
+    {
+      "id": "INT-02",
+      "name": "Company-specific adapters",
+      "scope": "Separate versioned carrier/supplier adapters supporting heterogeneous REST/JSON, SOAP/XML and custom supported contracts."
+    },
+    {
+      "id": "INT-03",
+      "name": "Post-purchase transmission",
+      "scope": "Durably transmit required recipient-scoped data after authoritative commercial/payment confirmation; support approved B2B credit/invoice paths explicitly."
+    },
+    {
+      "id": "INT-04",
+      "name": "Mapping and validation",
+      "scope": "Request/response mapping, schemas, enums, dates, currency/units, error taxonomy, contract tests and safe transformation rules."
+    },
+    {
+      "id": "INT-05",
+      "name": "Protocol and authentication support",
+      "scope": "API keys, token/OAuth flows, signatures, certificates/mTLS and partner-specific requirements with secret references and rotation."
+    },
+    {
+      "id": "INT-06",
+      "name": "Partner connection operations",
+      "scope": "Sandbox/live separation, product/operation/channel availability, onboarding, approved endpoints, credentials, health, degraded and suspended modes."
+    },
+    {
+      "id": "INT-07",
+      "name": "Reliable delivery and reconciliation",
+      "scope": "Transactional outbox/inbox, at-least-once delivery, idempotency, bounded retry, dead letters, ambiguous-outcome handling, replay and reconciliation."
+    },
+    {
+      "id": "INT-08",
+      "name": "Synchronous/asynchronous workflows",
+      "scope": "Quote/reserve/submit/issue/status steps, verified callbacks, polling, cancellation/endorsement/claim flows and separate financial/insurance states."
+    },
+    {
+      "id": "INT-09",
+      "name": "Integration testing and observability",
+      "scope": "Contract simulators, failure injection, masked logs, traces, latency/error metrics, health and operator actions."
+    },
+    {
+      "id": "INT-10",
+      "name": "Versioning and event routing",
+      "scope": "Versioned mappings/contracts, compatibility, controlled rollout/rollback, recipient-specific projections, authorized exports/webhooks and delivery audit."
+    }
+  ],
+  "product_families": [
+    {
+      "id": "PRD-01",
+      "name": "Motor third-party",
+      "scope": "Vehicle/owner and policy history, no-claim data, liability limits, term, penalties only from validated rules, installment eligibility."
+    },
+    {
+      "id": "PRD-02",
+      "name": "Comprehensive motor / body",
+      "scope": "Vehicle value, insured perils, deductibles, accessories, inspection evidence, geographic and insurer conditions."
+    },
+    {
+      "id": "PRD-03",
+      "name": "Motorcycle third-party",
+      "scope": "Motorcycle characteristics, ownership, prior policy, permitted usage and liability selections."
+    },
+    {
+      "id": "PRD-04",
+      "name": "Fire / property",
+      "scope": "Property use/location, construction, building/contents values, inspection, perils and coverage relationships."
+    },
+    {
+      "id": "PRD-05",
+      "name": "Earthquake coverage",
+      "scope": "Model as standalone or rider only where a carrier contract supports it; geography, insured values and exclusions."
+    },
+    {
+      "id": "PRD-06",
+      "name": "Individual / family supplementary health",
+      "scope": "Members/dependents, ages, base coverage, declarations, benefit limits, network, waiting/eligibility rules and privacy."
+    },
+    {
+      "id": "PRD-07",
+      "name": "Corporate / group health",
+      "scope": "Employer/census, dependents, benefits, enrollment windows, effective-dated changes, negotiations, billing and employee privacy."
+    },
+    {
+      "id": "PRD-08",
+      "name": "Life / investment-linked life",
+      "scope": "Insured age, underwriting, beneficiaries, contributions, term and approved projections/disclosures without invented returns."
+    },
+    {
+      "id": "PRD-09",
+      "name": "Pension / annuity",
+      "scope": "Contributions, duration, payout options, eligibility and approved benefit illustrations."
+    },
+    {
+      "id": "PRD-10",
+      "name": "Travel",
+      "scope": "Destination, traveler age, trip dates/duration, plan/assistance limits and destination-specific eligibility."
+    },
+    {
+      "id": "PRD-11",
+      "name": "Pilgrimage / Karbala",
+      "scope": "Special destination, traveler details, departure/duration, provider-specific plan and assistance rules."
+    },
+    {
+      "id": "PRD-12",
+      "name": "Physicians professional liability",
+      "scope": "Specialty, professional credentials, practice, limits, prior claims and exclusions."
+    },
+    {
+      "id": "PRD-13",
+      "name": "Elevator liability",
+      "scope": "Building, equipment, capacity/stops, maintenance/inspection evidence, operator and liability limits."
+    },
+    {
+      "id": "PRD-14",
+      "name": "Sports",
+      "scope": "Sport/activity, participant identity, risk class, period, benefit and authorized issuer requirements."
+    },
+    {
+      "id": "PRD-15",
+      "name": "Personal accident",
+      "scope": "Occupation/activity risk, benefits, insured parties and beneficiaries."
+    },
+    {
+      "id": "PRD-16",
+      "name": "Mobile-device protection",
+      "scope": "Device model/identifier/value, age/condition, proof, inspection, limits and deductibles."
+    },
+    {
+      "id": "PRD-17",
+      "name": "Electronic equipment",
+      "scope": "Equipment schedule, value, use/location, risk, maintenance and commercial underwriting."
+    },
+    {
+      "id": "PRD-18",
+      "name": "Engineering",
+      "scope": "Project/type, insured values, period, site, contractors, technical evidence and assisted underwriting."
+    },
+    {
+      "id": "PRD-19",
+      "name": "Cargo / transit",
+      "scope": "Cargo, values, route, transport, shipment period, coverage and supporting documents."
+    },
+    {
+      "id": "PRD-20",
+      "name": "Commercial property / assets",
+      "scope": "Organization, asset schedules, valuations, multi-site risks, inspection and negotiated terms."
+    },
+    {
+      "id": "PRD-21",
+      "name": "Other liability",
+      "scope": "Permitted professional/public/employer risks, insured operations, exposures, limits and assisted underwriting."
+    },
+    {
+      "id": "PRD-22",
+      "name": "Dental implant",
+      "scope": "Specific eligible treatment/device/provider, benefit conditions, exclusions and sensitive health data handling."
+    },
+    {
+      "id": "PRD-23",
+      "name": "War-related property coverage",
+      "scope": "Contract-defined eligible coverage/rider only; do not infer availability, legal approval or underwriting terms."
+    },
+    {
+      "id": "PRD-24",
+      "name": "Fleet / other group insurance",
+      "scope": "Multiple insured vehicles/assets/people, group quotes, schedule changes, approval/billing and individual certificates when applicable."
+    }
+  ],
+  "roles": [
+    {
+      "id": "R01",
+      "name": "Product lead / product owner",
+      "responsibilities": "Own product outcomes, personas, B2C/B2B/B2B2C scope, roadmap, priorities, commercial assumptions, success metrics and acceptance decisions. Resolve scope conflicts without deleting requirements.",
+      "outputs": "Vision, PRD, roadmap, product acceptance and scope-change proposals."
+    },
+    {
+      "id": "R02",
+      "name": "Insurance domain and underwriting specialist",
+      "responsibilities": "Define product structures, coverages, exclusions, eligibility, rating inputs, quote validity, underwriting, inspections, issuance, endorsements, renewals and claims. Distinguish advisory services from insurer-authorized actions.",
+      "outputs": "Product templates, insurance glossary, policy and claim state machines, insurer-rule validation."
+    },
+    {
+      "id": "R03",
+      "name": "Business / systems analyst",
+      "responsibilities": "Decompose every capability into atomic requirements, business rules, personas, workflows, field dictionaries, states, failure cases and traceability. Separate buyer, payer, policyholder, insured, beneficiary, distributor and carrier.",
+      "outputs": "SRS, requirements registry, business rules, acceptance criteria and traceability matrix."
+    },
+    {
+      "id": "R04",
+      "name": "UX/UI, accessibility and localization designer",
+      "responsibilities": "Design all storefronts and dashboards, information architecture, responsive interaction, RTL/LTR layouts, accessible forms and tables, error recovery and design tokens. Minimize perceived latency without concealing real status.",
+      "outputs": "Screen inventory, navigation maps, design system, UI states, accessibility and localization specifications."
+    },
+    {
+      "id": "R05",
+      "name": "Staff software / solution architect",
+      "responsibilities": "Own bounded contexts, deployment boundaries, tenancy, data ownership, API/event contracts, architecture decisions and dependency rules. Prefer the simplest architecture meeting measured requirements.",
+      "outputs": "C4 and sequence diagrams, ADRs, module contracts and architecture conformance."
+    },
+    {
+      "id": "R06",
+      "name": "Performance and capacity engineer",
+      "responsibilities": "Own workload assumptions, performance budgets, profiling, query and frontend analysis, concurrency limits, load/soak tests, capacity models and cost-per-transaction. Review all critical journeys.",
+      "outputs": "NFR budgets, test workloads, benchmark evidence, regression gates and bottleneck backlog."
+    },
+    {
+      "id": "R07",
+      "name": "Next.js frontend engineer",
+      "responsibilities": "Implement accessible localized storefronts and dashboards, rendering boundaries, authenticated data access, explicit caching, typed API clients, progressive quote results, form behavior and frontend tests.",
+      "outputs": "Next.js applications, shared UI packages, route tests, bundle and Web Vitals instrumentation."
+    },
+    {
+      "id": "R08",
+      "name": "NestJS backend / domain engineer",
+      "responsibilities": "Implement application use cases, modules, validation, authorization, business invariants, transactions, APIs, outbox events, workers, feature controls and post-sale servicing.",
+      "outputs": "NestJS services and workers, domain tests, transactional behavior and published API contracts."
+    },
+    {
+      "id": "R09",
+      "name": "Partner integration and workflow engineer",
+      "responsibilities": "Build carrier-specific adapters, canonical mapping, authentication, schemas, asynchronous workflows, idempotency, polling/callbacks, failure classification and reconciliation.",
+      "outputs": "Adapter SDK, contract simulators, integration studio, conformance tests and partner onboarding runbooks."
+    },
+    {
+      "id": "R10",
+      "name": "Database / data platform engineer",
+      "responsibilities": "Own relational models, indexes, query plans, tenant boundaries, migrations, transactional consistency, connection budgets, backups, retention and export/import design.",
+      "outputs": "ERDs, data dictionary, migrations, indexing plans, restore tests and data lifecycle rules."
+    },
+    {
+      "id": "R11",
+      "name": "Application security and privacy engineer",
+      "responsibilities": "Model threats; implement object/property authorization, privileged access, secret handling, encryption, auditability, secure integrations and privacy minimization. Review cache isolation and multi-tenant exposure.",
+      "outputs": "Threat model, security controls, privacy matrix, negative tests and security release evidence."
+    },
+    {
+      "id": "R12",
+      "name": "Payments, accounting and settlement specialist",
+      "responsibilities": "Define payment verification, allocations, installment schedules, precise monetary units, refunds, wallets, ledger invariants, commissions, insurer settlement and reconciliation.",
+      "outputs": "Financial model, payment/ledger specifications, accounting tests and settlement runbooks."
+    },
+    {
+      "id": "R13",
+      "name": "Quality engineering / test automation engineer",
+      "responsibilities": "Own risk-based testing, executable acceptance criteria, unit/integration/contract/E2E suites, accessibility checks, mode/tenant matrices, test data, fault injection and evidence quality.",
+      "outputs": "Test strategy, fixtures, automated suites, regression results and quality gates."
+    },
+    {
+      "id": "R14",
+      "name": "Platform / DevOps / SRE engineer",
+      "responsibilities": "Own reproducible environments, CI/CD, infrastructure, deployment, autoscaling, telemetry, alerts, queue durability, operational SLOs, recovery and rollback.",
+      "outputs": "Local environment, pipeline definitions, deployment architecture, dashboards, runbooks and recovery evidence."
+    },
+    {
+      "id": "R15",
+      "name": "Analytics / BI engineer",
+      "responsibilities": "Define consent-aware event taxonomy, conversion metrics, product reporting, seller/carrier/corporate analytics, freshness and access-controlled exports without burdening transactional workloads.",
+      "outputs": "Tracking plan, metric dictionary, analytical models and report specifications."
+    },
+    {
+      "id": "R16",
+      "name": "Content, SEO and growth specialist",
+      "responsibilities": "Define original product content, insurer profiles, CMS approvals, public indexing, metadata, campaigns, loyalty/referral attribution and compliant communications.",
+      "outputs": "CMS/SEO requirements, content taxonomy, lifecycle messaging and campaign rules."
+    },
+    {
+      "id": "R17",
+      "name": "Technical writer / documentation engineer",
+      "responsibilities": "Maintain the docs information architecture, templates, source registry, glossary, cross-links, machine-readable manifests, examples, guides and documentation validation.",
+      "outputs": "Complete docs tree, docs-as-code checks, coverage reports and operator/developer guides."
+    },
+    {
+      "id": "R18",
+      "name": "Engineering delivery / release lead",
+      "responsibilities": "Sequence dependency-aware vertical slices, coordinate role reviews, track blockers, manage changes and readiness gates, and ensure claimed completion is supported by evidence.",
+      "outputs": "Implementation plan, work ledger, release checklist, checkpoint and readiness reports."
+    },
+    {
+      "id": "R19",
+      "name": "Insurance regulatory / legal compliance reviewer",
+      "responsibilities": "Identify jurisdiction-specific licensing, distribution, privacy, financing, marketing, records and contractual obligations for qualified human validation. Never invent legal approval or insurer authority.",
+      "outputs": "Compliance questions, evidence register, launch restrictions and sign-off requirements."
+    },
+    {
+      "id": "R20",
+      "name": "Insurance operations, claims and partner-support specialist",
+      "responsibilities": "Define manual underwriting and issuance queues, customer/partner service, claims coordination, escalation, exception ownership, provider onboarding, fulfillment and staff tools.",
+      "outputs": "Operating procedures, queue SLAs, operational dashboards, support taxonomy and UAT scenarios."
+    },
+    {
+      "id": "R21",
+      "name": "Mobile / PWA client engineer",
+      "responsibilities": "Define installable web experiences, mobile forms and uploads, permissions, deep links, notifications and offline limitations; evaluate separately whether native applications are required.",
+      "outputs": "PWA/mobile specification and tests; explicit native-app scope and additional-stack decision when needed."
+    }
+  ]
+}

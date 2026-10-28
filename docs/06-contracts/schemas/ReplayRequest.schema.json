@@ -1,0 +1,47 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://insurance.example.invalid/schemas/ReplayRequest.schema.json",
+  "title": "ReplayRequest",
+  "type": "object",
+  "properties": {
+    "submissionId": {
+      "type": "string",
+      "format": "uuid"
+    },
+    "expectedVersion": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 2147483647
+    },
+    "reconciliationEvidenceId": {
+      "type": "string",
+      "format": "uuid"
+    },
+    "checkerApprovalId": {
+      "type": "string",
+      "format": "uuid"
+    },
+    "reason": {
+      "type": "string",
+      "minLength": 10,
+      "maxLength": 1000
+    },
+    "resolution": {
+      "type": "string",
+      "enum": [
+        "confirmed_not_accepted",
+        "safe_idempotent_retry",
+        "confirmed_accepted_no_resend"
+      ]
+    }
+  },
+  "required": [
+    "submissionId",
+    "expectedVersion",
+    "reconciliationEvidenceId",
+    "checkerApprovalId",
+    "reason",
+    "resolution"
+  ],
+  "additionalProperties": false
+}

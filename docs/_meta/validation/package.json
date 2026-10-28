@@ -1,0 +1,8 @@
+{
+  "name": "insurance-documentation-validation",
+  "private": true,
+  "type": "module",
+  "version": "1.0.0",
+  "scripts": {"validate:asyncapi": "node validate_asyncapi.mjs", "validate:standards": "node validate_standards.mjs"},
+  "devDependencies": {"@asyncapi/parser": "3.6.6", "@apidevtools/swagger-parser": "13.1.0"}
+}

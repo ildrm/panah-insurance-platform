@@ -1,0 +1,32 @@
+{
+  "fixtureId": "FIX-PRD-04",
+  "synthetic": true,
+  "productId": "PRD-04",
+  "schemaRef": "../schemas/PRD-04.risk.schema.json",
+  "riskExample": {
+    "occupancyCode": "SYNTH-RESIDENTIAL",
+    "constructionCode": "SYNTH-MASONRY",
+    "areaM2": "85.50",
+    "buildingValue": "9000000000",
+    "contentsValue": "500000000",
+    "perilCodes": [
+      "SYNTH-FIRE"
+    ],
+    "locationRef": "00000000-0000-4000-8000-000000000401"
+  },
+  "canonicalContext": {
+    "currency": "IRR",
+    "unit": "rial",
+    "channel": "b2c",
+    "partyAndAuthorityFixture": "Synthetic authorized buyer/payer/policyholder/insured roles; referenced UUIDs resolve only in the local test harness.",
+    "productRuleVersion": "SYNTH-1",
+    "liveOperationsAllowed": false
+  },
+  "scenarioContext": {},
+  "expected": {
+    "withoutContract": "live_quote_and_purchase_disabled",
+    "syntacticValidation": "pass",
+    "carrierEligibility": "undetermined_without_synthetic_rule_set",
+    "variant": "A tenant selects building cover without the required insurable-interest evidence: the server requests review and cannot issue a plan based only on the tenant's contents evidence."
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "eventId": "00000000-0000-4000-8000-000000000020",
+  "eventType": "purchase.committed.v1",
+  "schemaVersion": 1,
+  "occurredAt": "2026-10-28T08:00:00Z",
+  "correlationId": "00000000-0000-4000-8000-000000000021",
+  "aggregateId": "00000000-0000-4000-8000-000000000001",
+  "aggregateVersion": 1,
+  "contextRef": "00000000-0000-4000-8000-000000000002",
+  "data": {
+    "purchaseId": "00000000-0000-4000-8000-000000000001",
+    "purchaseVersion": 1,
+    "commitmentKind": "verified_payment",
+    "snapshotRef": "00000000-0000-4000-8000-000000000022",
+    "recipientProjectionRef": "00000000-0000-4000-8000-000000000008"
+  }
+}

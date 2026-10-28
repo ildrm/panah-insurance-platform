@@ -1,0 +1,235 @@
+{
+  "id": "SIM-WIRE-FIXTURES",
+  "version": "1.0.0",
+  "status": "synthetic",
+  "jsonFixtures": [
+    {
+      "path": "rest-quote-request.json",
+      "schema": "rest-wire.schema.json",
+      "definition": "QuoteRequest",
+      "valid": true
+    },
+    {
+      "path": "rest-quote-response.json",
+      "schema": "rest-wire.schema.json",
+      "definition": "QuoteResponse",
+      "valid": true
+    },
+    {
+      "path": "rest-submit-request.json",
+      "schema": "rest-wire.schema.json",
+      "definition": "SubmitRequest",
+      "valid": true
+    },
+    {
+      "path": "rest-ack.json",
+      "schema": "rest-wire.schema.json",
+      "definition": "Acknowledgment",
+      "valid": true
+    },
+    {
+      "path": "rest-status-request.json",
+      "schema": "rest-wire.schema.json",
+      "definition": "StatusRequest",
+      "valid": true
+    },
+    {
+      "path": "rest-status-pending.json",
+      "schema": "rest-wire.schema.json",
+      "definition": "Status",
+      "valid": true
+    },
+    {
+      "path": "rest-status-issued.json",
+      "schema": "rest-wire.schema.json",
+      "definition": "Status",
+      "valid": true
+    },
+    {
+      "path": "rest-rejected.json",
+      "schema": "rest-wire.schema.json",
+      "definition": "Reject",
+      "valid": true
+    },
+    {
+      "path": "rest-document-request.json",
+      "schema": "rest-wire.schema.json",
+      "definition": "DocumentRequest",
+      "valid": true
+    },
+    {
+      "path": "rest-document-response.json",
+      "schema": "rest-wire.schema.json",
+      "definition": "Document",
+      "valid": true
+    },
+    {
+      "path": "transport-unknown.json",
+      "schema": "rest-wire.schema.json",
+      "definition": "TransportUnknown",
+      "valid": true
+    },
+    {
+      "path": "invalid-rest-issued-without-policy.json",
+      "schema": "rest-wire.schema.json",
+      "definition": "Status",
+      "valid": false
+    },
+    {
+      "path": "invalid-rest-negative-premium.json",
+      "schema": "rest-wire.schema.json",
+      "definition": "SubmitRequest",
+      "valid": false
+    },
+    {
+      "path": "invalid-rest-malformed-quote.json",
+      "schema": "rest-wire.schema.json",
+      "definition": "QuoteResponse",
+      "valid": false
+    },
+    {
+      "path": "invalid-rest-mapping-v2.json",
+      "schema": "rest-wire.schema.json",
+      "definition": "QuoteResponse",
+      "valid": false
+    },
+    {
+      "path": "signed-quote-request.json",
+      "schema": "signed-wire.schema.json",
+      "definition": "QuoteRequest",
+      "valid": true
+    },
+    {
+      "path": "signed-quote-response.json",
+      "schema": "signed-wire.schema.json",
+      "definition": "QuoteResponse",
+      "valid": true
+    },
+    {
+      "path": "signed-submit-request.json",
+      "schema": "signed-wire.schema.json",
+      "definition": "SubmitRequest",
+      "valid": true
+    },
+    {
+      "path": "signed-ack.json",
+      "schema": "signed-wire.schema.json",
+      "definition": "Acknowledgment",
+      "valid": true
+    },
+    {
+      "path": "signed-callback-issued.json",
+      "schema": "signed-wire.schema.json",
+      "definition": "Callback",
+      "valid": true
+    },
+    {
+      "path": "signed-callback-pending.json",
+      "schema": "signed-wire.schema.json",
+      "definition": "Callback",
+      "valid": true
+    },
+    {
+      "path": "signed-callback-ack.json",
+      "schema": "signed-wire.schema.json",
+      "definition": "CallbackAck",
+      "valid": true
+    },
+    {
+      "path": "signed-rejected.json",
+      "schema": "signed-wire.schema.json",
+      "definition": "Reject",
+      "valid": true
+    },
+    {
+      "path": "signed-no-status.json",
+      "schema": "signed-wire.schema.json",
+      "definition": "Reject",
+      "valid": true
+    },
+    {
+      "path": "signed-document-response.json",
+      "schema": "signed-wire.schema.json",
+      "definition": "Document",
+      "valid": true
+    },
+    {
+      "path": "invalid-signed-wrong-unit.json",
+      "schema": "signed-wire.schema.json",
+      "definition": "SubmitRequest",
+      "valid": false
+    },
+    {
+      "path": "invalid-signed-malformed-ack.json",
+      "schema": "signed-wire.schema.json",
+      "definition": "Acknowledgment",
+      "valid": false
+    },
+    {
+      "path": "invalid-signed-mapping-v2.json",
+      "schema": "signed-wire.schema.json",
+      "definition": "SubmitRequest",
+      "valid": false
+    }
+  ],
+  "xmlFixtures": [
+    {
+      "path": "soap-quote-request.xml",
+      "payloadElement": "RequestQuote",
+      "schema": "soap-payloads.xsd"
+    },
+    {
+      "path": "soap-quote-response.xml",
+      "payloadElement": "QuoteResponse",
+      "schema": "soap-payloads.xsd"
+    },
+    {
+      "path": "soap-submit-request.xml",
+      "payloadElement": "SubmitApplication",
+      "schema": "soap-payloads.xsd"
+    },
+    {
+      "path": "soap-ack.xml",
+      "payloadElement": "SubmissionAcknowledgment",
+      "schema": "soap-payloads.xsd"
+    },
+    {
+      "path": "soap-status-request.xml",
+      "payloadElement": "GetSubmissionStatus",
+      "schema": "soap-payloads.xsd"
+    },
+    {
+      "path": "soap-status-poll-1.xml",
+      "payloadElement": "SubmissionStatus",
+      "schema": "soap-payloads.xsd"
+    },
+    {
+      "path": "soap-status-poll-2.xml",
+      "payloadElement": "SubmissionStatus",
+      "schema": "soap-payloads.xsd"
+    },
+    {
+      "path": "soap-status-poll-3.xml",
+      "payloadElement": "SubmissionStatus",
+      "schema": "soap-payloads.xsd"
+    },
+    {
+      "path": "soap-rejected.xml",
+      "payloadElement": "Reject",
+      "schema": "soap-payloads.xsd"
+    },
+    {
+      "path": "soap-document-request.xml",
+      "payloadElement": "GetPolicyDocument",
+      "schema": "soap-payloads.xsd"
+    },
+    {
+      "path": "soap-document-response.xml",
+      "payloadElement": "PolicyDocument",
+      "schema": "soap-payloads.xsd"
+    }
+  ],
+  "signingVectors": "signed-vectors.json",
+  "calendarPair": "calendar-money-pair.json",
+  "document": "synthetic-policy.pdf"
+}

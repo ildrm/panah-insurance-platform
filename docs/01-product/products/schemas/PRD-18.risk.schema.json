@@ -1,0 +1,74 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://insurance.invalid/schemas/PRD-18.risk.v1.schema.json",
+  "title": "PRD-18 synthetic risk input syntax",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "projectName",
+    "projectTypeCode",
+    "siteRefs",
+    "insuredValue",
+    "projectStart",
+    "projectEnd",
+    "contractorPartyRefs",
+    "technicalDossierRef"
+  ],
+  "properties": {
+    "projectName": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 200,
+      "description": "required; 1–200 NFC characters. Sensitivity: confidential. Error: PROJECT_NAME_REQUIRED. Eligibility is contract-dependent."
+    },
+    "projectTypeCode": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 80,
+      "description": "required; carrier-mapped project category <= 80. Sensitivity: confidential. Error: PROJECT_TYPE_UNMAPPED. Eligibility is contract-dependent."
+    },
+    "siteRefs": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 100,
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "format": "uuid"
+      },
+      "description": "required; 1–100 authorized locations. Sensitivity: restricted. Error: PROJECT_SITE_REQUIRED. Eligibility is contract-dependent."
+    },
+    "insuredValue": {
+      "type": "string",
+      "pattern": "^[1-9][0-9]{0,17}$",
+      "description": "required; positive; value components separate. Sensitivity: financial. Error: PROJECT_VALUE_INVALID. Eligibility is contract-dependent."
+    },
+    "projectStart": {
+      "type": "string",
+      "format": "date",
+      "description": "required; explicit site-local date. Sensitivity: confidential. Error: PROJECT_PERIOD_INVALID. Eligibility is contract-dependent."
+    },
+    "projectEnd": {
+      "type": "string",
+      "format": "date",
+      "description": "required; not before start. Sensitivity: confidential. Error: PROJECT_PERIOD_INVALID. Eligibility is contract-dependent."
+    },
+    "contractorPartyRefs": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 100,
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "format": "uuid"
+      },
+      "description": "required; 1–100 role-linked participants. Sensitivity: confidential. Error: CONTRACTOR_ROLE_REQUIRED. Eligibility is contract-dependent."
+    },
+    "technicalDossierRef": {
+      "type": "string",
+      "format": "uuid",
+      "description": "required for underwriting; versioned design/scope/evidence bundle. Sensitivity: highly restricted. Error: TECHNICAL_DOSSIER_REQUIRED. Eligibility is contract-dependent."
+    }
+  },
+  "description": "Strict syntax baseline. Conditional predicates, cross-field dates/sums/relationships and actual carrier eligibility require the versioned application validator; passing this schema is not underwriting acceptance."
+}

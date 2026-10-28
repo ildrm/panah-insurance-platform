@@ -1,0 +1,11 @@
+{
+  "kind": "quote",
+  "quoteRef": "SIM-REST-Q-1",
+  "premium": {
+    "amount": "120000",
+    "currency": "IRR",
+    "unit": "rial"
+  },
+  "expiresAt": "2026-10-28T08:10:00Z",
+  "mappingVersion": "map-v1"
+}

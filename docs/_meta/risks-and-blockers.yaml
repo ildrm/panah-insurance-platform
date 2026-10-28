@@ -1,0 +1,183 @@
+{
+  "id": "REG-RISKS-AND-BLOCKERS",
+  "version": "1.0.0",
+  "status": "draft",
+  "updated": "2026-10-28",
+  "entries": [
+    {
+      "id": "BLK-01",
+      "title": "Jurisdiction, licensing and residency",
+      "owner_role": "R19",
+      "scope_ids": [
+        "ALL"
+      ],
+      "missing_input": "Chosen jurisdiction, authoritative legal sources and qualified review",
+      "safe_default": "Live regulated operations off; only synthetic local boundaries",
+      "launch_consequence": "No production launch in an unvalidated jurisdiction",
+      "status": "open",
+      "kind": "external-blocker",
+      "resolution_evidence": null
+    },
+    {
+      "id": "BLK-02",
+      "title": "Carrier contracts and rules",
+      "owner_role": "R02",
+      "scope_ids": [
+        "INS-01",
+        "INS-04",
+        "INS-05",
+        "INS-11",
+        "COM-06",
+        "INT-02"
+      ],
+      "missing_input": "Executed agreements, actual rate/forms/risk/coverage/eligibility/schema versions",
+      "safe_default": "Live quote/submit/issue off; fictional simulators only",
+      "launch_consequence": "Affected products cannot sell or claim carrier connectivity",
+      "status": "open",
+      "kind": "external-blocker",
+      "resolution_evidence": null
+    },
+    {
+      "id": "BLK-03",
+      "title": "Payment/refund/payout authority",
+      "owner_role": "R12",
+      "scope_ids": [
+        "COM-03",
+        "COM-09",
+        "SVC-08",
+        "AUTO-03"
+      ],
+      "missing_input": "Provider contracts, merchant configuration, refund/settlement authority and reconciliation files",
+      "safe_default": "No live money movement",
+      "launch_consequence": "No purchase funding, refund, settlement or claim payout activation",
+      "status": "open",
+      "kind": "external-blocker",
+      "resolution_evidence": null
+    },
+    {
+      "id": "BLK-04",
+      "title": "Credit and financing agreements",
+      "owner_role": "R12",
+      "scope_ids": [
+        "COM-04",
+        "ORG-03",
+        "ECO-01"
+      ],
+      "missing_input": "Credit limits, financing terms, accounting and collections rules",
+      "safe_default": "Credit/financing new sales off",
+      "launch_consequence": "Only contract-backed payment alternatives may later be enabled",
+      "status": "open",
+      "kind": "external-blocker",
+      "resolution_evidence": null
+    },
+    {
+      "id": "BLK-05",
+      "title": "Claims and servicing delegation",
+      "owner_role": "R20",
+      "scope_ids": [
+        "SVC-04",
+        "SVC-05",
+        "SVC-06",
+        "SVC-07",
+        "SVC-08"
+      ],
+      "missing_input": "Carrier-approved intake, assessment, cancellation and settlement rights",
+      "safe_default": "Advisory-only synthetic workflows",
+      "launch_consequence": "Cannot represent claims decision/payout authority",
+      "status": "open",
+      "kind": "external-blocker",
+      "resolution_evidence": null
+    },
+    {
+      "id": "BLK-06",
+      "title": "Official inquiry authority",
+      "owner_role": "R09",
+      "scope_ids": [
+        "INS-04",
+        "AUTO-02"
+      ],
+      "missing_input": "Permitted data access, consent/retention terms, provider schemas and credentials",
+      "safe_default": "Official inquiries off; manual documented alternative",
+      "launch_consequence": "No unsupported official-data claims",
+      "status": "open",
+      "kind": "external-blocker",
+      "resolution_evidence": null
+    },
+    {
+      "id": "BLK-07",
+      "title": "Automotive and logistics providers",
+      "owner_role": "R20",
+      "scope_ids": [
+        "AUTO-03",
+        "AUTO-05",
+        "AUTO-06",
+        "AUTO-08",
+        "COM-07"
+      ],
+      "missing_input": "Authorized endpoints, inventory/booking/receipt/shipping/return/settlement contracts",
+      "safe_default": "Simulated bookings/commerce only",
+      "launch_consequence": "No live fulfillment/purchases",
+      "status": "open",
+      "kind": "external-blocker",
+      "resolution_evidence": null
+    },
+    {
+      "id": "BLK-08",
+      "title": "Trading, referral and regulated rewards",
+      "owner_role": "R19",
+      "scope_ids": [
+        "AUTO-07",
+        "ECO-01",
+        "GRW-03"
+      ],
+      "missing_input": "Capability-specific legal authority, agreements, disclosures and consent",
+      "safe_default": "Each capability individually off",
+      "launch_consequence": "Valuation cannot implicitly enable auctions, escrow, direct investment or prize draws",
+      "status": "open",
+      "kind": "external-blocker",
+      "resolution_evidence": null
+    },
+    {
+      "id": "BLK-09",
+      "title": "Infrastructure, exact dependencies and performance",
+      "owner_role": "R14",
+      "scope_ids": [
+        "ALL"
+      ],
+      "missing_input": "Region/residency approval, cost quotes, exact supported package lock, middleware compatibility, security scan and measured budgets",
+      "safe_default": "Deployment region unselected; build compatibility gate pending",
+      "launch_consequence": "No production readiness or measured performance claim",
+      "status": "open",
+      "kind": "external-blocker",
+      "resolution_evidence": null
+    },
+    {
+      "id": "BLK-10",
+      "title": "Native application scope",
+      "owner_role": "R21",
+      "scope_ids": [
+        "GRW-10"
+      ],
+      "missing_input": "Explicit iOS/Android scope, stack and acceptance decision",
+      "safe_default": "PWA specified; native status undecided",
+      "launch_consequence": "Native deliverable cannot be marked complete",
+      "status": "open",
+      "kind": "external-blocker",
+      "resolution_evidence": null
+    },
+    {
+      "id": "BLK-11",
+      "title": "ASVS authentication decision",
+      "owner_role": "R11",
+      "scope_ids": [
+        "GRW-01"
+      ],
+      "missing_input": "Resolve OTP-only customer flow against ASVS5 L2 MFA expectation and sensitive-action step-up",
+      "safe_default": "No L2 compliance claim; privileged MFA required",
+      "launch_consequence": "Security approval required before L2 readiness assertion",
+      "status": "open",
+      "kind": "external-blocker",
+      "resolution_evidence": null
+    }
+  ]
+}

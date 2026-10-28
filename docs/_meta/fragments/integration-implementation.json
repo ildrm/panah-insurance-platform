@@ -1,0 +1,815 @@
+{
+  "id": "IMPL-INTEGRATION-COMPONENT",
+  "version": "1.0.0",
+  "status": "partial",
+  "recorded_at": "2026-10-28T09:57:50Z",
+  "owner_roles": [
+    "R08",
+    "R09",
+    "R10",
+    "R11",
+    "R13",
+    "R14"
+  ],
+  "human_approval": "pending",
+  "application_scope": "Local fictional adapters, PostgreSQL issuance worker, private document delivery, persistent Integration Studio",
+  "supported_synthetic_products": [
+    "PRD-01",
+    "PRD-07",
+    "PRD-24"
+  ],
+  "other_product_mappings": "Explicit capability unsupported; not silently mapped to motor",
+  "requirements": [
+    {
+      "requirement_id": "INT-01-R001",
+      "parent_id": "INT-01",
+      "title": "Versioned buyer/payer/policyholder/insured/coverage model",
+      "status": "in_progress",
+      "rollout": "sandbox-only; live disabled",
+      "implemented_behavior": "Typed synthetic CarrierQuote/CarrierPurchase and minimal recipient projections.",
+      "remaining_behavior": "Complete buyer/payer/policyholder/insured/beneficiary canonical model is owned by root domain work, not this adapter package.",
+      "code_paths": [
+        "packages/integrations/src",
+        "apps/worker/src",
+        "apps/simulators/src"
+      ],
+      "test_paths": [
+        "tests/integration-adapters.test.ts",
+        "tests/integration-adapters-studio.test.ts"
+      ],
+      "evidence_ids": [
+        "INT-LOCAL-BUILD",
+        "INT-LOCAL-HTTP-PG-14"
+      ],
+      "status_scope": "Owned backend component; parent release assessment must include applicable UI and cross-domain evidence."
+    },
+    {
+      "requirement_id": "INT-01-R002",
+      "parent_id": "INT-01",
+      "title": "Financial references, distribution and permissions",
+      "status": "in_progress",
+      "rollout": "sandbox-only; live disabled",
+      "implemented_behavior": "Immutable money, tenant, owner, carrier and quote snapshots consumed by worker.",
+      "remaining_behavior": "Full financial references/distribution/property-authority snapshot requires complete parent domain integration.",
+      "code_paths": [
+        "packages/integrations/src",
+        "apps/worker/src",
+        "apps/simulators/src"
+      ],
+      "test_paths": [
+        "tests/integration-adapters.test.ts",
+        "tests/integration-adapters-studio.test.ts"
+      ],
+      "evidence_ids": [
+        "INT-LOCAL-BUILD",
+        "INT-LOCAL-HTTP-PG-14"
+      ],
+      "status_scope": "Owned backend component; parent release assessment must include applicable UI and cross-domain evidence."
+    },
+    {
+      "requirement_id": "INT-01-R003",
+      "parent_id": "INT-01",
+      "title": "Event correlation and version compatibility",
+      "status": "in_progress",
+      "rollout": "sandbox-only; live disabled",
+      "implemented_behavior": "Stable business keys, event identities, native mapping version and connection-version retention.",
+      "remaining_behavior": "Published event compatibility/client synchronization remains a broader contract gate.",
+      "code_paths": [
+        "packages/integrations/src",
+        "apps/worker/src",
+        "apps/simulators/src"
+      ],
+      "test_paths": [
+        "tests/integration-adapters.test.ts",
+        "tests/integration-adapters-studio.test.ts"
+      ],
+      "evidence_ids": [
+        "INT-LOCAL-BUILD",
+        "INT-LOCAL-HTTP-PG-14"
+      ],
+      "status_scope": "Owned backend component; parent release assessment must include applicable UI and cross-domain evidence."
+    },
+    {
+      "requirement_id": "INT-02-R001",
+      "parent_id": "INT-02",
+      "title": "Versioned REST/JSON adapter",
+      "status": "verified_local",
+      "rollout": "sandbox-only; live disabled",
+      "implemented_behavior": "REST/JSON local adapter with exact integer money, HTTP contract validation and idempotency.",
+      "remaining_behavior": "Live carrier contract/certification is externally blocked; this status is local fictional boundary only.",
+      "code_paths": [
+        "packages/integrations/src",
+        "apps/worker/src",
+        "apps/simulators/src"
+      ],
+      "test_paths": [
+        "tests/integration-adapters.test.ts",
+        "tests/integration-adapters-studio.test.ts"
+      ],
+      "evidence_ids": [
+        "INT-LOCAL-BUILD",
+        "INT-LOCAL-HTTP-PG-14"
+      ],
+      "status_scope": "Owned backend component; parent release assessment must include applicable UI and cross-domain evidence."
+    },
+    {
+      "requirement_id": "INT-02-R002",
+      "parent_id": "INT-02",
+      "title": "SOAP/XML and asynchronous polling adapter",
+      "status": "verified_local",
+      "rollout": "sandbox-only; live disabled",
+      "implemented_behavior": "Bounded SOAP/XML adapter, non-idempotent submission, non-authoritative first poll, asynchronous group issuance.",
+      "remaining_behavior": "Real SOAP/mTLS insurer contract and certification remain absent.",
+      "code_paths": [
+        "packages/integrations/src",
+        "apps/worker/src",
+        "apps/simulators/src"
+      ],
+      "test_paths": [
+        "tests/integration-adapters.test.ts",
+        "tests/integration-adapters-studio.test.ts"
+      ],
+      "evidence_ids": [
+        "INT-LOCAL-BUILD",
+        "INT-LOCAL-HTTP-PG-14"
+      ],
+      "status_scope": "Owned backend component; parent release assessment must include applicable UI and cross-domain evidence."
+    },
+    {
+      "requirement_id": "INT-02-R003",
+      "parent_id": "INT-02",
+      "title": "Custom signed HTTP and supplier contracts",
+      "status": "in_progress",
+      "rollout": "sandbox-only; live disabled",
+      "implemented_behavior": "Signed HTTP adapter with calendar/toman transforms, raw-byte HMAC and callbacks.",
+      "remaining_behavior": "Other supplier contracts and real carrier certification are not implemented.",
+      "code_paths": [
+        "packages/integrations/src",
+        "apps/worker/src",
+        "apps/simulators/src"
+      ],
+      "test_paths": [
+        "tests/integration-adapters.test.ts",
+        "tests/integration-adapters-studio.test.ts"
+      ],
+      "evidence_ids": [
+        "INT-LOCAL-BUILD",
+        "INT-LOCAL-HTTP-PG-14"
+      ],
+      "status_scope": "Owned backend component; parent release assessment must include applicable UI and cross-domain evidence."
+    },
+    {
+      "requirement_id": "INT-03-R001",
+      "parent_id": "INT-03",
+      "title": "Authoritative payment/commercial confirmation and durable event",
+      "status": "in_progress",
+      "rollout": "sandbox-only; live disabled",
+      "implemented_behavior": "Worker transmits only committed orders from durable PostgreSQL outbox.",
+      "remaining_behavior": "Cash verification/producer atomicity and end-to-end UI are owned by root implementation.",
+      "code_paths": [
+        "packages/integrations/src",
+        "apps/worker/src",
+        "apps/simulators/src"
+      ],
+      "test_paths": [
+        "tests/integration-adapters.test.ts",
+        "tests/integration-adapters-studio.test.ts"
+      ],
+      "evidence_ids": [
+        "INT-LOCAL-BUILD",
+        "INT-LOCAL-HTTP-PG-14"
+      ],
+      "status_scope": "Owned backend component; parent release assessment must include applicable UI and cross-domain evidence."
+    },
+    {
+      "requirement_id": "INT-03-R002",
+      "parent_id": "INT-03",
+      "title": "Approved B2B invoice/credit commitment",
+      "status": "in_progress",
+      "rollout": "sandbox-only; live disabled",
+      "implemented_behavior": "Credit-backed group order remains credit rather than cash-paid through actual SOAP issuance test.",
+      "remaining_behavior": "Full credit eligibility, independent purchase approval and UI evidence belong to parent domain scope.",
+      "code_paths": [
+        "packages/integrations/src",
+        "apps/worker/src",
+        "apps/simulators/src"
+      ],
+      "test_paths": [
+        "tests/integration-adapters.test.ts",
+        "tests/integration-adapters-studio.test.ts"
+      ],
+      "evidence_ids": [
+        "INT-LOCAL-BUILD",
+        "INT-LOCAL-HTTP-PG-14"
+      ],
+      "status_scope": "Owned backend component; parent release assessment must include applicable UI and cross-domain evidence."
+    },
+    {
+      "requirement_id": "INT-03-R003",
+      "parent_id": "INT-03",
+      "title": "Recipient-scoped post-purchase transmission",
+      "status": "in_progress",
+      "rollout": "sandbox-only; live disabled",
+      "implemented_behavior": "Minimal recipient-scoped synthetic risk and money data; committed connection version is retained.",
+      "remaining_behavior": "All real recipient schemas, declarations, evidence and contractual projections require actual contracts.",
+      "code_paths": [
+        "packages/integrations/src",
+        "apps/worker/src",
+        "apps/simulators/src"
+      ],
+      "test_paths": [
+        "tests/integration-adapters.test.ts",
+        "tests/integration-adapters-studio.test.ts"
+      ],
+      "evidence_ids": [
+        "INT-LOCAL-BUILD",
+        "INT-LOCAL-HTTP-PG-14"
+      ],
+      "status_scope": "Owned backend component; parent release assessment must include applicable UI and cross-domain evidence."
+    },
+    {
+      "requirement_id": "INT-04-R001",
+      "parent_id": "INT-04",
+      "title": "Request/response schemas and enums",
+      "status": "in_progress",
+      "rollout": "sandbox-only; live disabled",
+      "implemented_behavior": "Closed runtime wire validation and strict flat XML vocabulary; malformed responses rejected.",
+      "remaining_behavior": "Full mappings for all24 products and actual provider contracts remain unavailable.",
+      "code_paths": [
+        "packages/integrations/src",
+        "apps/worker/src",
+        "apps/simulators/src"
+      ],
+      "test_paths": [
+        "tests/integration-adapters.test.ts",
+        "tests/integration-adapters-studio.test.ts"
+      ],
+      "evidence_ids": [
+        "INT-LOCAL-BUILD",
+        "INT-LOCAL-HTTP-PG-14"
+      ],
+      "status_scope": "Owned backend component; parent release assessment must include applicable UI and cross-domain evidence."
+    },
+    {
+      "requirement_id": "INT-04-R002",
+      "parent_id": "INT-04",
+      "title": "Dates, calendars, currencies and units",
+      "status": "verified_local",
+      "rollout": "sandbox-only; live disabled",
+      "implemented_behavior": "BigInt rial/toman transform, no rounding, ICU calendar conversion and UTC date validation.",
+      "remaining_behavior": "Real provider date/effective-time contracts still need certification.",
+      "code_paths": [
+        "packages/integrations/src",
+        "apps/worker/src",
+        "apps/simulators/src"
+      ],
+      "test_paths": [
+        "tests/integration-adapters.test.ts",
+        "tests/integration-adapters-studio.test.ts"
+      ],
+      "evidence_ids": [
+        "INT-LOCAL-BUILD",
+        "INT-LOCAL-HTTP-PG-14"
+      ],
+      "status_scope": "Owned backend component; parent release assessment must include applicable UI and cross-domain evidence."
+    },
+    {
+      "requirement_id": "INT-04-R003",
+      "parent_id": "INT-04",
+      "title": "Error taxonomy, contract tests and safe rollout",
+      "status": "in_progress",
+      "rollout": "sandbox-only; live disabled",
+      "implemented_behavior": "Typed failure taxonomy, explicit unknown outcomes, local contract tests and retained route versions.",
+      "remaining_behavior": "Automated full public contract compatibility gate is broader unfinished scope.",
+      "code_paths": [
+        "packages/integrations/src",
+        "apps/worker/src",
+        "apps/simulators/src"
+      ],
+      "test_paths": [
+        "tests/integration-adapters.test.ts",
+        "tests/integration-adapters-studio.test.ts"
+      ],
+      "evidence_ids": [
+        "INT-LOCAL-BUILD",
+        "INT-LOCAL-HTTP-PG-14"
+      ],
+      "status_scope": "Owned backend component; parent release assessment must include applicable UI and cross-domain evidence."
+    },
+    {
+      "requirement_id": "INT-05-R001",
+      "parent_id": "INT-05",
+      "title": "API keys, tokens/OAuth and secret references",
+      "status": "in_progress",
+      "rollout": "sandbox-only; live disabled",
+      "implemented_behavior": "Synthetic API key and approved sandbox secret references; unknown refs cannot validate.",
+      "remaining_behavior": "OAuth/token provider flows and production secret-store integration are not implemented.",
+      "code_paths": [
+        "packages/integrations/src",
+        "apps/worker/src",
+        "apps/simulators/src"
+      ],
+      "test_paths": [
+        "tests/integration-adapters.test.ts",
+        "tests/integration-adapters-studio.test.ts"
+      ],
+      "evidence_ids": [
+        "INT-LOCAL-BUILD",
+        "INT-LOCAL-HTTP-PG-14"
+      ],
+      "status_scope": "Owned backend component; parent release assessment must include applicable UI and cross-domain evidence."
+    },
+    {
+      "requirement_id": "INT-05-R002",
+      "parent_id": "INT-05",
+      "title": "Signatures, certificates and mTLS",
+      "status": "in_progress",
+      "rollout": "sandbox-only; live disabled",
+      "implemented_behavior": "HMAC-SHA256, timestamp/nonce checks and SOAP synthetic certificate-reference header.",
+      "remaining_behavior": "Real mTLS/certificate verification is not implemented; header fixture is not mTLS.",
+      "code_paths": [
+        "packages/integrations/src",
+        "apps/worker/src",
+        "apps/simulators/src"
+      ],
+      "test_paths": [
+        "tests/integration-adapters.test.ts",
+        "tests/integration-adapters-studio.test.ts"
+      ],
+      "evidence_ids": [
+        "INT-LOCAL-BUILD",
+        "INT-LOCAL-HTTP-PG-14"
+      ],
+      "status_scope": "Owned backend component; parent release assessment must include applicable UI and cross-domain evidence."
+    },
+    {
+      "requirement_id": "INT-05-R003",
+      "parent_id": "INT-05",
+      "title": "Rotation and protocol-specific recovery",
+      "status": "in_progress",
+      "rollout": "sandbox-only; live disabled",
+      "implemented_behavior": "Immutable connection/secret-reference versions prevent silent in-flight replacement.",
+      "remaining_behavior": "Real credential rotation/token refresh/revocation contract workflows remain unimplemented.",
+      "code_paths": [
+        "packages/integrations/src",
+        "apps/worker/src",
+        "apps/simulators/src"
+      ],
+      "test_paths": [
+        "tests/integration-adapters.test.ts",
+        "tests/integration-adapters-studio.test.ts"
+      ],
+      "evidence_ids": [
+        "INT-LOCAL-BUILD",
+        "INT-LOCAL-HTTP-PG-14"
+      ],
+      "status_scope": "Owned backend component; parent release assessment must include applicable UI and cross-domain evidence."
+    },
+    {
+      "requirement_id": "INT-06-R001",
+      "parent_id": "INT-06",
+      "title": "Onboarding, endpoints, credentials and environment separation",
+      "status": "in_progress",
+      "rollout": "sandbox-only; live disabled",
+      "implemented_behavior": "Persistent Studio proposal, loopback destination validation, secret refs, local validation and independent publish.",
+      "remaining_behavior": "Parent API/UI integration and real provider onboarding/certification remain separate gates.",
+      "code_paths": [
+        "packages/integrations/src",
+        "apps/worker/src",
+        "apps/simulators/src"
+      ],
+      "test_paths": [
+        "tests/integration-adapters.test.ts",
+        "tests/integration-adapters-studio.test.ts"
+      ],
+      "evidence_ids": [
+        "INT-LOCAL-BUILD",
+        "INT-LOCAL-HTTP-PG-14"
+      ],
+      "status_scope": "Owned backend component; parent release assessment must include applicable UI and cross-domain evidence."
+    },
+    {
+      "requirement_id": "INT-06-R002",
+      "parent_id": "INT-06",
+      "title": "Product/operation/channel availability",
+      "status": "in_progress",
+      "rollout": "sandbox-only; live disabled",
+      "implemented_behavior": "Studio quote methods enforce product/channel/operation configuration and stamp connection identity/version.",
+      "remaining_behavior": "Parent must seed and route public new quotes through Studio; real product authority is absent.",
+      "code_paths": [
+        "packages/integrations/src",
+        "apps/worker/src",
+        "apps/simulators/src"
+      ],
+      "test_paths": [
+        "tests/integration-adapters.test.ts",
+        "tests/integration-adapters-studio.test.ts"
+      ],
+      "evidence_ids": [
+        "INT-LOCAL-BUILD",
+        "INT-LOCAL-HTTP-PG-14"
+      ],
+      "status_scope": "Owned backend component; parent release assessment must include applicable UI and cross-domain evidence."
+    },
+    {
+      "requirement_id": "INT-06-R003",
+      "parent_id": "INT-06",
+      "title": "Health, degraded and suspended modes",
+      "status": "in_progress",
+      "rollout": "sandbox-only; live disabled",
+      "implemented_behavior": "Persistent degraded/disabled/suspended states, fail-closed suspension, bounded transaction search and audited actual on-demand synthetic quote health probes.",
+      "remaining_behavior": "Active provider health polling, alerting and all UI states are not implemented by this component.",
+      "code_paths": [
+        "packages/integrations/src",
+        "apps/worker/src",
+        "apps/simulators/src"
+      ],
+      "test_paths": [
+        "tests/integration-adapters.test.ts",
+        "tests/integration-adapters-studio.test.ts"
+      ],
+      "evidence_ids": [
+        "INT-LOCAL-BUILD",
+        "INT-LOCAL-HTTP-PG-14"
+      ],
+      "status_scope": "Owned backend component; parent release assessment must include applicable UI and cross-domain evidence."
+    },
+    {
+      "requirement_id": "INT-07-R001",
+      "parent_id": "INT-07",
+      "title": "Transactional outbox/inbox and at-least-once delivery",
+      "status": "in_progress",
+      "rollout": "sandbox-only; live disabled",
+      "implemented_behavior": "Actual PostgreSQL SKIP LOCKED leases, durable callback inbox/outbox and duplicate/crash recovery.",
+      "remaining_behavior": "Parent producer payment/commit transaction and full observability need their own evidence.",
+      "code_paths": [
+        "packages/integrations/src",
+        "apps/worker/src",
+        "apps/simulators/src"
+      ],
+      "test_paths": [
+        "tests/integration-adapters.test.ts",
+        "tests/integration-adapters-studio.test.ts"
+      ],
+      "evidence_ids": [
+        "INT-LOCAL-BUILD",
+        "INT-LOCAL-HTTP-PG-14"
+      ],
+      "status_scope": "Owned backend component; parent release assessment must include applicable UI and cross-domain evidence."
+    },
+    {
+      "requirement_id": "INT-07-R002",
+      "parent_id": "INT-07",
+      "title": "Idempotency, bounded retries and dead letters",
+      "status": "verified_local",
+      "rollout": "sandbox-only; live disabled",
+      "implemented_behavior": "Stable operation identity, request-digest checks, bounded exponential jitter, dead/unknown states and provider/tenant permits.",
+      "remaining_behavior": "Multi-replica shared provider quotas are not qualified; current permits are per process.",
+      "code_paths": [
+        "packages/integrations/src",
+        "apps/worker/src",
+        "apps/simulators/src"
+      ],
+      "test_paths": [
+        "tests/integration-adapters.test.ts",
+        "tests/integration-adapters-studio.test.ts"
+      ],
+      "evidence_ids": [
+        "INT-LOCAL-BUILD",
+        "INT-LOCAL-HTTP-PG-14"
+      ],
+      "status_scope": "Owned backend component; parent release assessment must include applicable UI and cross-domain evidence."
+    },
+    {
+      "requirement_id": "INT-07-R003",
+      "parent_id": "INT-07",
+      "title": "Ambiguous outcomes and authoritative reconciliation",
+      "status": "verified_local",
+      "rollout": "sandbox-only; live disabled",
+      "implemented_behavior": "Timeout-after-acceptance reconciles through status; no-status/no-idempotency carrier remains unknown without resend.",
+      "remaining_behavior": "Live reconciliation requires actual partner evidence; local fictional behavior only.",
+      "code_paths": [
+        "packages/integrations/src",
+        "apps/worker/src",
+        "apps/simulators/src"
+      ],
+      "test_paths": [
+        "tests/integration-adapters.test.ts",
+        "tests/integration-adapters-studio.test.ts"
+      ],
+      "evidence_ids": [
+        "INT-LOCAL-BUILD",
+        "INT-LOCAL-HTTP-PG-14"
+      ],
+      "status_scope": "Owned backend component; parent release assessment must include applicable UI and cross-domain evidence."
+    },
+    {
+      "requirement_id": "INT-07-R004",
+      "parent_id": "INT-07",
+      "title": "Safe operator replay and recovery",
+      "status": "in_progress",
+      "rollout": "sandbox-only; live disabled",
+      "implemented_behavior": "Replay classification and read-only external reconciliation never blindly resubmit.",
+      "remaining_behavior": "Verified-evidence dual-control replay execution and complete operator UI are not implemented here.",
+      "code_paths": [
+        "packages/integrations/src",
+        "apps/worker/src",
+        "apps/simulators/src"
+      ],
+      "test_paths": [
+        "tests/integration-adapters.test.ts",
+        "tests/integration-adapters-studio.test.ts"
+      ],
+      "evidence_ids": [
+        "INT-LOCAL-BUILD",
+        "INT-LOCAL-HTTP-PG-14"
+      ],
+      "status_scope": "Owned backend component; parent release assessment must include applicable UI and cross-domain evidence."
+    },
+    {
+      "requirement_id": "INT-08-R001",
+      "parent_id": "INT-08",
+      "title": "Quote/reserve/submit sequencing",
+      "status": "in_progress",
+      "rollout": "sandbox-only; live disabled",
+      "implemented_behavior": "Actual quote/submit/status/document sequencing across three heterogeneous transports.",
+      "remaining_behavior": "Reserve and explicit issue command are declared unsupported for these fictional adapters.",
+      "code_paths": [
+        "packages/integrations/src",
+        "apps/worker/src",
+        "apps/simulators/src"
+      ],
+      "test_paths": [
+        "tests/integration-adapters.test.ts",
+        "tests/integration-adapters-studio.test.ts"
+      ],
+      "evidence_ids": [
+        "INT-LOCAL-BUILD",
+        "INT-LOCAL-HTTP-PG-14"
+      ],
+      "status_scope": "Owned backend component; parent release assessment must include applicable UI and cross-domain evidence."
+    },
+    {
+      "requirement_id": "INT-08-R002",
+      "parent_id": "INT-08",
+      "title": "Issue/status, verified callbacks and polling races",
+      "status": "verified_local",
+      "rollout": "sandbox-only; live disabled",
+      "implemented_behavior": "Durable callback dedupe, callback-before-ack, out-of-order suppression, polling races and independent document jobs.",
+      "remaining_behavior": "Actual carrier sandbox/live certification remains absent.",
+      "code_paths": [
+        "packages/integrations/src",
+        "apps/worker/src",
+        "apps/simulators/src"
+      ],
+      "test_paths": [
+        "tests/integration-adapters.test.ts",
+        "tests/integration-adapters-studio.test.ts"
+      ],
+      "evidence_ids": [
+        "INT-LOCAL-BUILD",
+        "INT-LOCAL-HTTP-PG-14"
+      ],
+      "status_scope": "Owned backend component; parent release assessment must include applicable UI and cross-domain evidence."
+    },
+    {
+      "requirement_id": "INT-08-R003",
+      "parent_id": "INT-08",
+      "title": "Cancellation, endorsement and claims flows",
+      "status": "not_started",
+      "rollout": "sandbox-only; live disabled",
+      "implemented_behavior": "Unsupported capabilities are explicit and fail closed.",
+      "remaining_behavior": "No carrier endorsement/cancellation/claim/payout transport is implemented.",
+      "code_paths": [
+        "packages/integrations/src",
+        "apps/worker/src",
+        "apps/simulators/src"
+      ],
+      "test_paths": [
+        "tests/integration-adapters.test.ts",
+        "tests/integration-adapters-studio.test.ts"
+      ],
+      "evidence_ids": [
+        "INT-LOCAL-BUILD",
+        "INT-LOCAL-HTTP-PG-14"
+      ],
+      "status_scope": "Owned backend component; parent release assessment must include applicable UI and cross-domain evidence."
+    },
+    {
+      "requirement_id": "INT-09-R001",
+      "parent_id": "INT-09",
+      "title": "Three carrier simulators and failure injection",
+      "status": "verified_local",
+      "rollout": "sandbox-only; live disabled",
+      "implemented_behavior": "Executable local HTTP simulators and failure injection including duplicate, timeout, malformed, throttle, key expiry, outage and mapping change.",
+      "remaining_behavior": "These are fictional local carriers, not real insurer connectivity.",
+      "code_paths": [
+        "packages/integrations/src",
+        "apps/worker/src",
+        "apps/simulators/src"
+      ],
+      "test_paths": [
+        "tests/integration-adapters.test.ts",
+        "tests/integration-adapters-studio.test.ts"
+      ],
+      "evidence_ids": [
+        "INT-LOCAL-BUILD",
+        "INT-LOCAL-HTTP-PG-14"
+      ],
+      "status_scope": "Owned backend component; parent release assessment must include applicable UI and cross-domain evidence."
+    },
+    {
+      "requirement_id": "INT-09-R002",
+      "parent_id": "INT-09",
+      "title": "Masked logs, traces and latency/error metrics",
+      "status": "in_progress",
+      "rollout": "sandbox-only; live disabled",
+      "implemented_behavior": "Structured safe error codes and durable delivery/configuration audit records.",
+      "remaining_behavior": "Full distributed traces, latency histograms, cardinality gates and dashboards remain broader observability work.",
+      "code_paths": [
+        "packages/integrations/src",
+        "apps/worker/src",
+        "apps/simulators/src"
+      ],
+      "test_paths": [
+        "tests/integration-adapters.test.ts",
+        "tests/integration-adapters-studio.test.ts"
+      ],
+      "evidence_ids": [
+        "INT-LOCAL-BUILD",
+        "INT-LOCAL-HTTP-PG-14"
+      ],
+      "status_scope": "Owned backend component; parent release assessment must include applicable UI and cross-domain evidence."
+    },
+    {
+      "requirement_id": "INT-09-R003",
+      "parent_id": "INT-09",
+      "title": "Health and audited operator actions",
+      "status": "in_progress",
+      "rollout": "sandbox-only; live disabled",
+      "implemented_behavior": "Audited Studio decisions, masked transaction list and safe replay classification.",
+      "remaining_behavior": "Active health monitoring, alerts and complete operational UI need additional work.",
+      "code_paths": [
+        "packages/integrations/src",
+        "apps/worker/src",
+        "apps/simulators/src"
+      ],
+      "test_paths": [
+        "tests/integration-adapters.test.ts",
+        "tests/integration-adapters-studio.test.ts"
+      ],
+      "evidence_ids": [
+        "INT-LOCAL-BUILD",
+        "INT-LOCAL-HTTP-PG-14"
+      ],
+      "status_scope": "Owned backend component; parent release assessment must include applicable UI and cross-domain evidence."
+    },
+    {
+      "requirement_id": "INT-10-R001",
+      "parent_id": "INT-10",
+      "title": "Mappings/contracts and compatibility",
+      "status": "in_progress",
+      "rollout": "sandbox-only; live disabled",
+      "implemented_behavior": "Reviewed closed declarative transformations and immutable native/connection versions.",
+      "remaining_behavior": "General breaking-schema compatibility automation and real partner schema migrations remain incomplete.",
+      "code_paths": [
+        "packages/integrations/src",
+        "apps/worker/src",
+        "apps/simulators/src"
+      ],
+      "test_paths": [
+        "tests/integration-adapters.test.ts",
+        "tests/integration-adapters-studio.test.ts"
+      ],
+      "evidence_ids": [
+        "INT-LOCAL-BUILD",
+        "INT-LOCAL-HTTP-PG-14"
+      ],
+      "status_scope": "Owned backend component; parent release assessment must include applicable UI and cross-domain evidence."
+    },
+    {
+      "requirement_id": "INT-10-R002",
+      "parent_id": "INT-10",
+      "title": "Controlled rollout/rollback and recipient projections",
+      "status": "in_progress",
+      "rollout": "sandbox-only; live disabled",
+      "implemented_behavior": "Actual HTTP test proves new quotes use v2 while a committed v1 order reaches its original endpoint.",
+      "remaining_behavior": "Percentage canary rollout, complete rollback UI and real recipient migrations remain incomplete.",
+      "code_paths": [
+        "packages/integrations/src",
+        "apps/worker/src",
+        "apps/simulators/src"
+      ],
+      "test_paths": [
+        "tests/integration-adapters.test.ts",
+        "tests/integration-adapters-studio.test.ts"
+      ],
+      "evidence_ids": [
+        "INT-LOCAL-BUILD",
+        "INT-LOCAL-HTTP-PG-14"
+      ],
+      "status_scope": "Owned backend component; parent release assessment must include applicable UI and cross-domain evidence."
+    },
+    {
+      "requirement_id": "INT-10-R003",
+      "parent_id": "INT-10",
+      "title": "Exports/webhooks and delivery audit",
+      "status": "not_started",
+      "rollout": "sandbox-only; live disabled",
+      "implemented_behavior": "No outbound partner export/webhook connector is falsely represented as implemented.",
+      "remaining_behavior": "Recipient-authorized exports/webhooks, delivery signatures and their audit workflow remain unimplemented.",
+      "code_paths": [
+        "packages/integrations/src",
+        "apps/worker/src",
+        "apps/simulators/src"
+      ],
+      "test_paths": [
+        "tests/integration-adapters.test.ts",
+        "tests/integration-adapters-studio.test.ts"
+      ],
+      "evidence_ids": [
+        "INT-LOCAL-BUILD",
+        "INT-LOCAL-HTTP-PG-14"
+      ],
+      "status_scope": "Owned backend component; parent release assessment must include applicable UI and cross-domain evidence."
+    }
+  ],
+  "commands": [
+    {
+      "id": "INT-LOCAL-BUILD",
+      "commands": [
+        "rtk proxy npm run build -w @st/integrations",
+        "rtk proxy npm run build -w @st/worker",
+        "rtk proxy npm run build -w @st/simulators"
+      ],
+      "result": "passed"
+    },
+    {
+      "id": "INT-LOCAL-HTTP-PG-14",
+      "command": "rtk proxy node --import tsx --test tests/integration-adapters*.test.ts",
+      "result": "passed",
+      "tests": 14,
+      "environment": "Node26.12, native local PostgreSQL17.11 on127.0.0.1:55432; unique disposable schema per test; actual loopback HTTP carriers",
+      "network_execution": "Loopback access required sandbox escalation; initial non-escalated run failed EPERM and was not counted as a pass.",
+      "duration_ms": 2138.333834
+    },
+    {
+      "id": "INT-XML-POST-REVIEW",
+      "command": "rtk proxy node --import tsx --test --test-name-pattern 'signature nonce' tests/integration-adapters.test.ts",
+      "result": "passed",
+      "tests": 1,
+      "scope": "Signature replay/tamper, DTD and unbound SOAP Body namespace rejection, currency/calendar checks after final parser review."
+    }
+  ],
+  "decisions": [
+    {
+      "id": "INT-PROPOSAL-GROUP-WIRE",
+      "status": "proposed-local-only",
+      "detail": "Preserve documented motor v1 vocabulary and add separately typed fictional SIM-GROUP/RequestGroupQuote extensions for approved aggregate census count; no health PII or real tariffs."
+    },
+    {
+      "id": "INT-PROPOSAL-PRIVATE-DOCUMENTS",
+      "status": "proposed-local-only",
+      "detail": "Insurer-confirmed issuance persists before independent document retrieval; private UUID.pdf files use OBJECT_STORAGE_DIR and no public file server."
+    }
+  ],
+  "limitations": [
+    "No actual insurer/payment authority or live credentials used.",
+    "No OAuth or real mTLS handler is claimed.",
+    "No reserve, endorsement, cancellation, claim or payout carrier operation is implemented.",
+    "Shared multi-replica quotas, comprehensive tracing/health alerts and full bulk report isolation need further qualification.",
+    "No production or representative200rps/1m-policy performance claim."
+  ],
+  "local_startup": [
+    "npm run build:packages",
+    "npm run build -w @st/simulators",
+    "npm run build -w @st/worker",
+    "npm run start:simulators",
+    "npm run start:worker"
+  ],
+  "schema_migration": "packages/integrations/migrations/002-studio.sql via migrateIntegrations(db)",
+  "full_platform_scope_retained": true,
+  "compatibility": {
+    "secret_reference_aliases": [
+      "secret://sandbox/rest/v1",
+      "secret://sandbox/soap/v1",
+      "secret://sandbox/signed/v1"
+    ],
+    "canonical_secret_references": [
+      "secret://sandbox/rest-v1",
+      "secret://sandbox/soap-v1",
+      "secret://sandbox/signed-v1"
+    ],
+    "signing_environment": "SIM_SIGNING_SECRET with SIMULATOR_SIGNING_SECRET fallback",
+    "old_configs": "Immutable old published config is retained; no rename mutation."
+  },
+  "latest_owned_regression": {
+    "command": "rtk proxy node --import tsx --test tests/integration-adapters.test.ts tests/integration-adapters-studio.test.ts tests/recovery.test.ts",
+    "passed": 20,
+    "failed": 0,
+    "skipped": 0,
+    "duration_ms": 2526.321334,
+    "scope": "16 integration tests plus 4 recovery tests; local only"
+  },
+  "wallet_commitment_compatibility": "purchase.committed.v2 accepts committed wallet funding authority, preserves the stable submit key and reconciles uncertain acceptance without inventing a cash receipt; v1 remains supported"
+}

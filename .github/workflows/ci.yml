@@ -1,0 +1,40 @@
+name: Local engineering gates
+on: [push, pull_request]
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:17.11
+        env: {POSTGRES_USER: st, POSTGRES_PASSWORD: local-ci-only, POSTGRES_DB: st_local}
+        ports: ["55432:5432"]
+        options: >-
+          --health-cmd "pg_isready -U st -d st_local" --health-interval 5s --health-timeout 5s --health-retries 10
+    env:
+      DATABASE_URL: postgresql://st:local-ci-only@127.0.0.1:55432/st_local
+      APP_MODE: sandbox
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: {node-version: 24.22.1, cache: npm}
+      - run: npm ci --ignore-scripts
+      - run: npm --prefix docs/_meta/validation ci --ignore-scripts
+      - run: npm run lint && npm run build
+      - run: npm run db:migrate && npm run db:seed
+      - run: npm run sandbox:controls
+      - run: npm audit --audit-level=high
+      - run: node docs/_meta/validation/validate_standards.mjs --check
+      - run: python3 -B docs/_meta/validation/validate.py
+      - run: pg_dump --version && pg_restore --version
+      - run: |
+          npm run start:simulators > /tmp/simulators.log 2>&1 &
+          npm run start:api > /tmp/api.log 2>&1 &
+          npm run start:worker > /tmp/worker.log 2>&1 &
+          sleep 3
+          npm run sandbox:publish
+          npm test
+      - run: npx playwright install --with-deps chromium
+      - run: |
+          npm run start -w @st/web > /tmp/web.log 2>&1 &
+          sleep 3
+          npm run test:e2e

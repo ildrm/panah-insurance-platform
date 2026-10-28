@@ -1,0 +1,35 @@
+{
+  "fixtureId": "FIX-PRD-07",
+  "synthetic": true,
+  "productId": "PRD-07",
+  "schemaRef": "../schemas/PRD-07.risk.schema.json",
+  "riskExample": {
+    "benefitClassCode": "SYNTH-CLASS-A",
+    "effectiveDate": "2027-01-01",
+    "billingBasisCode": "SYNTH-MONTHLY",
+    "proposalVersion": 3,
+    "organizationRef": "00000000-0000-4000-8000-000000000701",
+    "censusBatchRef": "00000000-0000-4000-8000-000000000702",
+    "enrollmentWindowRef": "00000000-0000-4000-8000-000000000704"
+  },
+  "canonicalContext": {
+    "currency": "IRR",
+    "unit": "rial",
+    "channel": "corporate",
+    "partyAndAuthorityFixture": "Synthetic authorized buyer/payer/policyholder/insured roles; referenced UUIDs resolve only in the local test harness.",
+    "productRuleVersion": "SYNTH-1",
+    "liveOperationsAllowed": false
+  },
+  "scenarioContext": {
+    "syntheticCensus": {
+      "acceptedRows": 18,
+      "rejectedRows": 2
+    }
+  },
+  "expected": {
+    "withoutContract": "live_quote_and_purchase_disabled",
+    "syntacticValidation": "pass",
+    "carrierEligibility": "undetermined_without_synthetic_rule_set",
+    "variant": "An HR import removes a member while a dependent addition is being approved: version conflict forces a new preview and no overlapping unauthorized coverage interval is committed."
+  }
+}

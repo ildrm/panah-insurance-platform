@@ -1,0 +1,40 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://insurance.example.invalid/schemas/Allocation.schema.json",
+  "title": "Allocation",
+  "type": "object",
+  "properties": {
+    "lineId": {
+      "type": "string",
+      "format": "uuid"
+    },
+    "kind": {
+      "type": "string",
+      "enum": [
+        "premium",
+        "tax",
+        "fee",
+        "discount",
+        "financing_cost",
+        "insurer_payable",
+        "seller_commission",
+        "platform_revenue"
+      ]
+    },
+    "money": {
+      "$ref": "Money.schema.json"
+    },
+    "agreementVersion": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 128,
+      "pattern": "^[A-Za-z0-9_.:-]+$"
+    }
+  },
+  "required": [
+    "lineId",
+    "kind",
+    "money"
+  ],
+  "additionalProperties": false
+}

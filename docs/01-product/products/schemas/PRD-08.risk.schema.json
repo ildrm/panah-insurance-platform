@@ -1,0 +1,80 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://insurance.invalid/schemas/PRD-08.risk.v1.schema.json",
+  "title": "PRD-08 synthetic risk input syntax",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "insuredRef",
+    "birthDate",
+    "beneficiaries",
+    "contributionAmount",
+    "contributionFrequency"
+  ],
+  "properties": {
+    "insuredRef": {
+      "type": "string",
+      "format": "uuid",
+      "description": "required; authorized person and underwriting purpose. Sensitivity: restricted. Error: INSURED_AUTHORITY_REQUIRED. Eligibility is contract-dependent."
+    },
+    "birthDate": {
+      "type": "string",
+      "format": "date",
+      "description": "required; valid nonfuture date with calendar source. Sensitivity: restricted. Error: BIRTH_DATE_INVALID. Eligibility is contract-dependent."
+    },
+    "occupationCode": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 60,
+      "description": "conditional; versioned risk classification <= 40. Sensitivity: restricted. Error: OCCUPATION_UNMAPPED. Eligibility is contract-dependent."
+    },
+    "beneficiaries": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 100,
+      "items": {
+        "type": "object",
+        "required": [
+          "ref",
+          "basisPoints"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "ref": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "basisPoints": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 10000
+          }
+        }
+      },
+      "description": "required before issue; 1–100 party refs with allocation basis points summing 10000 when percentage allocation applies. Sensitivity: highly restricted. Error: BENEFICIARY_ALLOCATION_INVALID. Eligibility is contract-dependent."
+    },
+    "contributionAmount": {
+      "type": "string",
+      "pattern": "^[1-9][0-9]{0,17}$",
+      "description": "required; positive; explicit schedule/currency. Sensitivity: financial. Error: CONTRIBUTION_INVALID. Eligibility is contract-dependent."
+    },
+    "contributionFrequency": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 40,
+      "description": "required; contract-offered schedule code. Sensitivity: financial. Error: FREQUENCY_UNAVAILABLE. Eligibility is contract-dependent."
+    },
+    "illustrationVersion": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 80,
+      "description": "conditional for projection; approved document/version <= 80. Sensitivity: financial. Error: ILLUSTRATION_UNAPPROVED. Eligibility is contract-dependent."
+    },
+    "medicalDeclarationRef": {
+      "type": "string",
+      "format": "uuid",
+      "description": "conditional; restricted member-specific record. Sensitivity: highly restricted. Error: MEDICAL_REVIEW_REQUIRED. Eligibility is contract-dependent."
+    }
+  },
+  "description": "Strict syntax baseline. Conditional predicates, cross-field dates/sums/relationships and actual carrier eligibility require the versioned application validator; passing this schema is not underwriting acceptance."
+}

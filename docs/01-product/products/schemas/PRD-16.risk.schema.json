@@ -1,0 +1,62 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://insurance.invalid/schemas/PRD-16.risk.v1.schema.json",
+  "title": "PRD-16 synthetic risk input syntax",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "deviceModelCode",
+    "deviceIdentifier",
+    "purchaseDate",
+    "declaredValue",
+    "conditionCode",
+    "perilPlanCode"
+  ],
+  "properties": {
+    "deviceModelCode": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 80,
+      "description": "required; catalog/contract mapping <= 80. Sensitivity: internal. Error: DEVICE_MODEL_UNMAPPED. Eligibility is contract-dependent."
+    },
+    "deviceIdentifier": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 64,
+      "description": "required; 1–64 characters; scheme-specific validation, encrypt/mask. Sensitivity: restricted. Error: DEVICE_IDENTIFIER_INVALID. Eligibility is contract-dependent."
+    },
+    "purchaseDate": {
+      "type": "string",
+      "format": "date",
+      "description": "required; nonfuture; calendar source explicit. Sensitivity: confidential. Error: PURCHASE_DATE_INVALID. Eligibility is contract-dependent."
+    },
+    "declaredValue": {
+      "type": "string",
+      "pattern": "^[1-9][0-9]{0,17}$",
+      "description": "required; positive explicit currency/unit. Sensitivity: financial. Error: DEVICE_VALUE_INVALID. Eligibility is contract-dependent."
+    },
+    "conditionCode": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 40,
+      "description": "required; contract-offered new/used/reconditioned category. Sensitivity: internal. Error: CONDITION_UNAVAILABLE. Eligibility is contract-dependent."
+    },
+    "purchaseEvidenceRef": {
+      "type": "string",
+      "format": "uuid",
+      "description": "conditional; authorized invoice/ownership evidence. Sensitivity: restricted. Error: PURCHASE_EVIDENCE_REQUIRED. Eligibility is contract-dependent."
+    },
+    "inspectionRef": {
+      "type": "string",
+      "format": "uuid",
+      "description": "conditional; approved device/condition check. Sensitivity: restricted. Error: DEVICE_INSPECTION_REQUIRED. Eligibility is contract-dependent."
+    },
+    "perilPlanCode": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 40,
+      "description": "required; offered damage/theft/other structure. Sensitivity: internal. Error: DEVICE_PLAN_UNAVAILABLE. Eligibility is contract-dependent."
+    }
+  },
+  "description": "Strict syntax baseline. Conditional predicates, cross-field dates/sums/relationships and actual carrier eligibility require the versioned application validator; passing this schema is not underwriting acceptance."
+}

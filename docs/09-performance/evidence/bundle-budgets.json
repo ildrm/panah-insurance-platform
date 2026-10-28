@@ -1,0 +1,49 @@
+{
+  "id": "PERF-BUNDLE-LOCAL",
+  "version": "1.0.0",
+  "status": "partial",
+  "updated": "2026-10-28",
+  "runtime": "v24.22.1",
+  "build": "Next.js production build",
+  "compression": "gzip level6 per unique external initial script; HTML/RSC bytes reported separately",
+  "results": [
+    {
+      "scenario": "landing",
+      "path": "/",
+      "chunks": 9,
+      "initial_js_gzip_bytes": 183800,
+      "initial_js_gzip_kib": 179.49,
+      "budget_kib": 180,
+      "html_gzip_bytes": 7904,
+      "pass": true
+    },
+    {
+      "scenario": "purchase",
+      "path": "/insurance/PRD-01",
+      "chunks": 10,
+      "initial_js_gzip_bytes": 198075,
+      "initial_js_gzip_kib": 193.43,
+      "budget_kib": 280,
+      "html_gzip_bytes": 3684,
+      "pass": true
+    },
+    {
+      "scenario": "dashboard",
+      "path": "/account",
+      "chunks": 10,
+      "initial_js_gzip_bytes": 204252,
+      "initial_js_gzip_kib": 199.46,
+      "budget_kib": 400,
+      "html_gzip_bytes": 3710,
+      "pass": true
+    }
+  ],
+  "measured_three_route_union_bytes": 221471,
+  "result": "pass",
+  "release_budget_proven": false,
+  "limitations": [
+    "Routes measured from current production HTML; dynamic lazy chunks after interactions not included",
+    "Dashboard anonymous gate has same routeclient entry but authenticated latewidgets mayaddchunks",
+    "Not field Web Vitals or full purchasejourney transfer evidence"
+  ]
+}

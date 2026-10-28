@@ -1,0 +1,29 @@
+{
+  "fixtureId": "FIX-PRD-22",
+  "synthetic": true,
+  "productId": "PRD-22",
+  "schemaRef": "../schemas/PRD-22.risk.schema.json",
+  "riskExample": {
+    "treatmentCode": "SYNTH-IMPLANT-A",
+    "deviceModelCode": "SYNTH-IMPLANT-MODEL",
+    "treatmentDate": "2027-06-01",
+    "benefitPlanCode": "SYNTH-DENTAL-PLAN",
+    "patientRef": "00000000-0000-4000-8000-000000002201",
+    "providerRef": "00000000-0000-4000-8000-000000002203"
+  },
+  "canonicalContext": {
+    "currency": "IRR",
+    "unit": "rial",
+    "channel": "b2c",
+    "partyAndAuthorityFixture": "Synthetic authorized buyer/payer/policyholder/insured roles; referenced UUIDs resolve only in the local test harness.",
+    "productRuleVersion": "SYNTH-1",
+    "liveOperationsAllowed": false
+  },
+  "scenarioContext": {},
+  "expected": {
+    "withoutContract": "live_quote_and_purchase_disabled",
+    "syntacticValidation": "pass",
+    "carrierEligibility": "undetermined_without_synthetic_rule_set",
+    "variant": "Employer admin requests a treatment-level report for nine members: the report suppresses the cohort and complementary totals; individual treatment identifiers are never returned."
+  }
+}

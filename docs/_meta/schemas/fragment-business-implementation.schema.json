@@ -1,0 +1,289 @@
+{
+  "type": "object",
+  "properties": {
+    "commands_run": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "command": {
+            "type": "string",
+            "minLength": 1
+          },
+          "duration_ms": {
+            "type": "number"
+          },
+          "environment": {
+            "type": "string",
+            "minLength": 1
+          },
+          "failures": {
+            "type": "integer"
+          },
+          "result": {
+            "type": "string",
+            "minLength": 1
+          },
+          "skipped": {
+            "type": "integer"
+          },
+          "tests": {
+            "type": "integer"
+          }
+        },
+        "required": [
+          "command",
+          "result"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "decisions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "detail": {
+            "type": "string",
+            "minLength": 1
+          },
+          "id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "status": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "required": [
+          "detail",
+          "id",
+          "status"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "external_blockers": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "owner_roles": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "products": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "missing": {
+            "type": "string",
+            "minLength": 1
+          },
+          "state": {
+            "type": "string",
+            "minLength": 1
+          },
+          "verified": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "required": [
+          "id",
+          "missing",
+          "state",
+          "verified"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "requirements": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "code_paths": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "missing": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "rollout": {
+            "type": "string",
+            "minLength": 1
+          },
+          "state": {
+            "type": "string",
+            "minLength": 1
+          },
+          "test_paths": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "ui_status": {
+            "type": "string",
+            "minLength": 1
+          },
+          "verified_backend_behaviors": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          }
+        },
+        "required": [
+          "code_paths",
+          "id",
+          "missing",
+          "rollout",
+          "state",
+          "test_paths",
+          "verified_backend_behaviors"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "review_findings_sent_to_root": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "revision": {
+      "type": "string",
+      "minLength": 1
+    },
+    "scope": {
+      "type": "string",
+      "minLength": 1
+    },
+    "source_hashes": {
+      "type": "object",
+      "properties": {
+        "packages/business/fixtures/synthetic-policy.pdf": {
+          "type": "string",
+          "minLength": 1
+        },
+        "packages/business/implementation-evidence.py": {
+          "type": "string",
+          "minLength": 1
+        },
+        "packages/business/migrations/001_business.sql": {
+          "type": "string",
+          "minLength": 1
+        },
+        "packages/business/migrations/002_evidence_codes.sql": {
+          "type": "string",
+          "minLength": 1
+        },
+        "packages/business/package.json": {
+          "type": "string",
+          "minLength": 1
+        },
+        "packages/business/src/catalog.ts": {
+          "type": "string",
+          "minLength": 1
+        },
+        "packages/business/src/evidence.ts": {
+          "type": "string",
+          "minLength": 1
+        },
+        "packages/business/src/index.ts": {
+          "type": "string",
+          "minLength": 1
+        },
+        "packages/business/src/products/templates.json": {
+          "type": "string",
+          "minLength": 1
+        },
+        "packages/business/src/store.ts": {
+          "type": "string",
+          "minLength": 1
+        },
+        "packages/business/src/validation.ts": {
+          "type": "string",
+          "minLength": 1
+        },
+        "packages/business/tsconfig.json": {
+          "type": "string",
+          "minLength": 1
+        },
+        "tests/business.test.ts": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "required": [
+        "packages/business/fixtures/synthetic-policy.pdf",
+        "packages/business/implementation-evidence.py",
+        "packages/business/migrations/001_business.sql",
+        "packages/business/migrations/002_evidence_codes.sql",
+        "packages/business/package.json",
+        "packages/business/src/catalog.ts",
+        "packages/business/src/evidence.ts",
+        "packages/business/src/index.ts",
+        "packages/business/src/products/templates.json",
+        "packages/business/src/store.ts",
+        "packages/business/src/validation.ts",
+        "packages/business/tsconfig.json",
+        "tests/business.test.ts"
+      ],
+      "additionalProperties": false
+    },
+    "updated": {
+      "type": "string",
+      "minLength": 1
+    },
+    "version": {
+      "type": "string",
+      "minLength": 1
+    }
+  },
+  "required": [
+    "commands_run",
+    "decisions",
+    "external_blockers",
+    "owner_roles",
+    "products",
+    "requirements",
+    "review_findings_sent_to_root",
+    "revision",
+    "scope",
+    "source_hashes",
+    "updated",
+    "version"
+  ],
+  "additionalProperties": false,
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://insurance.example.invalid/meta/fragment-business-implementation.schema.json",
+  "title": "Authored business-implementation build input v1"
+}

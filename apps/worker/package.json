@@ -1,0 +1,9 @@
+{
+  "name": "@st/worker",
+  "version": "0.1.0",
+  "private": true,
+  "type": "commonjs",
+  "main": "dist/main.js",
+  "scripts": {"build": "tsc -p tsconfig.json", "start": "node dist/main.js", "dev": "tsx src/main.ts"},
+  "dependencies": {"@st/database": "*", "@st/integrations": "*", "@nestjs/common": "12.3.2", "@nestjs/core": "12.3.2", "reflect-metadata": "0.2.2"}
+}

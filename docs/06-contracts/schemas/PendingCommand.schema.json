@@ -1,0 +1,88 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://insurance.example.invalid/schemas/PendingCommand.schema.json",
+  "title": "PendingCommand",
+  "type": "object",
+  "properties": {
+    "commandId": {
+      "type": "string",
+      "format": "uuid"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "pending",
+        "running",
+        "succeeded",
+        "rejected",
+        "external_outcome_unknown"
+      ]
+    },
+    "resourceId": {
+      "type": "string",
+      "format": "uuid"
+    },
+    "resourceVersion": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 2147483647
+    },
+    "updatedAt": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "error": {
+      "$ref": "Error.schema.json"
+    },
+    "operationId": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 128,
+      "pattern": "^[A-Za-z0-9_.:-]+$"
+    },
+    "completion": {
+      "$ref": "feature-types.schema.json#/$defs/FCommandCompletion"
+    }
+  },
+  "required": [
+    "commandId",
+    "status",
+    "updatedAt",
+    "operationId"
+  ],
+  "additionalProperties": false,
+  "oneOf": [
+    {
+      "properties": {
+        "status": {
+          "const": "succeeded"
+        }
+      },
+      "required": [
+        "completion"
+      ],
+      "not": {
+        "required": [
+          "error"
+        ]
+      }
+    },
+    {
+      "properties": {
+        "status": {
+          "enum": [
+            "pending",
+            "running",
+            "rejected",
+            "external_outcome_unknown"
+          ]
+        }
+      },
+      "not": {
+        "required": [
+          "completion"
+        ]
+      }
+    }
+  ]
+}

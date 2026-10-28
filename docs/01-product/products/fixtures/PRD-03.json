@@ -1,0 +1,29 @@
+{
+  "fixtureId": "FIX-PRD-03",
+  "synthetic": true,
+  "productId": "PRD-03",
+  "schemaRef": "../schemas/PRD-03.risk.schema.json",
+  "riskExample": {
+    "engineCapacityCc": 150,
+    "powertrainCode": "SYNTH-PETROL",
+    "modelYear": 2024,
+    "usageCode": "SYNTH-DELIVERY",
+    "liabilityPlanCode": "SYNTH-MOTO-A",
+    "motorcycleRef": "00000000-0000-4000-8000-000000000301"
+  },
+  "canonicalContext": {
+    "currency": "IRR",
+    "unit": "rial",
+    "channel": "b2c",
+    "partyAndAuthorityFixture": "Synthetic authorized buyer/payer/policyholder/insured roles; referenced UUIDs resolve only in the local test harness.",
+    "productRuleVersion": "SYNTH-1",
+    "liveOperationsAllowed": false
+  },
+  "scenarioContext": {},
+  "expected": {
+    "withoutContract": "live_quote_and_purchase_disabled",
+    "syntacticValidation": "pass",
+    "carrierEligibility": "undetermined_without_synthetic_rule_set",
+    "variant": "Two plans accept private use but reject delivery use: changing usage to delivery removes those offers and prevents stale quote selection."
+  }
+}

@@ -1,0 +1,316 @@
+{
+  "type": "object",
+  "properties": {
+    "application_scope": {
+      "type": "string",
+      "minLength": 1
+    },
+    "commands": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "command": {
+            "type": "string",
+            "minLength": 1
+          },
+          "commands": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "duration_ms": {
+            "type": "number"
+          },
+          "environment": {
+            "type": "string",
+            "minLength": 1
+          },
+          "id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "network_execution": {
+            "type": "string",
+            "minLength": 1
+          },
+          "result": {
+            "type": "string",
+            "minLength": 1
+          },
+          "scope": {
+            "type": "string",
+            "minLength": 1
+          },
+          "tests": {
+            "type": "integer"
+          }
+        },
+        "required": [
+          "id",
+          "result"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "compatibility": {
+      "type": "object",
+      "properties": {
+        "canonical_secret_references": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "old_configs": {
+          "type": "string",
+          "minLength": 1
+        },
+        "secret_reference_aliases": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "signing_environment": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "required": [
+        "canonical_secret_references",
+        "old_configs",
+        "secret_reference_aliases",
+        "signing_environment"
+      ],
+      "additionalProperties": false
+    },
+    "decisions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "detail": {
+            "type": "string",
+            "minLength": 1
+          },
+          "id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "status": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "required": [
+          "detail",
+          "id",
+          "status"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "full_platform_scope_retained": {
+      "type": "boolean"
+    },
+    "human_approval": {
+      "type": "string",
+      "minLength": 1
+    },
+    "id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "latest_owned_regression": {
+      "type": "object",
+      "properties": {
+        "command": {
+          "type": "string",
+          "minLength": 1
+        },
+        "duration_ms": {
+          "type": "number"
+        },
+        "failed": {
+          "type": "integer"
+        },
+        "passed": {
+          "type": "integer"
+        },
+        "scope": {
+          "type": "string",
+          "minLength": 1
+        },
+        "skipped": {
+          "type": "integer"
+        }
+      },
+      "required": [
+        "command",
+        "duration_ms",
+        "failed",
+        "passed",
+        "scope",
+        "skipped"
+      ],
+      "additionalProperties": false
+    },
+    "limitations": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "local_startup": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "other_product_mappings": {
+      "type": "string",
+      "minLength": 1
+    },
+    "owner_roles": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "recorded_at": {
+      "type": "string",
+      "minLength": 1
+    },
+    "requirements": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "code_paths": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "evidence_ids": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "implemented_behavior": {
+            "type": "string",
+            "minLength": 1
+          },
+          "parent_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "remaining_behavior": {
+            "type": "string",
+            "minLength": 1
+          },
+          "requirement_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "rollout": {
+            "type": "string",
+            "minLength": 1
+          },
+          "status": {
+            "type": "string",
+            "minLength": 1
+          },
+          "status_scope": {
+            "type": "string",
+            "minLength": 1
+          },
+          "test_paths": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "title": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "required": [
+          "code_paths",
+          "evidence_ids",
+          "implemented_behavior",
+          "parent_id",
+          "remaining_behavior",
+          "requirement_id",
+          "rollout",
+          "status",
+          "status_scope",
+          "test_paths",
+          "title"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "schema_migration": {
+      "type": "string",
+      "minLength": 1
+    },
+    "status": {
+      "type": "string",
+      "minLength": 1
+    },
+    "supported_synthetic_products": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "version": {
+      "type": "string",
+      "minLength": 1
+    },
+    "wallet_commitment_compatibility": {
+      "type": "string",
+      "minLength": 1
+    }
+  },
+  "required": [
+    "application_scope",
+    "commands",
+    "compatibility",
+    "decisions",
+    "full_platform_scope_retained",
+    "human_approval",
+    "id",
+    "latest_owned_regression",
+    "limitations",
+    "local_startup",
+    "other_product_mappings",
+    "owner_roles",
+    "recorded_at",
+    "requirements",
+    "schema_migration",
+    "status",
+    "supported_synthetic_products",
+    "version",
+    "wallet_commitment_compatibility"
+  ],
+  "additionalProperties": false,
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://insurance.example.invalid/meta/fragment-integration-implementation.schema.json",
+  "title": "Authored integration-implementation build input v1"
+}

@@ -1,0 +1,29 @@
+{
+  "id": "RUNTIME-MATRIX-LOCAL",
+  "version": "1.0.0",
+  "status": "partial",
+  "updated": "2026-10-28",
+  "checkedAt": "2026-10-28T10:44:22.074Z",
+  "node": "v24.22.1",
+  "npm": "11.19.1",
+  "platform": "darwin",
+  "arch": "arm64",
+  "postgres": "17.11 (Homebrew)",
+  "chrome": "Google Chrome 156.0.8078.48",
+  "packages": {
+    "next": "16.4.3",
+    "react": "19.3.1",
+    "react-dom": "19.3.1",
+    "@nestjs/core": "12.3.2",
+    "@nestjs/common": "12.3.2",
+    "@nestjs/platform-express": "12.3.2",
+    "express": "5.3.0",
+    "typescript": "5.9.3",
+    "pg": "8.23.1",
+    "ajv": "8.20.0",
+    "ajv-formats": "3.0.1",
+    "@playwright/test": "1.64.1"
+  },
+  "lockSha256": "aebce4847d3f64ff1ac212f1621f0e04e49e1077aca0fd47ab3ce3aebb9ee50b",
+  "qualification": "Actual local install/build/test versions; no production support, license or complete matrix certification"
+}

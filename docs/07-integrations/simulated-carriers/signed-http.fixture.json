@@ -1,0 +1,36 @@
+{
+  "id": "SIM-SIGNED",
+  "synthetic": true,
+  "protocol": "Signed HTTP",
+  "capabilities": {
+    "quote": true,
+    "submit": true,
+    "status": false,
+    "issue": true,
+    "retrieveDocument": true,
+    "idempotency": false,
+    "callbacks": true
+  },
+  "request": {
+    "client_ref": "synthetic-order-001",
+    "quote_ref": "SIM-SIGNED-Q-1",
+    "premium_toman": "12000",
+    "effective_jalali": "1405-08-10",
+    "calendar": "persian",
+    "mapping_version": "signed-map-v1"
+  },
+  "scenarios": [
+    "normal",
+    "duplicate_callback",
+    "malformed_response",
+    "timeout_after_acceptance",
+    "idempotency_not_supported",
+    "throttled",
+    "expired_token",
+    "partial_outage",
+    "mapping_version_change"
+  ],
+  "requestExamplePath": "wire/signed-submit-request.json",
+  "wireFixtureManifest": "wire/fixture-manifest.json",
+  "validatedMappingPair": "wire/calendar-money-pair.json"
+}
